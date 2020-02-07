@@ -49,7 +49,16 @@ colonist = {
 	resources = {
 		category = planet_jobs
 		produces = {
+			trigger = {
+				is_lithoid = no
+			}
 			food = 5
+		}
+		produces = {
+			trigger = {
+				is_lithoid = yes
+			}
+			minerals = 5
 		}
 	}	
 	

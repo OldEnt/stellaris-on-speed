@@ -156,7 +156,47 @@ slave_toiler = {
 	}
 }
 
-
+#scavenger_drone = {
+#	category = simple_drone
+#	is_capped_by_modifier = no
+#	building_icon = building_residence
+#	clothes_texture_index = 2
+#	icon = mining_drone
+#	
+#	possible_pre_triggers = {
+#		has_owner = yes
+#		is_being_purged = no
+#		is_enslaved = no
+#		is_being_assimilated = no
+#	}
+#
+#	possible = {
+#		owner = { is_hive_empire = yes } 
+#		drone_job_check_trigger = yes
+#		days_passed >= 1 # So drones are not assigned this job before other jobs are created by the game start
+#	}
+#	
+#	resources = {
+#		category = planet_jobs
+#		produces = {
+#			minerals = 5
+#		}
+#		
+#		upkeep = {
+#			trigger = { 
+#				planet = {
+#					has_modifier = activity_program
+#				}
+#			}
+#			food = 5
+#		}
+#	}	
+#		
+#	weight = {
+#		weight = @special_job_weight
+#	}
+#}
+#
 organic_battery = {
 	category = worker
 	is_capped_by_modifier = no
@@ -208,7 +248,17 @@ livestock = {
 	resources = {
 		category = planet_livestock
 		produces = {
+			trigger = { 
+				is_organic_species = yes
+				is_lithoid = no
+			}
 			food = 20
+		}
+		produces = {
+			trigger = { 
+				is_lithoid = yes
+			}
+			minerals = 10
 		}
 	}
 		
@@ -275,8 +325,16 @@ purge = {
 			trigger = {
 				has_purge_type = { type = purge_processing }
 				is_robotic_species = no
+				is_lithoid = no
 			}
 			food = 30
+		}
+		produces = { # regular processing
+			trigger = {
+				has_purge_type = { type = purge_processing }
+				is_lithoid = yes
+			}
+			minerals = 20
 		}
 		produces = { # processing robots (devouring swarm)
 			trigger = {
@@ -399,15 +457,22 @@ assimilation = {
 		upkeep = {
 			trigger = { 
 				is_organic_species = yes
+				is_lithoid = no
 			}
 			food = @living_standard_food_normal
-		}		
+		}
+		upkeep = {
+			trigger = { 
+				is_lithoid = yes
+			}
+			minerals = @living_standard_food_normal
+		}
 		upkeep = {
 			trigger = { 
 				is_robotic_species = yes
 			}
 			energy = @living_standard_energy_normal
-		}		
+		}
 	}	
 		
 	weight = {

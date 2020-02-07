@@ -41,7 +41,16 @@ spawning_drone = {
 	resources = {
 		category = planet_jobs
 		upkeep = {
-			food = 5
+			trigger = {
+				is_lithoid = no
+			}
+			food = 25
+		}
+		upkeep = {
+			trigger = {
+				is_lithoid = yes
+			}
+			minerals = 25
 		}
 	}
 	
@@ -223,7 +232,17 @@ synapse_drone = {
 			society_research = 15
 		}
 		upkeep = {
+			trigger = {
+				is_lithoid = no
+			}
 			food = 10
+			energy = 10
+		}
+		upkeep = {
+			trigger = {
+				is_lithoid = yes
+			}
+			minerals = 10
 			energy = 10
 		}
 	}
@@ -634,6 +653,27 @@ patrol_drone = {
 		modifier = {
 			factor = 50
 			planet = { planet_crime > 22 }
+		}
+		modifier = {
+			weight = 20
+			exists = owner
+			owner = { is_at_war = yes }
+		}
+		modifier = {
+			factor = 3
+			has_trait = trait_resilient
+		}
+		modifier = {
+			factor = 3
+			has_trait = trait_very_strong
+		}
+		modifier = {
+			factor = 2
+			has_trait = trait_strong
+		}
+		modifier = {
+			factor = 0.5
+			has_trait = trait_weak
 		}
 	}
 }

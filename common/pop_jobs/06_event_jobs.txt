@@ -8,27 +8,27 @@ event_purge = {
 	category = purge
 
 	purge = purge_normal
-		
+
 	possible = {
 		has_pop_flag = event_purge
-	}	
+	}
 
 	resources = {
 		category = planet_jobs
 		produces = {
-			trigger = { 
-				owner = { has_valid_civic = civic_fanatic_purifiers } 
+			trigger = {
+				owner = { has_valid_civic = civic_fanatic_purifiers }
 			}
 			unity = 10
 		}
 		produces = {
-			trigger = { 	
-				owner = { has_valid_civic = civic_hive_devouring_swarm } 
+			trigger = {
+				owner = { has_valid_civic = civic_hive_devouring_swarm }
 			}
 			society_research = 10
 		}
-	}	
-		
+	}
+
 	weight = {
 		weight = 999999
 	}
@@ -36,11 +36,11 @@ event_purge = {
 
 ratling_scavenger = {
 	category = worker
-	
+
 	can_set_priority = no
 	is_capped_by_modifier = yes
 	building_icon = building_junkheap
-		
+
 	possible_pre_triggers = {
 		has_owner = yes
 	}
@@ -49,7 +49,7 @@ ratling_scavenger = {
 		hidden_trigger = { exists = owner }
 		owner = { is_country_type = ratlings }
 	}
-	
+
 	resources = {
 		category = planet_farmers
 		produces = {
@@ -57,8 +57,8 @@ ratling_scavenger = {
 			minerals = 5
 			consumer_goods = 5
 		}
-	}	
-	
+	}
+
 	weight = {
 		weight = @worker_job_weight
 	}
@@ -79,7 +79,7 @@ odd_factory_worker = {
 	possible = {
 		worker_job_check_trigger = yes
 	}
-	
+
 	resources = {
 		category = planet_metallurgists
 		produces = {
@@ -88,20 +88,20 @@ odd_factory_worker = {
 	}
 
 	weight = {
-		weight = 999999
+		weight = 999
 		modifier = {
 			factor = 0.2
-			has_citizenship_rights = no	
-			NOT = { has_trait = trait_mechanical }	
-		}		
+			has_citizenship_rights = no
+			NOT = { has_trait = trait_mechanical }
+		}
 		modifier = {
 			factor = 0.1
 			can_take_servant_job = yes
-		}	
+		}
 		modifier = {
 			factor = 0
 			owner = { has_country_flag = odd_factory_pause }
-		}	
+		}
 	}
 }
 
@@ -121,7 +121,7 @@ odd_factory_drone = {
 	possible = {
 		drone_job_check_trigger = yes
 	}
-	
+
 	resources = {
 		category = planet_metallurgists
 		produces = {
@@ -130,11 +130,11 @@ odd_factory_drone = {
 	}
 
 	weight = {
-		weight = 999999
+		weight = 999
 	}
 }
 
-underground_trade_worker = {	
+underground_trade_worker = {
 	category = specialist
 	condition_string = SPECIALIST_JOB_TRIGGER
 	building_icon = building_holo_theatres
@@ -150,22 +150,22 @@ underground_trade_worker = {
 	possible = {
 		specialist_job_check_trigger = yes
 	}
-	
+
 	planet_modifier = {
 		planet_amenities_add = 3
 		trade_value_add = 25
 	}
-	
+
 	triggered_pop_modifier = {
 		pop_housing_usage_add = -1
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			OR = {
 				has_ethic = ethic_xenophile
 				has_ethic = ethic_fanatic_xenophile
-				has_ethic = ethic_materialist 
+				has_ethic = ethic_materialist
 				has_ethic = ethic_fanatic_materialist
 				has_ethic = ethic_fanatic_xenophile
 				has_trait = trait_charismatic
@@ -185,20 +185,20 @@ underground_trade_worker = {
 			planet_amenities_add = -1
 			trade_value_add = -10
 		}
-	}	
-		
+	}
+
 	weight = {
 		weight = @specialist_job_weight
 		modifier = {
 			factor = 0.5
-			OR = { 
+			OR = {
 				has_ethic = ethic_xenophobe
 				has_ethic = ethic_fanatic_xenophobe
 			}
-		}	
+		}
 		modifier = {
 			factor = 2
-			OR = { 
+			OR = {
 				has_ethic = ethic_xenophile
 				has_ethic = ethic_fanatic_xenophile
 			}
@@ -214,7 +214,7 @@ underground_trade_worker = {
 	}
 }
 
-underground_contact_drone = {	
+underground_contact_drone = {
 	category = simple_drone
 	condition_string = DRONE_JOB_TRIGGER
 	building_icon = building_holo_theatres
@@ -231,19 +231,19 @@ underground_contact_drone = {
 	possible = {
 		drone_job_check_trigger = yes
 	}
-	
+
 	planet_modifier = {
 		planet_amenities_add = 3
 	}
-	
+
 	triggered_pop_modifier = {
 		pop_housing_usage_add = -1
 	}
-	
+
 	resources = {
 		category = planet_jobs
 		produces = {
-			trigger = { 
+			trigger = {
 				owner = {
 						is_hive_empire = yes
 				}
@@ -252,7 +252,7 @@ underground_contact_drone = {
 			food = 10
 		}
 		produces = {
-			trigger = { 
+			trigger = {
 				owner = {
 						is_machine_empire = yes
 				}
@@ -260,8 +260,8 @@ underground_contact_drone = {
 			energy = 30
 		}
 	}
-		
-		
+
+
 	weight = {
 		weight = @simple_drone_job_weight
 		modifier = {
@@ -292,7 +292,7 @@ dimensional_portal_researcher = {
 	possible = {
 		complex_specialist_job_check_trigger = yes
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			planet = {
@@ -337,20 +337,20 @@ dimensional_portal_researcher = {
 			trade_value_add = 5
 		}
 	}
-	
+
 	resources = {
 		category = planet_researchers
 		produces = {
 			physics_research = 60
 		}
 		produces = {
-			trigger = { 
+			trigger = {
 				owner = { has_valid_civic = civic_technocracy }
 			}
 			unity = 5
 		}
 		produces = {
-			trigger = { 
+			trigger = {
 				planet = {
 						has_planet_flag = dportal_closed
 				}
@@ -358,7 +358,7 @@ dimensional_portal_researcher = {
 			physics_research = -30
 		}
 		produces = {
-			trigger = { 
+			trigger = {
 				planet = {
 						has_planet_flag = dportal_energy
 				}
@@ -366,7 +366,7 @@ dimensional_portal_researcher = {
 			energy = 30
 		}
 		produces = {
-			trigger = { 
+			trigger = {
 				planet = {
 						has_planet_flag = dportal_void
 				}
@@ -374,7 +374,7 @@ dimensional_portal_researcher = {
 			sr_dark_matter = 1 
 		}
 		produces = {
-			trigger = { 
+			trigger = {
 				planet = {
 						has_planet_flag = dportal_void2
 				}
@@ -385,7 +385,7 @@ dimensional_portal_researcher = {
 			consumer_goods = 15
 		}
 		upkeep = {
-				trigger = { 
+				trigger = {
 					planet = {
 						has_planet_flag = dportal_hell
 					}
@@ -393,12 +393,12 @@ dimensional_portal_researcher = {
 			consumer_goods = 15
 		}
 	}
-	
+
 	weight = {
 		weight = @specialist_job_weight
 		modifier = {
 			factor = 0.2
-			has_citizenship_rights = no	
+			has_citizenship_rights = no
 			NOT = { has_trait = trait_mechanical }
 		}
 		modifier = {
@@ -408,7 +408,7 @@ dimensional_portal_researcher = {
 		modifier = {
 			factor = 3
 			has_trait = trait_erudite
-		}		
+		}
 		modifier = {
 			factor = 2
 			OR = {
@@ -429,7 +429,7 @@ dimensional_portal_researcher = {
 			factor = 0.65
 			OR = {
 				has_trait = trait_syncretic_proles
-				has_trait = trait_presapient_proles	
+				has_trait = trait_presapient_proles
 			}
 		}
 		modifier = {
@@ -437,7 +437,7 @@ dimensional_portal_researcher = {
 			AND = {
 				planet = {
 					has_planet_flag = dportal_hell
-				}	
+				}
 				OR = {
 					has_ethic = ethic_spiritualist
 					has_ethic = ethic_fanatic_spiritualist
@@ -447,7 +447,7 @@ dimensional_portal_researcher = {
 		modifier = {
 			factor = 0.1
 			can_take_servant_job = yes
-		}		
+		}
 	}
 }
 
@@ -468,7 +468,7 @@ dimensional_portal_researcher_gestalt = {
 	possible = {
 		complex_specialist_job_check_trigger = yes
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			planet = {
@@ -509,7 +509,7 @@ dimensional_portal_researcher_gestalt = {
 			planet_amenities_add = 2
 		}
 	}
-	
+
 	resources = {
 		category = planet_researchers
 		produces = {
@@ -549,13 +549,13 @@ dimensional_portal_researcher_gestalt = {
 			energy = 10
 		}
 		produces = {
-			trigger = { 
+			trigger = {
 				owner = { has_valid_civic = civic_technocracy }
 			}
 			unity = 5
 		}
 		produces = {
-			trigger = { 
+			trigger = {
 				planet = {
 						has_planet_flag = dportal_closed
 				}
@@ -563,7 +563,7 @@ dimensional_portal_researcher_gestalt = {
 			physics_research = -30
 		}
 		produces = {
-			trigger = { 
+			trigger = {
 				planet = {
 						has_planet_flag = dportal_energy
 				}
@@ -571,7 +571,7 @@ dimensional_portal_researcher_gestalt = {
 			energy = 30
 		}
 		produces = {
-			trigger = { 
+			trigger = {
 				planet = {
 						has_planet_flag = dportal_void
 				}
@@ -579,7 +579,7 @@ dimensional_portal_researcher_gestalt = {
 			sr_dark_matter = 1 
 		}
 		produces = {
-			trigger = { 
+			trigger = {
 				planet = {
 						has_planet_flag = dportal_void2
 				}
@@ -587,7 +587,7 @@ dimensional_portal_researcher_gestalt = {
 			sr_dark_matter = 5
 		}
 		upkeep = {
-			trigger = { 
+			trigger = {
 					owner = {
 						is_machine_empire = yes
 					}
@@ -595,15 +595,25 @@ dimensional_portal_researcher_gestalt = {
 				energy = 15
 		}
 		upkeep = {
-			trigger = { 
+			trigger = {
 					owner = {
 						is_hive_empire = yes
+						is_lithoid_empire = no
 					}
 				}
 				food = 15
 		}
 		upkeep = {
-				trigger = { 
+			trigger = {
+					owner = {
+						is_hive_empire = yes
+						is_lithoid_empire = yes
+					}
+				}
+				minerals = 15
+		}
+		upkeep = {
+				trigger = {
 					owner = {
 						is_gestalt = no
 					}
@@ -611,7 +621,7 @@ dimensional_portal_researcher_gestalt = {
 			consumer_goods = 15
 		}
 		upkeep = {
-				trigger = { 
+				trigger = {
 					owner = {
 						is_gestalt = no
 					}
@@ -622,12 +632,12 @@ dimensional_portal_researcher_gestalt = {
 			consumer_goods = 15
 		}
 	}
-	
+
 	weight = {
 		weight = @complex_drone_job_weight
 		modifier = {
 			factor = 0.2
-			has_citizenship_rights = no	
+			has_citizenship_rights = no
 			NOT = { has_trait = trait_mechanical }
 		}
 		modifier = {
@@ -637,7 +647,7 @@ dimensional_portal_researcher_gestalt = {
 		modifier = {
 			factor = 3
 			has_trait = trait_erudite
-		}		
+		}
 		modifier = {
 			factor = 2
 			OR = {
@@ -659,7 +669,7 @@ dimensional_portal_researcher_gestalt = {
 			AND = {
 				planet = {
 					has_planet_flag = dportal_hell
-				}	
+				}
 				OR = {
 					has_ethic = ethic_spiritualist
 					has_ethic = ethic_fanatic_spiritualist
@@ -669,6 +679,6 @@ dimensional_portal_researcher_gestalt = {
 		modifier = {
 			factor = 0.1
 			can_take_servant_job = yes
-		}		
+		}
 	}
 }

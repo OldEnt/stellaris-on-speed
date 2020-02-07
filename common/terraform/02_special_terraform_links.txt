@@ -690,7 +690,7 @@ terraform_link = {
 	to = "pc_continental"
 	
 	energy = 10000
-	duration = 5400
+	duration = 1080
 	
 	potential = {
 		from = { has_modifier = terraforming_candidate }
@@ -713,7 +713,7 @@ terraform_link = {
 	to = "pc_tropical"
 	
 	energy = 10000
-	duration = 5400
+	duration = 1080
 	
 	potential = {
 		from = { has_modifier = terraforming_candidate }
@@ -736,7 +736,7 @@ terraform_link = {
 	to = "pc_ocean"
 	
 	energy = 10000
-	duration = 5400
+	duration = 1080
 	
 	potential = {
 		from = { has_modifier = terraforming_candidate }
@@ -898,7 +898,7 @@ terraform_link = {
 	to = "pc_continental"
 	
 	energy = 10000
-	duration = 5400
+	duration = 1080
 	
 	potential = {
 		from = { has_modifier = terraforming_candidate }
@@ -921,7 +921,7 @@ terraform_link = {
 	to = "pc_tropical"
 	
 	energy = 10000
-	duration = 5400
+	duration = 1080
 	
 	potential = {
 		from = { has_modifier = terraforming_candidate }
@@ -944,7 +944,7 @@ terraform_link = {
 	to = "pc_ocean"
 	
 	energy = 10000
-	duration = 5400
+	duration = 1080
 	
 	potential = {
 		from = { has_modifier = terraforming_candidate }
