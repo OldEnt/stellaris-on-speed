@@ -1,0 +1,77 @@
+ship_behavior = {
+	name = "swarm"
+	preferred_attack_range = 30
+	formation_distance = 30
+	return_to_formation_distance = 30
+	
+	collision_awareness = 1.5
+	collision_strafe = 2.0	
+	collision_radius = 1.0
+	attack_move_pattern = charge 
+	passive_move_pattern = charge
+
+	desc = "SWARM_BEHAVIOR_DESC"
+}
+ship_behavior = {
+	name = "picket"
+	
+	preferred_attack_range = 30
+	formation_distance = 30
+	return_to_formation_distance = 30
+	
+	collision_awareness = 1.5		
+	collision_strafe = 2.0			
+	collision_radius = 1.0
+	
+	attack_move_pattern = stay_at_range
+	passive_move_pattern = charge
+	
+	desc = "PICKET_BEHAVIOR_DESC"
+}
+
+ship_behavior = {
+	name = "line"
+	preferred_attack_range = 50
+	
+	formation_distance = 50
+	return_to_formation_distance = 50
+	
+	collision_awareness = 0.7		
+	collision_radius = 2.0				
+	collision_strafe = 0.7				
+	
+	attack_move_pattern = stay_at_range     
+	passive_move_pattern = charge
+	
+	desc = "LINE_BEHAVIOR_DESC"
+}
+
+ship_behavior = {
+	name = "artillery"
+	preferred_attack_range = 80
+	formation_distance = 80
+	return_to_formation_distance = 80
+
+	collision_awareness = 0.3		
+	collision_radius = 1.0				
+	collision_strafe = 4.0					
+	attack_move_pattern = stay_at_range 
+	passive_move_pattern = charge
+	
+	desc = "ARTILLERY_BEHAVIOR_DESC"
+}
+
+ship_behavior = {
+	name = "platform"
+	preferred_attack_range = max
+	formation_distance = 40
+	return_to_formation_distance = 20
+	collision_awareness = 0.2
+	collision_radius = 1.0					
+	collision_strafe = 2.5					
+	
+	attack_move_pattern = none
+	passive_move_pattern = none
+	
+	desc = "PLATFORM_BEHAVIOR_DESC"
+}
