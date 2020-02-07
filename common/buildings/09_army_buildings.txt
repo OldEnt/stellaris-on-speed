@@ -26,7 +26,6 @@ building_military_academy = {
 	
 	triggered_planet_modifier = {
 		potential = {
-			exists = owner
 			owner = { is_gestalt = no }
 		}
 		modifier = {
@@ -35,7 +34,6 @@ building_military_academy = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			exists = owner
 			owner = { is_gestalt = yes }
 		}
 		modifier = {
@@ -86,11 +84,21 @@ building_stronghold = {
 	potential = {
 		buildings_simple_allow = yes
 	}
-	
+
 	destroy_trigger = {
 		exists = owner
 		owner = { is_ai = yes }
-		num_buildings = { type = building_stronghold value > 1 }
+		AND = {
+			OR = {
+				num_buildings = { type = building_stronghold value > 1 }
+				has_building = building_fortress
+			}
+			free_building_slots = 0
+			owner = { 
+				used_naval_capacity_percent < 0.6
+				is_at_war = no # don't destroy while at war
+			}
+		}
 	}
 	
 	planet_modifier = {
@@ -99,7 +107,6 @@ building_stronghold = {
 	
 	triggered_planet_modifier = {
 		potential = {
-			exists = owner
 			owner = { is_gestalt = no }
 		}
 		modifier = {
@@ -108,7 +115,6 @@ building_stronghold = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			exists = owner
 			owner = { is_gestalt = yes }
 		}
 		modifier = {
@@ -152,10 +158,21 @@ building_stronghold = {
 	ai_weight = {
 		weight = 0
 		modifier = {
-			weight = 50000
-			num_pops >= 40
-			NOR = {
-				has_building = building_stronghold
+			weight = 1
+			free_jobs = 0
+			free_building_slots > 1
+			owner = { used_naval_capacity_percent > 0.9	}
+		}
+		modifier = {
+			weight = 100
+			is_planet_class = pc_habitat
+			owner = { used_naval_capacity_percent > 0.8	}
+		}
+		modifier = {
+			weight = 25
+			num_pops > 39
+			NOR = {	
+				has_building = building_stronghold 
 				has_building = building_fortress
 			}
 		}
@@ -177,7 +194,14 @@ building_fortress = {
 	destroy_trigger = {
 		exists = owner
 		owner = { is_ai = yes }
-		num_buildings = { type = building_fortress value > 1 }
+		OR = {
+			AND = {
+				num_buildings = { type = building_fortress value > 1 }
+				free_building_slots = 0
+				owner = { used_naval_capacity_percent < 0.4	}
+			}
+			buildings_no_motes = yes
+		}
 	}
 	
 	planet_modifier = {
@@ -186,7 +210,6 @@ building_fortress = {
 	
 	triggered_planet_modifier = {
 		potential = {
-			exists = owner
 			owner = { is_gestalt = no }
 		}
 		modifier = {
@@ -195,7 +218,6 @@ building_fortress = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			exists = owner
 			owner = { is_gestalt = yes }
 		}
 		modifier = {
@@ -235,16 +257,30 @@ building_fortress = {
 	}
 	
 	ai_weight = {
-		weight = 1
+		weight = 0
 		modifier = {
-			factor = 0
-			owner = { has_country_flag = buildings_new_mote_building }
+			weight = 1
+			buildings_has_motes = yes
 		}
 	}
 	
-	on_built = {
-		planet = { 
-			owner = { set_timed_country_flag = { flag = buildings_new_mote_building days = 480 } }
+	on_queued = {
+		IF = {
+			limit = {
+				owner = { has_technology = tech_construction_templates }
+			}
+			owner = { set_timed_country_flag = { flag = buildings_new_mote_building days = 270 } }
+		}
+		ELSE_IF = {
+			limit = {
+				owner = { has_technology = tech_assembly_pattern }
+			}
+			owner = { set_timed_country_flag = { flag = buildings_new_mote_building days = 390 } }
+		}
+		else = {
+			planet = { 
+				owner = { set_timed_country_flag = { flag = buildings_new_mote_building days = 510 } }
+			}
 		}
 	}
 }

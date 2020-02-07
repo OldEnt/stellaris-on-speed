@@ -32,7 +32,7 @@ d_dragon_monument = {
 	resources = {
 		category = planet_deposits
 		produces = {
-			unity = 225
+			unity = 75
 		}
 	}
 	potential = { always = no }

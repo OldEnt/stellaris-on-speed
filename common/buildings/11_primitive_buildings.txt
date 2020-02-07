@@ -7,30 +7,30 @@ building_crude_huts = {
 	can_build = no
 	can_demolish = yes
 	can_be_ruined = no
-	
+
 	potential = {
 		exists = owner
-		owner = { 
+		owner = {
 			is_primitive = yes
-			has_country_flag = stone_age 
+			has_country_flag = stone_age
 		}
 	}
-	
+
 	destroy_trigger = {
-		owner = { 
+		owner = {
 			is_primitive = no
 		}
 	}
-	
+
 	planet_modifier = {
 		planet_amenities_add = 5
 		planet_housing_add = 4
 		planet_crime_add = -10
 	}
-		
+
 	upgrades = {
 	}
-	
+
 	ai_weight = {
 		weight = 1
 		modifier = {
@@ -44,10 +44,10 @@ building_primitive_dwellings = {
 	can_build = no
 	can_demolish = yes
 	can_be_ruined = no
-	
+
 	potential = {
 		exists = owner
-		owner = { 
+		owner = {
 			is_primitive = yes
 			OR = {
 				has_country_flag = bronze_age
@@ -58,17 +58,17 @@ building_primitive_dwellings = {
 			}
 		}
 	}
-	
+
 	destroy_trigger = {
-		owner = { 
+		owner = {
 			is_primitive = no
 		}
 	}
-	
+
 	planet_modifier = {
 		planet_housing_add = 6
 	}
-		
+
 	upgrades = {
 	}
 
@@ -86,10 +86,10 @@ building_stone_palace = {
 	can_build = no
 	can_demolish = yes
 	can_be_ruined = no
-	
+
 	potential = {
 		exists = owner
-		owner = { 
+		owner = {
 			is_primitive = yes
 			OR = {
 				has_country_flag = bronze_age
@@ -113,7 +113,7 @@ building_stone_palace = {
 		building_machine_capital
 		building_colony_shelter
 	}
-	
+
 	planet_modifier = {
 		job_primitive_noble_add = 1
 		job_primitive_warrior_add = 1
@@ -123,19 +123,19 @@ building_stone_palace = {
 		planet_amenities_add = 25
 		planet_crime_add = -10
 	}
-		
+
 	upgrades = {
-	}	
+	}
 }
 
 building_primitive_factory = {
 	can_build = no
 	can_demolish = yes
 	can_be_ruined = no
-	
+
 	potential = {
 		exists = owner
-		owner = { 
+		owner = {
 			is_primitive = yes
 			OR = {
 				has_country_flag = steam_age
@@ -146,17 +146,17 @@ building_primitive_factory = {
 			}
 		}
 	}
-	
+
 	destroy_trigger = {
-		owner = { 
+		owner = {
 			is_primitive = no
 		}
 	}
-	
+
 	planet_modifier = {
 		job_primitive_laborer_add = 2
 	}
-		
+
 	upgrades = {
 	}
 }
@@ -165,10 +165,10 @@ building_primitive_mine = {
 	can_build = no
 	can_demolish = yes
 	can_be_ruined = no
-	
+
 	potential = {
 		exists = owner
-		owner = { 
+		owner = {
 			is_primitive = yes
 			OR = {
 				has_country_flag = steam_age
@@ -179,17 +179,26 @@ building_primitive_mine = {
 			}
 		}
 	}
-	
+
 	destroy_trigger = {
-		owner = { 
+		owner = {
 			is_primitive = no
 		}
 	}
-	
+
 	planet_modifier = {
 		job_primitive_miner_add = 2
 	}
-		
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_lithoid_empire = yes }
+		}
+
+		job_primitive_miner_add = 8
+	}
+
 	upgrades = {
 	}
 }
@@ -198,10 +207,10 @@ building_primitive_power_plant = {
 	can_build = no
 	can_demolish = yes
 	can_be_ruined = no
-	
+
 	potential = {
 		exists = owner
-		owner = { 
+		owner = {
 			is_primitive = yes
 			OR = {
 				has_country_flag = steam_age
@@ -212,17 +221,17 @@ building_primitive_power_plant = {
 			}
 		}
 	}
-	
+
 	destroy_trigger = {
-		owner = { 
+		owner = {
 			is_primitive = no
 		}
 	}
-	
+
 	planet_modifier = {
 		job_primitive_technician_add = 2
 	}
-		
+
 	upgrades = {
 	}
 }
@@ -231,10 +240,10 @@ building_primitive_farm = {
 	can_build = no
 	can_demolish = yes
 	can_be_ruined = no
-	
+
 	potential = {
 		exists = owner
-		owner = { 
+		owner = {
 			is_primitive = yes
 			OR = {
 				has_country_flag = machine_age
@@ -242,19 +251,30 @@ building_primitive_farm = {
 				has_country_flag = atomic_age
 				has_country_flag = early_space_age
 			}
+			is_lithoid_empire = no
 		}
 	}
-	
+
+	convert_to = {
+		building_primitive_mine
+	}
+
 	destroy_trigger = {
-		owner = { 
-			is_primitive = no
+		owner = {
+			OR = {
+				is_primitive = no
+				AND = {
+					exists = owner
+					is_lithoid_empire = yes
+				}
+			}
 		}
 	}
-	
+
 	planet_modifier = {
 		job_primitive_farmer_add = 10
 	}
-		
+
 	upgrades = {
 	}
 }
@@ -264,10 +284,10 @@ building_primitive_capital = {
 	can_build = no
 	can_demolish = yes
 	can_be_ruined = no
-	
+
 	potential = {
 		exists = owner
-		owner = { 
+		owner = {
 			is_primitive = yes
 			OR = {
 				has_country_flag = machine_age
@@ -277,19 +297,19 @@ building_primitive_capital = {
 			}
 		}
 	}
-	
+
 	destroy_trigger = {
-		owner = { 
+		owner = {
 			is_primitive = no
 		}
 	}
-	
+
 	convert_to = {
 		building_machine_capital
 		building_capital
 		building_hive_capital
 	}
-	
+
 	planet_modifier = {
 		job_primitive_bureaucrat_add = 2
 		job_primitive_warrior_2_add = 2
@@ -299,7 +319,7 @@ building_primitive_capital = {
 		planet_amenities_add = 25
 		planet_crime_add = -20
 	}
-		
+
 	upgrades = {
 	}
 }
@@ -309,10 +329,10 @@ building_urban_dwellings = {
 	can_demolish = yes
 	can_be_ruined = no
 	icon = building_residence
-	
+
 	potential = {
 		exists = owner
-		owner = { 
+		owner = {
 			is_primitive = yes
 			OR = {
 				has_country_flag = machine_age
@@ -322,17 +342,17 @@ building_urban_dwellings = {
 			}
 		}
 	}
-	
+
 	destroy_trigger = {
-		owner = { 
+		owner = {
 			is_primitive = no
 		}
 	}
-	
+
 	planet_modifier = {
 		planet_housing_add = 24
 	}
-		
+
 	upgrades = {
 	}
 }

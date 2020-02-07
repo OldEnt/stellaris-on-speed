@@ -96,8 +96,15 @@ building_commercial_megaplex = {
 		has_building = building_commercial_zone
 	}
 	
+	allow = {
+		buildings_upgrade_allow = yes
+	}
+
 	destroy_trigger = {
-		owner = { is_regular_empire = no }
+		OR = {
+			owner = { is_regular_empire = no }
+			buildings_no_crystals = yes
+		}
 	}
 	
 	planet_modifier = {
@@ -133,10 +140,10 @@ building_commercial_megaplex = {
 	}
 	
 	ai_weight = {
-		weight = 1
+		weight = 0
 		modifier = {
-			factor = 0
-			owner = { has_country_flag = buildings_new_crystal_building }
+			weight = 1
+			buildings_has_crystals = yes
 		}
 	}
 
@@ -146,9 +153,24 @@ building_commercial_megaplex = {
 			always = yes
 		}
 	}
-	on_built = {
-		planet = { 
-			owner = { set_timed_country_flag = { flag = buildings_new_crystal_building days = 480 } }
+
+	on_queued = {
+		IF = {
+			limit = {
+				owner = { has_technology = tech_construction_templates }
+			}
+			owner = { set_timed_country_flag = { flag = buildings_new_crystal_building days = 270 } }
+		}
+		ELSE_IF = {
+			limit = {
+				owner = { has_technology = tech_assembly_pattern }
+			}
+			owner = { set_timed_country_flag = { flag = buildings_new_crystal_building days = 390 } }
+		}
+		else = {
+			planet = { 
+				owner = { set_timed_country_flag = { flag = buildings_new_crystal_building days = 510 } }
+			}
 		}
 	}
 }

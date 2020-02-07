@@ -101,9 +101,12 @@ building_research_lab_1 = {
 			num_pops >= 15
 			free_amenities > 2 #Prevents running out of amenities
 			owner = {
-				has_monthly_income = {
-					resource = consumer_goods
-					value > 0
+				OR = {
+					has_monthly_income = {
+						resource = consumer_goods
+						value > 0
+					}
+					country_uses_consumer_goods = no
 				}
 			} # so that we don't run out of consumer goods
 
@@ -118,9 +121,12 @@ building_research_lab_1 = {
 			weight = 50
 			free_amenities > 2 #Prevents running out of amenities
 			owner = {
-				has_monthly_income = {
-					resource = consumer_goods
-					value > 0
+				OR = {
+					has_monthly_income = {
+						resource = consumer_goods
+						value > 0
+					}
+					country_uses_consumer_goods = no
 				}
 			} # so that we don't run out of consumer goods
 
@@ -156,7 +162,7 @@ building_research_lab_1 = {
 					is_gestalt = yes
 					has_monthly_income = {
 						resource = alloys
-						value > 10
+						value > 6
 					}
 					has_monthly_income = {
 						resource = minerals
@@ -188,6 +194,12 @@ building_research_lab_1 = {
 				}
 			}
 		}
+		modifier = {
+			weight = 25000
+			free_building_slots = 0
+			has_building_construction = no
+			has_building = building_research_lab_1
+		}#Repairs
 	}
 }
 
@@ -203,9 +215,9 @@ building_research_lab_2 = {
 	
 	destroy_trigger = {
 		OR = {
-			buildings_has_exotic_gases = no
 			has_modifier = slave_colony
 			has_modifier = resort_colony
+			buildings_no_exotic_gases = yes
 		}
 	}
 
@@ -340,9 +352,9 @@ building_research_lab_3 = {
 
 	destroy_trigger = {
 		OR = {
-			buildings_has_exotic_gases = no
 			has_modifier = slave_colony
 			has_modifier = resort_colony
+			buildings_no_exotic_gases = yes
 		}
 	}
 	
