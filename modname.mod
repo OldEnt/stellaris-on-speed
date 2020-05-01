@@ -5,5 +5,5 @@ tags={
 	"Fixes"
 }
 picture="stellaris_on_speed.jpg"
-supported_version="2.5.*"
+supported_version="2.6.*"
 remote_file_id="1878276758"
