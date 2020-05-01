@@ -1,3 +1,0 @@
-sos_default_speed = {
-	ship_speed_reduction = -4.0
-}
