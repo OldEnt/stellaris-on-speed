@@ -1,0 +1,67 @@
+NPop = {
+	REQUIRED_POP_GROWTH					= 20	# Required growth to make a new pop
+	REQUIRED_POP_ASSEMBLY				= 20	# Required assembly to add a pop
+}
+
+NGameplay = {	
+	POLICY_YEARS						= 2 	# Years a set policy can not be changed for
+	SPECIES_POLICY_YEARS				= 2
+	TRUCE_YEARS							= 2 	# Truce last for X years
+	MIN_RIVAL_YEARS						= 2		# Years before you can remove an empire as a rival
+	GOVERNMENT_COOLDOWN_YEARS			= 4		# Cooldown years after changing government before you can change it again
+	MIN_TRADE_DEAL_LENGTH_YEARS			= 2		# Minimum length of a trade deal in years.
+	MAX_TRADE_DEAL_LENGTH_YEARS			= 6		# Maximum length of a trade deal in years.
+	MOVE_CAPITAL_COOLDOWN_YEARS 		= 2  	# Cooldown in years for moving capital.
+
+	SCIENCE_SHIP_SURVEY_SPEED_MULT = 2.5
+
+	SCIENCE_SHIP_ANOMALY_RESEARCH_DAYS = { # equal level is middle (count of items / 2)
+		4 		#9 levels above anomaly
+		4.8 		#8 levels above anomaly
+		6 		#7 levels above anomaly
+		7 		#6 levels above anomaly
+		9 		#5 levels above anomaly
+		11 		#4 levels above anomaly
+		13 		#3 levels above anomaly
+		16 		#2 levels above anomaly
+		20		#1 level above anomaly
+		24		#0 level equal to anomaly
+		36		#1 level below anomaly
+		60		#2 levels below anomaly
+		108		#3 levels below anomaly
+		144		#4 levels below anomaly
+		216 	#5 levels below anomaly
+		288		#6 levels below anomaly
+		432		#7 levels below anomaly
+		576		#8 levels below anomaly
+		1152	#9 levels below anomaly
+	}
+
+	LEADER_EXPERIENCE_REQUIREMENT_BASE_VALUE					= 25.0 # Base value when calculating required experience for next skill level
+	LEADER_EXPERIENCE_REQUIREMENT_SCALE_VALUE					= 15.0 # Scale factor when calculating required experience for next skill level
+
+	MID_GAME_START_DEFAULT = 20
+	MID_GAME_START_MAX = 400
+	MID_GAME_START_MIN = 5
+	END_GAME_START_DEFAULT = 40
+	END_GAME_START_MAX = 800
+	END_GAME_START_MIN = 10
+	START_YEAR_SLIDER_INTERVAL = 5		
+	VICTORY_YEAR_DEFAULT = 60
+	VICTORY_YEAR_MAX = 1050
+	VICTORY_YEAR_MIN = 20
+	VICTORY_YEAR_SLIDER_INTERVAL = 5
+	TECH_COST_DEFAULT = 1.0
+	TECH_COST_MIN = 0.1
+	TECH_COST_MAX = 5.00
+	TECH_COST_SLIDER_INTERVAL = 0.1		
+
+	CONSTRUCTION_SHIP_WORK_SPEED_MULT = 5	# Construction ship construction speed multiplier
+	
+}
+
+NAI = {	
+		AI_BUDGETING_START_YEARS = 3
+		AI_BUDGETING_MID_YEARS = 6
+		AI_BUDGETING_LATE_YEARS = 10
+}
