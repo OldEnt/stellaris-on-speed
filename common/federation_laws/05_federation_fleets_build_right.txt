@@ -70,6 +70,12 @@ federation_build_fleets_only_leader = {
 	}
 	
 	ai_weight = {
-		base = 51
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 51
+		}
 	}
 }

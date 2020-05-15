@@ -31,42 +31,65 @@ challenge_type_arena_combat = {
 	}
 
 	ai_weight = {
-		base = 51
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 51
+		}
 				
 		#Behaviour-specific
 		modifier = {
+			desc = federation_acceptance_ruler_cyborg
 			add = 10
 			ruler = {
 				has_trait = leader_trait_ruler_cyborg
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_ruler_synthetic
 			add = 15
 			ruler = {
 				has_trait = leader_trait_ruler_synthetic
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_ruler_very_strong
 			add = 10
 			ruler = {
 				species = { has_trait = trait_very_strong }
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_ruler_psionic
 			add = 10
 			ruler = {
 				has_trait = leader_trait_ruler_psionic
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_honorbound_warriors
 			add = 25
 			has_ai_personality = honorbound_warriors
 		}
 		modifier = {
+			desc = federation_acceptance_warrior_culture
 			add = 50
 			has_civic = civic_warrior_culture
 		}
 		modifier = {
+			desc = federation_acceptance_peaceful_traders
+			add = -25
+			has_ai_personality = peaceful_traders
+		}
+		modifier = {
+			desc = federation_acceptance_harmonious_hierarchy
+			add = -25
+			has_ai_personality = harmonious_hierarchy
+		}
+		modifier = {
+			desc = federation_acceptance_ruler_chosen
 			add = 100
 			ruler = {
 				has_trait = leader_trait_ruler_chosen
@@ -82,7 +105,7 @@ challenge_type_psionic_battle = {
 		custom_tooltip = {
 			fail_text = "requires_psionic_pops"
 			any_member = {
-				any_owned_pop = {
+				any_owned_species = {
 					OR = {
 						has_trait = trait_latent_psionic
 						has_trait = trait_psionic
@@ -111,13 +134,20 @@ challenge_type_psionic_battle = {
 	}
 
 	ai_weight = {
-		base = 26
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 26
+		}
 		
 		# Psionic empires should like it
 		modifier = {
-			factor = 0
+			desc = federation_acceptance_no_psionic
+			add = -100
 			NOT = {
-				any_owned_pop = {
+				any_owned_species = {
 					OR = {
 						has_trait = trait_latent_psionic
 						has_trait = trait_psionic
@@ -126,6 +156,7 @@ challenge_type_psionic_battle = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_psionic
 			add = 25
 			count_owned_pops = {
 				limit = {
@@ -138,6 +169,7 @@ challenge_type_psionic_battle = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_psionic
 			add = 30
 			count_owned_pops = {
 				limit = {
@@ -150,6 +182,7 @@ challenge_type_psionic_battle = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_psionic
 			add = 35
 			count_owned_pops = {
 				limit = {
@@ -162,6 +195,7 @@ challenge_type_psionic_battle = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_psionic
 			add = 40
 			count_owned_pops = {
 				limit = {
@@ -174,6 +208,7 @@ challenge_type_psionic_battle = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_psionic
 			add = 45
 			count_owned_pops = {
 				limit = {
@@ -186,6 +221,7 @@ challenge_type_psionic_battle = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_chosen
 			#the chosen believes in the people!
 			add = 25
 			ruler = {
@@ -195,7 +231,8 @@ challenge_type_psionic_battle = {
 				
 		#Behaviour-specific
 		modifier = {
-			factor = 0
+			desc = federation_acceptance_gestalt
+			add = -100
 			is_gestalt = yes
 		}
 	}
@@ -226,12 +263,40 @@ challenge_type_bidding_war = {
 	}
 
 	ai_weight = {
-		base = 75
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 26
+		}
 				
 		#Behaviour-specific
 		modifier = {
+			desc = federation_acceptance_trade_league
+			add = 15
+			federation = {
+				has_federation_type = trade_federation
+			}
+		}
+		modifier = {
+			desc = federation_acceptance_ruthless_capitalists
 			add = 25
-			has_authority = auth_corporate
+			has_ai_personality = ruthless_capitalists
+		}
+		modifier = {
+			desc = federation_acceptance_peaceful_traders
+			add = 25
+			has_ai_personality = peaceful_traders
+		}
+		modifier = {
+			desc = federation_acceptance_president
+			add = 25
+			OR = {
+				has_ai_personality = peaceful_traders
+				has_ai_personality = ruthless_capitalists			
+			}
+			is_federation_leader = yes
 		}
 	}
 }
@@ -261,12 +326,30 @@ challenge_type_thesis = {
 	}
 
 	ai_weight = {
-		base = 50
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 26
+		}
+		
+		modifier = {
+			desc = federation_acceptance_materialist
+			add = 5
+			is_materialist = yes
+		}
+		
+		modifier = {
+			desc = federation_acceptance_erudite_explorers
+			add = 26
+			has_ai_personality = erudite_explorers
+		}
 				
 		#Technocrats and materialists will relish it
 		modifier = {
-			add = 25
-			is_materialist = yes
+			desc = federation_acceptance_technocracy
+			add = 50
 			has_civic = civic_technocracy
 		}
 	}

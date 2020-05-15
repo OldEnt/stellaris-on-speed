@@ -142,7 +142,13 @@ building_foundry_1 = {
 		}
 		modifier = {
 			weight = 400
+			NOR = {
+				num_buildings = { type = building_foundry_1 value > 1 }
+				has_building = building_foundry_2
+				has_building = building_foundry_3
+			}
 			OR = {
+				NOT = { has_building = building_foundry_1 }
 				AND = {
 					owner = {
 						OR = {
@@ -153,11 +159,6 @@ building_foundry_1 = {
 							country_uses_consumer_goods = no
 						}
 					}
-					NOR = {
-						num_buildings = { type = building_foundry_1 value > 1 }
-						has_building = building_foundry_2
-						has_building = building_foundry_3
-					}
 					owner = {
 						has_ai_personality_behaviour = conqueror
 						OR = {
@@ -167,16 +168,17 @@ building_foundry_1 = {
 						}
 					}#Agressive empires but not robot liberators as they tend to be erudite explorers and the like.
 				}#Give agressive empires 2 alloy factories on planets early on.
-				NOR = {
-					has_building = building_foundry_1
-					has_building = building_foundry_2
-					has_building = building_foundry_3
-				}
 			}
 		}
 		modifier = {
 			factor = 0.5
 			free_jobs > 3
+		}
+		modifier = {
+			factor = 1.5
+			owner = {
+				has_origin = origin_void_dwellers
+			}
 		}
 		modifier = {
 			weight = 500
@@ -313,26 +315,6 @@ building_foundry_2 = {
 			always = yes
 		}
 	}
-
-	on_queued = {
-		IF = {
-			limit = {
-				owner = { has_technology = tech_construction_templates }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_mote_building days = 270 } }
-		}
-		ELSE_IF = {
-			limit = {
-				owner = { has_technology = tech_assembly_pattern }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_mote_building days = 390 } }
-		}
-		ELSE = {
-			planet = {
-				owner = { set_timed_country_flag = { flag = buildings_new_mote_building days = 510 } }
-			}
-		}
-	}
 }
 
 building_foundry_3 = {
@@ -451,26 +433,6 @@ building_foundry_3 = {
 			always = yes
 		}
 	}
-
-	on_queued = {
-		IF = {
-			limit = {
-				owner = { has_technology = tech_construction_templates }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_mote_building days = 270 } }
-		}
-		ELSE_IF = {
-			limit = {
-				owner = { has_technology = tech_assembly_pattern }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_mote_building days = 390 } }
-		}
-		ELSE = {
-			planet = {
-				owner = { set_timed_country_flag = { flag = buildings_new_mote_building days = 510 } }
-			}
-		}
-	}
 }
 
 building_factory_1 = {
@@ -570,28 +532,17 @@ building_factory_1 = {
 				has_building = building_factory_2
 				has_building = building_factory_3
 			}
-			owner = {
-				OR = {
-					is_gestalt = no
-					has_valid_civic = civic_machine_servitor
-				}
-			}
 		}
 		modifier = {
 			weight = 100
 			jobs_work_minerals_goods = no
-			owner = {
-				OR = {
-					is_gestalt = no
-					has_valid_civic = civic_machine_servitor
-				}
-			}
 			owner = {
 				has_monthly_income = {
 					resource = consumer_goods
 					value < 150
 				}
 				OR = {
+					country_uses_food = no
 					has_monthly_income = {
 						resource = food
 						value >= 0
@@ -727,26 +678,6 @@ building_factory_2 = {
 			always = yes
 		}
 	}
-
-	on_queued = {
-		IF = {
-			limit = {
-				owner = { has_technology = tech_construction_templates }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_crystal_building days = 54 } }
-		}
-		ELSE_IF = {
-			limit = {
-				owner = { has_technology = tech_assembly_pattern }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_crystal_building days = 78 } }
-		}
-		ELSE = {
-			planet = {
-				owner = { set_timed_country_flag = { flag = buildings_new_crystal_building days = 102 } }
-			}
-		}
-	}
 }
 
 building_factory_3 = {
@@ -855,26 +786,6 @@ building_factory_3 = {
 			always = yes
 		}
 	}
-
-	on_queued = {
-		IF = {
-			limit = {
-				owner = { has_technology = tech_construction_templates }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_crystal_building days = 54 } }
-		}
-		ELSE_IF = {
-			limit = {
-				owner = { has_technology = tech_assembly_pattern }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_crystal_building days = 78 } }
-		}
-		ELSE = {
-			planet = {
-				owner = { set_timed_country_flag = { flag = buildings_new_crystal_building days = 102 } }
-			}
-		}
-	}
 }
 
 building_refinery = {
@@ -959,7 +870,6 @@ building_refinery = {
 		modifier = {
 			weight = 50
 			owner = {
-				NOT = { has_country_flag = buildings_new_exotic_gases_plant }
 				has_monthly_income = {
 					resource = exotic_gases
 					value < 25
@@ -970,7 +880,6 @@ building_refinery = {
 		modifier = {
 			weight = 200
 			owner = {
-				NOT = { has_country_flag = buildings_new_exotic_gases_plant }
 				has_monthly_income = {
 					resource = exotic_gases
 					value < 5
@@ -980,29 +889,9 @@ building_refinery = {
 	}
 
 	ai_resource_production = {
-		exotic_gases = 1
+		exotic_gases = 5
 		trigger = {
 			always = yes
-		}
-	}
-
-	on_queued = {
-		IF = {
-			limit = {
-				owner = { has_technology = tech_construction_templates }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_exotic_gases_plant days = 54 } }
-		}
-		ELSE_IF = {
-			limit = {
-				owner = { has_technology = tech_assembly_pattern }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_exotic_gases_plant days = 78 } }
-		}
-		ELSE = {
-			planet = {
-				owner = { set_timed_country_flag = { flag = buildings_new_exotic_gases_plant days = 102 } }
-			}
 		}
 	}
 }
@@ -1086,17 +975,17 @@ building_chemical_plant = {
 	ai_weight = {
 		weight = 0
 		modifier = {
+			factor = 0
+			buildings_build_building = no
+		}
+		modifier = {
 			weight = 30
 			owner = {
 				has_monthly_income = {
 					resource = volatile_motes
 					value < 15
 				}#5 is too high since that means 2 extra buildings. Better to just go with 1 extra building
-				NOT = {
-					has_country_flag = buildings_new_mote_plant
-				}
 			}
-			buildings_build_building = yes
 		}
 		modifier = {
 			weight = 200
@@ -1105,11 +994,7 @@ building_chemical_plant = {
 					resource = volatile_motes
 					value < 0
 				}#5 is too high since that means 2 extra buildings. Better to just go with 1 extra building
-				NOT = {
-					has_country_flag = buildings_new_mote_plant
-				}
 			}
-			buildings_build_building = yes
 		}
 	}
 
@@ -1117,26 +1002,6 @@ building_chemical_plant = {
 		volatile_motes = 5
 		trigger = {
 			always = yes
-		}
-	}
-
-	on_queued = {
-		IF = {
-			limit = {
-				owner = { has_technology = tech_construction_templates }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_mote_plant days = 54 } }
-		}
-		ELSE_IF = {
-			limit = {
-				owner = { has_technology = tech_assembly_pattern }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_mote_plant days = 78 } }
-		}
-		ELSE = {
-			planet = {
-				owner = { set_timed_country_flag = { flag = buildings_new_mote_plant days = 102 } }
-			}
 		}
 	}
 }
@@ -1225,17 +1090,17 @@ building_crystal_plant = {
 	ai_weight = {
 		weight = 0
 		modifier = {
+			factor = 0
+			buildings_build_building = no
+		}
+		modifier = {
 			weight = 30
 			owner = {
 				has_monthly_income = {
 					resource = rare_crystals
 					value < 3
 				}#5 is too high since that means 2 extra buildings. Better to just go with 1 extra building
-				NOT = {
-					has_country_flag = buildings_new_crystal_plant
-				}#Prevents mass spamming of building
 			}
-			buildings_build_building = yes
 		}
 		modifier = {
 			weight = 200
@@ -1244,38 +1109,14 @@ building_crystal_plant = {
 					resource = rare_crystals
 					value < 0
 				}#5 is too high since that means 2 extra buildings. Better to just go with 1 extra building
-				NOT = {
-					has_country_flag = buildings_new_crystal_plant
-				}#Prevents mass spamming of building
 			}
-			buildings_build_building = yes
 		}
 	}
 
 	ai_resource_production = {
-		rare_crystals = 1
+		rare_crystals = 5
 		trigger = {
 			always = yes
-		}
-	}
-
-	on_queued = {
-		IF = {
-			limit = {
-				owner = { has_technology = tech_construction_templates }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_crystal_plant days = 270 } }
-		}
-		ELSE_IF = {
-			limit = {
-				owner = { has_technology = tech_assembly_pattern }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_crystal_plant days = 390 } }
-		}
-		ELSE = {
-			planet = {
-				owner = { set_timed_country_flag = { flag = buildings_new_crystal_plant days = 510 } }
-			}
 		}
 	}
 }

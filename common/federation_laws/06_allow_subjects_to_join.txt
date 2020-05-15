@@ -32,7 +32,13 @@ allow_subjects_to_join_no = {
 	}
 	
 	ai_weight = {
-		base = 26
+		base = 0
+				
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 26
+		}
 		
 		modifier = {
 			add = 25
@@ -69,15 +75,23 @@ allow_subjects_to_join_yes = {
 	}
 	
 	ai_weight = {
-		base = 26
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 26
+		}
 		
 		modifier = {
+			desc = federation_acceptance_weaker
 			add = 25
 			relative_power = { who = from value >= superior }
 		}
 		
 		#Behaviour-specific
 		modifier = {
+			desc = federation_acceptance_has_subjects
 			add = 75
 			vassals > 0
 		}

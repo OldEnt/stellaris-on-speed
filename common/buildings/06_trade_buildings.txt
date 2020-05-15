@@ -169,26 +169,6 @@ building_commercial_megaplex = {
 			always = yes
 		}
 	}
-
-	on_queued = {
-		IF = {
-			limit = {
-				owner = { has_technology = tech_construction_templates }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_crystal_building days = 270 } }
-		}
-		ELSE_IF = {
-			limit = {
-				owner = { has_technology = tech_assembly_pattern }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_crystal_building days = 390 } }
-		}
-		else = {
-			planet = {
-				owner = { set_timed_country_flag = { flag = buildings_new_crystal_building days = 510 } }
-			}
-		}
-	}
 }
 
 building_galactic_stock_exchange = {

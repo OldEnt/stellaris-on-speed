@@ -22,6 +22,7 @@ decision_planet_food_boost = {
 			has_modifier = planet_growth_discouraged
 			has_modifier = planet_population_control
 		}
+		always = no
 	}
 
 	allow = {

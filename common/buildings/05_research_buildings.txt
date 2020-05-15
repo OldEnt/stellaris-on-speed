@@ -141,19 +141,16 @@ building_research_lab_1 = {
 				num_pops >= 40
 				owner = {
 					any_neighbor_country = {
-						count >= 1
 						is_country_type = default
-						prev = {
-							relative_power = {
-								who = prev
-								category = technology
-								value > equivalent
-							}
-							relative_power = {
-								who = prev
-								category = all
-								value < superior
-							}
+						relative_power = {
+							who = prev
+							category = technology
+							value > equivalent
+						}
+						relative_power = {
+							who = prev
+							category = all
+							value < overwhelming
 						}
 					}
 				}
@@ -333,15 +330,6 @@ building_research_lab_2 = {
 			factor = 0
 			free_jobs > 3 #Extremely high priority building
 		}
-		modifier = {
-			factor = 0
-			owner = { has_country_flag = buildings_new_gas_building }
-		}
-	}
-	on_built = {
-		planet = {
-			owner = { set_timed_country_flag = { flag = buildings_new_gas_building days = 480 } }
-		}
 	}
 }
 
@@ -507,15 +495,6 @@ building_research_lab_3 = {
 		modifier = {
 			factor = 0
 			free_jobs > 3 #Extremely high priority building
-		}
-		modifier = {
-			factor = 0
-			owner = { has_country_flag = buildings_new_gas_building }
-		}
-	}
-	on_built = {
-		planet = {
-			owner = { set_timed_country_flag = { flag = buildings_new_gas_building days = 480 } }
 		}
 	}
 }

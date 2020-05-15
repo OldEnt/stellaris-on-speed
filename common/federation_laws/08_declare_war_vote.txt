@@ -37,7 +37,13 @@ declare_war_unanimous_vote = {
 	}
 
 	ai_weight = {
-		base = 61
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 61
+		}
 	}
 }
 
@@ -84,7 +90,13 @@ declare_war_majority_vote = {
 	}
 
 	ai_weight = {
-		base = 51
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 51
+		}
 	}
 }
 
@@ -129,7 +141,13 @@ declare_war_majority_vote_hegemony = {
 	}
 
 	ai_weight = {
-		base = 51
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 51
+		}
 	}
 }
 
@@ -174,24 +192,34 @@ declare_war_president_vote = {
 	}
 
 	ai_weight = {
-		base = 26
-
+		base = 0
+		
+		#Default support
 		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 26
+		}
+		modifier = {
+			desc = federation_acceptance_weaker
 			add = 25
 			relative_power = { who = from value >= superior }
 		}
-
 		modifier = {
+			desc = federation_acceptance_hegemony_federation
 			add = 25
 			federation = {
-				OR = {
-					has_federation_type = hegemony_federation
-					has_federation_type = military_federation
-				}
+				has_federation_type = hegemony_federation
+			}
+		}		
+		modifier = {
+			desc = federation_acceptance_military_federation
+			add = 25
+			federation = {
+				has_federation_type = military_federation
 			}
 		}
-
 		modifier = {
+			desc = federation_acceptance_president
 			add = 75
 			is_federation_leader = yes
 		}

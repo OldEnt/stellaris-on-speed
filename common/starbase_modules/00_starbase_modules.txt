@@ -30,7 +30,28 @@ shipyard = {
 	ai_build_at_chokepoint = no
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 50
+		weight = 20
+		modifier = {
+			factor = 3
+			OR = {
+				AND = {
+					has_starbase_module = shipyard
+					count_starbase_modules = {
+						count < 3
+						type = shipyard
+					}
+				}
+				owner = {
+					count_owned_starbase = {
+						count >= 10
+					}
+					count_owned_starbase = {
+						count < 2
+						limit = { has_starbase_module = shipyard }
+					}
+				}
+			}
+		}
 	#	modifier = {
 	#		factor = 100
 	#		NOT = { has_starbase_module = shipyard }
@@ -289,5 +310,14 @@ trading_hub = {
 	ai_build_at_chokepoint = no
 	ai_weight = {
 		weight = 15
+		modifier = {
+			factor = 5
+			NOT = { has_starbase_module = trading_hub }
+			solar_system = {
+				any_neighbor_system = {
+					has_system_trade_value > 250
+				}
+			}
+		}
 	}
 }

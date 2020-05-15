@@ -36,10 +36,17 @@ fleet_contribution_none = {
 	}
 
 	ai_weight = {
-		base = 1
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 1
+		}
 		
 		#Attempt to lower contribution by a step when there is bad cohesion
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -48,6 +55,7 @@ fleet_contribution_none = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -56,6 +64,7 @@ fleet_contribution_none = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -64,24 +73,28 @@ fleet_contribution_none = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
 				federation_cohesion < -75
 				has_federation_law = fleet_contribution_low
 			}
-		}		
+		}
 		
 		#Behaviour-specific
 		modifier = {
+			desc = federation_acceptance_peaceful_traders
 			add = 5
 			has_ai_personality = peaceful_traders
 		}
 		modifier = {
+			desc = federation_acceptance_federation_builders
 			add = -5
 			has_ai_personality = federation_builders
 		}
 		modifier = {
+			desc = federation_acceptance_militarist
 			add = -5
 			is_militarist = yes
 		}
@@ -138,20 +151,29 @@ fleet_contribution_low = {
 	}
 	
 	ai_weight = {
-		base = 11
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 11
+		}
 		
 		#Attempt to raise contribution by a step in crisis
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 15
 			federation = { has_federation_law = fleet_contribution_none }			
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 25
 			federation = { has_federation_law = fleet_contribution_none }			
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 100
 			federation = { has_federation_law = fleet_contribution_none }			
 			has_crisis_stage_4 = yes
@@ -159,25 +181,30 @@ fleet_contribution_low = {
 		
 		#Behaviour-specific
 		modifier = {
+			desc = federation_acceptance_president
 			add = 100
 			federation = { has_federation_law = fleet_contribution_none }			
 			is_federation_leader = yes
 		}
 		modifier = {
+			desc = federation_acceptance_federation_builders
 			add = 10
 			has_ai_personality = federation_builders
 		}
 		modifier = {
+			desc = federation_acceptance_democratic_crusaders
 			add = 5
 			has_ai_personality = democratic_crusaders
 		}
 		modifier = {
+			desc = federation_acceptance_militarist
 			add = 5
 			is_militarist = yes
 		}
 		
 		#Attempt to lower contribution by a step when there is bad cohesion
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -186,6 +213,7 @@ fleet_contribution_low = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -194,6 +222,7 @@ fleet_contribution_low = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -202,6 +231,7 @@ fleet_contribution_low = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -260,20 +290,29 @@ fleet_contribution_medium = {
 	}
 	
 	ai_weight = {
-		base = 26
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 26
+		}
 		
 		#Attempt to raise contribution by a step in crisis
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 15
 			federation = { has_federation_law = fleet_contribution_low }			
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 25
 			federation = { has_federation_law = fleet_contribution_low }			
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 100
 			federation = { has_federation_law = fleet_contribution_low }			
 			has_crisis_stage_4 = yes
@@ -281,37 +320,44 @@ fleet_contribution_medium = {
 		
 		#Behaviour-specific
 		modifier = {
+			desc = federation_acceptance_president
 			add = 100
 			federation = { has_federation_law = fleet_contribution_low }			
 			is_federation_leader = yes
 		}
 		modifier = {
+			desc = federation_acceptance_federation_builders
 			add = 10
 			has_ai_personality = federation_builders
 		}
 		modifier = {
+			desc = federation_acceptance_democratic_crusaders
 			add = 5
 			has_ai_personality = democratic_crusaders
 		}
 		modifier = {
-			add = 5
-			is_militarist = yes
-		}
-		modifier = {
+			desc = federation_acceptance_xenophobic_isolationists
 			add = -5
 			has_ai_personality = xenophobic_isolationists
+		}
+		modifier = {
+			desc = federation_acceptance_militarist
+			add = 5
+			is_militarist = yes
 		}
 		
 		#Attempt to lower contribution by a step when there is bad cohesion
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
 				federation_cohesion < 0
-				has_federation_law = fleet_contribution_medium
+				has_federation_law = fleet_contribution_high
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -320,6 +366,7 @@ fleet_contribution_medium = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -328,6 +375,7 @@ fleet_contribution_medium = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -386,20 +434,29 @@ fleet_contribution_high = {
 	}
 	
 	ai_weight = {
-		base = 41
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 41
+		}
 		
 		#Attempt to raise contribution by a step in crisis
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 15
 			federation = { has_federation_law = fleet_contribution_medium }			
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 25
 			federation = { has_federation_law = fleet_contribution_medium }			
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 100
 			federation = { has_federation_law = fleet_contribution_medium }			
 			has_crisis_stage_4 = yes
@@ -407,25 +464,30 @@ fleet_contribution_high = {
 		
 		#Behaviour-specific
 		modifier = {
+			desc = federation_acceptance_president
 			add = 100
 			federation = { has_federation_law = fleet_contribution_medium }			
 			is_federation_leader = yes
 		}
 		modifier = {
+			desc = federation_acceptance_federation_builders
 			add = 10
 			has_ai_personality = federation_builders
 		}
 		modifier = {
+			desc = federation_acceptance_democratic_crusaders
 			add = 5
 			has_ai_personality = democratic_crusaders
 		}
 		modifier = {
-			add = 5
-			is_militarist = yes
-		}
-		modifier = {
+			desc = federation_acceptance_xenophobic_isolationists
 			add = -5
 			has_ai_personality = xenophobic_isolationists
+		}
+		modifier = {
+			desc = federation_acceptance_militarist
+			add = 5
+			is_militarist = yes
 		}
 	}
 }
@@ -480,20 +542,29 @@ fleet_contribution_low_trade = {
 	}
 	
 	ai_weight = {
-		base = 11
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 11
+		}
 		
 		#Attempt to raise contribution by a step in crisis
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 15
 			federation = { has_federation_law = fleet_contribution_none }			
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 25
 			federation = { has_federation_law = fleet_contribution_none }			
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 100
 			federation = { has_federation_law = fleet_contribution_none }			
 			has_crisis_stage_4 = yes
@@ -501,29 +572,35 @@ fleet_contribution_low_trade = {
 		
 		#Behaviour-specific
 		modifier = {
+			desc = federation_acceptance_president
 			add = 100
 			federation = { has_federation_law = fleet_contribution_none }			
 			is_federation_leader = yes
 		}
 		modifier = {
+			desc = federation_acceptance_federation_builders
 			add = 10
 			has_ai_personality = federation_builders
 		}
 		modifier = {
+			desc = federation_acceptance_militarist
 			add = 5
 			is_militarist = yes
 		}
 		modifier = {
+			desc = federation_acceptance_ruthless_capitalists
 			add = 5
 			has_ai_personality = ruthless_capitalists
 		}
 		modifier = {
+			desc = federation_acceptance_peaceful_traders
 			add = -5
 			has_ai_personality = peaceful_traders
 		}
 		
 		#Attempt to lower contribution by a step when there is bad cohesion
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -532,6 +609,7 @@ fleet_contribution_low_trade = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -540,6 +618,7 @@ fleet_contribution_low_trade = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -548,6 +627,7 @@ fleet_contribution_low_trade = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -606,20 +686,29 @@ fleet_contribution_medium_trade = {
 	}
 	
 	ai_weight = {
-		base = 26
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 26
+		}
 		
 		#Attempt to raise contribution by a step in crisis
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 15
 			federation = { has_federation_law = fleet_contribution_low_trade }			
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 25
 			federation = { has_federation_law = fleet_contribution_low_trade }			
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 100
 			federation = { has_federation_law = fleet_contribution_low_trade }			
 			has_crisis_stage_4 = yes
@@ -627,33 +716,40 @@ fleet_contribution_medium_trade = {
 		
 		#Behaviour-specific
 		modifier = {
+			desc = federation_acceptance_president
 			add = 100
 			federation = { has_federation_law = fleet_contribution_low_trade }			
 			is_federation_leader = yes
 		}
 		modifier = {
+			desc = federation_acceptance_federation_builders
 			add = 10
 			has_ai_personality = federation_builders
 		}
 		modifier = {
+			desc = federation_acceptance_militarist
 			add = 5
 			is_militarist = yes
 		}
 		modifier = {
+			desc = federation_acceptance_ruthless_capitalists
 			add = 5
 			has_ai_personality = ruthless_capitalists
 		}
 		modifier = {
+			desc = federation_acceptance_peaceful_traders
 			add = -5
 			has_ai_personality = peaceful_traders
 		}
 		modifier = {
+			desc = federation_acceptance_xenophobic_isolationists
 			add = -5
 			has_ai_personality = xenophobic_isolationists
 		}
 		
 		#Attempt to lower contribution by a step when there is bad cohesion
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -662,6 +758,7 @@ fleet_contribution_medium_trade = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -670,6 +767,7 @@ fleet_contribution_medium_trade = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -678,6 +776,7 @@ fleet_contribution_medium_trade = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -736,20 +835,29 @@ fleet_contribution_high_trade = {
 	}
 	
 	ai_weight = {
-		base = 41
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 41
+		}
 		
 		#Attempt to raise contribution by a step in crisis
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 15
 			federation = { has_federation_law = fleet_contribution_medium_trade }			
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 25
 			federation = { has_federation_law = fleet_contribution_medium_trade }			
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 100
 			federation = { has_federation_law = fleet_contribution_medium_trade }			
 			has_crisis_stage_4 = yes
@@ -757,27 +865,33 @@ fleet_contribution_high_trade = {
 		
 		#Behaviour-specific
 		modifier = {
+			desc = federation_acceptance_president
 			add = 100
 			federation = { has_federation_law = fleet_contribution_medium_trade }			
 			is_federation_leader = yes
 		}
 		modifier = {
+			desc = federation_acceptance_federation_builders
 			add = 10
 			has_ai_personality = federation_builders
 		}
 		modifier = {
+			desc = federation_acceptance_militarist
 			add = 5
 			is_militarist = yes
 		}
 		modifier = {
+			desc = federation_acceptance_ruthless_capitalists
 			add = 5
 			has_ai_personality = ruthless_capitalists
 		}
 		modifier = {
+			desc = federation_acceptance_peaceful_traders
 			add = -5
 			has_ai_personality = peaceful_traders
 		}
 		modifier = {
+			desc = federation_acceptance_xenophobic_isolationists
 			add = -5
 			has_ai_personality = xenophobic_isolationists
 		}
@@ -834,20 +948,29 @@ fleet_contribution_low_research = {
 	}
 	
 	ai_weight = {
-		base = 6
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 6
+		}
 		
 		#Attempt to raise contribution by a step in crisis
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 15
 			federation = { has_federation_law = fleet_contribution_none }			
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 25
 			federation = { has_federation_law = fleet_contribution_none }			
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 100
 			federation = { has_federation_law = fleet_contribution_none }			
 			has_crisis_stage_4 = yes
@@ -855,25 +978,30 @@ fleet_contribution_low_research = {
 		
 		#Behaviour-specific
 		modifier = {
+			desc = federation_acceptance_president
 			add = 100
 			federation = { has_federation_law = fleet_contribution_none }			
 			is_federation_leader = yes
 		}
 		modifier = {
+			desc = federation_acceptance_federation_builders
 			add = 10
 			has_ai_personality = federation_builders
 		}
 		modifier = {
+			desc = federation_acceptance_militarist
 			add = 5
 			is_militarist = yes
 		}
 		modifier = {
+			desc = federation_acceptance_xenophobic_isolationists
 			add = -5
 			has_ai_personality = xenophobic_isolationists
 		}
 		
 		#Attempt to lower contribution by a step when there is bad cohesion
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -882,6 +1010,7 @@ fleet_contribution_low_research = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -890,6 +1019,7 @@ fleet_contribution_low_research = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -898,6 +1028,7 @@ fleet_contribution_low_research = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -956,20 +1087,29 @@ fleet_contribution_medium_research = {
 	}
 	
 	ai_weight = {
-		base = 21
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 21
+		}
 		
 		#Attempt to raise contribution by a step in crisis
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 15
 			federation = { has_federation_law = fleet_contribution_low_research }			
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 25
 			federation = { has_federation_law = fleet_contribution_low_research }			
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 100
 			federation = { has_federation_law = fleet_contribution_low_research }			
 			has_crisis_stage_4 = yes
@@ -977,19 +1117,23 @@ fleet_contribution_medium_research = {
 		
 		#Behaviour-specific
 		modifier = {
+			desc = federation_acceptance_president
 			add = 100
 			federation = { has_federation_law = fleet_contribution_low_research }			
 			is_federation_leader = yes
 		}
 		modifier = {
+			desc = federation_acceptance_federation_builders
 			add = 10
 			has_ai_personality = federation_builders
 		}
 		modifier = {
+			desc = federation_acceptance_militarist
 			add = 5
 			is_militarist = yes
 		}
 		modifier = {
+			desc = federation_acceptance_xenophobic_isolationists
 			add = -5
 			has_ai_personality = xenophobic_isolationists
 		}
@@ -1047,20 +1191,29 @@ fleet_contribution_low_martial = {
 	}
 	
 	ai_weight = {
-		base = 11
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 11
+		}
 		
 		#Attempt to raise contribution by a step in crisis
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 15
 			federation = { has_federation_law = fleet_contribution_none }			
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 25
 			federation = { has_federation_law = fleet_contribution_none }			
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 100
 			federation = { has_federation_law = fleet_contribution_none }			
 			has_crisis_stage_4 = yes
@@ -1068,25 +1221,30 @@ fleet_contribution_low_martial = {
 		
 		#Behaviour-specific
 		modifier = {
+			desc = federation_acceptance_president
 			add = 100
 			federation = { has_federation_law = fleet_contribution_none }			
 			is_federation_leader = yes
 		}
 		modifier = {
+			desc = federation_acceptance_federation_builders
 			add = 10
 			has_ai_personality = federation_builders
 		}
 		modifier = {
+			desc = federation_acceptance_honorbound_warriors
 			add = 5
 			has_ai_personality = honorbound_warriors
 		}
 		modifier = {
+			desc = federation_acceptance_militarist
 			add = 5
 			is_militarist = yes
 		}
 		
 		#Attempt to lower contribution by a step when there is bad cohesion
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -1095,6 +1253,7 @@ fleet_contribution_low_martial = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -1103,6 +1262,7 @@ fleet_contribution_low_martial = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -1111,6 +1271,7 @@ fleet_contribution_low_martial = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -1169,20 +1330,29 @@ fleet_contribution_medium_martial = {
 	}
 	
 	ai_weight = {
-		base = 26
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 26
+		}
 		
 		#Attempt to raise contribution by a step in crisis
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 15
 			federation = { has_federation_law = fleet_contribution_low_martial }			
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 25
 			federation = { has_federation_law = fleet_contribution_low_martial }			
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 100
 			federation = { has_federation_law = fleet_contribution_low_martial }			
 			has_crisis_stage_4 = yes
@@ -1190,29 +1360,35 @@ fleet_contribution_medium_martial = {
 		
 		#Behaviour-specific
 		modifier = {
+			desc = federation_acceptance_president
 			add = 100
-			federation = { has_federation_law = fleet_contribution_low_martial }			
+			federation = { has_federation_law = fleet_contribution_low_martial }
 			is_federation_leader = yes
 		}
 		modifier = {
+			desc = federation_acceptance_federation_builders
 			add = 10
 			has_ai_personality = federation_builders
 		}
 		modifier = {
+			desc = federation_acceptance_honorbound_warriors
 			add = 5
 			has_ai_personality = honorbound_warriors
 		}
 		modifier = {
+			desc = federation_acceptance_militarist
 			add = 5
 			is_militarist = yes
 		}
 		modifier = {
+			desc = federation_acceptance_xenophobic_isolationists
 			add = -5
 			has_ai_personality = xenophobic_isolationists
 		}
 		
 		#Attempt to lower contribution by a step when there is bad cohesion
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -1221,6 +1397,7 @@ fleet_contribution_medium_martial = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -1229,6 +1406,7 @@ fleet_contribution_medium_martial = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -1237,6 +1415,7 @@ fleet_contribution_medium_martial = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -1295,20 +1474,29 @@ fleet_contribution_high_martial = {
 	}
 	
 	ai_weight = {
-		base = 41
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 41
+		}
 		
 		#Attempt to raise contribution by a step in crisis
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 15
 			federation = { has_federation_law = fleet_contribution_medium_martial }			
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 25
 			federation = { has_federation_law = fleet_contribution_medium_martial }			
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 100
 			federation = { has_federation_law = fleet_contribution_medium_martial }			
 			has_crisis_stage_4 = yes
@@ -1316,23 +1504,28 @@ fleet_contribution_high_martial = {
 		
 		#Behaviour-specific
 		modifier = {
+			desc = federation_acceptance_president
 			add = 100
 			federation = { has_federation_law = fleet_contribution_medium_martial }			
 			is_federation_leader = yes
 		}
 		modifier = {
+			desc = federation_acceptance_federation_builders
 			add = 10
 			has_ai_personality = federation_builders
 		}
 		modifier = {
+			desc = federation_acceptance_honorbound_warriors
 			add = 5
 			has_ai_personality = honorbound_warriors
 		}
 		modifier = {
+			desc = federation_acceptance_militarist
 			add = 5
 			is_militarist = yes
 		}
 		modifier = {
+			desc = federation_acceptance_xenophobic_isolationists
 			add = -5
 			has_ai_personality = xenophobic_isolationists
 		}
@@ -1389,20 +1582,29 @@ fleet_contribution_low_hegemony = {
 	}
 	
 	ai_weight = {
-		base = 11
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 11
+		}
 		
 		#Attempt to raise contribution by a step in crisis
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 15
 			federation = { has_federation_law = fleet_contribution_none }			
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 25
 			federation = { has_federation_law = fleet_contribution_none }			
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 100
 			federation = { has_federation_law = fleet_contribution_none }			
 			has_crisis_stage_4 = yes
@@ -1410,25 +1612,30 @@ fleet_contribution_low_hegemony = {
 		
 		#Behaviour-specific
 		modifier = {
+			desc = federation_acceptance_president
 			add = 100
 			federation = { has_federation_law = fleet_contribution_none }			
 			is_federation_leader = yes
 		}
 		modifier = {
+			desc = federation_acceptance_federation_builders
 			add = 10
 			has_ai_personality = federation_builders
 		}
 		modifier = {
+			desc = federation_acceptance_subject
 			add = 10
 			is_subject = yes
 		}
 		modifier = {
+			desc = federation_acceptance_militarist
 			add = 5
 			is_militarist = yes
 		}
 		
 		#Attempt to lower contribution by a step when there is bad cohesion
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -1437,6 +1644,7 @@ fleet_contribution_low_hegemony = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -1445,6 +1653,7 @@ fleet_contribution_low_hegemony = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -1453,6 +1662,7 @@ fleet_contribution_low_hegemony = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -1511,20 +1721,29 @@ fleet_contribution_medium_hegemony = {
 	}
 	
 	ai_weight = {
-		base = 26
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 26
+		}
 		
 		#Attempt to raise contribution by a step in crisis
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 15
 			federation = { has_federation_law = fleet_contribution_low_hegemony }			
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 25
 			federation = { has_federation_law = fleet_contribution_low_hegemony }			
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 100
 			federation = { has_federation_law = fleet_contribution_low_hegemony }			
 			has_crisis_stage_4 = yes
@@ -1532,25 +1751,30 @@ fleet_contribution_medium_hegemony = {
 		
 		#Behaviour-specific
 		modifier = {
+			desc = federation_acceptance_president
 			add = 100
 			federation = { has_federation_law = fleet_contribution_low_hegemony }			
 			is_federation_leader = yes
 		}
 		modifier = {
+			desc = federation_acceptance_federation_builders
 			add = 10
 			has_ai_personality = federation_builders
 		}
 		modifier = {
+			desc = federation_acceptance_subject
 			add = 10
 			is_subject = yes
 		}
 		modifier = {
+			desc = federation_acceptance_militarist
 			add = 5
 			is_militarist = yes
 		}
 		
 		#Attempt to lower contribution by a step when there is bad cohesion
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -1559,6 +1783,7 @@ fleet_contribution_medium_hegemony = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -1567,6 +1792,7 @@ fleet_contribution_medium_hegemony = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -1575,6 +1801,7 @@ fleet_contribution_medium_hegemony = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
 			federation = {			
@@ -1633,20 +1860,29 @@ fleet_contribution_high_hegemony = {
 	}
 	
 	ai_weight = {
-		base = 41
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 41
+		}
 		
 		#Attempt to raise contribution by a step in crisis
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 15
 			federation = { has_federation_law = fleet_contribution_medium_hegemony }			
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 25
 			federation = { has_federation_law = fleet_contribution_medium_hegemony }			
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
+			desc = federation_acceptance_crisis
 			add = 100
 			federation = { has_federation_law = fleet_contribution_medium_hegemony }			
 			has_crisis_stage_4 = yes
@@ -1654,19 +1890,23 @@ fleet_contribution_high_hegemony = {
 		
 		#Behaviour-specific
 		modifier = {
+			desc = federation_acceptance_president
 			add = 100
 			federation = { has_federation_law = fleet_contribution_medium_hegemony }			
 			is_federation_leader = yes
 		}
 		modifier = {
+			desc = federation_acceptance_federation_builders
 			add = 10
 			has_ai_personality = federation_builders
 		}
 		modifier = {
+			desc = federation_acceptance_subject
 			add = 10
 			is_subject = yes
 		}
 		modifier = {
+			desc = federation_acceptance_militarist
 			add = 5
 			is_militarist = yes
 		}

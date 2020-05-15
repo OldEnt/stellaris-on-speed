@@ -26,10 +26,17 @@ free_migration_no = {
 	}
 	
 	ai_weight = {
-		base = 51
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 51
+		}
 		
 		#Behaviour-specific	
 		modifier = {
+			desc = federation_acceptance_xenophobe
 			add = 50
 			is_xenophobe = yes
 		}
@@ -65,23 +72,33 @@ free_migration_yes = {
 	}
 	
 	ai_weight = {
-		base = 51
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 51
+		}
 				
 		modifier = {
+			desc = federation_acceptance_weaker
 			add = 25
 			relative_power = { who = from value >= superior }
 		}
 		
 		#Behaviour-specific	
 		modifier = {
+			desc = federation_acceptance_xenophile
 			add = 50
 			is_xenophile = yes
 		}
 		modifier = {
+			desc = federation_acceptance_federation_builders
 			add = 25
 			has_ai_personality = federation_builders
 		}
 		modifier = {
+			desc = federation_acceptance_xenophobe
 			add = -25
 			is_xenophobe = yes
 		}

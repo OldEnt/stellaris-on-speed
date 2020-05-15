@@ -27,31 +27,34 @@ centralization_minimal = {
 	}
 	
 	ai_weight = {
-		base = 26
+		base = 0
 		modifier = {
-			factor = 0
-			has_ai_personality = federation_builders
-		}		
+			desc = federation_acceptance_generally_positive
+			add = 26
+		}
 		modifier = {
+			desc = federation_acceptance_dont_lower_centralization
 			add = -25
-			federation = {			
+			federation = {
 				federation_cohesion > 50
 			}
 		}
 		
 		#Attempt to lower centralization by a step when there is bad cohesion
 		modifier = {
+			desc = federation_acceptance_reduce_centralization
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -50
 				has_federation_law = centralization_low
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_centralization
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -75
 				has_federation_law = centralization_low
 			}
@@ -89,12 +92,19 @@ centralization_low = {
 			}
 		}
 		add_cohesion = -10
+
+		fire_random_centralisation_flavour_event_effect = yes #potentially fire a flavour event
 	}
 	ai_weight = {
-		base = 26
+		base = 0
 		
 		#Default support
 		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 26
+		}
+		modifier = {
+			desc = federation_acceptance_better_cohesion
 			add = -50
 			is_federation_leader = no
 			federation = {			
@@ -102,6 +112,8 @@ centralization_low = {
 			}
 		}
 		modifier = {
+			# AI doesn't want to reduce centralization if president
+			desc = federation_acceptance_president
 			add = -50
 			is_federation_leader = yes
 			federation = {
@@ -113,7 +125,8 @@ centralization_low = {
 			}
 		}
 		modifier = {
-			# AI will try to increase the centralization one step at a time
+			# AI will try to increase the centralization one step at a time if they are the president
+			desc = federation_acceptance_president
 			add = 100
 			is_federation_leader = yes
 			federation = {
@@ -123,69 +136,94 @@ centralization_low = {
 		
 		#Behaviour-specific
 		modifier = {
-			add = 25
+			desc = federation_acceptance_authoritarian
+			add = 10
 			is_authoritarian = yes
 		}
 		modifier = {
-			add = 25
-			has_ai_personality = federation_builders
-		}
-		modifier = {
+			desc = federation_acceptance_weaker
 			add = 25
 			relative_power = { who = from value >= superior }
 		}
 		modifier = {
+			desc = federation_acceptance_federation_builders
+			add = 25			
+			AND = {
+				has_ai_personality = federation_builders
+				federation = {
+					has_federation_law = centralization_minimal
+				}
+			}
+		}
+		modifier = {
+			desc = federation_acceptance_erudite_explorers_in_research_federation
 			add = 10
 			AND = {
 				has_ai_personality = erudite_explorers
 				federation = {
 					has_federation_type = research_federation
+					has_federation_law = centralization_minimal
 				}
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_honorbound_warriors_in_military_federation
 			add = 20
 			AND = {
 				has_ai_personality = honorbound_warriors
 				federation = {
 					has_federation_type = military_federation
+					has_federation_law = centralization_minimal
 				}
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_ruthless_capitalists_in_trade_federation
 			add = 20
 			AND = {
-				OR = {
-					has_ai_personality = peaceful_traders
-					has_ai_personality = ruthless_capitalists					
-				}
+				has_ai_personality = ruthless_capitalists
 				federation = {
 					has_federation_type = trade_federation
+					has_federation_law = centralization_minimal
 				}
 			}
-		}		
+		}
+		modifier = {
+			desc = federation_acceptance_peaceful_traders_in_trade_federation
+			add = 20
+			AND = {
+				has_ai_personality = peaceful_traders
+				federation = {
+					has_federation_type = trade_federation
+					has_federation_law = centralization_minimal
+				}
+			}
+		}
 		
 		#Attempt to lower centralization by a step when there is bad cohesion
 		modifier = {
+			desc = federation_acceptance_reduce_centralization
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -25
 				has_federation_law = centralization_medium
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_centralization
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -50
 				has_federation_law = centralization_medium
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_centralization
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -75
 				has_federation_law = centralization_medium
 			}
@@ -223,12 +261,19 @@ centralization_medium = {
 			}
 		}
 		add_cohesion = -10
+
+		fire_random_centralisation_flavour_event_effect = yes #potentially fire a flavour event
 	}
 	ai_weight = {
-		base = 36
+		base = 0
 		
 		#Default support
 		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 36
+		}
+		modifier = {
+			desc = federation_acceptance_better_cohesion
 			add = -50
 			is_federation_leader = no
 			federation = {			
@@ -236,11 +281,12 @@ centralization_medium = {
 			}
 		}
 		modifier = {
+			# AI doesn't want to reduce centralization if president
+			desc = federation_acceptance_president
 			add = -50
 			is_federation_leader = yes
 			federation = {
 				OR = {
-					has_federation_law = centralization_medium
 					has_federation_law = centralization_high
 					has_federation_law = centralization_very_high
 				}
@@ -248,86 +294,113 @@ centralization_medium = {
 		}
 		modifier = {
 			# AI will try to increase the centralization one step at a time
+			desc = federation_acceptance_president
 			add = 100
 			is_federation_leader = yes
 			federation = {
-				has_federation_law = centralization_minimal
+				has_federation_law = centralization_low
 			}
 		}
 		
 		#Behaviour-specific
 		modifier = {
-			add = 25
+			desc = federation_acceptance_authoritarian
+			add = 10
 			is_authoritarian = yes
 		}
 		modifier = {
-			add = 25
-			has_ai_personality = federation_builders
-		}
-		modifier = {
+			desc = federation_acceptance_weaker
 			add = 25
 			relative_power = { who = from value >= superior }
 		}
 		modifier = {
+			desc = federation_acceptance_federation_builders
+			add = 25			
+			AND = {
+				has_ai_personality = federation_builders
+				federation = {
+					has_federation_law = centralization_low
+				}
+			}
+		}
+		modifier = {
+			desc = federation_acceptance_erudite_explorers_in_research_federation
 			add = 10
 			AND = {
 				has_ai_personality = erudite_explorers
 				federation = {
 					has_federation_type = research_federation
+					has_federation_law = centralization_low
 				}
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_honorbound_warriors_in_military_federation
 			add = 20
 			AND = {
 				has_ai_personality = honorbound_warriors
 				federation = {
 					has_federation_type = military_federation
+					has_federation_law = centralization_low
 				}
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_ruthless_capitalists_in_trade_federation
 			add = 20
 			AND = {
-				OR = {
-					has_ai_personality = peaceful_traders
-					has_ai_personality = ruthless_capitalists					
-				}
+				has_ai_personality = ruthless_capitalists
 				federation = {
 					has_federation_type = trade_federation
+					has_federation_law = centralization_low
+				}
+			}
+		}
+		modifier = {
+			desc = federation_acceptance_peaceful_traders_in_trade_federation
+			add = 20
+			AND = {
+				has_ai_personality = peaceful_traders
+				federation = {
+					has_federation_type = trade_federation
+					has_federation_law = centralization_low
 				}
 			}
 		}
 		
 		#Attempt to lower centralization by a step when there is bad cohesion
 		modifier = {
+			desc = federation_acceptance_reduce_centralization
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < 0
 				has_federation_law = centralization_high
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_centralization
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -25
 				has_federation_law = centralization_high
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_centralization
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -50
 				has_federation_law = centralization_high
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_centralization
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -75
 				has_federation_law = centralization_high
 			}
@@ -365,12 +438,19 @@ centralization_high = {
 			}
 		}
 		add_cohesion = -10
+
+		fire_random_centralisation_flavour_event_effect = yes #potentially fire a flavour event
 	}
 	ai_weight = {
-		base = 41
+		base = 0
 		
 		#Default support
 		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 41
+		}
+		modifier = {
+			desc = federation_acceptance_better_cohesion
 			add = -50
 			is_federation_leader = no
 			federation = {			
@@ -378,98 +458,123 @@ centralization_high = {
 			}
 		}
 		modifier = {
+			# AI doesn't want to reduce centralization if president
+			desc = federation_acceptance_president
 			add = -50
 			is_federation_leader = yes
 			federation = {
-				OR = {
-					has_federation_law = centralization_medium
-					has_federation_law = centralization_high
-					has_federation_law = centralization_very_high
-				}
+				has_federation_law = centralization_very_high
 			}
 		}
 		modifier = {
 			# AI will try to increase the centralization one step at a time
+			desc = federation_acceptance_president
 			add = 100
 			is_federation_leader = yes
 			federation = {
-				has_federation_law = centralization_minimal
+				has_federation_law = centralization_medium
 			}
 		}
 		
 		#Behaviour-specific
 		modifier = {
-			add = 25
+			desc = federation_acceptance_authoritarian
+			add = 10
 			is_authoritarian = yes
 		}
 		modifier = {
-			add = 25
-			has_ai_personality = federation_builders
-		}
-		modifier = {
+			desc = federation_acceptance_weaker
 			add = 25
 			relative_power = { who = from value >= superior }
 		}
 		modifier = {
+			desc = federation_acceptance_federation_builders
+			add = 25			
+			AND = {
+				has_ai_personality = federation_builders
+				federation = {
+					has_federation_law = centralization_medium
+				}
+			}
+		}
+		modifier = {
+			desc = federation_acceptance_erudite_explorers_in_research_federation
 			add = 10
 			AND = {
 				has_ai_personality = erudite_explorers
 				federation = {
 					has_federation_type = research_federation
+					has_federation_law = centralization_medium
 				}
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_honorbound_warriors_in_military_federation
 			add = 20
 			AND = {
 				has_ai_personality = honorbound_warriors
 				federation = {
 					has_federation_type = military_federation
+					has_federation_law = centralization_medium
 				}
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_ruthless_capitalists_in_trade_federation
 			add = 20
 			AND = {
-				OR = {
-					has_ai_personality = peaceful_traders
-					has_ai_personality = ruthless_capitalists					
-				}
+				has_ai_personality = ruthless_capitalists
 				federation = {
 					has_federation_type = trade_federation
+					has_federation_law = centralization_medium
+				}
+			}
+		}
+		modifier = {
+			desc = federation_acceptance_peaceful_traders_in_trade_federation
+			add = 20
+			AND = {
+				has_ai_personality = peaceful_traders
+				federation = {
+					has_federation_type = trade_federation
+					has_federation_law = centralization_medium
 				}
 			}
 		}
 		
 		#Attempt to lower centralization by a step when there is bad cohesion
 		modifier = {
+			desc = federation_acceptance_reduce_centralization
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < 0
 				has_federation_law = centralization_very_high
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_centralization
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -25
 				has_federation_law = centralization_very_high
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_centralization
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -50
 				has_federation_law = centralization_very_high
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_reduce_centralization
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -75
 				has_federation_law = centralization_very_high
 			}
@@ -507,12 +612,19 @@ centralization_very_high = {
 			}
 		}
 		add_cohesion = -10
+
+		fire_random_centralisation_flavour_event_effect = yes #potentially fire a flavour event
 	}
 	ai_weight = {
-		base = 51
+		base = 0
 		
 		#Default support
 		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 51
+		}
+		modifier = {
+			desc = federation_acceptance_better_cohesion
 			add = -50
 			is_federation_leader = no
 			federation = {			
@@ -520,67 +632,78 @@ centralization_very_high = {
 			}
 		}
 		modifier = {
-			add = -50
-			is_federation_leader = yes
-			federation = {
-				OR = {
-					has_federation_law = centralization_medium
-					has_federation_law = centralization_high
-					has_federation_law = centralization_very_high
-				}
-			}
-		}
-		modifier = {
 			# AI will try to increase the centralization one step at a time
 			add = 100
 			is_federation_leader = yes
 			federation = {
-				has_federation_law = centralization_minimal
+				has_federation_law = centralization_high
 			}
 		}
 		
 		#Behaviour-specific
 		modifier = {
-			add = 25
+			desc = federation_acceptance_authoritarian
+			add = 10
 			is_authoritarian = yes
 		}
 		modifier = {
-			add = 25
-			has_ai_personality = federation_builders
-		}
-		modifier = {
+			desc = federation_acceptance_weaker
 			add = 25
 			relative_power = { who = from value >= superior }
 		}
 		modifier = {
+			desc = federation_acceptance_federation_builders
+			add = 25			
+			AND = {
+				has_ai_personality = federation_builders
+				federation = {
+					has_federation_law = centralization_medium
+				}
+			}
+		}
+		modifier = {
+			desc = federation_acceptance_erudite_explorers_in_research_federation
 			add = 10
 			AND = {
 				has_ai_personality = erudite_explorers
 				federation = {
 					has_federation_type = research_federation
+					has_federation_law = centralization_medium
 				}
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_honorbound_warriors_in_military_federation
 			add = 20
 			AND = {
 				has_ai_personality = honorbound_warriors
 				federation = {
 					has_federation_type = military_federation
+					has_federation_law = centralization_medium
 				}
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_ruthless_capitalists_in_trade_federation
 			add = 20
 			AND = {
-				OR = {
-					has_ai_personality = peaceful_traders
-					has_ai_personality = ruthless_capitalists					
-				}
+				has_ai_personality = ruthless_capitalists
 				federation = {
 					has_federation_type = trade_federation
+					has_federation_law = centralization_medium
 				}
 			}
-		}	
+		}
+		modifier = {
+			desc = federation_acceptance_peaceful_traders_in_trade_federation
+			add = 20
+			AND = {
+				has_ai_personality = peaceful_traders
+				federation = {
+					has_federation_type = trade_federation
+					has_federation_law = centralization_medium
+				}
+			}
+		}
 	}
 }

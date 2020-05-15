@@ -471,7 +471,7 @@ d_disco_planet = {
 	is_for_colonizeable = yes
 	category = deposit_cat_rare
 	
-	icon = d_central_spire
+	icon = d_tradestation_interior
 	
 	planet_modifier = {
 		planet_amenities_mult = 0.2
@@ -491,7 +491,7 @@ d_disco_planet2 = {
 	is_for_colonizeable = yes
 	category = deposit_cat_rare
 	
-	icon = d_central_spire
+	icon = d_tradestation_interior
 	
 	planet_modifier = {
 		planet_amenities_mult = 0.2
@@ -613,6 +613,36 @@ d_crater_bluelotus = {
 		produces = {
 			alloys = 10
 		}
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+#2nd best reward for Hegemony Joint Operation
+d_federation_hegemony_monument_1 = {
+    is_for_colonizeable = yes
+    category = deposit_cat_rare
+    icon = d_monument_in_space
+
+	country_modifier = {
+		country_base_influence_produces_add = 1.25
+	}
+	
+	drop_weight = {
+		weight = 0
+	}
+}
+
+#Best reward for Hegemony Joint Operation
+d_federation_hegemony_monument_2 = {
+    is_for_colonizeable = yes
+    category = deposit_cat_rare
+    icon = d_monument_in_space
+
+	country_modifier = {
+		country_base_influence_produces_add = 2.5
 	}
 	
 	drop_weight = {

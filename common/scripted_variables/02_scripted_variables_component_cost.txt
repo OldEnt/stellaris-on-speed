@@ -12,8 +12,8 @@
 @s_t1_upkeep_alloys = 0.1
 @s_t2_upkeep_energy = 0.6.5
 @s_t2_upkeep_alloys = 0.13
-@s_t3_upkeep_energy = 0.17
-@s_t3_upkeep_alloys = 0.034
+@s_t3_upkeep_energy = 0.85
+@s_t3_upkeep_alloys = 0.17
 @s_t4_upkeep_energy = 0.85
 @s_t4_upkeep_alloys = 0.17
 @s_t5_upkeep_energy = 1.1

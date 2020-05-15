@@ -9,12 +9,10 @@ building_hydroponics_farm = {
 
 	potential = {
 		exists = owner
-		planet = {
-			or = {
-				owner = {
-					country_uses_food = yes
-				}
-				owner = { is_ai = no }
+		owner = {
+			OR = {
+				country_uses_food = yes
+				is_ai = no
 			}
 		}
 		NOT = { is_planet_class = pc_machine }
@@ -27,14 +25,20 @@ building_hydroponics_farm = {
 
 	destroy_trigger = {
 		exists = owner
-		planet = {
-			NOT = { is_planet_class = pc_habitat }
-			free_building_slots = 0
+		OR = {
 			owner = {
 				is_ai = yes
-				has_monthly_income = {
-					resource = food
-					value > 500
+				country_uses_food = no
+			}
+			planet = {
+				NOT = { is_planet_class = pc_habitat }
+				free_building_slots = 0
+				owner = {
+					is_ai = yes
+					has_monthly_income = {
+						resource = food
+						value > 500
+					}
 				}
 			}
 		}
@@ -117,16 +121,6 @@ building_hydroponics_farm = {
 				free_district_slots = 0
 			}
 			owner = {
-				OR = {
-					is_mechanical_empire = no
-					AND = {
-						is_mechanical_empire = yes
-						OR = {
-							has_civic = civic_machine_servitor
-							has_civic = civic_machine_assimilator
-						}
-					}
-				}
 				has_monthly_income = {
 					resource = food
 					value < 0
@@ -146,16 +140,6 @@ building_hydroponics_farm = {
 			is_planet_class = pc_habitat
 			OR = {
 				owner = {
-					OR = {
-						is_mechanical_empire = no
-						AND = {
-							is_mechanical_empire = yes
-							OR = {
-								has_civic = civic_machine_servitor
-								has_civic = civic_machine_assimilator
-							}
-						}
-					}
 					has_monthly_income = {
 						resource = food
 						value < 125
@@ -164,10 +148,25 @@ building_hydroponics_farm = {
 				has_building = building_hydroponics_farm
 			}
 		}
+		modifier = {
+			factor = 0
+			owner = {
+				has_monthly_income = {
+					resource = food
+					value > 500
+				}
+			}
+		}
+		modifier = {
+			factor = 0
+			owner = {
+				country_uses_food = no
+			}
+		}
 	}
 
 	ai_resource_production = {
-		food = 1
+		food = 5
 		trigger = {
 			always = yes
 		}
@@ -189,6 +188,10 @@ building_food_processing_facility = {
 	destroy_trigger = {
 		exists = owner
 		OR = {
+			owner = {
+				is_ai = yes
+				country_uses_food = no
+			}
 			is_planet_class = pc_machine
 			has_modifier = resort_colony
 		}
@@ -280,7 +283,7 @@ building_food_processing_facility = {
 	}
 
 	ai_resource_production = {
-		food = 1
+		food = 5
 		trigger = {
 			always = yes
 		}
@@ -303,6 +306,13 @@ building_food_processing_center = {
 
 	destroy_trigger = {
 		OR = {
+			AND = {
+				exists = owner
+				owner = {
+					is_ai = yes
+					country_uses_food = no
+				}
+			}
 			is_planet_class = pc_machine
 			has_modifier = resort_colony
 			buildings_no_motes = yes
@@ -376,32 +386,16 @@ building_food_processing_center = {
 				}
 			}
 		}
+		modifier = {
+			factor = 0
+			owner = { country_uses_food = no }
+		}
 	}
 
 	ai_resource_production = {
-		food = 1
+		food = 5
 		trigger = {
 			always = yes
-		}
-	}
-
-	on_queued = {
-		IF = {
-			limit = {
-				owner = { has_technology = tech_construction_templates }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_mote_building days = 54 } }
-		}
-		ELSE_IF = {
-			limit = {
-				owner = { has_technology = tech_assembly_pattern }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_mote_building days = 78 } }
-		}
-		ELSE = {
-			planet = {
-				owner = { set_timed_country_flag = { flag = buildings_new_mote_building days = 102 } }
-			}
 		}
 	}
 }
@@ -561,7 +555,7 @@ building_mineral_purification_plant = {
 	}
 
 	ai_resource_production = {
-		minerals = 1
+		minerals = 5
 		trigger = {
 			always = yes
 		}
@@ -697,29 +691,9 @@ building_mineral_purification_hub = {
 	}
 
 	ai_resource_production = {
-		minerals = 1
+		minerals = 5
 		trigger = {
 			always = yes
-		}
-	}
-
-	on_queued = {
-		IF = {
-			limit = {
-				owner = { has_technology = tech_construction_templates }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_mote_building days = 270 } }
-		}
-		ELSE_IF = {
-			limit = {
-				owner = { has_technology = tech_assembly_pattern }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_mote_building days = 390 } }
-		}
-		ELSE = {
-			planet = {
-				owner = { set_timed_country_flag = { flag = buildings_new_mote_building days = 510 } }
-			}
 		}
 	}
 }
@@ -882,7 +856,7 @@ building_energy_grid = {
 	}
 
 	ai_resource_production = {
-		energy = 1
+		energy = 5
 		trigger = {
 			always = yes
 		}
@@ -1018,29 +992,9 @@ building_energy_nexus = {
 	}
 
 	ai_resource_production = {
-		energy = 1
+		energy = 5
 		trigger = {
 			always = yes
-		}
-	}
-
-	on_queued = {
-		IF = {
-			limit = {
-				owner = { has_technology = tech_construction_templates }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_gas_building days = 270 } }
-		}
-		ELSE_IF = {
-			limit = {
-				owner = { has_technology = tech_assembly_pattern }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_gas_building days = 390 } }
-		}
-		ELSE = {
-			planet = {
-				owner = { set_timed_country_flag = { flag = buildings_new_gas_building days = 510 } }
-			}
 		}
 	}
 }
@@ -1216,7 +1170,6 @@ building_bio_reactor = {
 					value > 250
 				}
 				NOR = {
-					has_country_flag = buildings_new_reactor_building
 					has_valid_civic = civic_machine_servitor
 					has_valid_civic = civic_machine_assimilator
 				}

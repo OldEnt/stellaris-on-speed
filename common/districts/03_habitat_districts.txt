@@ -6,11 +6,11 @@ district_hab_housing = {
 	is_capped_by_modifier = no
 
 	show_on_uncolonized = {
-		is_planet_class = pc_habitat
+		uses_district_set = habitat
 	}
 
 	potential = {
-		is_planet_class = pc_habitat
+		uses_district_set = habitat
 	}
 
 	resources = {
@@ -71,7 +71,7 @@ district_hab_energy = {
 	is_capped_by_modifier = no
 
 	show_on_uncolonized = {
-		is_planet_class = pc_habitat
+		uses_district_set = habitat
 		OR = {
 			has_planet_flag = energy_habitat
 			AND = {
@@ -82,7 +82,7 @@ district_hab_energy = {
 	}
 
 	potential = {
-		is_planet_class = pc_habitat
+		uses_district_set = habitat
 		OR = {
 			has_planet_flag = energy_habitat
 			AND = {
@@ -206,12 +206,12 @@ district_hab_science = {
 	is_capped_by_modifier = no
 
 	show_on_uncolonized = {
-		is_planet_class = pc_habitat
+		uses_district_set = habitat
 		has_planet_flag = research_habitat
 	}
 
 	potential = {
-		is_planet_class = pc_habitat
+		uses_district_set = habitat
 		has_planet_flag = research_habitat
 	}
 
@@ -305,14 +305,14 @@ district_hab_commercial = {
 	is_capped_by_modifier = no
 
 	show_on_uncolonized = {
-		is_planet_class = pc_habitat
+		uses_district_set = habitat
 
 		exists = from
 		from = { is_gestalt = no }
 	}
 
 	potential = {
-		is_planet_class = pc_habitat
+		uses_district_set = habitat
 
 		exists = owner
 		owner = { is_gestalt = no }
@@ -330,7 +330,7 @@ district_hab_commercial = {
 		}
 		upkeep = {
 			energy = @hab_maintenance
-		}		
+		}
 	}
 
 	planet_modifier = {
@@ -390,12 +390,12 @@ district_hab_mining = {
 	is_capped_by_modifier = no
 
 	show_on_uncolonized = {
-		is_planet_class = pc_habitat
+		uses_district_set = habitat
 		has_planet_flag = mining_habitat
 	}
 
 	potential = {
-		is_planet_class = pc_habitat
+		uses_district_set = habitat
 		has_planet_flag = mining_habitat
 	}
 
@@ -513,7 +513,7 @@ district_hab_cultural = {
 	is_capped_by_modifier = no
 
 	show_on_uncolonized = {
-		is_planet_class = pc_habitat
+		uses_district_set = habitat
 
 		exists = from
 		from = {
@@ -525,7 +525,7 @@ district_hab_cultural = {
 	}
 
 	potential = {
-		is_planet_class = pc_habitat
+		uses_district_set = habitat
 
 		exists = owner
 		owner = {

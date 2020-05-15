@@ -8,19 +8,11 @@ district_generator = {
 	max_for_deposits_on_planet = 15
 
 	show_on_uncolonized = {
-		habitable_structure = no
-		NOT = { is_planet_class = pc_machine }
-		NOT = { is_planet_class = pc_hive }
-		NOT = { is_planet_class = pc_city }
-		NOT = { is_planet_class = pc_ringworld_habitable }
+		uses_district_set = standard
 	}
 
 	potential = {
-		habitable_structure = no
-		NOT = { is_planet_class = pc_machine }
-		NOT = { is_planet_class = pc_hive }
-		NOT = { is_planet_class = pc_city }
-		NOT = { is_planet_class = pc_ringworld_habitable }
+		uses_district_set = standard
 	}
 
 	allow = {
@@ -243,19 +235,11 @@ district_mining = {
 	max_for_deposits_on_planet = 15
 
 	show_on_uncolonized = {
-		habitable_structure = no
-		NOT = { is_planet_class = pc_machine }
-		NOT = { is_planet_class = pc_hive }
-		NOT = { is_planet_class = pc_city }
-		NOT = { is_planet_class = pc_ringworld_habitable }
+		uses_district_set = standard
 	}
 
 	potential = {
-		habitable_structure = no
-		NOT = { is_planet_class = pc_machine }
-		NOT = { is_planet_class = pc_hive }
-		NOT = { is_planet_class = pc_city }
-		NOT = { is_planet_class = pc_ringworld_habitable }
+		uses_district_set = standard
 	}
 
 	allow = {
@@ -464,19 +448,11 @@ district_farming = {
 	max_for_deposits_on_planet = 15
 
 	show_on_uncolonized = {
-		habitable_structure = no
-		NOT = { is_planet_class = pc_machine }
-		NOT = { is_planet_class = pc_hive }
-		NOT = { is_planet_class = pc_city }
-		NOT = { is_planet_class = pc_ringworld_habitable }
+		uses_district_set = standard
 	}
 
 	potential = {
-		habitable_structure = no
-		NOT = { is_planet_class = pc_machine }
-		NOT = { is_planet_class = pc_hive }
-		NOT = { is_planet_class = pc_city }
-		NOT = { is_planet_class = pc_ringworld_habitable }
+		uses_district_set = standard
 	}
 
 	allow = {
@@ -604,7 +580,13 @@ district_farming = {
 		weight = 0
 		modifier = {
 			weight = 3
-			owner = { country_uses_food = yes }
+			owner = {
+				country_uses_food = yes
+				has_monthly_income = {
+					resource = food
+					value < 500
+				}
+			}
 			num_free_districts = { type = district_mining value = 0 }
 			num_free_districts = { type = district_generator value = 0 }
 			OR = {
@@ -671,6 +653,13 @@ district_farming = {
 				has_deficit = food
 			}
 		}
+		modifier = {
+			factor = 0
+			owner = {
+				country_uses_food = no
+				NOT = { has_deficit = food }
+			}
+		}
 	}
 
 	ai_resource_production = {
@@ -688,15 +677,15 @@ district_generator_uncapped = {
 
 	show_on_uncolonized = {
 		OR = {
-			is_planet_class = pc_hive
-			is_planet_class = pc_machine
+			uses_district_set = hive_world
+			uses_district_set = machine_world
 		}
 	}
 
 	potential = {
 		OR = {
-			is_planet_class = pc_hive
-			is_planet_class = pc_machine
+			uses_district_set = hive_world
+			uses_district_set = machine_world
 		}
 	}
 
@@ -807,7 +796,7 @@ district_generator_uncapped = {
 	ai_weight = {
 		weight = 0
 		modifier = {
-			weight = 9000
+			weight = 250
 			districts_build_district = yes
 			OR = {
 				owner = {
@@ -851,15 +840,15 @@ district_mining_uncapped = {
 
 	show_on_uncolonized = {
 		OR = {
-			is_planet_class = pc_hive
-			is_planet_class = pc_machine
+			uses_district_set = hive_world
+			uses_district_set = machine_world
 		}
 	}
 
 	potential = {
 		OR = {
-			is_planet_class = pc_hive
-			is_planet_class = pc_machine
+			uses_district_set = hive_world
+			uses_district_set = machine_world
 		}
 	}
 
@@ -1022,9 +1011,9 @@ district_farming_uncapped = {
 	icon = district_farming
 	is_capped_by_modifier = no
 
-	show_on_uncolonized = {	is_planet_class = pc_hive }
+	show_on_uncolonized = { uses_district_set = hive_world }
 
-	potential = { is_planet_class = pc_hive }
+	potential = { uses_district_set = hive_world }
 
 	allow = {
 		NOT = { has_modifier = resort_colony }

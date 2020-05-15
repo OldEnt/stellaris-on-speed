@@ -13,13 +13,19 @@ progressive = {
 		category = pop_factions
 		produces = {
 			influence = 10
-		}		
+		}
 	}
 
 	is_potential = {
 		years_passed > 10
 		has_encountered_other_species = yes
 		NOT = { has_authority = auth_hive_mind }
+		count_owned_pops = {
+			count >= 5
+			limit = {
+				has_ethic = ethic_egalitarian
+			}
+		}
 	}
 
 	parameters = {
@@ -361,7 +367,7 @@ progressive = {
 				modifier = {
 					factor = 0
 					owner = {
-						count_pop_factions = {
+						count_pop_faction = {
 							count < 4
 						}
 					}

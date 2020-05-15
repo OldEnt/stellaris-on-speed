@@ -477,6 +477,21 @@ d_dark_matter_deposit_3 = {
 	}
 }
 
+d_dark_matter_deposit_10 = {
+	resources = { 
+		category = orbital_research_deposits
+		produces = {
+			sr_dark_matter = 50
+		}
+	}
+	station = shipclass_research_station 
+	is_for_colonizeable = no
+	
+	drop_weight = {
+		weight = 0	
+	}
+}
+
 d_living_metal_deposit = {
 	resources = {
 		category = orbital_mining_deposits

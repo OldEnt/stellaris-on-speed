@@ -13,13 +13,19 @@ isolationist = {
 		category = pop_factions
 		produces = {
 			influence = 10
-		}		
+		}
 	}
 
 	is_potential = {
 		years_passed > 10
 		has_encountered_other_species = yes
 		NOT = { has_ethic = ethic_gestalt_consciousness }
+		count_owned_pops = {
+			count >= 5
+			limit = {
+				has_ethic = ethic_xenophobe
+			}
+		}
 	}
 
 	parameters = {
@@ -252,7 +258,7 @@ isolationist = {
 			exists = owner
 			owner = {
 				num_communications > 2
-				count_country = {
+				count_playable_country = {
 					limit = {
 						OR = {
 							has_non_aggression_pact = root.owner
@@ -288,7 +294,7 @@ isolationist = {
 			exists = owner
 			owner = {
 				num_communications > 2
-				count_country = {
+				count_playable_country = {
 					limit = {
 						OR = {
 							has_non_aggression_pact = root.owner
@@ -297,7 +303,7 @@ isolationist = {
 					}
 					count > 1
 				}
-				count_country = {
+				count_playable_country = {
 					limit = {
 						OR = {
 							has_non_aggression_pact = root.owner
@@ -311,7 +317,7 @@ isolationist = {
 
 		trigger = {
 			owner = {
-				count_country = {
+				count_playable_country = {
 					limit = {
 						OR = {
 							has_non_aggression_pact = root.owner
@@ -336,7 +342,7 @@ isolationist = {
 			exists = owner
 			owner = {
 				num_communications > 2
-				count_country = {
+				count_playable_country = {
 					limit = {
 						OR = {
 							has_non_aggression_pact = root.owner
@@ -350,7 +356,7 @@ isolationist = {
 
 		trigger = {
 			owner = {
-				count_country = {
+				count_playable_country = {
 					limit = {
 						OR = {
 							has_non_aggression_pact = root.owner
@@ -574,7 +580,7 @@ isolationist = {
 				modifier = {
 					factor = 0
 					owner = {
-						count_pop_factions = {
+						count_pop_faction = {
 							count < 4
 						}
 					}

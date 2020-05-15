@@ -13,6 +13,12 @@ prosperity = {
 		years_passed > 10
 		has_encountered_other_species = yes
 		NOT = { has_ethic = ethic_gestalt_consciousness }
+		count_owned_pops = {
+			count >= 5
+			limit = {
+				has_ethic = ethic_pacifist
+			}
+		}
 	}
 
 	parameters = {
@@ -28,7 +34,7 @@ prosperity = {
 		category = pop_factions
 		produces = {
 			influence = 10
-		}		
+		}
 	}
 
 	can_join_pre_triggers = {
@@ -445,7 +451,7 @@ prosperity = {
 				modifier = {
 					factor = 0
 					owner = {
-						count_pop_factions = {
+						count_pop_faction = {
 							count < 4
 						}
 					}

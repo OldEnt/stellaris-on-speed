@@ -7,6 +7,7 @@
 
 scientific_revolution = {
 	length = @ambitionDuration
+	icon = "GFX_edict_type_time"
 	
 	is_ambition = yes 		# Costs Unity scaled to tradition cost
 	resources = {
@@ -29,6 +30,7 @@ scientific_revolution = {
 
 desperate_measures = {
 	length = @ambitionDuration
+	icon = "GFX_edict_type_time"
 	
 	is_ambition = yes 		# Costs Unity scaled to tradition cost
 	resources = {
@@ -55,6 +57,7 @@ desperate_measures = {
 
 fortress_proclamation = {
 	length = @ambitionDuration
+	icon = "GFX_edict_type_time"
 	
 	is_ambition = yes 		# Costs Unity scaled to tradition cost
 	resources = {
@@ -77,6 +80,7 @@ fortress_proclamation = {
 
 architectural_renaissance = {
 	length = @ambitionDuration
+	icon = "GFX_edict_type_time"
 	
 	is_ambition = yes 		# Costs Unity scaled to tradition cost
 	resources = {
@@ -104,6 +108,7 @@ architectural_renaissance = {
 
 hearts_and_minds = {
 	length = @ambitionDuration
+	icon = "GFX_edict_type_time"
 	
 	is_ambition = yes 		# Costs Unity scaled to tradition cost
 	resources = {
@@ -127,6 +132,7 @@ hearts_and_minds = {
 
 omnifarious_acquisition = {
 	length = @ambitionDuration
+	icon = "GFX_edict_type_time"
 	
 	is_ambition = yes 		# Costs Unity scaled to tradition cost
 	resources = {
@@ -148,6 +154,7 @@ omnifarious_acquisition = {
 
 grand_fleet = {
 	length = @ambitionDuration
+	icon = "GFX_edict_type_time"
 	
 	is_ambition = yes 		# Costs Unity scaled to tradition cost
 	resources = {
@@ -174,6 +181,7 @@ grand_fleet = {
 
 will_to_power = {
 	length = @ambitionDuration
+	icon = "GFX_edict_type_time"
 	
 	is_ambition = yes 		# Costs Unity scaled to tradition cost
 	resources = {

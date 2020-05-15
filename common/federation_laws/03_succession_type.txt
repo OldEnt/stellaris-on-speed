@@ -49,10 +49,17 @@ succession_type_rotation = {
 	}
 	
 	ai_weight = {
-		base = 26		
+		base = 0
 		
-		#Attempt to lower contribution by a step when there is bad cohesion
+		#Default support
 		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 26
+		}	
+		
+		#Attempt to change to rotating when there is bad cohesion
+		modifier = {
+			desc = federation_acceptance_rotating
 			add = 25
 			federation = {			
 				federation_cohesion < 0
@@ -60,6 +67,7 @@ succession_type_rotation = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_rotating
 			add = 25
 			federation = {			
 				federation_cohesion < -25
@@ -67,6 +75,7 @@ succession_type_rotation = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_rotating
 			add = 25
 			federation = {			
 				federation_cohesion < -50
@@ -74,6 +83,7 @@ succession_type_rotation = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_rotating
 			add = 25
 			federation = {			
 				federation_cohesion < -75
@@ -83,6 +93,7 @@ succession_type_rotation = {
 		
 		#Behaviour-specific
 		modifier = {
+			desc = federation_acceptance_strong_president
 			add = -100
 			is_federation_leader = yes
 			federation = {
@@ -90,20 +101,34 @@ succession_type_rotation = {
 			}
 		}
 		modifier = {
+			desc = federation_acceptance_migrating_flock
 			add = 25
-			OR = {
-				has_ai_personality = migrating_flock
-				has_ai_personality = democratic_crusaders
-			}
+			has_ai_personality = migrating_flock
 		}
 		modifier = {
+			desc = federation_acceptance_democratic_crusaders
+			add = 25
+			has_ai_personality = democratic_crusaders
+		}
+		modifier = {
+			desc = federation_acceptance_xenophobic_isolationists
 			add = 50
-			OR = {
-				has_ai_personality = xenophobic_isolationists
-				has_ai_personality = hive_mind
-				has_ai_personality = machine_intelligence
-				has_ai_personality = servitors
-			}
+			has_ai_personality = xenophobic_isolationists
+		}
+		modifier = {
+			desc = federation_acceptance_hive_mind
+			add = 50
+			has_ai_personality = hive_mind
+		}
+		modifier = {
+			desc = federation_acceptance_machine_intelligence
+			add = 50
+			has_ai_personality = machine_intelligence
+		}
+		modifier = {
+			desc = federation_acceptance_servitors
+			add = 50
+			has_ai_personality = servitors
 		}
 	}
 }
@@ -164,47 +189,62 @@ succession_type_challenge = {
 	}
 	
 	ai_weight = {
-		base = 1
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 1
+		}
 		
 		#Behaviour-specific
 		modifier = {
+			desc = federation_acceptance_president
 			add = -10
 			is_federation_leader = yes
 		}
 		modifier = {
-			factor = 0.5
+			desc = federation_acceptance_gestalt
+			add = -25
 			is_gestalt = yes
 		}
 		modifier = {
+			desc = federation_acceptance_ruler_cyborg
 			add = 10
 			exists = ruler
 			ruler = { has_trait = leader_trait_ruler_cyborg	}
 		}
 		modifier = {
+			desc = federation_acceptance_ruler_synthetic
 			add = 10
 			exists = ruler
 			ruler = { has_trait = leader_trait_ruler_synthetic }
 		}
 		modifier = {
+			desc = federation_acceptance_ruler_psionic
 			add = 10
 			exists = ruler
 			ruler = { has_trait = leader_trait_ruler_psionic }
 		}
 		modifier = {
+			desc = federation_acceptance_ruler_very_strong
 			add = 10
 			exists = ruler
 			ruler = { species = { has_trait = trait_very_strong } }
 		}
 		modifier = {
+			desc = federation_acceptance_honorbound_warriors
 			add = 25
 			has_ai_personality = honorbound_warriors
 		}
 		modifier = {
+			desc = federation_acceptance_warrior_culture
 			add = 50
 			has_civic = civic_warrior_culture
 		}
 		modifier = {
 			#the chosen believes in both challenges
+			desc = federation_acceptance_ruler_chosen
 			add = 100
 			exists = ruler
 			ruler = { has_trait = leader_trait_ruler_chosen	}
@@ -261,32 +301,43 @@ succession_type_random = {
 	}
 	
 	ai_weight = {
-		base = 26
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 26
+		}
 		
 		#Opens up a bit more when cohesion is low, but not high enough that AI will suggest it
 		modifier = {
-			add = 10
+			desc = federation_acceptance_poor_cohesion
+			add = 20
 			is_federation_leader = no
 			federation = { federation_cohesion < 0 }
 		}
 		modifier = {
-			add = 10
+			desc = federation_acceptance_poor_cohesion
+			add = 20
 			is_federation_leader = no
 			federation = { federation_cohesion < -25 }
 		}
 		modifier = {
-			add = 10
+			desc = federation_acceptance_poor_cohesion
+			add = 20
 			is_federation_leader = no
 			federation = { federation_cohesion < -50 }
 		}
 		modifier = {
-			add = 10
+			desc = federation_acceptance_poor_cohesion
+			add = 20
 			is_federation_leader = no
 			federation = { federation_cohesion < -75 }
 		}
 		
 		#Behaviour-specific
 		modifier = {
+			desc = federation_acceptance_president
 			add = -50
 			is_federation_leader = yes
 		}
@@ -346,14 +397,27 @@ succession_type_strongest = {
 	}
 
 	ai_weight = {
-		base = 1
+		base = 0
+		
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 1
+		}
 		
 		#Behaviour-specific
 		modifier = {
+			desc = federation_acceptance_subject
+			add = 10
+			is_subject = yes
+			is_federation_leader = no
+		}
+		modifier = {
+			desc = federation_acceptance_ruthless_capitalists
 			add = 50
 			has_ai_personality = ruthless_capitalists
 		}
 		modifier = {
+			desc = federation_acceptance_president
 			add = 100
 			is_federation_leader = yes
 			federation = { has_federation_law = succession_type_strongest }
@@ -395,17 +459,30 @@ succession_type_strongest_hegemony = {
 	}
 
 	ai_weight = {
-		base = 1
+		base = 0
+		
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 1
+		}
 		
 		#Behaviour-specific
 		modifier = {
+			desc = federation_acceptance_subject
+			add = 25
+			is_subject = yes
+			is_federation_leader = no
+		}
+		modifier = {
+			desc = federation_acceptance_ruthless_capitalists
 			add = 50
 			has_ai_personality = ruthless_capitalists
 		}
 		modifier = {
+			desc = federation_acceptance_president
 			add = 100
 			is_federation_leader = yes
-			federation = { has_federation_law = succession_type_strongest }
+			federation = { has_federation_law = succession_type_strongest_hegemony }
 		}
 	}
 }

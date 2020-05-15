@@ -26,7 +26,13 @@ vote_weight_equal = {
 	}
 	
 	ai_weight = {
-		base = 51		
+		base = 0	
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 51
+		}	
 	}
 }
 
@@ -59,6 +65,12 @@ vote_weight_diplomatic = {
 	}
 	
 	ai_weight = {
-		base = 51
+		base = 0
+		
+		#Default support
+		modifier = {
+			desc = federation_acceptance_generally_positive
+			add = 26
+		}
 	}
 }

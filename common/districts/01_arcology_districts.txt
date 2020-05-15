@@ -3,11 +3,11 @@ district_arcology_housing = {
 	is_capped_by_modifier = no
 
 	show_on_uncolonized = {
-		is_planet_class = pc_city
+		uses_district_set = city_world
 	}
 
 	potential = {
-		is_planet_class = pc_city
+		uses_district_set = city_world
 	}
 
 	conversion_ratio = 1
@@ -145,11 +145,11 @@ district_arcology_arms_industry = {
 	is_capped_by_modifier = no
 
 	show_on_uncolonized = {
-		is_planet_class = pc_city
+		uses_district_set = city_world
 	}
 
 	potential = {
-		is_planet_class = pc_city
+		uses_district_set = city_world
 	}
 
 	conversion_ratio = 1
@@ -252,11 +252,11 @@ district_arcology_civilian_industry = {
 	is_capped_by_modifier = no
 
 	show_on_uncolonized = {
-		is_planet_class = pc_city
+		uses_district_set = city_world
 	}
 
 	potential = {
-		is_planet_class = pc_city
+		uses_district_set = city_world
 		exists = owner
 		owner = {
 			OR = {
@@ -357,14 +357,14 @@ district_arcology_leisure = {
 	is_capped_by_modifier = no
 
 	show_on_uncolonized = {
-		is_planet_class = pc_city
+		uses_district_set = city_world
 		from = {
 			is_regular_empire = yes
 		}
 	}
 
 	potential = {
-		is_planet_class = pc_city
+		uses_district_set = city_world
 		owner = {
 			exists = owner
 			is_regular_empire = yes
