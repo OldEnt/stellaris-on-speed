@@ -1,6 +1,8 @@
-As of now, credit for the latest and all coming updates goes to [url=https://steamcommunity.com/id/oldent/]OldEnt[/url] (development takes place on [url=https://github.com/OldEnt/stellaris-on-speed]his GitHub[/url]). Thank you so much! The initial version had been developed by [url=https://steamcommunity.com/id/schreon]schreon[/url].
-
 This is a balanced 5x speed modification for Stellaris. "Balanced" means that all aspects of the game have been accelerated, so game experience is really just faster, but not distorted.
+
+[i]As of now, credit for the latest and all coming updates goes to [url=https://steamcommunity.com/id/oldent/]OldEnt[/url] (development takes place on [url=https://github.com/OldEnt/stellaris-on-speed]his GitHub[/url]). Thank you so much! The initial version had been developed by [url=https://steamcommunity.com/id/schreon]schreon[/url].[/i]
+
+[b]If you are running any other mods with Stellaris on Speed this mod should always be at the top so other mods can overwrite it if necessary.[/b]
 
 You can play the game at "normal" or even "slow" - the game progress is still quite fast. This also means that players with a weak system or a bad Internet connection can now enjoy the whole game, even on a large map in endgame.
 
