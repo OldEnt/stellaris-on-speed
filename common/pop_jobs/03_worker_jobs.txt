@@ -131,6 +131,15 @@ technician = {
 			}
 			energy = 10
 		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_edict = capacity_subsidies
+				}
+			}
+			energy = 2.5
+		}
 	}
 
 	weight = {
@@ -273,6 +282,15 @@ miner = {
 		produces = {
 			minerals = 20
 		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_edict = mining_subsidies
+				}
+			}
+			energy = 2.5
+		}
 	}
 
 	weight = {
@@ -397,6 +415,15 @@ crystal_miner = {
 		produces = {
 			rare_crystals = 2
 		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_edict = mining_subsidies
+				}
+			}
+			energy = 2.5
+		}
 	}
 
 	weight = {
@@ -489,6 +516,15 @@ gas_extractor = {
 		produces = {
 			exotic_gases = 10
 		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_edict = mining_subsidies
+				}
+			}
+			energy = 2.5
+		}
 	}
 
 	weight = {
@@ -580,6 +616,15 @@ mote_harvester = {
 		category = planet_miners
 		produces = {
 			volatile_motes = 10
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_edict = mining_subsidies
+				}
+			}
+			energy = 2.5
 		}
 	}
 
@@ -686,6 +731,15 @@ farmer = {
 				}
 			}
 			food = -5
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_edict = farming_subsidies
+				}
+			}
+			energy = 2.5
 		}
 	}
 
@@ -997,6 +1051,10 @@ soldier = {
 		modifier = {
 			factor = 0
 			can_be_soldier = no
+		}
+		modifier = {
+			factor = 2
+			has_trait = trait_lithoid
 		}
 	}
 }

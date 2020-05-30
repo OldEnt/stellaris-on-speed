@@ -407,7 +407,17 @@ dimensional_portal_researcher = {
 				planet = {
 					has_planet_flag = dportal_hell
 				}
+			}
 			consumer_goods = 15
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_edict = research_subsidies
+				}
+			}
+			energy = 5
 		}
 	}
 
@@ -650,6 +660,15 @@ dimensional_portal_researcher_gestalt = {
 			}
 			consumer_goods = 15
 		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_edict = research_subsidies
+				}
+			}
+			energy = 5
+		}
 	}
 
 	weight = {
@@ -713,7 +732,7 @@ gas_plant_engineer = {
 	building_icon = building_refinery
 	clothes_texture_index = 3
 	icon = gas_extractor
-	
+
 	possible_pre_triggers = {
 		has_owner = yes
 	}

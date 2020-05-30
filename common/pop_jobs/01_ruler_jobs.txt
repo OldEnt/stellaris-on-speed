@@ -25,9 +25,18 @@ head_researcher = {
 			physics_research = 25
 			engineering_research = 25
 			society_research = 25
-		}			
+		}
+		upkeep = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_edict = research_subsidies
+				}
+			}
+			energy = 1
+		}
 	}
-	
+
 	planet_modifier = {
 		planet_amenities_add = 5
 	}
@@ -51,12 +60,12 @@ head_researcher = {
 			planet_amenities_add = -1
 		}
 	}
-	
+
 	weight = {
 		weight = @ruler_job_weight
 		modifier = {
 			factor = 0.2
-			has_citizenship_rights = no	
+			has_citizenship_rights = no
 			NOT = { has_trait = trait_mechanical }
 		}
 		modifier = {
@@ -66,7 +75,7 @@ head_researcher = {
 		modifier = {
 			factor = 3
 			has_trait = trait_erudite
-		}		
+		}
 		modifier = {
 			factor = 2
 			OR = {
@@ -88,20 +97,20 @@ head_researcher = {
 		}
 		modifier = {
 			factor = 0.65
-			has_trait = trait_presapient_proles	
+			has_trait = trait_presapient_proles
 		}
 		modifier = {
 			factor = 1.5
 			has_trait = trait_latent_psionic
-		}	
+		}
 		modifier = {
 			factor = 2
 			has_trait = trait_psionic
-		}	
+		}
 		modifier = {
 			factor = 0.1
 			has_trait = trait_enigmatic_intelligence_failed
-		}	
+		}
 		modifier = {
 			factor = 2
 			OR = {
@@ -134,6 +143,8 @@ head_researcher = {
 		}
 		modifier = {
 			factor = 0.01
+			exists = planet
+			exists = planet.controller
 			planet.controller = {
 				OR = {
 					is_country_type = swarm
@@ -144,12 +155,12 @@ head_researcher = {
 	}
 }
 
-high_priest = {	
+high_priest = {
 	category = ruler
 	condition_string = RULER_JOB_TRIGGER
 	building_icon = building_citadel_of_faith
 	clothes_texture_index = 1
-	
+
 	possible_pre_triggers = {
 		has_owner = yes
 		is_enslaved = no
@@ -176,11 +187,11 @@ high_priest = {
 			unity = 5
 		}				
 	}
-	
+
 	planet_modifier = {
 		planet_amenities_add = 5
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			OR = {
@@ -199,14 +210,14 @@ high_priest = {
 		modifier = {
 			planet_amenities_add = -1
 		}
-	}	
-	
+	}
+
 	weight = {
-		weight = @ruler_job_weight	
+		weight = @ruler_job_weight
 		modifier = {
 			factor = 0.1
-			has_citizenship_rights = no	
-			NOT = { has_trait = trait_mechanical }	
+			has_citizenship_rights = no
+			NOT = { has_trait = trait_mechanical }
 		}
 		modifier = {
 			factor = 1.25
@@ -218,22 +229,22 @@ high_priest = {
 		modifier = {
 			factor = 0.75
 			has_trait = trait_repugnant
-		}	
+		}
 		modifier = {
 			factor = 1.5
 			OR = {
 				has_trait = trait_robot_propaganda_machines
 				has_trait = trait_traditional
-			}		
+			}
 		}
 		modifier = {
 			factor = 0.5
 			has_trait = trait_quarrelsome
-		}	
+		}
 		modifier = {
 			factor = 1.2
 			has_ethic = ethic_spiritualist
-		}	
+		}
 		modifier = {
 			factor = 0.1
 			has_ethic = ethic_materialist
@@ -246,11 +257,11 @@ high_priest = {
 		modifier = {
 			factor = 1.5
 			has_trait = trait_brainslug
-		}	
+		}
 		modifier = {
 			factor = 1.25
 			has_trait = trait_presapient_natural_intellectuals
-		}	
+		}
 		modifier = {
 			factor = 1.25
 			has_trait = trait_robust
@@ -258,6 +269,8 @@ high_priest = {
 		# crisis purge
 		modifier = {
 			factor = 0.01
+			exists = planet
+			exists = planet.controller
 			planet.controller = {
 				OR = {
 					is_country_type = swarm
@@ -268,12 +281,12 @@ high_priest = {
 	}
 }
 
-administrator = {	
+administrator = {
 	category = ruler
 	condition_string = RULER_JOB_TRIGGER
 	building_icon = building_capital
 	clothes_texture_index = 1
-	
+
 	possible_pre_triggers = {
 		has_owner = yes
 		is_enslaved = no
@@ -291,11 +304,11 @@ administrator = {
 			unity = 15
 		}
 	}
-	
+
 	planet_modifier = {
 		planet_amenities_add = 8
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			OR = {
@@ -314,15 +327,15 @@ administrator = {
 		modifier = {
 			planet_amenities_add = -1.6
 		}
-	}	
-	
+	}
+
 	weight = {
 		weight = @ruler_job_weight
 		modifier = {
 			factor = 0.1
-			has_citizenship_rights = no	
-			NOT = { has_trait = trait_mechanical }	
-		}		
+			has_citizenship_rights = no
+			NOT = { has_trait = trait_mechanical }
+		}
 		modifier = {
 			factor = 1.5
 			OR = {
@@ -339,7 +352,7 @@ administrator = {
 			OR = {
 				has_trait = trait_robot_propaganda_machines
 				has_trait = trait_traditional
-			}		
+			}
 		}
 		modifier = {
 			factor = 0.75
@@ -348,7 +361,7 @@ administrator = {
 		modifier = {
 			factor = 5
 			has_job = administrator
-		}		
+		}
 		modifier = {
 			factor = 1.25
 			has_trait = trait_brainslug
@@ -364,13 +377,15 @@ administrator = {
 		# crisis purge
 		modifier = {
 			factor = 0.01
+			exists = planet
+			exists = planet.controller
 			planet.controller = {
 				OR = {
 					is_country_type = swarm
 					is_country_type = ai_empire
 				}
 			}
-		}	
+		}
 	}
 }
 
@@ -390,41 +405,41 @@ noble = {
 	possible = {
 		ruler_job_check_trigger = yes
 	}
-	
+
 	resources = {
-		category = planet_nobles	
+		category = planet_nobles
 		produces = {
 			unity = 15
 		}
 	}
-	
+
 	planet_modifier = {
 		planet_stability_add = 5
 	}
-		
+
 	weight = {
-		weight = @ruler_job_weight	
+		weight = @ruler_job_weight
 		modifier = {
 			factor = 0.1
-			has_citizenship_rights = no	
-			NOT = { has_trait = trait_mechanical }	
-		}	
+			has_citizenship_rights = no
+			NOT = { has_trait = trait_mechanical }
+		}
 		modifier = {
 			factor = 1.5
 			OR = {
 				has_trait = trait_robot_propaganda_machines
 				has_trait = trait_traditional
-			}		
+			}
 		}
 		modifier = {
 			factor = 0.5
 			has_trait = trait_quarrelsome
-		}		
+		}
 		modifier = {
 			factor = 0.1
 			is_egalitarian = yes
 			NOT = { has_job = noble }
-		}	
+		}
 		modifier = {
 			factor = 5
 			has_job = noble
@@ -432,6 +447,8 @@ noble = {
 		# crisis purge
 		modifier = {
 			factor = 0.01
+			exists = planet
+			exists = planet.controller
 			planet.controller = {
 				OR = {
 					is_country_type = swarm
@@ -454,7 +471,7 @@ merchant = {
 	condition_string = RULER_JOB_TRIGGER
 	building_icon = building_galactic_stock_exchange
 	clothes_texture_index = 1
-		
+
 	possible_pre_triggers = {
 		has_owner = yes
 		is_enslaved = no
@@ -465,7 +482,7 @@ merchant = {
 	possible = {
 		ruler_job_check_trigger = yes
 	}
-	
+
 	planet_modifier = {
 		planet_amenities_add = 5
 		trade_value_add = 40
@@ -474,7 +491,7 @@ merchant = {
 	resources = {
 		category = planet_merchants
 		produces = {
-			trigger = { 
+			trigger = {
 				exists = owner
 				owner = { has_civic = civic_merchant_guilds	}
 			}
@@ -498,8 +515,8 @@ merchant = {
 		modifier = {
 			trade_value_add = 10
 		}
-	}	
-	
+	}
+
 	triggered_planet_modifier = {
 		potential = {
 			OR = {
@@ -519,7 +536,7 @@ merchant = {
 			planet_amenities_add = -1
 		}
 	}
-	
+
 	weight = {
 		weight = @ruler_job_weight
 		modifier = {
@@ -549,12 +566,12 @@ merchant = {
 			factor = 1.25
 			owner = { has_civic = civic_merchant_guilds	}
 			has_trait = trait_brainslug
-		}	
+		}
 		modifier = {
 			factor = 1.125
 			owner = { has_civic = civic_merchant_guilds	}
 			has_trait = trait_presapient_natural_intellectuals
-		}	
+		}
 		modifier = {
 			factor = 1.125
 			owner = { has_civic = civic_merchant_guilds	}
@@ -563,6 +580,8 @@ merchant = {
 		# crisis purge
 		modifier = {
 			factor = 0.01
+			exists = planet
+			exists = planet.controller
 			planet.controller = {
 				OR = {
 					is_country_type = swarm
@@ -585,7 +604,7 @@ executive = {
 	condition_string = RULER_JOB_TRIGGER
 	building_icon = building_capital
 	clothes_texture_index = 1
-		
+
 	possible_pre_triggers = {
 		has_owner = yes
 		is_enslaved = no
@@ -596,19 +615,19 @@ executive = {
 	possible = {
 		ruler_job_check_trigger = yes
 	}
-	
+
 	resources = {
 		category = planet_executives
 		produces = {
 			unity = 10
 		}
-	}	
-	
+	}
+
 	planet_modifier = {
 		planet_amenities_add = 5
 		trade_value_add = 20
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			has_trait = trait_thrifty
@@ -626,7 +645,7 @@ executive = {
 			trade_value_add = 5
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			OR = {
@@ -646,7 +665,7 @@ executive = {
 			planet_amenities_add = -1
 		}
 	}
-	
+
 	weight = {
 		weight = @ruler_job_weight
 		modifier = {
@@ -682,6 +701,8 @@ executive = {
 		# crisis purge
 		modifier = {
 			factor = 0.01
+			exists = planet
+			exists = planet.controller
 			planet.controller = {
 				OR = {
 					is_country_type = swarm
