@@ -1,0 +1,11 @@
+﻿l_english:
+
+ ### Status change value set in FEDERATION_LEADER_POWER_THRESHOLD
+ succession_term_years_10:0 "2 Years"
+ succession_term_years_10_desc:0 "Sets a term length for certain Succession Types."
+ succession_term_years_20:0 "4 Years"
+ succession_term_years_20_desc:0 "$succession_term_years_10_desc$"
+ succession_term_years_30:0 "6 Years"
+ succession_term_years_30_desc:0 "$succession_term_years_10_desc$"
+ succession_term_years_40:0 "8 Years"
+ succession_term_years_40_desc:0 "$succession_term_years_10_desc$"
