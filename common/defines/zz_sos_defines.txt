@@ -58,6 +58,8 @@ NGameplay = {
 
 	CONSTRUCTION_SHIP_WORK_SPEED_MULT = 5	# Construction ship construction speed multiplier
 	
+	ARCHAEOLOGICAL_SITE_DISCOVERY_DAYS = 18
+	
 }
 
 NAI = {	
