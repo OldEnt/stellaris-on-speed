@@ -38,7 +38,6 @@ NGameplay = {
 	}
 
 	LEADER_EXPERIENCE_REQUIREMENT_BASE_VALUE					= 25.0 # Base value when calculating required experience for next skill level
-	LEADER_EXPERIENCE_REQUIREMENT_SCALE_VALUE					= 15.0 # Scale factor when calculating required experience for next skill level
 
 	MID_GAME_START_DEFAULT = 20
 	MID_GAME_START_MAX = 400
