@@ -1,0 +1,22 @@
+# Emergency cooldown disabled until fire rate change is implemented
+
+stellaris_on_speed_ships_10 = {
+	ship_speed_mult = 10
+	ship_interstellar_speed_mult = 10
+#	ship_emergency_ftl_min_days_mult = -0.9
+	ship_jumpdrive_cooldown_mult = -0.9
+}
+
+stellaris_on_speed_ships_5 = {
+	ship_speed_mult = 5
+	ship_interstellar_speed_mult = 5
+#	ship_emergency_ftl_min_days_mult = -0.8
+	ship_jumpdrive_cooldown_mult = -0.8
+}
+
+stellaris_on_speed_ships_2_5 = {
+	ship_speed_mult = 2.5
+	ship_interstellar_speed_mult = 2.5
+#	ship_emergency_ftl_min_days_mult = -0.6
+	ship_jumpdrive_cooldown_mult = -0.6
+}

@@ -1,0 +1,8 @@
+on_monthly_pulse_country = {
+	events = {
+		sos_event.10
+		sos_event.5
+		sos_event.25
+		sos_event.99
+	}
+}
