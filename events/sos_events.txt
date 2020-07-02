@@ -155,6 +155,78 @@ event = {
 }
 
 event = {
+	id = sos_event.87
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_global_flag = stellaris_on_speed_times_5
+	}
+	immediate = {
+		every_country = {
+			limit = {
+				NOT = {
+					has_modifier = stellaris_on_speed_ships_5
+				}
+			}
+			add_modifier = {
+				modifier = "stellaris_on_speed_ships_5"
+				days = -1
+			}
+			remove_modifier = stellaris_on_speed_ships_10
+			remove_modifier = stellaris_on_speed_ships_2_5
+		}
+	}
+}
+
+event = {
+	id = sos_event.88
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_global_flag = stellaris_on_speed_times_10
+	}
+	immediate = {
+		every_country = {
+			limit = {
+				NOT = {
+					has_modifier = stellaris_on_speed_ships_10
+				}
+			}
+			add_modifier = {
+				modifier = "stellaris_on_speed_ships_10"
+				days = -1
+			}
+			remove_modifier = stellaris_on_speed_ships_5
+			remove_modifier = stellaris_on_speed_ships_2_5
+		}
+	}
+}
+
+event = {
+	id = sos_event.89
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_global_flag = stellaris_on_speed_times_2_5
+	}
+	immediate = {
+		every_country = {
+			limit = {
+				NOT = {
+					has_modifier = stellaris_on_speed_ships_2_5
+				}
+			}
+			add_modifier = {
+				modifier = "stellaris_on_speed_ships_2_5"
+				days = -1
+			}
+			remove_modifier = stellaris_on_speed_ships_5
+			remove_modifier = stellaris_on_speed_ships_10
+		}
+	}
+}
+
+event = {
 	id = sos_event.99
 	hide_window = yes
 	is_triggered_only = yes
