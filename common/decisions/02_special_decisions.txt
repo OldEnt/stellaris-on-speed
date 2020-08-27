@@ -809,7 +809,7 @@ decision_arcology_project = {
 	owned_planets_only = yes
 	icon = decision_arcology_project
 
-	enactment_time = 3600
+	enactment_time = 720
 	resources = {
 		category = decisions
 		cost = {
@@ -865,7 +865,7 @@ decision_arcology_project = {
 					}
 				}
 				owner = {
-					set_timed_country_flag = { flag = resolution_breached_terraformed days = 3600 }
+					set_timed_country_flag = { flag = resolution_breached_terraformed days = 720 }
 				}
 			}
 		}
@@ -881,7 +881,7 @@ decision_arcology_project_relic = {
 	owned_planets_only = yes
 	icon = decision_arcology_project
 
-	enactment_time = 3600
+	enactment_time = 720
 	resources = {
 		category = decisions
 		cost = {
@@ -931,7 +931,7 @@ decision_arcology_project_relic = {
 					}
 				}
 				owner = {
-					set_timed_country_flag = { flag = resolution_breached_terraformed days = 3600 }
+					set_timed_country_flag = { flag = resolution_breached_terraformed days = 720 }
 				}
 			}
 		}
