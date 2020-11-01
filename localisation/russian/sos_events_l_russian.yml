@@ -1,0 +1,7 @@
+﻿l_russian:
+sos_event_3.name:0 "Stellaris on Speed"
+sos_event_3.desc:0 "Please choose multiplier of ships' speed. This does not affect fire rate.\n\nType §Gevent sos_event.3§! in the console to get back to this window at any time. This is a simple speed bonus and as such won't scale well with speed upgrades (but gives you multiple options to choose from!).\n\nChanges will take effect on a new month."
+sos_event_3.a:0 "§Gx5 (recommended)§!"
+sos_event_3.b:0 "x10"
+sos_event_3.c:0 "x2.5"
+sos_event_3.d:0 "none (default speed)"
