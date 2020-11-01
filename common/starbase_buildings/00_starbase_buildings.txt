@@ -936,7 +936,10 @@ warp_fluctuator = {
 	
 	potential = {
 		exists = owner
-		owner = { has_technology = tech_hyper_drive_2 }
+		owner = { 
+			has_technology = tech_hyper_drive_2 
+			is_gestalt = no
+		}
 	}
 
 	possible = {

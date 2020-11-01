@@ -395,3 +395,52 @@ machine_assault_3 = {
 	
 	prerequisites = { "tech_biomechanics" }
 }
+
+# Undead Armies
+undead_army = {
+	damage = 1.00
+	health = 1.00
+	has_morale = no
+	collateral_damage = 1.25
+	morale_damage = 1.60
+	war_exhaustion = 0.50
+	time = 12
+	icon_frame = 13
+	pop_limited = no
+	prerequisites = { "tech_assault_armies" }
+
+	resources = {
+		category = armies
+		cost = {
+			energy = 100
+		}
+
+		upkeep = {
+			energy = 3.75
+		}
+	}
+	
+	show_tech_unlock_if = {
+		has_valid_civic = civic_reanimated_armies
+	}
+	
+	potential = {
+		from = {
+			NOR = {
+				has_trait = "trait_mechanical"
+				has_trait = "trait_machine_unit"
+				is_sapient = no
+			}
+		}
+		planet = {
+			has_building = building_dread_encampment
+			num_assigned_jobs = {
+				job = necromancer
+				value >= 1
+			}
+		}
+		owner = {
+			has_valid_civic = civic_reanimated_armies
+		}
+	}
+}

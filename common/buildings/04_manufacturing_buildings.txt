@@ -1284,6 +1284,11 @@ building_ministry_production = {
 			free_building_slots = 0
 		}#Repairs
 	}
+	ai_resource_production = {
+		trigger = { always = yes }
+		alloys = 5
+		consumer_goods = 5
+	}
 }
 
 building_production_center = {
@@ -1384,5 +1389,10 @@ building_production_center = {
 			weight = 1
 			free_building_slots = 0
 		}#Repairs
+	}
+	ai_resource_production = {
+		trigger = { always = yes }
+		alloys = 5
+		consumer_goods = 5
 	}
 }

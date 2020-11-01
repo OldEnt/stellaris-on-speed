@@ -9,11 +9,22 @@ building_military_academy = {
 	
 	potential = {
 		buildings_simple_allow = yes
+		exists = owner
+		owner = { NOT = { has_valid_civic = civic_reanimated_armies } }
 	}
 	
 	destroy_trigger = {
 		exists = owner
-		owner = { is_ai = yes }
+		owner = {
+			OR = {
+				is_ai = yes
+				has_valid_civic = civic_reanimated_armies
+			}
+		}
+	}
+
+	convert_to = {
+		building_dread_encampment
 	}
 	
 	allow = {
@@ -56,6 +67,10 @@ building_military_academy = {
 	prerequisites = {
 		"tech_centralized_command"
 	}
+
+	show_tech_unlock_if = {
+		NOT = { has_valid_civic = civic_reanimated_armies }
+	}
 	
 	triggered_desc = {
 		trigger = {
@@ -74,6 +89,64 @@ building_military_academy = {
 	
 	ai_weight = {
 		weight = 0
+	}
+}
+
+building_dread_encampment = {
+	base_buildtime = @b2_time
+	base_cap_amount = 1
+
+	category = army
+	
+	potential = {
+		buildings_simple_allow = yes
+		exists = owner
+		owner = { has_valid_civic = civic_reanimated_armies }
+	}
+
+	convert_to = {
+		building_military_academy
+	}
+	
+	allow = {
+		has_upgraded_capital = yes
+	}
+	
+	army_modifier = {
+		army_starting_experience_add = 110
+	}
+	
+	planet_modifier = {
+		job_necromancer_add = 1
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b2_minerals
+		}			
+		upkeep = {
+			energy = @b1_upkeep
+		}
+	}
+	
+	prerequisites = {
+		"tech_centralized_command"
+	}
+
+	show_tech_unlock_if = {
+		has_valid_civic = civic_reanimated_armies
+	}
+	
+	triggered_desc = {
+		trigger = {
+			always = yes
+		}
+		text = job_necromancer_effect_desc
+	}
+	
+	ai_weight = {
+		weight = 50
 	}
 }
 

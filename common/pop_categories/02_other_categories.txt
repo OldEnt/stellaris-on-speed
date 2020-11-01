@@ -1150,18 +1150,20 @@ precursor = {
 	clothes_texture_index = 1
 	change_job_threshold = 2
 
+	demotion_time = 5
+
 	assign_to_pop = {
 		exists = owner
-		OR = {
-			is_same_species = owner
-			owner = {
-				is_fallen_empire_spiritualist = yes
-			}
-		}
 		owner = {
 			OR = {
 				is_country_type = fallen_empire
 				is_country_type = awakened_fallen_empire
+			}
+		}
+		OR = {
+			is_same_species = owner
+			owner = {
+				is_fallen_empire_spiritualist = yes
 			}
 		}
 	}
@@ -1177,6 +1179,10 @@ precursor = {
 					is_country_type = ai_empire
 				}
 			}
+		}
+		modifier = {
+			factor = 0.01
+			is_unemployed = yes
 		}
 	}
 

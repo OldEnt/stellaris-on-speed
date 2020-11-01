@@ -95,10 +95,6 @@ decision_baol_life_seed = {
 		custom_tooltip = decision_baol_life_seed_effects
 		hidden_effect = {
 			owner = { remove_country_flag = relic_last_baol_activated }
-			if = { #Special case since Grunur Prime has mostly non-convertable deposits
-				limit = { has_planet_flag = grunur_prime }
-				reroll_deposits = yes
-			}
 			change_pc = pc_gaia
 			if = {
 				limit = { NOT = { exists = event_target:nu_baol_species } }
@@ -157,7 +153,10 @@ decision_museum_exhibits = {
 		NOT = { 
 			has_modifier = "planet_museum_exhibits" 
 		}
-		any_owned_pop = { has_job = culture_worker }
+		num_assigned_jobs = {
+			job = culture_worker
+			value >= 1
+		}
 	}
 
 	resources = {

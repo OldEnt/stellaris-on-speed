@@ -3305,6 +3305,11 @@ tech_synthetic_leaders = {
 				has_level > 3
 			}
 		}
+		modifier = {
+			factor = 0.33
+			has_origin = origin_necrophage
+			has_trait = trait_necrophage
+		}
 	}
 
 	ai_weight = {

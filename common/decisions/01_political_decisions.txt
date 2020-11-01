@@ -427,7 +427,6 @@ decision_expel_population = {
 				random_owned_pop = {
 					limit = {
 						is_robot_pop = no
-						has_culture_shock = no
 						NOR = {
 							has_trait = trait_hive_mind 
 							has_trait = trait_nerve_stapled

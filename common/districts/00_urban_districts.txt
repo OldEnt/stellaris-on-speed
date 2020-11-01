@@ -68,7 +68,6 @@ district_city = {
 			exists = owner
 			owner = {
 				is_regular_empire = yes
-				is_fallen_empire = no
 			}
 		}
 		modifier = {

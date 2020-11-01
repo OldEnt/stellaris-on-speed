@@ -17,7 +17,7 @@ technologist = {
 	}
 
 	is_potential = {
-		years_passed > 10
+		years_passed > 2
 		has_encountered_other_species = yes
 		NOT = { has_ethic = ethic_gestalt_consciousness }
 		count_owned_pops = {
@@ -43,7 +43,6 @@ technologist = {
 
 	can_join_faction = {
 		is_shackled_robot = no
-		has_culture_shock = no
 		NOT = { has_trait = trait_nerve_stapled }
 		NOR = {
 			has_ethic = ethic_spiritualist

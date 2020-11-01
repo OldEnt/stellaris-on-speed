@@ -685,7 +685,7 @@ building_syndicate_outreach_office = {
 			minerals = @b3_minerals
 		}
 		produces = {
-			unity = 60
+			unity = 30
 		}
 		upkeep = {
 			energy = 10

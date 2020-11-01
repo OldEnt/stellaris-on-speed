@@ -40,7 +40,7 @@ asteroid = {
 	
 	num_target_locators = 0
 	icon_frame = 2
-	is_civilian = yes
+	is_civilian = no
 	class = shipclass_military
 	is_designable = no
 }

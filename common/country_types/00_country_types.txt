@@ -1536,14 +1536,17 @@ gate_builders = {
 	resources = {
 		category = country_base
 		produces = {
-			energy = 50
+			energy = 500
 			minerals = 50
 			physics_research = 50
 			society_research = 50
 			engineering_research = 50
 			influence = 15
 			unity = 10
-			alloys = 25
+			alloys = 625
+			volatile_motes = 100
+			rare_crystals = 5
+			exotic_gases = 5
 		}
 	}
 }
@@ -1728,6 +1731,7 @@ crystal = {
 }
 
 drone = {
+	always_valid_target_aggressive = yes
 	share_communications = no
 	is_space_critter = yes
 	blocks_piracy = yes

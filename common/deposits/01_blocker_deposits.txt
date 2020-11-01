@@ -926,8 +926,31 @@ d_unsupervised_settlement = {
 	}
 
 	on_cleared = {
-		create_pop = {
-			species = owner
+		if = {
+			limit = {
+				any_owned_pop = {
+					is_robot_pop = no
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					is_robot_pop = no
+				}
+				root = {
+					create_pop = {
+						species = prev
+					}
+				}
+			}
+		}
+		else = {
+			random_owned_pop = {
+				root = {
+					create_pop = {
+						species = prev
+					}
+				}
+			}
 		}
 	}
 

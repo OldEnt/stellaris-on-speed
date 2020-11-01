@@ -8,7 +8,7 @@ early_default_plan = {
 	income = {
 		energy = 250
 		minerals = 1000
-		alloys = 1000
+		alloys = 500
 		unity = 250
 
 		physics_research = 1000
@@ -54,7 +54,7 @@ early_default_plan = {
 		}
 
 		focus = {
-			consumer_goods = 220
+			consumer_goods = 100
 		}
 	}
 
@@ -272,7 +272,7 @@ ultimate_default_plan = {
 
 	focus = {
 		energy = 250
-		minerals = 800
+		minerals = 500
 		alloys = 1000
 	}
 

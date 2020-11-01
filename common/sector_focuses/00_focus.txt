@@ -80,18 +80,23 @@ basic = {
 		weight = {
 			weight = 1
 			modifier = {
-				factor = 2
-				free_housing < 0
+				factor = 10
+				free_housing < -10
 			}
 
 			modifier = {
 				factor = 3
-				free_amenities < 0
+				free_housing < 0
 			}
 
 			modifier = {
 				factor = 0
-				free_amenities >= 0
+				free_housing >= 3
+			}
+
+			modifier = {
+				factor = 2
+				free_amenities < 0
 			}
 
 			modifier = {
@@ -112,7 +117,7 @@ basic = {
 			weight = 1
 
 			modifier = {
-				factor = 4
+				factor = 5
 				free_amenities < 0
 			}
 
@@ -129,6 +134,7 @@ basic = {
 			# No one to work it anyway
 			modifier = {
 				factor = 0
+				has_available_jobs = entertainer
 				NOT = {
 					any_owned_pop = { 
 						OR = { 
@@ -157,7 +163,7 @@ basic = {
 			weight = 1
 
 			modifier = {
-				factor = 4
+				factor = 5
 				free_amenities < 0
 			}
 
@@ -174,6 +180,7 @@ basic = {
 			# No one to work it anyway
 			modifier = {
 				factor = 0
+				has_available_jobs = entertainer
 				NOT = {
 					any_owned_pop = { 
 						OR = { 
@@ -379,6 +386,37 @@ basic = {
 						}
 					}
 				}
+			}
+		}
+	}
+
+	building = {
+		key = building_necrophage_elevation_chamber
+		weight = {
+			weight = 10
+
+			modifier = {
+				factor = 0
+				exists = controller
+				controller = {
+					OR = {
+						NOT = { has_origin = origin_necrophage }
+						NOT = { has_trait = trait_necrophage }
+					}
+				}
+			}
+
+			modifier = {
+				factor = 10
+				num_assigned_jobs = {
+					job = unemployed
+					value > 5
+				}
+			}
+
+			modifier = {
+				factor = 10
+				planet_stability <= 30
 			}
 		}
 	}
@@ -723,6 +761,24 @@ balanced = {
 					}
 				}
 			}
+
+			modifier = {
+				factor = 5
+				OR = {
+					num_districts = {
+						type = district_hab_mining
+						value >= 3
+					}
+					num_districts = {
+						type = district_mining
+						value >= 4
+					}
+					num_districts = {
+						type = district_mining_uncapped
+						value >= 4
+					}
+				}
+			}
 		}
 	}
 
@@ -736,7 +792,29 @@ balanced = {
 				owner = { 
 					has_monthly_income = {
 						resource = energy
-						value < 50
+						value < 10
+					}
+				}
+			}
+
+			modifier = {
+				factor = 5
+				OR = {
+					num_districts = {
+						type = district_hab_energy
+						value >= 3
+					}
+					num_districts = {
+						type = district_generator
+						value >= 4
+					}
+					num_districts = {
+						type = district_generator_uncapped
+						value >= 4
+					}
+					num_districts = {
+						type = district_rw_generator
+						value >= 1
 					}
 				}
 			}
@@ -1057,6 +1135,32 @@ balanced = {
 		weight = {
 			weight = 2
 
+			modifier = {
+				factor = 3
+				OR = {
+					num_assigned_jobs = {
+						job = fabricator
+						value >= 5
+					}
+					num_assigned_jobs = {
+						job = artisan
+						value >= 5
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				NOR = {
+					num_assigned_jobs = {
+						job = fabricator
+						value > 0
+					}
+					num_assigned_jobs = {
+						job = artisan
+						value > 0
+					}
+				}
+			}
 			# No one to work it anyway
 			modifier = {
 				factor = 0
@@ -1077,6 +1181,20 @@ balanced = {
 		weight = {
 			weight = 2
 
+			modifier = {
+				factor = 3
+				num_assigned_jobs = {
+					job = alloy_drone
+					value >= 5
+				}
+			}
+			modifier = {
+				factor = 0
+				num_assigned_jobs = {
+					job = alloy_drone
+					value = 0
+				}
+			}
 			# No one to work it anyway
 			modifier = {
 				factor = 0
@@ -1760,6 +1878,23 @@ production = {
 					}
 				}
 			}
+			modifier = {
+				factor = 5
+				OR = {
+					num_districts = {
+						type = district_hab_mining
+						value >= 3
+					}
+					num_districts = {
+						type = district_mining
+						value >= 4
+					}
+					num_districts = {
+						type = district_mining_uncapped
+						value >= 4
+					}
+				}
+			}
 		}
 	}
 
@@ -1786,6 +1921,28 @@ production = {
 							is_unemployed = yes 
 							has_job = servant 
 						}
+					}
+				}
+			}
+
+			modifier = {
+				factor = 5
+				OR = {
+					num_districts = {
+						type = district_hab_energy
+						value >= 3
+					}
+					num_districts = {
+						type = district_generator
+						value >= 4
+					}
+					num_districts = {
+						type = district_generator_uncapped
+						value >= 4
+					}
+					num_districts = {
+						type = district_rw_generator
+						value >= 1
 					}
 				}
 			}
@@ -2484,6 +2641,32 @@ manufacturing = {
 		weight = {
 			weight = 2
 
+			modifier = {
+				factor = 3
+				OR = {
+					num_assigned_jobs = {
+						job = fabricator
+						value >= 5
+					}
+					num_assigned_jobs = {
+						job = artisan
+						value >= 5
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				NOR = {
+					num_assigned_jobs = {
+						job = fabricator
+						value > 0
+					}
+					num_assigned_jobs = {
+						job = artisan
+						value > 0
+					}
+				}
+			}
 			# No one to work it anyway
 			modifier = {
 				factor = 0
@@ -2504,6 +2687,20 @@ manufacturing = {
 		weight = {
 			weight = 2
 
+			modifier = {
+				factor = 3
+				num_assigned_jobs = {
+					job = alloy_drone
+					value >= 5
+				}
+			}
+			modifier = {
+				factor = 0
+				num_assigned_jobs = {
+					job = alloy_drone
+					value = 0
+				}
+			}
 			# No one to work it anyway
 			modifier = {
 				factor = 0
