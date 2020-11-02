@@ -115,6 +115,7 @@ replicator = {
 		weight = @spawner_drone_job_weight
 		modifier = {
 			factor = 0.01 # crisis purge
+			exists = planet
 			exists = planet.controller
 			planet.controller = {
 				OR = {
@@ -142,8 +143,11 @@ coordinator = {
 		drone_job_check_trigger = yes
 	}
 
-	country_modifier = {
-		country_admin_cap_add = 15
+	resources = {
+		category = planet_bureaucrats
+		upkeep = {
+			energy = 20
+		}
 	}
 
 	triggered_planet_modifier = {
@@ -180,10 +184,23 @@ coordinator = {
 		}
 	}
 
-	resources = {
-		category = planet_bureaucrats
-		upkeep = {
-			energy = 20
+	country_modifier = {
+		country_admin_cap_add = 15
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			exists = planet
+			planet = {
+				exists = sector
+				sector = {
+					exists = leader
+					leader = { has_trait = leader_trait_amplifier }
+				}
+			}
+		}
+		modifier = {
+			country_admin_cap_add = 1
 		}
 	}
 
@@ -260,8 +277,25 @@ synapse_drone = {
 		drone_job_check_trigger = yes
 	}
 
-	country_modifier = {
-		country_admin_cap_add = 5
+	resources = {
+		category = planet_synapse_drones
+		produces = {
+			unity = 15
+		}
+		upkeep = {
+			trigger = {
+				is_lithoid = no
+			}
+			food = 10
+			energy = 10
+		}
+		upkeep = {
+			trigger = {
+				is_lithoid = yes
+			}
+			minerals = 10
+			energy = 10
+		}
 	}
 
 	triggered_planet_modifier = {
@@ -284,24 +318,23 @@ synapse_drone = {
 		}
 	}
 
-	resources = {
-		category = planet_synapse_drones
-		produces = {
-			unity = 15
-		}
-		upkeep = {
-			trigger = {
-				is_lithoid = no
+	country_modifier = {
+		country_admin_cap_add = 5
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			exists = planet
+			planet = {
+				exists = sector
+				sector = {
+					exists = leader
+					leader = { has_trait = leader_trait_mindfulness }
+				}
 			}
-			food = 10
-			energy = 10
 		}
-		upkeep = {
-			trigger = {
-				is_lithoid = yes
-			}
-			minerals = 10
-			energy = 10
+		modifier = {
+			country_admin_cap_add = 1
 		}
 	}
 
@@ -998,7 +1031,7 @@ gas_extraction_drone = {
 mining_drone = {
 	category = simple_drone
 	condition_string = DRONE_JOB_TRIGGER
-	building_icon = building_crystal_mines
+	building_icon = building_mineral_purification_plant
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -1056,6 +1089,10 @@ mining_drone = {
 					value > 85
 				}
 			}
+		}
+		modifier = {
+			factor = 0.65
+			has_trait = trait_necrophage
 		}
 	}
 }
@@ -1150,13 +1187,17 @@ agri_drone = {
 				}
 			}
 		}
+		modifier = {
+			factor = 0.65
+			has_trait = trait_necrophage
+		}
 	}
 }
 
 technician_drone = {
 	category = simple_drone
 	condition_string = DRONE_JOB_TRIGGER
-	building_icon = building_power_plant
+	building_icon = building_energy_grid
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -1223,6 +1264,10 @@ technician_drone = {
 			years_passed < 1
 			owner = { has_valid_civic = civic_machine_assimilator }
 			has_trait = trait_cybernetic
+		}
+		modifier = {
+			factor = 0.65
+			has_trait = trait_necrophage
 		}
 	}
 }
@@ -1322,6 +1367,22 @@ maintenance_drone = {
 			owner = {
 				has_valid_civic = civic_machine_maintenance_protocols
 			}
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				free_amenities <= -5
+			}
+		}
+		modifier = {
+			factor = 1.5
+			planet = {
+				free_amenities <= -15
+			}
+		}
+		modifier = {
+			factor = 0.85
+			has_trait = trait_necrophage
 		}
 	}
 }
@@ -1483,6 +1544,67 @@ bluelotus_drone = {
 			OR = {
 				has_trait = trait_robust
 				has_trait = trait_robot_efficient_processors
+			}
+		}
+	}
+}
+
+chronicle_drone = {
+	category = complex_drone
+	condition_string = DRONE_JOB_TRIGGER
+	building_icon = building_galactic_memorial_1
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+	}
+
+	possible = { drone_job_check_trigger = yes }
+
+	resources = {
+		category = planet_researchers
+		produces = {
+			unity = 20
+			society_research = 10
+		}
+		upkeep = {
+			trigger = { is_robotic_species = yes }
+			minerals = 5
+			energy = 10
+		}
+		upkeep = {
+			trigger = { species = { is_archetype = BIOLOGICAL } }
+			energy = 5
+			food = 10
+		}
+		upkeep = {
+			trigger = { species = { is_archetype = LITHOID } }
+			energy = 5
+			minerals = 10
+		}
+	}
+
+	weight = {
+		weight = @complex_drone_job_weight
+		modifier = {
+			factor = 1.25
+			has_trait = trait_charismatic
+		}
+		modifier = {
+			factor = 0.8
+			has_trait = trait_repugnant
+		}
+		modifier = {
+			factor = 0.01 # crisis purge
+			exists = planet
+			exists = planet.controller
+			planet.controller = {
+				OR = {
+					is_country_type = swarm
+					is_country_type = ai_empire
+				}
 			}
 		}
 	}

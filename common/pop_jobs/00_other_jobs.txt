@@ -404,7 +404,7 @@ crisis_purge = {
 		
 	possible = { # controlled by crisis
 		exists = planet
-		planet = { exists = controller }
+		exists = planet.controller
 		planet.controller = {
 			OR = {
 				is_country_type = swarm
@@ -425,6 +425,8 @@ crisis_purge = {
 
 		modifier = {
 			factor = 200 # brings @special_job_weight up to 2
+			exists = planet
+			exists = planet.controller
 			planet.controller = {
 				OR = {
 					is_country_type = swarm
@@ -435,6 +437,8 @@ crisis_purge = {
 
 		modifier = {
 			factor = 9999 # u die when crisis'd
+			exists = planet
+			exists = planet.controller
 			planet.controller = {
 				OR = {
 					is_country_type = swarm

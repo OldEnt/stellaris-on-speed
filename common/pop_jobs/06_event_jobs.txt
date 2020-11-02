@@ -767,7 +767,11 @@ gas_plant_engineer = {
 		modifier = {
 			factor = 10
 			has_job = gas_refiner
-		}		
+		}
+		modifier = {
+			factor = 1.5
+			has_trait = trait_necrophage
+		}
 	}
 }
 
@@ -778,7 +782,7 @@ gas_plant_engineer_gestalt = {
 	building_icon = building_refinery
 	clothes_texture_index = 3
 	icon = gas_refiner_drone
-	
+
 	possible_pre_triggers = {
 		has_owner = yes
 	}
@@ -861,13 +865,17 @@ cave_cleaner = {
 		modifier = {
 			factor = 10
 			has_job = miner
-		}		
+		}
+		modifier = {
+			factor = 1.5
+			has_trait = trait_necrophage
+		}
 	}
 }
 
 # Gestalt Species
 cave_cleaner_gestalt = {
-	category = specialist
+	category = complex_drone
 	condition_string = SPECIALIST_JOB_TRIGGER
 	building_icon = building_mineral_purification_plant
 	clothes_texture_index = 3
