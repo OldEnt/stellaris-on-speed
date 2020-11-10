@@ -14,3 +14,9 @@ on_yearly_pulse = {
 		sos_event.89
 	}
 }
+
+on_colonized = {
+	events = {
+		necroids.9000
+	}
+}

@@ -1,0 +1,453 @@
+namespace = necroids
+# Consumption event for necrophage
+planet_event = {
+	id = necroids.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			has_building = building_necrophage_elevation_chamber
+			has_building = building_necrophage_house_of_apotheosis
+		}
+		exists = owner
+		owner = {
+			has_origin = origin_necrophage
+			has_trait = trait_necrophage
+		}
+		num_assigned_jobs = {
+			job = necro_apprentice
+			value >= 1
+		}
+	}
+	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					has_planet_flag = sos_necroids_timeout
+				}
+			}
+			planet_event = {
+				id = necroids.9002				# Adding additional SoS events to avoid complete on_actions overwrite.
+				days = 720
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_planet_flag = sos_necroids_timeout
+				}
+			}
+			planet_event = {
+				id = necroids.9004
+				days = 1440
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_planet_flag = sos_necroids_timeout
+				}
+			}
+			planet_event = {
+				id = necroids.9006
+				days = 2160
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_planet_flag = sos_necroids_timeout
+				}
+			}
+			planet_event = {
+				id = necroids.9008
+				days = 2880
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_planet_flag = sos_necroids_timeout
+				}
+			}
+			set_timed_planet_flag = {
+				flag = sos_necroids_timeout
+				days = 3600
+			}
+		}
+		set_timed_planet_flag = {
+			flag = necrophage_alert_timer
+			days = 576
+		}
+		random_owned_pop = {
+			limit = {
+				is_same_species = owner_species
+				has_trait = trait_necrophage
+			}
+			species = {
+				save_event_target_as = necrophage_pop_species
+			}
+		}
+		every_owned_pop = {
+			limit = {
+				has_job = necro_apprentice
+			}
+			root = {
+				change_variable = {
+					which = var_necrophaged_pops
+					value = 1
+				}
+				if = {
+					limit = {
+						exists = event_target:necrophage_pop_species
+					}
+					create_pop = {
+						species = event_target:necrophage_pop_species
+					}
+				}
+				else = {
+					create_pop = {
+						species = owner_species
+					}
+				}
+				if = {
+					limit = {
+						last_created_pop = {
+							NOT = {
+								ideal_planet_class = root
+							}
+						}
+						NOR = {
+							uses_district_set = habitat
+							uses_district_set = ring_world
+							uses_district_set = city_world
+							uses_district_set = hive_world
+							uses_district_set = machine_world
+							is_planet_class = pc_gaia
+							is_planet_class = pc_relic
+						}
+						owner = {
+							has_technology = tech_glandular_acclimation
+							NOT = {
+								ideal_planet_class = root
+							}
+						}
+					}
+					last_created_pop = {
+						modify_species = {
+							ideal_planet_class = root
+						}
+					}
+				}
+			}
+			every_country = {
+				limit = {
+					has_communications = root.owner
+					NOT = {
+						is_country = root.owner
+					}
+					NOT = {
+						is_same_species = prev
+					}
+					NOT = {
+						has_ai_personality_behaviour = purger
+					}
+					NOT = {
+						has_origin = origin_necrophage
+					}
+					NOT = {
+						has_ethic = ethic_gestalt_consciousness
+					}
+					NOR = {
+						has_valid_civic = civic_death_cult
+						has_valid_civic = civic_death_cult_corporate
+					}
+					OR = {
+						is_country_type = default
+						has_ai_personality = awakened_fallen_empire_xenophile
+					}
+				}
+				add_opinion_modifier = {
+					who = root.owner
+					modifier = opinion_necrophage
+				}
+			}
+			every_country = {
+				limit = {
+					has_communications = root.owner
+					NOT = {
+						is_country = root.owner
+					}
+					is_same_species = prev
+				}
+				add_opinion_modifier = {
+					who = root.owner
+					modifier = opinion_necrophage_our_species
+				}
+			}
+			kill_pop = yes
+		}
+		create_message = {
+			type = MESSAGE_NECROPHAGE_POPS_NECROPHAGED
+			localization = MESSAGE_NECROPHAGE_POPS_NECROPHAGED
+			days = 30
+			target = this
+			variable = {
+				type = name
+				localization = PLANET
+				scope = this
+			}
+			variable = {
+				type = variable
+				varname = var_necrophaged_pops
+				localization = VALUE
+				scope = this
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					has_swapped_tradition = tr_harmony_unity_of_self
+				}
+			}
+			owner = {
+				add_monthly_resource_mult = {
+					resource = unity
+					value = 1.5
+					min = 5
+					max = 100
+				}
+			}
+		}
+		set_variable = {
+			which = var_necrophaged_pops
+			value = 0
+		}
+	}
+}
+
+# 2, 4, 6 and 8 years after establishing colony. Modified vanilla on_action handles from 10th on.
+planet_event = {
+	id = necroids.9000
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		exists = owner
+		owner = {
+			has_origin = origin_necrophage
+			has_trait = trait_necrophage
+		}
+	}
+	immediate = {
+		planet_event = {
+			id = necroids.9002			# Adding additional SoS events to avoid complete on_actions overwrite.
+			days = 720
+		}
+		planet_event = {
+			id = necroids.9004
+			days = 1440
+		}
+		planet_event = {
+			id = necroids.9006
+			days = 2160
+		}
+		planet_event = {
+			id = necroids.9008
+			days = 2880
+		}
+	}
+}
+
+planet_event = {
+	id = necroids.9002
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			has_building = building_necrophage_elevation_chamber
+			has_building = building_necrophage_house_of_apotheosis
+		}
+		exists = owner
+		owner = {
+			has_origin = origin_necrophage
+			has_trait = trait_necrophage
+		}
+		num_assigned_jobs = {
+			job = necro_apprentice
+			value >= 1
+		}
+	}
+	immediate = {
+		planet_event = {
+			id = necroids.1
+		}
+	}
+}
+
+planet_event = {
+	id = necroids.9004
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			has_building = building_necrophage_elevation_chamber
+			has_building = building_necrophage_house_of_apotheosis
+		}
+		exists = owner
+		owner = {
+			has_origin = origin_necrophage
+			has_trait = trait_necrophage
+		}
+		num_assigned_jobs = {
+			job = necro_apprentice
+			value >= 1
+		}
+	}
+	immediate = {
+		planet_event = {
+			id = necroids.1
+		}
+	}
+}
+
+planet_event = {
+	id = necroids.9006
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			has_building = building_necrophage_elevation_chamber
+			has_building = building_necrophage_house_of_apotheosis
+		}
+		exists = owner
+		owner = {
+			has_origin = origin_necrophage
+			has_trait = trait_necrophage
+		}
+		num_assigned_jobs = {
+			job = necro_apprentice
+			value >= 1
+		}
+	}
+	immediate = {
+		planet_event = {
+			id = necroids.1
+		}
+	}
+}
+
+planet_event = {
+	id = necroids.9008
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			has_building = building_necrophage_elevation_chamber
+			has_building = building_necrophage_house_of_apotheosis
+		}
+		exists = owner
+		owner = {
+			has_origin = origin_necrophage
+			has_trait = trait_necrophage
+		}
+		num_assigned_jobs = {
+			job = necro_apprentice
+			value >= 1
+		}
+	}
+	immediate = {
+		planet_event = {
+			id = necroids.1
+		}
+	}
+}
+
+# AI help event
+country_event = {
+	id = necroids.6
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = yes
+	}
+	immediate = {
+		every_owned_planet = {
+			limit = {
+				has_modifier = planet_culture_shock
+				count_owned_pop = {
+					count <= 1
+					limit = {
+						is_same_species = root
+					}
+				}
+			}
+			while = {
+				count = 3
+				limit = {
+					count_owned_pop = {
+						count < 3
+						limit = {
+							is_same_species = root
+						}
+					}
+				}
+				root = {
+					capital_scope = {
+						random_owned_pop = {
+							limit = {
+								species = {
+									is_same_species = root
+								}
+							}
+							resettle_pop = {
+								pop = this
+								planet = prevprevprev
+							}
+						}
+					}
+				}
+			}
+			add_district = district_city
+		}
+		every_planet_within_border = {
+			limit = {
+				is_colony = yes
+				owner = {
+					is_country_type = primitive
+				}
+			}
+			if = {
+				limit = {
+					has_observation_outpost = yes
+				}
+				observation_outpost = {
+					dismantle = yes
+				}
+			}
+			add_modifier = {
+				modifier = planet_culture_shock
+				years = 2
+			}
+			set_owner = ROOT
+			while = {
+				count = 3
+				root = {
+					capital_scope = {
+						random_owned_pop = {
+							limit = {
+								species = {
+									is_same_species = root
+								}
+							}
+							resettle_pop = {
+								pop = this
+								planet = prevprevprev
+							}
+						}
+					}
+				}
+			}
+			add_district = district_city
+		}
+	}
+}

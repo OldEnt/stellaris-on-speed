@@ -2331,21 +2331,21 @@ necro_apprentice = {
 	resources = {
 		category = planet_necro_apprentices
 		produces = {
-			unity = 2
+			unity = 10
 		}
 		upkeep = {
 			trigger = {
 				is_organic_species = yes
 				is_lithoid = no
 			}
-			consumer_goods = 1
+			consumer_goods = 5
 			food = @living_standard_food_normal
 		}
 		upkeep = {
 			trigger = {
 				is_lithoid = yes
 			}
-			consumer_goods = 1
+			consumer_goods = 5
 			minerals = @living_standard_food_normal
 		}
 	}
