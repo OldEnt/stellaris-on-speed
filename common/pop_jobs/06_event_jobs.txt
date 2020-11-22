@@ -389,7 +389,7 @@ dimensional_portal_researcher = {
 					has_planet_flag = dportal_void
 				}
 			}
-			sr_dark_matter = 1 
+			sr_dark_matter = 1
 		}
 		produces = {
 			trigger = {
@@ -474,6 +474,10 @@ dimensional_portal_researcher = {
 		modifier = {
 			factor = 0.1
 			can_take_servant_job = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_trait = trait_necrophage
 		}
 	}
 }
@@ -604,7 +608,7 @@ dimensional_portal_researcher_gestalt = {
 					has_planet_flag = dportal_void
 				}
 			}
-			sr_dark_matter = 1 
+			sr_dark_matter = 1
 		}
 		produces = {
 			trigger = {
@@ -620,7 +624,8 @@ dimensional_portal_researcher_gestalt = {
 				owner = {
 					is_machine_empire = yes
 				}
-				energy = 15
+			}
+			energy = 15
 		}
 		upkeep = {
 			trigger = {
@@ -629,7 +634,8 @@ dimensional_portal_researcher_gestalt = {
 					is_hive_empire = yes
 					is_lithoid_empire = no
 				}
-				food = 15
+			}
+			food = 15
 		}
 		upkeep = {
 			trigger = {
@@ -638,7 +644,8 @@ dimensional_portal_researcher_gestalt = {
 					is_hive_empire = yes
 					is_lithoid_empire = yes
 				}
-				minerals = 15
+			}
+			minerals = 15
 		}
 		upkeep = {
 			trigger = {
@@ -646,6 +653,7 @@ dimensional_portal_researcher_gestalt = {
 				owner = {
 					is_gestalt = no
 				}
+			}
 			consumer_goods = 15
 		}
 		upkeep = {
@@ -760,8 +768,8 @@ gas_plant_engineer = {
 		upkeep = {
 			minerals = 50
 		}
-	}	
-	
+	}
+
 	weight = {
 		weight = @specialist_job_weight
 		modifier = {
@@ -801,7 +809,7 @@ gas_plant_engineer_gestalt = {
 			planet_jobs_exotic_gases_produces_mult = 0.05
 		}
 	}
-	
+
 	resources = {
 		category = planet_refiners
 		produces = {
@@ -810,14 +818,14 @@ gas_plant_engineer_gestalt = {
 		upkeep = {
 			minerals = 50
 		}
-	}	
-	
+	}
+
 	weight = {
 		weight = @specialist_job_weight
 		modifier = {
 			factor = 10
 			has_job = gas_refiner
-		}		
+		}
 	}
 }
 
@@ -830,7 +838,7 @@ cave_cleaner = {
 	building_icon = building_mineral_purification_plant
 	clothes_texture_index = 3
 	icon = miner
-	
+
 	possible_pre_triggers = {
 		has_owner = yes
 	}
@@ -858,8 +866,8 @@ cave_cleaner = {
 		upkeep = {
 			energy = 10
 		}
-	}	
-	
+	}
+
 	weight = {
 		weight = @specialist_job_weight
 		modifier = {
@@ -880,7 +888,7 @@ cave_cleaner_gestalt = {
 	building_icon = building_mineral_purification_plant
 	clothes_texture_index = 3
 	icon = mining_drone
-	
+
 	possible_pre_triggers = {
 		has_owner = yes
 	}
@@ -908,14 +916,14 @@ cave_cleaner_gestalt = {
 		upkeep = {
 			energy = 10
 		}
-	}	
-	
+	}
+
 	weight = {
 		weight = @specialist_job_weight
 		modifier = {
 			factor = 10
 			has_job = miner
-		}		
+		}
 	}
 }
 
@@ -938,7 +946,7 @@ titan_hunter = {
 	}
 
 	planet_modifier = {
-		trade_value_add = 6
+		trade_value_add = 30
 	}
 
 	resources = {

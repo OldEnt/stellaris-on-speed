@@ -72,6 +72,18 @@ NGameplay = {
 	COUNCIL_ELECTION_TIMER = 1440					# time between galactic council elections
 	COUNCIL_ELECTION_SOON_CUTOFF = 36				# when there is less than this many days left until the next council we show an alert
 	
+	MOVE_CAPITAL_COOLDOWN_YEARS 			= 2  	# Cooldown in years for moving capital.
+
+	INTEGRATE_SUBJECT_MIN_DAYS 				= 720 # Amount of days the subject has been a subject before we can integrate it
+	SUBJECT_INTEGRATION_BASE_PROGRESS 		= 25 # Cost per month for subject integration
+	SUBJECT_INTEGRATION_COST_BASE			= 250 # Base cost for integration
+	SUBJECT_INTEGRATION_COST_PER_POP 		= 0.2 # Integration cost per pop
+	SUBJECT_INTEGRATION_COST_PER_PLANET		= 2 # Integration cost per planet
+	
+}
+
+NEconomy = {
+		BORROW_DIPLO_WEIGHT_FAVOR_COST		= { 125 }
 }
 
 NAI = {	

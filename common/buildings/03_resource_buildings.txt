@@ -1223,7 +1223,7 @@ building_resource_silo = {
 	}
 
 	country_modifier = {
-		country_resource_max_add = 2000
+		country_resource_max_add = 10000
 	}
 
 	prerequisites = {
