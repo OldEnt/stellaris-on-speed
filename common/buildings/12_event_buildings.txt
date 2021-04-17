@@ -8,6 +8,7 @@ building_junkheap = {
 	can_demolish = yes
 	can_be_ruined = no
 	can_be_disabled = no
+	position_priority = 0
 
 	potential = {
 		exists = owner
@@ -44,12 +45,6 @@ building_akx_worm_3 = {
 		NOT = { has_modifier = slave_colony }
 	}
 
-	allow = {
-	}
-
-	planet_modifier  = {
-	}
-
 	prerequisites = {
 		"tech_akx_worm_3"
 	}
@@ -65,10 +60,6 @@ building_akx_worm_3 = {
 		produces = {
 			physics_research = 80
 		}
-	}
-
-	ai_weight = {
-		factor = 2
 	}
 }
 
@@ -185,14 +176,6 @@ building_artist_patron = {
 			}
 		}
 	}
-
-	ai_weight = {
-		weight = 2
-		modifier = {
-			factor = 0
-			is_planet_class = pc_habitat
-		}
-	}
 }
 
 building_waste_reprocessing_center = {
@@ -233,14 +216,6 @@ building_waste_reprocessing_center = {
 	triggered_desc = {
 		text = job_technician_drone_effect_desc
 	}
-
-	ai_weight = {
-		weight = 500
-		modifier = {
-			factor = 0
-			is_planet_class = pc_habitat
-		}
-	}
 }
 
 building_nuumismatic_shrine = {
@@ -277,14 +252,6 @@ building_nuumismatic_shrine = {
 	}
 	triggered_desc = {
 		text = job_merchant_effect_desc
-	}
-
-	ai_weight = {
-		weight = 2
-		modifier = {
-			factor = 0
-			is_planet_class = pc_habitat
-		}
 	}
 }
 
@@ -359,31 +326,7 @@ building_crystal_plant_2 = {
 		}
 		text = job_translucer_drone_effect_desc
 	}
-
-	ai_weight = {
-		weight = 2
-		modifier = {
-			factor = 5
-			owner = {
-				has_monthly_income = {
-					resource = rare_crystals
-					value < 8
-				}
-			}
-		}
-		modifier = {
-			factor = 0
-			num_buildings = { type = building_crystal_plant_2 value >= 2 }
-		}
-		# There are already unworked jobs
-		# Blocks buildings unworkable by remaining pops (slaves/robots etc)
-		# Will be improved... at some point
-		modifier = {
-			factor = 0
-			free_jobs > 0
-		}
-	}
-
+	
 	ai_resource_production = {
 		rare_crystals = @b3_rare_upkeep
 		trigger = {

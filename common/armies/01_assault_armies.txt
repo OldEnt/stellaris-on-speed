@@ -72,6 +72,7 @@ slave_army = {
 	prerequisites = { "tech_neural_implants" }
 	
 	allow = {
+		has_building = building_slave_processing
 		any_owned_pop = { is_pop_category = slave }
 	}
 	potential = {
@@ -433,7 +434,7 @@ undead_army = {
 			}
 		}
 		planet = {
-			has_building = building_dread_encampment
+			has_active_building = building_dread_encampment
 			num_assigned_jobs = {
 				job = necromancer
 				value >= 1

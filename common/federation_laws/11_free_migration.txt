@@ -44,7 +44,10 @@ free_migration_no = {
 }
 
 free_migration_yes = {
-	potential = { host_has_dlc = Federations }
+	potential = { 
+		host_has_dlc = Federations
+		NOT = { has_federation_flag = special_federation }
+	}
 	allow = {
 		custom_tooltip = {
 			NOT = {

@@ -27,6 +27,7 @@
 @xp_to_level_5 = 1920
 
 default_federation = {
+	base_intel = 60
 	icon = "GFX_default_federation"
 	potential = {
 		always = yes
@@ -293,6 +294,7 @@ default_federation = {
 }
 
 trade_federation = {
+	base_intel = 50
 	icon = "GFX_trade_federation"
 	potential = {
 		host_has_dlc = Federations
@@ -574,6 +576,7 @@ trade_federation = {
 }
 
 research_federation = {
+	base_intel = 50
 	icon = "GFX_research_federation"
 	potential = {
 		host_has_dlc = Federations
@@ -843,6 +846,7 @@ research_federation = {
 }
 
 military_federation = {
+	base_intel = 50
 	icon = "GFX_military_federation"
 	potential = {
 		host_has_dlc = Federations
@@ -1105,6 +1109,7 @@ military_federation = {
 }
 
 hegemony_federation = {
+	base_intel = 40
 	icon = "GFX_hegemony_federation"
 	potential = {
 		host_has_dlc = Federations

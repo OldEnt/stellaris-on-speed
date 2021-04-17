@@ -1,7 +1,10 @@
 @cooldown = 720
 
 treaties_separate_no = {
-	potential = { host_has_dlc = Federations }
+	potential = { 
+		host_has_dlc = Federations
+		NOT = { has_federation_flag = special_federation }
+	}
 	allow = {
 		custom_tooltip = {
 			NOT = {
@@ -56,7 +59,9 @@ treaties_separate_no = {
 }
 
 treaties_separate_yes = {
-	potential = { always = yes }
+	potential = { 
+		NOT = { has_federation_flag = special_federation }
+	}
 	allow = {
 		custom_tooltip = {
 			NOT = {

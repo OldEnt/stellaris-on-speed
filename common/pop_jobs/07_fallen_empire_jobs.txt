@@ -11,6 +11,7 @@ fe_overseer = {
 		
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {
@@ -50,6 +51,7 @@ fe_sky_cardinal = {
 		
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {
@@ -90,6 +92,7 @@ fe_guardian_bot = {
 
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {
@@ -135,6 +138,7 @@ fe_protector = {
 
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {
@@ -179,6 +183,7 @@ fe_archivist = {
 		
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {
@@ -224,11 +229,11 @@ fe_acolyte_farm = {
 	
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {
 		owner = { is_fallen_empire_spiritualist = yes }
-		is_same_species = owner
 	}
 
 	resources = {
@@ -264,11 +269,11 @@ fe_acolyte_mine = {
 
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {
 		owner = { is_fallen_empire_spiritualist = yes }
-		is_same_species = owner
 	}
 
 	resources = {
@@ -304,11 +309,11 @@ fe_acolyte_generator = {
 	
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {
 		owner = { is_fallen_empire_spiritualist = yes }
-		is_same_species = owner
 	}
 
 	resources = {
@@ -345,6 +350,7 @@ fe_augur = {
 		
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {
@@ -386,6 +392,7 @@ fe_xeno_keeper = {
 		
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {
@@ -429,6 +436,7 @@ fe_xeno_ward = {
 		
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {
@@ -477,6 +485,7 @@ fe_hedonist = {
 		
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {
@@ -526,6 +535,7 @@ fe_acolyte_artisan = {
 		
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {
@@ -571,6 +581,7 @@ fe_maintenance_bot = {
 		
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {

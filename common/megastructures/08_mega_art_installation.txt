@@ -272,6 +272,19 @@ mega_art_installation_4 = {
 	}
 }
 
+# Permanently Ruined Mega Art Installation
+mega_art_installation_permanently_ruined = {
+	entity = mega_art_institution_01_destroyed_entity
+	construction_entity = "mega_art_institution_01_destroyed_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -27 y = -27 }
+
+	potential = {
+		always = no
+	}
+}
+
 # Ruined Mega Art Installation
 mega_art_installation_ruined = {
 	entity = mega_art_institution_01_destroyed_entity

@@ -1,7 +1,9 @@
 @cooldown = 720
 
 declare_war_unanimous_vote = {
-	potential = { always = yes }
+	potential = { 
+		NOT = { has_federation_type = imperial_loyalists_federation }
+	}
 	allow = {
 		custom_tooltip = {
 			NOT = {
@@ -51,6 +53,7 @@ declare_war_majority_vote = {
 	potential = {
 		host_has_dlc = Federations
 		NOT = { has_federation_type = hegemony_federation }
+		NOT = { has_federation_type = imperial_loyalists_federation }
 	}
 	allow = {
 		custom_tooltip = {
@@ -104,6 +107,7 @@ declare_war_majority_vote_hegemony = {
 	potential = {
 		host_has_dlc = Federations
 		has_federation_type = hegemony_federation
+		NOT = { has_federation_type = imperial_loyalists_federation }
 	}
 	allow = {
 		custom_tooltip = {
@@ -152,7 +156,10 @@ declare_war_majority_vote_hegemony = {
 }
 
 declare_war_president_vote = {
-	potential = { host_has_dlc = Federations }
+	potential = { 
+		host_has_dlc = Federations
+		NOT = { has_federation_type = imperial_loyalists_federation }
+	}
 	allow = {
 		custom_tooltip = {
 			NOT = {

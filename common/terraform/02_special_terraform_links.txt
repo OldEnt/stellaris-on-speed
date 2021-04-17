@@ -248,11 +248,6 @@ terraform_link = {
 			factor = 0	
 			resource_stockpile_compare = { resource = energy value < 40000 }
 		}
-		# TODO: Fix
-		#modifier = {
-		#	factor = 0		
-		#	from = { sector_controlled = yes }
-		#}
 		modifier = {
 			factor = 0
 			OR = {		
@@ -281,11 +276,6 @@ terraform_link = {
 			factor = 0	
 			resource_stockpile_compare = { resource = energy value < 40000 }
 		}
-		# TODO: Fix
-		#modifier = {
-		#	factor = 0		
-		#	from = { sector_controlled = yes }
-		#}
 		modifier = {
 			factor = 0
 			OR = {
@@ -314,11 +304,6 @@ terraform_link = {
 			factor = 0	
 			resource_stockpile_compare = { resource = energy value < 40000 }
 		}
-		# TODO: Fix
-		#modifier = {
-		#	factor = 0		
-		#	from = { sector_controlled = yes }
-		#}
 		modifier = {
 			factor = 0
 			OR = {
@@ -347,11 +332,6 @@ terraform_link = {
 			factor = 0	
 			resource_stockpile_compare = { resource = energy value < 40000 }
 		}
-		# TODO: Fix
-		#modifier = {
-		#	factor = 0		
-		#	from = { sector_controlled = yes }
-		#}
 		modifier = {
 			factor = 0
 			OR = {
@@ -380,11 +360,6 @@ terraform_link = {
 			factor = 0	
 			resource_stockpile_compare = { resource = energy value < 40000 }
 		}
-		# TODO: Fix
-		#modifier = {
-		#	factor = 0		
-		#	from = { sector_controlled = yes }
-		#}
 		modifier = {
 			factor = 0
 			OR = {
@@ -413,11 +388,6 @@ terraform_link = {
 			factor = 0	
 			resource_stockpile_compare = { resource = energy value < 40000 }
 		}
-		# TODO: Fix
-		#modifier = {
-		#	factor = 0		
-		#	from = { sector_controlled = yes }
-		#}
 		modifier = {
 			factor = 0
 			OR = {
@@ -446,11 +416,6 @@ terraform_link = {
 			factor = 0	
 			resource_stockpile_compare = { resource = energy value < 40000 }
 		}
-		# TODO: Fix
-		#modifier = {
-		#	factor = 0		
-		#	from = { sector_controlled = yes }
-		#}
 		modifier = {
 			factor = 0
 			OR = {
@@ -479,11 +444,6 @@ terraform_link = {
 			factor = 0	
 			resource_stockpile_compare = { resource = energy value < 40000 }
 		}
-		# TODO: Fix
-		#modifier = {
-		#	factor = 0		
-		#	from = { sector_controlled = yes }
-		#}
 		modifier = {
 			factor = 0
 			OR = {
@@ -512,11 +472,6 @@ terraform_link = {
 			factor = 0	
 			resource_stockpile_compare = { resource = energy value < 40000 }
 		}
-		# TODO: Fix
-		#modifier = {
-		#	factor = 0		
-		#	from = { sector_controlled = yes }
-		#}
 		modifier = {
 			factor = 0
 			OR = {
@@ -554,11 +509,6 @@ terraform_link = {
 			factor = 0	
 			resource_stockpile_compare = { resource = energy value < 40000 }
 		}
-		# TODO: Fix
-		#modifier = {
-		#	factor = 0		
-		#	from = { sector_controlled = yes }
-		#}
 		modifier = {
 			factor = 0
 			OR = {
@@ -596,11 +546,6 @@ terraform_link = {
 			factor = 0	
 			resource_stockpile_compare = { resource = energy value < 40000 }
 		}
-		# TODO: Fix
-		#modifier = {
-		#	factor = 0		
-		#	from = { sector_controlled = yes }
-		#}
 		modifier = {
 			factor = 0
 			OR = {

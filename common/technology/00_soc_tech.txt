@@ -226,6 +226,7 @@ tech_eco_simulation = {
 
 	modifier = {
 		planet_farmers_food_produces_mult = 0.2
+		starbase_constructions_food_produces_mult = 0.20
 	}
 
 	weight_modifier = {
@@ -302,6 +303,7 @@ tech_gene_crops = {
 
 	modifier = {
 		planet_farmers_food_produces_mult = 0.2
+		starbase_constructions_food_produces_mult = 0.20
 	}
 
 	weight_modifier = {
@@ -378,6 +380,7 @@ tech_nano_vitality_crops = {
 
 	modifier = {
 		planet_farmers_food_produces_mult = 0.2
+		starbase_constructions_food_produces_mult = 0.20
 	}
 
 	weight_modifier = {
@@ -454,6 +457,7 @@ tech_nutrient_replication = {
 
 	modifier = {
 		planet_jobs_food_produces_mult = 0.15
+		starbase_constructions_food_produces_mult = 0.20
 	}
 
 	potential = {
@@ -2304,7 +2308,7 @@ tech_epigenetic_triggers = {
 			NOR = {
 				has_country_flag = found_presapients
 				any_planet_within_border = {
-					any_pop = {
+					any_owned_pop = {
 						is_sapient = no
 					}
 				}
@@ -4109,6 +4113,95 @@ tech_precognition_interface = {
 	}
 }
 
+tech_thought_enforcement = {
+	cost = @tier4cost2
+	area = society
+	tier = 4
+	category = { psionics }
+	is_rare = yes
+	prerequisites = { "tech_telepathy" }
+	weight = @tier4weight2
+	is_reverse_engineerable = no
+
+	# Unlocks thought enforcement edict
+
+	potential = {
+		NOT = { has_ethic = ethic_gestalt_consciousness }
+	}
+
+	weight_modifier = {
+		factor = 0.5
+		modifier = {
+			factor = 0
+			host_has_dlc = "Utopia"
+		}
+		modifier = {
+			factor = 0.50
+			NOT = {
+				research_leader = {
+					area = society
+					has_trait = "leader_trait_expertise_psionics"
+				}
+			}
+		}
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = tech_thought_enforcement }
+			}
+		}
+		modifier = {
+			factor = 2
+			is_spiritualist = yes
+			has_ethic = ethic_authoritarian
+		}
+		modifier = {
+			factor = 3
+			is_spiritualist = yes
+			has_ethic = ethic_fanatic_authoritarian
+		}
+		modifier = {
+			factor = 2
+			has_valid_civic = civic_police_state
+		}
+		modifier = {
+			factor = 2
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_maniacal"
+			}
+		}
+		modifier = {
+			factor = 4
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_psionics"
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = 5 #very rare tech
+		modifier = {
+			factor = 2
+			is_authoritarian = yes
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_psionics"
+			}
+		}
+	}
+}
+
 tech_psi_jump_drive_1 = {
 	cost = @tier5cost2
 	area = society
@@ -4570,6 +4663,78 @@ tech_galactic_administration = {
 	}
 }
 
+tech_planetary_infrastructure_1 = {
+	cost = @tier2cost3
+	area = society
+	tier = 2
+	category = { new_worlds }
+	prerequisites = { "tech_colonial_centralization" "tech_ship_armor_2" }
+	weight = @tier2weight3
+
+	gateway = infrastructure
+
+	modifier = {
+		planet_max_buildings_add = 1
+	}
+
+	weight_modifier = {
+		factor = 4
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_new_worlds"
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = 5 # Important tech
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_new_worlds"
+			}
+		}
+	}
+}
+
+tech_planetary_infrastructure_2 = {
+	cost = @tier4cost3
+	area = society
+	tier = 4
+	category = { new_worlds }
+	prerequisites = { "tech_galactic_administration" "tech_ship_armor_4" "tech_planetary_infrastructure_1" }
+	weight = @tier4weight3
+
+	modifier = {
+		planet_max_buildings_add = 1
+	}
+
+	weight_modifier = {
+		factor = 4
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_new_worlds"
+			}
+		}
+	}
+
+	ai_weight = {
+		factor = 5 # Important tech
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_new_worlds"
+			}
+		}
+	}
+}
+
 #Subdermal Implants
 tech_subdermal_stimulation = {
 	cost = @tier2cost2
@@ -4638,19 +4803,84 @@ tech_subdermal_stimulation = {
 	}
 }
 
+tech_tracking_implants = {
+	area = society
+	cost = @tier4cost2
+	tier = 4
+	category = { statecraft }
+	prerequisites = { "tech_subdermal_stimulation" "tech_galactic_bureaucracy" }
+	is_rare = yes
+	weight = @tier4weight2
+
+	# Unlocks tracking implants edict
+
+	weight_modifier = {
+		factor = 0.5
+		modifier = {
+			factor = 0.20
+			NOR = {
+				has_modifier = "curator_insight"
+				research_leader = {
+					area = society
+					has_trait = "leader_trait_curator"
+				}
+				research_leader = {
+					area = society
+					has_trait = "leader_trait_expertise_statecraft"
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			is_materialist = yes
+			is_authoritarian = yes
+		}
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = tech_tracking_implants }
+			}
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 9999
+	}
+}
+
 #Global Manufacturing
 tech_global_production_strategy = {
 	cost = @tier3cost1
 	area = society
 	tier = 3
 	category = { statecraft }
-	prerequisites = { "tech_alloys_1" "tech_luxuries_1" "tech_colonial_centralization" }
+	prerequisites = { "tech_alloys_1" "tech_colonial_centralization" }
 	weight = @tier3weight1
 
 	# unlocks Ministry of Production
 
 	weight_modifier = {
 		factor = 1.5
+		modifier = {
+			factor = 0
+			NOR = {
+				has_technology = "tech_luxuries_1"
+				country_uses_consumer_goods = no
+			}
+		}
 		modifier = {
 			factor = 1.25
 			research_leader = {
@@ -4680,6 +4910,8 @@ tech_adaptive_bureaucracy = {
 	category = { statecraft }
 	prerequisites = { "tech_planetary_unification" }
 	weight = @tier1weight2
+
+	gateway = espionage
 
 	modifier = {
 		country_admin_cap_mult = 0.05
@@ -4779,8 +5011,11 @@ tech_colonial_bureaucracy = {
 	prerequisites = { "tech_adaptive_bureaucracy" }
 	weight = @tier2weight1
 
+	gateway = espionage
+
 	modifier = {
 		country_admin_cap_add = 10
+		add_base_country_intel = 10
 	}
 
 	weight_modifier = {
@@ -4830,6 +5065,7 @@ tech_galactic_bureaucracy = {
 
 	modifier = {
 		country_admin_cap_add = 10
+		add_base_country_intel = 10
 	}
 
 	weight_modifier = {
@@ -5008,6 +5244,7 @@ tech_autonomous_agents = {
 
 	modifier = {
 		country_base_influence_produces_add = 1
+		envoys_add = 1
 	}
 
 	weight_modifier = {
@@ -5060,6 +5297,7 @@ tech_embodied_dynamism = {
 	modifier = {
 		leader_skill_levels = 1
 		leaders_upkeep_mult = -0.10
+		envoys_add = 1
 	}
 
 	potential = {
@@ -5120,7 +5358,7 @@ tech_neural_implants = {
 	weight_modifier = {
 		modifier = {
 			factor = 1.5
-			count_owned_pops = {
+			count_owned_pop = {
 				limit = {
 					is_enslaved = yes
 				}
@@ -5129,7 +5367,7 @@ tech_neural_implants = {
 		}
 		modifier = {
 			factor = 2
-			count_owned_pops = {
+			count_owned_pop = {
 				limit = {
 					is_enslaved = yes
 				}
@@ -5138,7 +5376,7 @@ tech_neural_implants = {
 		}
 		modifier = {
 			factor = 2
-			count_owned_pops = {
+			count_owned_pop = {
 				limit = {
 					is_enslaved = yes
 				}
@@ -6315,6 +6553,127 @@ tech_xeno_relations = {
 		modifier = {
 			factor = 0.01
 			has_civic = civic_inwards_perfection
+		}
+	}
+}
+
+### Productivity
+tech_capital_productivity_1 = {
+	cost = @tier2cost3
+	area = society
+	tier = 2
+	category = { statecraft }
+	prerequisites = { "tech_planetary_unification" }
+	weight = @tier2weight3
+
+	# Increases production and upkeep of planets with tier 2 capitals or better.
+
+	modifier = {
+		description = tech_capital_productivity_1_effect
+	}
+
+	weight_modifier = {
+		factor = 1
+		modifier = {
+			factor = 0.25
+			NOT = { has_tradition = tr_prosperity_finish }
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+}
+
+tech_capital_productivity_2 = {
+	cost = @tier3cost3
+	area = society
+	tier = 3
+	category = { statecraft }
+	prerequisites = { "tech_colonial_centralization" "tech_capital_productivity_1" }
+	weight = @tier2weight3
+
+	# Increases production and upkeep of planets with tier 2 capitals or better.
+
+	modifier = {
+		description = tech_capital_productivity_2_effect
+	}
+
+	weight_modifier = {
+		factor = 1
+		modifier = {
+			factor = 0.25
+			NOT = { has_tradition = tr_prosperity_finish }
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+}
+
+tech_capital_productivity_3 = {
+	cost = @tier4cost3
+	area = society
+	tier = 4
+	category = { statecraft }
+	prerequisites = { "tech_galactic_administration" "tech_capital_productivity_2" }
+	weight = @tier2weight3
+
+	# Increases production and upkeep of planets with tier 2 capitals or better.
+
+	modifier = {
+		description = tech_capital_productivity_3_effect
+	}
+
+	weight_modifier = {
+		factor = 1
+		modifier = {
+			factor = 0.25
+			NOT = { has_tradition = tr_prosperity_finish }
+		}
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
+		}
+	}
+
+	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = society
+				has_trait = "leader_trait_expertise_statecraft"
+			}
 		}
 	}
 }

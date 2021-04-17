@@ -22,6 +22,18 @@ complex_drone = {
 		energy = 100
 	}
 
+	resettlement_cost = {
+		trigger = {
+			owner = {
+				NOR = {
+					has_valid_civic = civic_machine_ota_updates
+					has_valid_civic = civic_hive_subsumed_will
+				}
+			}
+		}
+		influence = 10
+	}
+
 	unemployment_resources = {
 		category = unemployment_resources
 	}
@@ -105,6 +117,18 @@ simple_drone = {
 
 	resettlement_cost = {
 		energy = 100
+	}
+
+	resettlement_cost = {
+		trigger = {
+			owner = {
+				NOR = {
+					has_valid_civic = civic_machine_ota_updates
+					has_valid_civic = civic_hive_subsumed_will
+				}
+			}
+		}
+		influence = 10
 	}
 
 	unemployment_resources = {

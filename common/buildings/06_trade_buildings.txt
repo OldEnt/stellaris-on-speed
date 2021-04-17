@@ -54,38 +54,22 @@ building_commercial_zone = {
 		"building_commercial_megaplex"
 	}
 
-	ai_weight = {
-		weight = 0
-		modifier = {
-			weight = 5
-			OR = {
-				has_building = building_holo_theatres
-				has_building = building_hyper_entertainment_forum
-			}
-			OR = {
-				num_buildings = { type = building_research_lab_1 value = 3 } #Prevents AI falling behind on research to all but the most research dedicated players
-				has_building = building_research_lab_2
-				has_building = building_research_lab_3
-			}
-			NOR = {
-				has_building = building_commercial_zone
-				has_building = building_commercial_megaplex
-			}
-		}
-		modifier = {
-			factor = 10
-			exists = owner
-			owner = {
-				is_megacorp = yes
-			}
-			num_buildings = { type = building_commercial_zone value < 3 }
-		}
-	}
-
 	ai_resource_production = {
-		energy = 5
+		energy = 10
 		trigger = {
 			always = yes
+		}
+	}
+	ai_resource_production = {
+		energy = 15
+		trigger = {
+			OR = {
+				num_unemployed >= 10
+				num_assigned_jobs = {
+					job = servant
+					value >= 10
+				}
+			}
 		}
 	}
 }
@@ -148,25 +132,22 @@ building_commercial_megaplex = {
 		text = job_merchant_effect_desc
 	}
 
-	ai_weight = {
-		weight = 0
-		modifier = {
-			weight = 1
-			buildings_has_crystals = yes
-		}
-		modifier = {
-			factor = 10
-			exists = owner
-			owner = {
-				is_megacorp = yes
-			}
-		}
-	}
-
 	ai_resource_production = {
-		energy = 5
+		energy = 20
 		trigger = {
 			always = yes
+		}
+	}
+	ai_resource_production = {
+		energy = 30
+		trigger = {
+			OR = {
+				num_unemployed >= 10
+				num_assigned_jobs = {
+					job = servant
+					value >= 10
+				}
+			}
 		}
 	}
 }
@@ -223,34 +204,26 @@ building_galactic_stock_exchange = {
 		text = job_merchant_effect_desc
 	}
 
-	ai_weight = {
-		weight = 0
-		modifier = {
-			factor = 0
-			buildings_has_crystals = no
-		}
-		modifier = {
-			weight = 10
-			OR = {
-				has_building = building_commercial_megaplex
-				has_building = building_commercial_zone
-				has_district = district_hab_commercial
-				has_district = district_rw_commercial
-			}
-		}
-		modifier = {
-			factor = 10
-			exists = owner
-			owner = {
-				is_megacorp = yes
-			}
+	ai_resource_production = {
+		energy = 15
+		trigger = {
+			always = yes
 		}
 	}
-
 	ai_resource_production = {
 		energy = 5
 		trigger = {
-			always = yes
+			solar_system = {
+				has_system_trade_value >= 50
+			}
+		}
+	}
+	ai_resource_production = {
+		energy = 15
+		trigger = {
+			solar_system = {
+				has_system_trade_value >= 80
+			}
 		}
 	}
 }

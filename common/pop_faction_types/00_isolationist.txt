@@ -20,7 +20,8 @@ isolationist = {
 		years_passed > 2
 		has_encountered_other_species = yes
 		NOT = { has_ethic = ethic_gestalt_consciousness }
-		count_owned_pops = {
+		NOT = { has_country_flag = suppress_vanilla_factions }
+		count_owned_pop = {
 			count >= 5
 			limit = {
 				has_ethic = ethic_xenophobe
@@ -228,6 +229,7 @@ isolationist = {
 		trigger = {
 			owner = {
 				NOR = {
+					num_migration_pacts > 0 #doesn't check all the stuff below, but early exclude if it is true
 					any_relation = {
 						has_communications = root.owner
 						OR = {
@@ -271,11 +273,9 @@ isolationist = {
 
 		trigger = {
 			owner = {
-				any_country = {
-					OR = {
-						has_non_aggression_pact = root.owner
-						has_association_status = root.owner
-					}
+				OR = {
+					num_non_aggression_pacts > 0
+					exists = associated_federation
 				}
 			}
 		}
@@ -470,6 +470,31 @@ isolationist = {
 		}
 	}
 
+	demand = {
+		title = "ISOLATIONIST_REPEAL_PROACTIVE_FIRST_CONTACT_POLICY"
+		unfulfilled_title = "ISOLATIONIST_NO_PROACTIVE_FIRST_CONTACT_POLICY"
+		desc = "ISOLATIONIST_REPEAL_PROACTIVE_FIRST_CONTACT_POLICY_DESC"
+
+		unfulfilled_effect = -10
+		fulfilled_effect = 0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					years_passed <= 15
+					has_country_flag = recent_first_contact_process_started
+				}
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOT = { has_policy_flag = first_contact_proactive }
+			}
+		}
+	}
+
 	on_create = {
 		pop_faction_event = { id = factions.1 }
 	}
@@ -545,6 +570,11 @@ isolationist = {
 								is_ai = no
 								is_country_type = default
 								has_communications = prev
+								has_intel_level = {
+									who = prev
+									category = government
+									level >= 1
+								}
 							}
 							country_event = { id = factions.2000 }
 						}

@@ -20,7 +20,8 @@ supremacist = {
 		years_passed > 2
 		has_encountered_other_species = yes
 		NOT = { has_ethic = ethic_gestalt_consciousness }
-		count_owned_pops = {
+		NOT = { has_country_flag = suppress_vanilla_factions }
+		count_owned_pop = {
 			count >= 5
 			limit = {
 				has_ethic = ethic_xenophobe
@@ -251,7 +252,8 @@ supremacist = {
 
 		trigger = {
 			owner = {
-				NOT = {
+				NOR = {
+					num_migration_pacts > 0
 					any_country = {
 						is_country_type = default
 						has_communications = root.owner
@@ -333,20 +335,7 @@ supremacist = {
 			owner = {
 				host_has_dlc = "Leviathans Story Pack"
 				any_country = {
-					OR = {
-						is_country_type = guardian
-						is_country_type = guardian_dragon
-						is_country_type = guardian_stellarite
-						is_country_type = guardian_wraith
-						is_country_type = guardian_hiver
-						is_country_type = guardian_horror
-						is_country_type = guardian_fortress
-						is_country_type = guardian_dreadnought
-						is_country_type = guardian_sphere
-						is_country_type = guardian_scavenger_bot
-						is_country_type = guardian_elderly_tiyanki
-						is_country_type = guardian_hatchling
-					}
+					is_guardian_country = yes
 					has_communications = prev
 				}
 			}
@@ -457,6 +446,31 @@ supremacist = {
 		}
 	}
 
+	demand = {
+		title = "SUPREMACIST_AGGRESSIVE_FIRST_CONTACT_POLICY"
+		unfulfilled_title = "SUPREMACIST_NO_AGGRESSIVE_FIRST_CONTACT_POLICY"
+		desc = "SUPREMACIST_NO_AGGRESSIVE_FIRST_CONTACT_POLICY_DESC"
+
+		unfulfilled_effect = -5
+		fulfilled_effect = 10
+
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					years_passed <= 15
+					has_country_flag = recent_first_contact_process_started
+				}
+			}
+		}
+
+		trigger = {
+			owner = {
+				has_policy_flag = first_contact_attack_allowed
+			}
+		}
+	}
+
 	on_create = {
 		pop_faction_event = { id = factions.1 }
 	}
@@ -537,6 +551,11 @@ supremacist = {
 								is_ai = no
 								is_country_type = default
 								has_communications = prev
+								has_intel_level = {
+									who = prev
+									category = government
+									level >= 1
+								}
 							}
 							country_event = { id = factions.2000 }
 						}

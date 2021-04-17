@@ -225,6 +225,17 @@ strategic_coordination_center_3 = {
 	}
 }
 
+# Permanently Ruined Strategic Coordination Center
+strategic_coordination_center_permanently_ruined = {
+	entity = "strategic_coordination_center_01_destroyed_entity"
+	construction_entity = "strategic_coordination_center_01_destroyed_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -27 y = -27 }
+	
+	potential = { always = no }
+}
+
 # Ruined Strategic Coordination Center
 strategic_coordination_center_ruined = {
 	entity = "strategic_coordination_center_01_destroyed_entity"

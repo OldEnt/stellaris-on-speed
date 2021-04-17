@@ -7,8 +7,8 @@
 pre_sapient = {
 	category = pre_sapients
 	is_capped_by_modifier = no
-	is_pre_sapient = yes
 	clothes_texture_index = 2
+	contributes_to_diplo_weight = no
 
 	possible_pre_triggers = {
 		is_sapient = no
@@ -35,6 +35,7 @@ hunter_gatherer = {
 
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {
@@ -77,6 +78,7 @@ peasant = {
 
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {
@@ -121,6 +123,7 @@ primitive_warrior = {
 
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {
@@ -141,7 +144,7 @@ primitive_warrior = {
 	}
 
 	weight = {
-		weight = 2
+		weight = @soldier_job_weight
 		modifier = {
 			factor = 6
 			is_militarist = yes
@@ -161,6 +164,7 @@ primitive_noble = {
 
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {
@@ -200,6 +204,7 @@ primitive_researcher = {
 
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {
@@ -225,7 +230,7 @@ primitive_researcher = {
 	}
 
 	weight = {
-		weight = 2
+		weight = @specialist_job_weight
 		modifier = {
 			factor = 6
 			is_materialist = yes
@@ -245,6 +250,7 @@ primitive_priest = {
 
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {
@@ -272,7 +278,7 @@ primitive_priest = {
 	}
 
 	weight = {
-		weight = 2
+		weight = @specialist_job_weight
 		modifier = {
 			factor = 6
 			is_spiritualist = yes
@@ -292,6 +298,7 @@ primitive_laborer = {
 
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {
@@ -320,7 +327,7 @@ primitive_laborer = {
 
 
 	weight = {
-		weight = 2
+		weight = @worker_job_weight
 	}
 }
 
@@ -333,6 +340,7 @@ primitive_miner = {
 
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {
@@ -356,7 +364,7 @@ primitive_miner = {
 	}
 
 	weight = {
-		weight = 2
+		weight = @worker_job_weight
 	}
 }
 
@@ -369,6 +377,7 @@ primitive_technician = {
 
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {
@@ -392,7 +401,7 @@ primitive_technician = {
 	}
 
 	weight = {
-		weight = 2
+		weight = @worker_job_weight
 	}
 }
 
@@ -404,6 +413,7 @@ primitive_farmer = {
 
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {
@@ -439,6 +449,7 @@ primitive_researcher_2 = {
 
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {
@@ -463,7 +474,7 @@ primitive_researcher_2 = {
 	}
 
 	weight = {
-		weight = 2
+		weight = @specialist_job_weight
 		modifier = {
 			factor = 6
 			is_materialist = yes
@@ -483,6 +494,7 @@ primitive_priest_2 = {
 
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {
@@ -509,7 +521,7 @@ primitive_priest_2 = {
 	}
 
 	weight = {
-		weight = 2
+		weight = @specialist_job_weight
 		modifier = {
 			factor = 6
 			is_spiritualist = yes
@@ -529,6 +541,7 @@ primitive_warrior_2 = {
 
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {
@@ -548,7 +561,7 @@ primitive_warrior_2 = {
 	}
 
 	weight = {
-		weight = 2
+		weight = @soldier_job_weight
 		modifier = {
 			factor = 6
 			is_militarist = yes
@@ -569,6 +582,7 @@ primitive_bureaucrat = {
 
 	possible_pre_triggers = {
 		has_owner = yes
+		is_sapient = yes
 	}
 
 	possible = {

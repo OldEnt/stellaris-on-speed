@@ -51,6 +51,7 @@ massive_ship_fallen_empire = {
 	num_target_locators = 0
 	is_space_station = no
 	icon_frame = 7
+	text_icon = military_size_32
 	
 	combat_disengage_chance = 0.5
 
@@ -88,6 +89,7 @@ large_ship_fallen_empire = {
 	num_target_locators = 0
 	is_space_station = no
 	icon_frame = 5
+	text_icon = military_size_8
 	
 	combat_disengage_chance = 1.0
 
@@ -124,6 +126,7 @@ small_ship_fallen_empire = {
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	icon_frame = 3
+	text_icon = military_size_2
 	is_space_station = no
 	
 	combat_disengage_chance = 1.5

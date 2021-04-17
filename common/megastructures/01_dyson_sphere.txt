@@ -322,6 +322,16 @@ dyson_sphere_5 = {
 	}
 }
 
+# Permanently Ruined Dyson Sphere
+dyson_sphere_permanently_ruined = {
+	entity = "dyson_sphere_destroyed_entity"
+	portrait = "GFX_megastructure_construction_background"
+
+	potential = {
+		always = no
+	}
+}
+
 # Ruined Dyson Sphere
 dyson_sphere_ruined = {
 	entity = "dyson_sphere_destroyed_entity"

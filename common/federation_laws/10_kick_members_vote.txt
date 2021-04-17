@@ -1,7 +1,9 @@
 @cooldown = 720
 
 kick_members_majority_vote = {
-	potential = { always = yes }
+	potential = { 
+		NOT = { has_federation_type = imperial_loyalists_federation }
+	}
 	allow = {
 		custom_tooltip = {
 			NOT = {
@@ -45,6 +47,7 @@ kick_members_president_vote = {
 	potential = {
 		host_has_dlc = Federations
 		NOT = { has_federation_type = hegemony_federation }
+		NOT = { has_federation_type = imperial_loyalists_federation }
 	}
 	allow = {
 		custom_tooltip = {
@@ -105,6 +108,7 @@ kick_members_president_vote_hegemony = {
 	potential = {
 		host_has_dlc = Federations
 		has_federation_type = hegemony_federation
+		NOT = { has_federation_type = imperial_loyalists_federation }
 	}
 	allow = {
 		custom_tooltip = {

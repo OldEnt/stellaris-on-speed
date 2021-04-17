@@ -41,7 +41,7 @@ building_military_academy = {
 			owner = { is_gestalt = no }
 		}
 		modifier = {
-			job_soldier_add = 1
+			job_soldier_add = @b1_jobs
 		}
 	}
 	triggered_planet_modifier = {
@@ -50,7 +50,7 @@ building_military_academy = {
 			owner = { is_gestalt = yes }
 		}
 		modifier = {
-			job_warrior_drone_add = 1
+			job_warrior_drone_add = @b1_jobs
 		}
 	}
 
@@ -85,10 +85,6 @@ building_military_academy = {
 			owner = { is_gestalt = no }
 		}
 		text = job_soldier_effect_desc
-	}
-	
-	ai_weight = {
-		weight = 0
 	}
 }
 
@@ -144,15 +140,11 @@ building_dread_encampment = {
 		}
 		text = job_necromancer_effect_desc
 	}
-	
-	ai_weight = {
-		weight = 50
-	}
 }
 
 building_stronghold = {
 	base_buildtime = 48
-	add_to_first_building_slot = yes
+	position_priority = 100
 
 	category = army
 	
@@ -176,17 +168,13 @@ building_stronghold = {
 		}
 	}
 	
-	planet_modifier = {
-		planet_housing_add = 1
-	}
-	
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_gestalt = no }
 		}
 		modifier = {
-			job_soldier_add = 1
+			job_soldier_add = @b1_jobs
 		}
 	}
 	triggered_planet_modifier = {
@@ -195,7 +183,7 @@ building_stronghold = {
 			owner = { is_gestalt = yes }
 		}
 		modifier = {
-			job_warrior_drone_add = 1
+			job_warrior_drone_add = @b1_jobs
 		}
 	}
 
@@ -230,29 +218,6 @@ building_stronghold = {
 			owner = { is_gestalt = no }
 		}
 		text = job_soldier_effect_desc
-	}	
-	
-	ai_weight = {
-		weight = 0
-		modifier = {
-			weight = 1
-			free_jobs < 1
-			free_building_slots > 1
-			owner = { used_naval_capacity_percent > 0.9	}
-		}
-		modifier = {
-			weight = 100
-			is_planet_class = pc_habitat
-			owner = { used_naval_capacity_percent > 0.8	}
-		}
-		modifier = {
-			weight = 25
-			num_pops > 39
-			NOR = {	
-				has_building = building_stronghold 
-				has_building = building_fortress
-			}
-		}
 	}
 }
 
@@ -260,7 +225,7 @@ building_fortress = {
 	base_buildtime = @b1_time
 	can_build = no
 	planetary_ftl_inhibitor = yes
-	add_to_first_building_slot = yes
+	position_priority = 100
 
 	category = army
 	
@@ -281,17 +246,13 @@ building_fortress = {
 		}
 	}
 	
-	planet_modifier = {
-		planet_housing_add = 3
-	}
-	
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_gestalt = no }
 		}
 		modifier = {
-			job_soldier_add = 3
+			job_soldier_add = @b2_jobs
 		}
 	}
 	triggered_planet_modifier = {
@@ -300,7 +261,7 @@ building_fortress = {
 			owner = { is_gestalt = yes }
 		}
 		modifier = {
-			job_warrior_drone_add = 3
+			job_warrior_drone_add = @b2_jobs
 		}
 	}
 
@@ -311,7 +272,7 @@ building_fortress = {
 			volatile_motes = @b2_rare_cost
 		}			
 		upkeep = {
-			energy = 1
+			energy = 5
 			volatile_motes = @b2_rare_upkeep
 		}
 	}
@@ -334,26 +295,18 @@ building_fortress = {
 		}
 		text = job_soldier_effect_desc
 	}
-	
-	ai_weight = {
-		weight = 0
-		modifier = {
-			weight = 1
-			buildings_has_motes = yes
-		}
-	}
 }
 
 building_planetary_shield_generator = {
 	base_buildtime = @b3_time	
 	base_cap_amount = 1
-	add_to_first_building_slot = yes
+	position_priority = 100
 
 	category = army
 	
 	allow = {
 		has_upgraded_capital = yes
-		owner = { is_ai = no }
+		hidden_trigger = { owner = { is_ai = no } }
 	}
 	
 	destroy_trigger = {
@@ -377,9 +330,5 @@ building_planetary_shield_generator = {
 	
 	prerequisites = {
 		"tech_planetary_shield_generator"
-	}
-	
-	ai_weight = {
-		weight = 0
 	}
 }

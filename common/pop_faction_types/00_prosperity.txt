@@ -13,7 +13,8 @@ prosperity = {
 		years_passed > 2
 		has_encountered_other_species = yes
 		NOT = { has_ethic = ethic_gestalt_consciousness }
-		count_owned_pops = {
+		NOT = { has_country_flag = suppress_vanilla_factions }
+		count_owned_pop = {
 			count >= 5
 			limit = {
 				has_ethic = ethic_pacifist
@@ -131,22 +132,10 @@ prosperity = {
 		fulfilled_effect = 10
 		unfulfilled_effect = -0.001
 
-		potential = { # TODO get a reasonable trigger for counting colonies?
+		potential = {
 			exists = owner
 			owner = {
-				any_owned_planet = {
-					NOT = { is_same_value = root.capital_scope }
-					root = {
-						owner = {
-							any_owned_planet = {
-								NOR = {
-									is_same_value = prevprevprev
-									is_same_value = root.owner.capital_scope
-								}
-							}
-						}
-					}
-				}
+				num_owned_planets >= 3
 			}
 		}
 
@@ -416,6 +405,11 @@ prosperity = {
 								is_ai = no
 								is_country_type = default
 								has_communications = prev
+								has_intel_level = {
+									who = prev
+									category = government
+									level >= 1
+								}
 							}
 							country_event = { id = factions.2000 }
 						}

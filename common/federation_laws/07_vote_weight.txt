@@ -1,7 +1,9 @@
 @cooldown = 720
 
 vote_weight_equal = {
-	potential = { always = yes }
+	potential = {
+		NOT = { has_federation_type = imperial_loyalists_federation }
+	}
 	allow = {
 		custom_tooltip = {
 			NOT = {
@@ -37,7 +39,10 @@ vote_weight_equal = {
 }
 
 vote_weight_diplomatic = {
-	potential = { host_has_dlc = Federations }
+	potential = {
+		NOT = { has_federation_type = imperial_loyalists_federation }
+		host_has_dlc = Federations 
+	}
 	allow = {
 		custom_tooltip = {
 			NOT = {

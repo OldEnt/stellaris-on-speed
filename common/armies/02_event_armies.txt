@@ -486,3 +486,65 @@ cybrex_warform = {
 		}
 	}
 }
+
+# Imperial Legions
+
+imperial_legion = {
+	damage = 2.5
+	health = 3.0
+	morale = 3.0
+	morale_damage = 1.0
+	collateral_damage = 0.75
+	war_exhaustion = 3.0
+	time = 30
+	icon_frame = 14
+	has_species = no
+
+	resources = {
+		category = armies
+		cost = {
+			minerals = 300
+		}
+
+		upkeep = {
+			energy = 15
+		}
+	}
+
+	potential = {
+		owner = {
+			is_galactic_emperor = yes
+			is_active_resolution = "resolution_emperor_imperial_legions"
+		}
+	}
+
+	allow = {
+		custom_tooltip = {
+			text = imperial_legion_limit_tooltip
+			owner = {
+				check_variable = {
+					which = "imperial_legion_soldier_count"
+					value < 12
+				}
+			}
+		}
+	}
+
+	on_queued = {
+		owner = {
+			change_variable = {
+				which = "imperial_legion_soldier_count"
+				value = 1
+			}
+		}
+	}
+
+	on_unqueued = {
+		owner = {
+			change_variable = {
+				which = "imperial_legion_soldier_count"
+				value = -1
+			}
+		}
+	}
+}

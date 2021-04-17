@@ -83,7 +83,7 @@ decision_baol_life_seed = {
 			is_planet_class = pc_relic
 			is_planet_class = pc_hive
 		}
-		habitable_structure = no
+		is_artificial = no
 		exists = owner
 		owner = { has_country_flag = relic_last_baol_activated }
 	}
@@ -103,7 +103,7 @@ decision_baol_life_seed = {
 					plural = "NAME_Nu_Baol"
 					class = "PLANT"
 					portrait = pla16_baol
-					name_list = "PLANT2"
+					namelist = "PLANT2"
 					extra_trait_points = 3
 					traits = {
 						trait = "trait_agrarian"
@@ -123,7 +123,7 @@ decision_baol_life_seed = {
 				create_pop = {
 					species = event_target:nu_baol_species
 					ethos = {
-						ethic = "ethic_fanatic_pacifist"
+						ethic = "ethic_pacifist"
 					}
 				}
 			}

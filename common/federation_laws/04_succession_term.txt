@@ -1,7 +1,10 @@
 @cooldown = 720
 
 succession_term_years_10 = {
-	potential = { always = yes }
+	potential = { 
+		always = yes
+		NOT = { has_federation_flag = special_federation }
+	}
 	allow = {
 		custom_tooltip = {
 			NOT = {
@@ -63,7 +66,10 @@ succession_term_years_10 = {
 }
 
 succession_term_years_20 = {
-	potential = { always = yes }
+	potential = { 
+		always = yes
+		NOT = { has_federation_flag = special_federation }
+	}
 	allow = {
 		custom_tooltip = {
 			NOT = {
@@ -159,7 +165,10 @@ succession_term_years_20 = {
 }
 
 succession_term_years_30 = {
-	potential = { always = yes }
+	potential = { 
+		always = yes
+		NOT = { has_federation_flag = special_federation }
+	}
 	allow = {
 		custom_tooltip = {
 			NOT = {
@@ -221,7 +230,10 @@ succession_term_years_30 = {
 }
 
 succession_term_years_40 = {
-	potential = { always = yes }
+	potential = { 
+		always = yes
+		NOT = { has_federation_flag = special_federation }
+	}
 	allow = {
 		custom_tooltip = {
 			NOT = {
@@ -325,7 +337,10 @@ succession_term_years_40 = {
 }
 
 succession_term_status_change = {
-	potential = { always = yes }
+	potential = { 
+		always = yes
+		NOT = { has_federation_flag = special_federation }
+	}
 	allow = {
 		custom_tooltip = {
 			fail_text = "requires_strongest"

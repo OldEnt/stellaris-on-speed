@@ -7,13 +7,15 @@ building_ancient_control_center = {
 	capital = yes
 	can_build = no
 	can_demolish = yes
+	position_priority = 0
+
 	icon = building_maintenance_depot
-	
+
 	potential = {
 		exists = owner
 		owner = { is_fallen_machine_empire = yes }
-	}	
-	
+	}
+
 	convert_to = {
 		building_hive_major_capital
 		building_machine_major_capital
@@ -26,6 +28,7 @@ building_ancient_control_center = {
 		planet_amenities_add = 12
 		job_fe_maintenance_bot_add = 4
 		job_fe_guardian_bot_add = 5
+		planet_max_buildings_add = 11
 	}
 
 	resources = {
@@ -37,13 +40,9 @@ building_ancient_control_center = {
 			energy = 50
 		}
 	}
-		
+
 	upgrades = {
 	}
-	
-	ai_weight = {
-		weight = 100
-	}	
 }
 
 building_ancient_palace = {
@@ -51,13 +50,15 @@ building_ancient_palace = {
 	capital = yes
 	can_build = no
 	can_demolish = yes
+	position_priority = 0
+
 	icon = building_palace
-	
+
 	potential = {
 		exists = owner
 		owner = { is_fallen_empire = yes }
-	}	
-	
+	}
+
 	convert_to = {
 		building_hive_major_capital
 		building_machine_major_capital
@@ -68,6 +69,7 @@ building_ancient_palace = {
 	planet_modifier = {
 		planet_housing_add = 12
 		planet_amenities_add = 12
+		planet_max_buildings_add = 11
 	}
 
 	triggered_planet_modifier = {
@@ -101,13 +103,9 @@ building_ancient_palace = {
 			energy = 50
 		}
 	}
-		
+
 	upgrades = {
 	}
-	
-	ai_weight = {
-		weight = 100
-	}	
 }
 
 
@@ -117,6 +115,8 @@ building_hab_fe_capital = {
 	capital = yes
 	can_build = no
 	can_demolish = yes
+	position_priority = 0
+
 	icon = building_capital
 
 	potential = {
@@ -142,6 +142,7 @@ building_hab_fe_capital = {
 	planet_modifier = {
 		planet_housing_add = 5
 		planet_amenities_add = 5
+		planet_max_buildings_add = 11
 	}
 
 	triggered_planet_modifier = {
@@ -178,10 +179,6 @@ building_hab_fe_capital = {
 
 	upgrades = {
 	}
-	
-	ai_weight = {
-		weight = 100
-	}
 }
 
 
@@ -190,7 +187,7 @@ building_affluence_center = {
 	can_build = yes
 	can_demolish = yes
 	icon = building_hyper_entertainment_forum
-	
+
 	potential = {
 		custom_tooltip = {
 			exists = owner
@@ -229,7 +226,7 @@ building_affluence_center = {
 			change_variable = { which = affluence_center_build_count value = 1 }
 		}
 	}
-		
+
 	upgrades = {
 	}
 }
@@ -239,7 +236,7 @@ building_nourishment_center = {
 	can_build = yes
 	can_demolish = yes
 	icon = building_food_processing_center
-	
+
 	potential = {
 		custom_tooltip = {
 			exists = owner
@@ -252,7 +249,7 @@ building_nourishment_center = {
 			fail_text = "ancrel.10004.failtext"
 		}
 	}
-	
+
 	planet_modifier = {
 	}
 
@@ -268,7 +265,7 @@ building_nourishment_center = {
 			energy = 100
 		}
 	}
-	
+
 	on_queued = {
 		owner = {
 			subtract_variable = { which = nourishment_center_build_count value = 1 }
@@ -280,7 +277,7 @@ building_nourishment_center = {
 			change_variable = { which = nourishment_center_build_count value = 1 }
 		}
 	}
-		
+
 	upgrades = {
 	}
 }
@@ -290,7 +287,7 @@ building_dimensional_fabricator = {
 	can_build = yes
 	can_demolish = yes
 	icon = building_nanite_transmuter
-	
+
 	potential = {
 		custom_tooltip = {
 			exists = owner
@@ -303,7 +300,7 @@ building_dimensional_fabricator = {
 			fail_text = "ancrel.10004.failtext"
 		}
 	}
-	
+
 	planet_modifier = {
 	}
 
@@ -313,7 +310,7 @@ building_dimensional_fabricator = {
 			minerals = 500
 			rare_crystals = @b3_rare_upkeep
 			exotic_gases = @b3_rare_upkeep
-			volatile_motes = @b3_rare_upkeep			
+			volatile_motes = @b3_rare_upkeep
 		}
 		produces = {
 			trigger = {
@@ -343,7 +340,7 @@ building_dimensional_fabricator = {
 			change_variable = { which = dimensional_fabricator_build_count value = 1 }
 		}
 	}
-		
+
 	upgrades = {
 	}
 }
@@ -353,7 +350,7 @@ building_class_4_singularity = {
 	base_buildtime = @b2_time
 	can_build = yes
 	can_demolish = yes
-	
+
 	potential = {
 		custom_tooltip = {
 			exists = owner
@@ -366,7 +363,7 @@ building_class_4_singularity = {
 			fail_text = "ancrel.10004.failtext"
 		}
 	}
-	
+
 	planet_modifier = {
 	}
 
@@ -379,7 +376,7 @@ building_class_4_singularity = {
 			energy = 1250
 		}
 	}
-		
+
 	upgrades = {
 	}
 
@@ -400,7 +397,7 @@ building_nano_forge = {
 	base_buildtime = @b2_time
 	can_build = yes
 	can_demolish = yes
-	
+
 	potential = {
 		custom_tooltip = {
 			exists = owner
@@ -413,7 +410,7 @@ building_nano_forge = {
 			fail_text = "ancrel.10004.failtext"
 		}
 	}
-	
+
 	planet_modifier = {
 	}
 
@@ -430,7 +427,7 @@ building_nano_forge = {
 			energy = 50
 		}
 	}
-		
+
 	upgrades = {
 	}
 
@@ -451,10 +448,10 @@ building_master_archive = {
 	base_buildtime = @b2_time
 	can_build = no
 	can_demolish = yes
-	
+
 	potential = {
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -477,7 +474,7 @@ building_master_archive = {
 			energy = 100
 		}
 	}
-		
+
 	upgrades = {
 	}
 }
@@ -487,16 +484,16 @@ building_empyrean_shrine = {
 	can_build = no
 	can_demolish = yes
 	icon = building_citadel_of_faith
-	
+
 	potential = {
 		exists = owner
 		owner = { is_fallen_empire = yes }
-	}	
-	
+	}
+
 	convert_to = {
 		building_citadel_of_faith
 	}
-	
+
 	planet_modifier = {
 		job_fe_augur_add = 3
 	}
@@ -505,12 +502,12 @@ building_empyrean_shrine = {
 		category = planet_buildings
 		cost = {
 			minerals = @b3_minerals
-		}	
+		}
 		upkeep = {
 			energy = 50
 		}
 	}
-		
+
 	upgrades = {
 	}
 }
@@ -519,17 +516,17 @@ building_ancient_cryo_chamber = {
 	base_buildtime = @b2_time
 	can_build = no
 	can_demolish = yes
-	
+
 	potential = {
 		exists = owner
 		owner = { is_fallen_machine_empire = yes }
-	}	
-	
+	}
+
 	planet_modifier = {
 	}
 
 	resources = {
-		category = planet_buildings	
+		category = planet_buildings
 		cost = {
 			minerals = @b2_minerals
 		}
@@ -537,7 +534,7 @@ building_ancient_cryo_chamber = {
 			energy = 20
 		}
 	}
-		
+
 	upgrades = {
 	}
 }
@@ -547,25 +544,27 @@ building_fe_xeno_zoo = {
 	capital = yes
 	can_build = no
 	can_demolish = yes
-	
+	position_priority = 0
+
 	potential = {
 		exists = owner
-		owner = { 
-			is_fallen_empire = yes 
+		owner = {
+			is_fallen_empire = yes
 			is_xenophile = yes
 		}
-	}	
-	
+	}
+
 	convert_to = {
 		building_hive_capital
 		building_machine_capital
 		building_capital
 	}
-	
+
 	planet_modifier = {
 		planet_amenities_add = 15
 		job_fe_xeno_keeper_add = 2
 		planet_housing_add = 30
+		planet_max_buildings_add = 15
 	}
 
 	resources = {
@@ -577,7 +576,7 @@ building_fe_xeno_zoo = {
 			energy = 50
 		}
 	}
-		
+
 	upgrades = {
 	}
 }
@@ -586,7 +585,7 @@ building_fe_dome = {
 	base_buildtime = @b2_time
 	can_build = yes
 	icon = building_paradise_dome
-	
+
 	potential = {
 		custom_tooltip = {
 			exists = owner
@@ -599,12 +598,12 @@ building_fe_dome = {
 			fail_text = "ancrel.10004.failtext"
 		}
 	}
-	
+
 	planet_modifier = {
 		planet_housing_add = 20
 		planet_amenities_add = 20
 	}
-	
+
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -632,16 +631,16 @@ building_fe_stronghold = {
 	base_buildtime = @b2_time
 	can_build = no
 	icon = building_fortress
-	
+
 	potential = {
 		exists = owner
 		owner = { is_fallen_empire = yes }
 	}
-	
+
 	convert_to = {
 		building_fortress
 	}
-	
+
 	planet_modifier = {
 		job_fe_protector_add = 5
 	}

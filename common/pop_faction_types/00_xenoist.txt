@@ -20,7 +20,8 @@ xenoist = {
 		years_passed > 2
 		has_encountered_other_species = yes
 		NOT = { has_ethic = ethic_gestalt_consciousness }
-		count_owned_pops = {
+		NOT = { has_country_flag = suppress_vanilla_factions }
+		count_owned_pop = {
 			count >= 5
 			limit = {
 				has_ethic = ethic_xenophile
@@ -348,7 +349,7 @@ xenoist = {
 				OR = {
 					has_country_flag = found_presapients
 					any_planet_within_border = {
-						any_pop = {
+						any_owned_pop = {
 							is_sapient = no
 						}
 					}
@@ -479,6 +480,58 @@ xenoist = {
 	}
 
 	demand = {
+		title = "XENOIST_PROACTIVE_FIRST_CONTACT_POLICY"
+		unfulfilled_title = "XENOIST_ADOPT_PROACTIVE_FIRST_CONTACT_POLICY"
+		desc = "XENOIST_PROACTIVE_FIRST_CONTACT_POLICY_DESC"
+
+		fulfilled_effect = 10
+		unfulfilled_effect = -0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				NOT = { has_policy_flag = first_contact_attack_allowed }
+				OR = {
+					years_passed <= 15
+					has_country_flag = recent_first_contact_process_started
+				}
+			}
+		}
+
+		trigger = {
+			owner = {
+				has_policy_flag = first_contact_proactive
+			}
+		}
+	}
+
+	demand = {
+		title = "XENOIST_AGGRESSIVE_FIRST_CONTACT_POLICY"
+		unfulfilled_title = "XENOIST_NO_AGGRESSIVE_FIRST_CONTACT_POLICY"
+		desc = "XENOIST_AGGRESSIVE_FIRST_CONTACT_POLICY_DESC"
+
+		unfulfilled_effect = -10
+		fulfilled_effect = 0.001
+
+		potential = {
+			exists = owner
+			owner = {
+				has_policy_flag = first_contact_attack_allowed
+				OR = {
+					years_passed <= 75
+					has_country_flag = recent_first_contact_process_started
+				}
+			}
+		}
+
+		trigger = {
+			owner = {
+				NOT = { has_policy_flag = first_contact_attack_allowed }
+			}
+		}
+	}
+
+	demand = {
 		title = "COOPERATIVE_DIPLO_STANCE"
 		unfulfilled_title = "COOPERATIVE_DIPLO_STANCE"
 		desc = "COOPERATIVE_DIPLO_STANCE_DESC"
@@ -573,6 +626,11 @@ xenoist = {
 								is_ai = no
 								is_country_type = default
 								has_communications = prev
+								has_intel_level = {
+									who = prev
+									category = government
+									level >= 1
+								}
 							}
 							country_event = { id = factions.2000 }
 						}

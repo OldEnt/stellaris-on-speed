@@ -20,7 +20,8 @@ technologist = {
 		years_passed > 2
 		has_encountered_other_species = yes
 		NOT = { has_ethic = ethic_gestalt_consciousness }
-		count_owned_pops = {
+		NOT = { has_country_flag = suppress_vanilla_factions }
+		count_owned_pop = {
 			count >= 5
 			limit = {
 				has_ethic = ethic_materialist
@@ -149,6 +150,13 @@ technologist = {
 					has_communications = root.owner
 					is_country_type = default
 					NOT = { has_government = gov_successor_khanate }
+					root.owner = {
+						has_intel_level = {
+							who = prev
+							category = technology
+							level >= 1
+						}
+					}
 				}
 				NOR = {
 					has_country_flag = primitives_can_into_space
@@ -164,6 +172,13 @@ technologist = {
 						has_communications = root.owner
 						is_country_type = default
 						NOT = { has_government = gov_successor_khanate }
+						root.owner = {
+							has_intel_level = {
+								who = prev
+								category = technology
+								level >= 1
+							}
+						}
 						relative_power = {
 							who = root.owner
 							category = technology
@@ -186,7 +201,8 @@ technologist = {
 		potential = {
 			exists = owner
 			owner = {
-				num_communications > 2
+				num_communications > 3
+				NOT = { has_valid_civic = civic_inwards_perfection }
 			}
 		}
 
@@ -220,15 +236,24 @@ technologist = {
 		fulfilled_effect = 0.001
 
 		potential = {
+			years_passed >= 10 #otherwise, just a penalty for meeting Mechanists early
 			exists = owner
 			owner = {
 				NOT = { has_ascension_perk = ap_synthetic_evolution }
 				any_relation = {
 					has_communications = root.owner
-					any_owned_pop = {
+					root.owner = {
+						has_intel_level = {
+							who = prev
+							category = economy
+							level >= 1
+						}
+					}
+					is_gestalt = no
+					any_owned_species = {
 						OR = {
-							pop_has_trait = trait_mechanical
-							pop_has_trait = trait_cybernetic
+							has_trait = trait_mechanical
+							has_trait = trait_cybernetic
 						}
 					}
 				}
@@ -237,10 +262,10 @@ technologist = {
 
 		trigger = {
 			owner = {
-				any_owned_pop = {
+				any_owned_species = {
 					OR = {
-						pop_has_trait = trait_mechanical
-						pop_has_trait = trait_cybernetic
+						has_trait = trait_mechanical
+						has_trait = trait_cybernetic
 					}
 				}
 			}
@@ -434,6 +459,11 @@ technologist = {
 								is_ai = no
 								is_country_type = default
 								has_communications = prev
+								has_intel_level = {
+									who = prev
+									category = government
+									level >= 1
+								}
 							}
 							country_event = { id = factions.2000 }
 						}

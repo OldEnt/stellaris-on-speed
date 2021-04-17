@@ -1,4 +1,4 @@
-# Icons set here are the ones show in the actual slot. The reason is so that we can support different icons for different sizes. 
+# Icons set here are the ones show in the actual slot. The reason is so that we can support different icons for different sizes.
 #############
 #	POWER	#
 #############
@@ -129,7 +129,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_fission_power" }
 	component_set = "power_core"
-	size_restriction = { corvette colonizer lithoid_colonizer lithoid_colonizer sponsored_colonizer constructor science transport }
+	size_restriction = { corvette colonizer lithoid_colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette }
 	upgrades_to = "CORVETTE_FUSION_REACTOR"
 
 	ai_weight = {
@@ -156,7 +156,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_fission_power" }
 	component_set = "power_core"
-	size_restriction = { destroyer }
+	size_restriction = { destroyer crisis_destroyer }
 	upgrades_to = "DESTROYER_FUSION_REACTOR"
 
 	ai_weight = {
@@ -183,7 +183,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_fission_power" }
 	component_set = "power_core"
-	size_restriction = { cruiser }
+	size_restriction = { cruiser crisis_cruiser }
 	upgrades_to = "CRUISER_FUSION_REACTOR"
 
 	ai_weight = {
@@ -325,7 +325,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_fusion_power" }
 	component_set = "power_core"
-	size_restriction = { corvette colonizer lithoid_colonizer sponsored_colonizer constructor science transport }
+	size_restriction = { corvette colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette }
 	upgrades_to = "CORVETTE_COLD_FUSION_REACTOR"
 
 	ai_weight = {
@@ -352,7 +352,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_fusion_power" }
 	component_set = "power_core"
-	size_restriction = { destroyer }
+	size_restriction = { destroyer crisis_destroyer }
 	upgrades_to = "DESTROYER_COLD_FUSION_REACTOR"
 
 	ai_weight = {
@@ -379,7 +379,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_fusion_power" }
 	component_set = "power_core"
-	size_restriction = { cruiser }
+	size_restriction = { cruiser crisis_cruiser }
 	upgrades_to = "CRUISER_COLD_FUSION_REACTOR"
 
 	ai_weight = {
@@ -521,7 +521,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_cold_fusion_power" }
 	component_set = "power_core"
-	size_restriction = { corvette colonizer lithoid_colonizer sponsored_colonizer constructor science transport }
+	size_restriction = { corvette colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette }
 	upgrades_to = "CORVETTE_ANTIMATTER_REACTOR"
 
 	ai_weight = {
@@ -548,7 +548,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_cold_fusion_power" }
 	component_set = "power_core"
-	size_restriction = { destroyer }
+	size_restriction = { destroyer crisis_destroyer }
 	upgrades_to = "DESTROYER_ANTIMATTER_REACTOR"
 
 	ai_weight = {
@@ -575,7 +575,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_cold_fusion_power" }
 	component_set = "power_core"
-	size_restriction = { cruiser }
+	size_restriction = { cruiser crisis_cruiser }
 	upgrades_to = "CRUISER_ANTIMATTER_REACTOR"
 
 	ai_weight = {
@@ -717,7 +717,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_antimatter_power" }
 	component_set = "power_core"
-	size_restriction = { corvette colonizer lithoid_colonizer sponsored_colonizer constructor science transport }
+	size_restriction = { corvette colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette }
 	upgrades_to = "CORVETTE_ZERO_POINT_REACTOR"
 
 	ai_weight = {
@@ -744,7 +744,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_antimatter_power" }
 	component_set = "power_core"
-	size_restriction = { destroyer }
+	size_restriction = { destroyer crisis_destroyer }
 	upgrades_to = "DESTROYER_ZERO_POINT_REACTOR"
 
 	ai_weight = {
@@ -771,7 +771,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_antimatter_power" }
 	component_set = "power_core"
-	size_restriction = { cruiser }
+	size_restriction = { cruiser crisis_cruiser }
 	upgrades_to = "CRUISER_ZERO_POINT_REACTOR"
 
 	ai_weight = {
@@ -913,7 +913,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_zero_point_power" }
 	component_set = "power_core"
-	size_restriction = { corvette colonizer lithoid_colonizer sponsored_colonizer constructor science transport }
+	size_restriction = { corvette colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette }
 	upgrades_to = "CORVETTE_DARK_MATTER_REACTOR"
 
 	ai_weight = {
@@ -940,7 +940,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_zero_point_power" }
 	component_set = "power_core"
-	size_restriction = { destroyer }
+	size_restriction = { destroyer crisis_destroyer }
 	upgrades_to = "DESTROYER_DARK_MATTER_REACTOR"
 
 	ai_weight = {
@@ -967,7 +967,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_zero_point_power" }
 	component_set = "power_core"
-	size_restriction = { cruiser }
+	size_restriction = { cruiser crisis_cruiser }
 	upgrades_to = "CRUISER_DARK_MATTER_REACTOR"
 
 	ai_weight = {
@@ -1037,7 +1037,7 @@ utility_component_template = {
 	power = @colossus_power
 
 	component_set = "power_core"
-	size_restriction = { colossus }
+	size_restriction = { colossus star_eater }
 	upgrades_to = "COLOSSUS_DARK_MATTER_REACTOR"
 
 	ai_weight = {
@@ -1148,14 +1148,13 @@ utility_component_template = {
 
 	prerequisites = { "tech_dark_matter_power_core" }
 	component_set = "power_core"
-	size_restriction = { corvette colonizer lithoid_colonizer sponsored_colonizer constructor science transport }
+	size_restriction = { corvette colonizer lithoid_colonizer sponsored_colonizer constructor science transport crisis_corvette }
 
 	ai_weight = {
 		weight = 6
 		modifier = {
 			factor = 0.0
-			is_country_type = default
-			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
 		}
 	}
 }
@@ -1180,14 +1179,13 @@ utility_component_template = {
 
 	prerequisites = { "tech_dark_matter_power_core" }
 	component_set = "power_core"
-	size_restriction = { destroyer }
+	size_restriction = { destroyer crisis_destroyer }
 
 	ai_weight = {
 		weight = 6
 		modifier = {
 			factor = 0.0
-			is_country_type = default
-			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
 		}
 	}
 }
@@ -1212,14 +1210,13 @@ utility_component_template = {
 
 	prerequisites = { "tech_dark_matter_power_core" }
 	component_set = "power_core"
-	size_restriction = { cruiser }
+	size_restriction = { cruiser crisis_cruiser }
 
 	ai_weight = {
 		weight = 6
 		modifier = {
 			factor = 0.0
-			is_country_type = default
-			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
 		}
 	}
 }
@@ -1250,8 +1247,7 @@ utility_component_template = {
 		weight = 6
 		modifier = {
 			factor = 0.0
-			is_country_type = default
-			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
 		}
 	}
 }
@@ -1282,8 +1278,7 @@ utility_component_template = {
 		weight = 6
 		modifier = {
 			factor = 0.0
-			is_country_type = default
-			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
 		}
 	}
 }
@@ -1300,7 +1295,7 @@ utility_component_template = {
 
 	prerequisites = { "tech_dark_matter_power_core" }
 	component_set = "power_core"
-	size_restriction = { colossus }
+	size_restriction = { colossus star_eater }
 
 	ai_weight = {
 		weight = 6
@@ -1338,8 +1333,7 @@ utility_component_template = {
 		weight = 6
 		modifier = {
 			factor = 0.0
-			is_country_type = default
-			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
 		}
 	}
 }
@@ -1366,8 +1360,7 @@ utility_component_template = {
 		weight = 6
 		modifier = {
 			factor = 0.0
-			is_country_type = default
-			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
 		}
 	}
 }

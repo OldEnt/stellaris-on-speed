@@ -373,7 +373,7 @@ tech_space_science_3 = {
 	weight = @tier2weight1
 
 	modifier = {
-		station_researchers_produces_mult = 0.10
+		station_researchers_produces_mult = 0.15
 	}
 
 	weight_modifier = {
@@ -406,7 +406,7 @@ tech_space_science_4 = {
 	weight = @tier2weight3
 
 	modifier = {
-		station_researchers_produces_mult = 0.10
+		station_researchers_produces_mult = 0.15
 	}
 
 	weight_modifier = {
@@ -439,7 +439,7 @@ tech_space_science_5 = {
 	weight = @tier3weight1
 
 	modifier = {
-		station_researchers_produces_mult = 0.10
+		station_researchers_produces_mult = 0.30
 	}
 
 	weight_modifier = {
@@ -473,6 +473,8 @@ tech_physics_1 = {
 	tier = 1
 	category = { computing }
 	weight = @tier1weight1
+
+	gateway = espionage
 
 	modifier = {
 		planet_researchers_physics_research_produces_mult = 0.2
@@ -528,6 +530,8 @@ tech_physics_2 = {
 	prerequisites = { "tech_physics_1" }
 	weight = @tier2weight3
 
+	gateway = espionage
+
 	modifier = {
 		planet_researchers_physics_research_produces_mult = 0.2
 	}
@@ -577,6 +581,8 @@ tech_physics_3 = {
 	category = { computing }
 	prerequisites = { "tech_physics_2" }
 	weight = @tier4weight2
+
+	gateway = espionage
 
 	modifier = {
 		planet_researchers_physics_research_produces_mult = 0.2
@@ -847,6 +853,10 @@ tech_sapient_ai = {
 	prerequisites = { "tech_self_aware_logic" }
 	weight = @tier4weight1
 
+	feature_flags = {
+		unlocks_auto_research
+	}
+
 	modifier = {
 		all_technology_research_speed = 0.05
 	}
@@ -883,6 +893,10 @@ tech_positronic_implants = {
 	category = { computing }
 	prerequisites = { "tech_self_aware_logic" }
 	weight = @tier4weight1
+
+	feature_flags = {
+		unlocks_auto_research
+	}
 
 	modifier = {
 		all_technology_research_speed = 0.05
@@ -1273,7 +1287,7 @@ tech_synchronized_defences = {
 }
 
 tech_consumer_good_refinement_1 = {
-	cost = @tier3cost1
+	cost = @tier2cost1
 	area = physics
 	tier = 2
 	category = { computing }
@@ -1314,7 +1328,7 @@ tech_consumer_good_refinement_1 = {
 }
 
 tech_consumer_good_refinement_2 = {
-	cost = @tier3cost1
+	cost = @tier4cost1
 	area = physics
 	tier = 4
 	category = { computing }
@@ -1344,6 +1358,262 @@ tech_consumer_good_refinement_2 = {
 	}
 
 	ai_weight = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+}
+
+### ENCRYPTION / DECRYPTION
+
+tech_encryption_1 = {
+	area = physics
+	tier = 1
+	cost = @tier1cost2
+	category = { computing }
+	prerequisites = { "tech_physics_1" "tech_colonial_bureaucracy" }
+	weight = @tier1weight3
+
+	gateway = espionage
+
+	modifier = {
+		intel_encryption_add = 2
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+		modifier = {
+			factor = 0.1
+			NOR = {
+				is_ai = yes # AIs don't get the informative event that flags this
+				has_country_flag = first_spynetwork
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 3
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+}
+
+tech_encryption_2 = {
+	area = physics
+	tier = 2
+	cost = @tier2cost2
+	category = { computing }
+	prerequisites = { "tech_encryption_1" "tech_physics_2" }
+	weight = @tier2weight3
+
+	gateway = espionage
+
+	modifier = {
+		intel_encryption_add = 2
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+		modifier = {
+			factor = 0.1
+			NOR = {
+				is_ai = yes # AIs don't get the informative event that flags this
+				has_country_flag = first_spynetwork
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 3
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+}
+
+tech_encryption_3 = {
+	area = physics
+	tier = 4
+	cost = @tier4cost2
+	category = { computing }
+	prerequisites = { "tech_encryption_2" "tech_physics_3" }
+	weight = @tier3weight3
+
+	modifier = {
+		intel_encryption_add = 2
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+		modifier = {
+			factor = 0.1
+			NOR = {
+				is_ai = yes # AIs don't get the informative event that flags this
+				has_country_flag = first_spynetwork
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 3
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+}
+
+tech_decryption_1 = {
+	area = physics
+	tier = 1
+	cost = @tier1cost2
+	category = { computing }
+	prerequisites = { "tech_physics_1" "tech_colonial_bureaucracy" }
+	weight = @tier1weight3
+
+	gateway = espionage
+
+	modifier = {
+		intel_decryption_add = 2
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+		modifier = {
+			factor = 0.1
+			NOR = {
+				is_ai = yes # AIs don't get the informative event that flags this
+				has_country_flag = first_spynetwork
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 3
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+}
+
+tech_decryption_2 = {
+	area = physics
+	tier = 2
+	cost = @tier2cost2
+	category = { computing }
+	prerequisites = { "tech_decryption_1" "tech_physics_2" }
+	weight = @tier2weight3
+
+	gateway = espionage
+
+	modifier = {
+		intel_decryption_add = 2
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+		modifier = {
+			factor = 0.1
+			NOR = {
+				is_ai = yes # AIs don't get the informative event that flags this
+				has_country_flag = first_spynetwork
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 3
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+}
+
+tech_decryption_3 = {
+	area = physics
+	tier = 4
+	cost = @tier4cost2
+	category = { computing }
+	prerequisites = { "tech_decryption_2" "tech_physics_3" }
+	weight = @tier3weight3
+
+	modifier = {
+		intel_decryption_add = 2
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.25
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+		modifier = {
+			factor = 0.1
+			NOR = {
+				is_ai = yes # AIs don't get the informative event that flags this
+				has_country_flag = first_spynetwork
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 3
 		modifier = {
 			factor = 1.25
 			research_leader = {
@@ -2012,6 +2282,7 @@ tech_power_plant_2 = {
 
 	modifier = {
 		planet_technician_energy_produces_mult = 0.2
+		starbase_constructions_energy_produces_mult = 0.20
 	}
 
 	weight_modifier = {
@@ -2051,6 +2322,7 @@ tech_power_plant_3 = {
 
 	modifier = {
 		planet_technician_energy_produces_mult = 0.2
+		starbase_constructions_energy_produces_mult = 0.20
 	}
 
 	weight_modifier = {
@@ -2090,6 +2362,7 @@ tech_power_plant_4 = {
 
 	modifier = {
 		planet_technician_energy_produces_mult = 0.2
+		starbase_constructions_energy_produces_mult = 0.20
 	}
 
 	weight_modifier = {

@@ -279,6 +279,21 @@ matter_decompressor_4 = {
 	}
 }
 
+# Permanently Ruined Matter Decompressor
+matter_decompressor_permanently_ruined = {
+	entity = "matter_decompressor_destroyed_01_entity"
+	construction_entity = "matter_decompressor_stage_4_construction_entity"
+	portrait = "GFX_megastructure_construction_background"
+	entity_offset = { x = -20 y = -20 }
+	rotate_to_center = yes
+	scale_offset = yes
+	place_entity_on_planet_plane = no
+
+	potential = {
+		always = no
+	}
+}
+
 # Ruined Matter Decompressor
 matter_decompressor_ruined = {
 	entity = "matter_decompressor_destroyed_01_entity"

@@ -43,6 +43,7 @@ starbase_caravaneer = {
 	build_block_radius = @build_block_radius_starbase
 	formation_priority = @starbase_formation_priority
 	icon_frame = -1
+	text_icon = military_size_station
 }
 
 caravaneer_station_01 = {
@@ -65,4 +66,5 @@ caravaneer_station_01 = {
 	
 	class = shipclass_military_station
 	is_designable = no
+	text_icon = military_size_station
 }

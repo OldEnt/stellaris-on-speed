@@ -1,7 +1,9 @@
 @cooldown = 720
 
 allow_subjects_to_join_no = {
-	potential = { always = yes }
+	potential = {
+		NOT = { has_federation_type = imperial_loyalists_federation }
+	}
 	allow = {
 		custom_tooltip = {
 			fail_text = disabled_for_hegemony
@@ -48,7 +50,10 @@ allow_subjects_to_join_no = {
 }
 
 allow_subjects_to_join_yes = {
-	potential = { host_has_dlc = Federations }
+	potential = { 
+		host_has_dlc = Federations
+		NOT = { has_federation_type = imperial_loyalists_federation }
+	}
 	allow = {
 		custom_tooltip = {
 			NOT = {

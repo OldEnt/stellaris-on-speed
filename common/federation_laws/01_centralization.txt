@@ -2,6 +2,9 @@
 
 centralization_minimal = {
 	unlocks_centralization = 1
+	potential = { 
+		NOT = { has_federation_flag = special_federation }
+	}
 	allow = {
 		custom_tooltip = {
 			NOT = {
@@ -103,6 +106,9 @@ centralization_minimal = {
 centralization_low = {
 	display_level = 2
 	unlocks_centralization = 2
+	potential = { 
+		NOT = { has_federation_flag = special_federation }
+	}
 	allow = {
 		custom_tooltip = {
 			fail_text = "requires_federation_lvl_2"
@@ -140,6 +146,14 @@ centralization_low = {
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 26
+		}
+		modifier = {
+			add = 50
+			desc = federation_acceptance_high_cohesion
+			federation = {			
+				federation_cohesion >= 99
+				has_federation_law = centralization_minimal
+			}
 		}
 		modifier = {
 			desc = federation_acceptance_better_cohesion
@@ -296,6 +310,9 @@ centralization_low = {
 centralization_medium = {
 	display_level = 3
 	unlocks_centralization = 3
+	potential = { 
+		NOT = { has_federation_flag = special_federation }
+	}
 	allow = {
 		custom_tooltip = {
 			fail_text = "requires_federation_lvl_3"
@@ -333,6 +350,14 @@ centralization_medium = {
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 36
+		}
+		modifier = {
+			add = 50
+			desc = federation_acceptance_high_cohesion
+			federation = {			
+				federation_cohesion >= 99
+				has_federation_law = centralization_low
+			}
 		}
 		modifier = {
 			desc = federation_acceptance_better_cohesion
@@ -497,6 +522,9 @@ centralization_medium = {
 centralization_high = {
 	display_level = 4
 	unlocks_centralization = 4
+	potential = { 
+		NOT = { has_federation_flag = special_federation }
+	}
 	allow = {
 		custom_tooltip = {
 			fail_text = "requires_federation_lvl_4"
@@ -534,6 +562,14 @@ centralization_high = {
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 41
+		}
+		modifier = {
+			add = 50
+			desc = federation_acceptance_high_cohesion
+			federation = {			
+				federation_cohesion >= 99
+				has_federation_law = centralization_medium
+			}
 		}
 		modifier = {
 			desc = federation_acceptance_better_cohesion
@@ -696,6 +732,9 @@ centralization_high = {
 centralization_very_high = {
 	display_level = 5
 	unlocks_centralization = 5
+	potential = { 
+		NOT = { has_federation_flag = special_federation }
+	}
 	allow = {
 		custom_tooltip = {
 			fail_text = "requires_federation_lvl_5"
@@ -735,6 +774,14 @@ centralization_very_high = {
 			add = 51
 		}
 		modifier = {
+			add = 50
+			desc = federation_acceptance_high_cohesion
+			federation = {			
+				federation_cohesion >= 99
+				has_federation_law = centralization_high
+			}
+		}
+		modifier = {
 			desc = federation_acceptance_better_cohesion
 			add = -50
 			is_federation_leader = no
@@ -744,6 +791,7 @@ centralization_very_high = {
 		}
 		modifier = {
 			# AI will try to increase the centralization one step at a time
+			desc = federation_acceptance_president
 			add = 100
 			is_federation_leader = yes
 			federation = {

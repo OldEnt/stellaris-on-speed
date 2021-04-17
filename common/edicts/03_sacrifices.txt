@@ -32,7 +32,7 @@ sacrifice_togetherness = {
         }
 		has_technology = tech_cultural_heritage
 		any_owned_planet = {
-			count_pops = {
+			count_owned_pop = {
             	limit = { has_job = mortal_initiate }
             	count >= 1
         	}
@@ -67,7 +67,7 @@ sacrifice_togetherness = {
 			AND = {
 				years_passed > 12
 				any_owned_planet = {
-					count_pops = {
+					count_owned_pop = {
 						limit = { has_job = mortal_initiate }
 						count >= 3
 					}
@@ -83,7 +83,7 @@ sacrifice_togetherness = {
 			AND = {
 				years_passed > 20
 				any_owned_planet = {
-					count_pops = {
+					count_owned_pop = {
 						limit = { has_job = mortal_initiate }
 						count >= 3
 					}
@@ -120,7 +120,7 @@ sacrifice_harmony = {
         }
 		has_technology = tech_cultural_heritage
 		any_owned_planet = {
-			count_pops = {
+			count_owned_pop = {
             	limit = { has_job = mortal_initiate }
             	count >= 1
         	}
@@ -155,7 +155,7 @@ sacrifice_harmony = {
 			AND = {
 				years_passed > 12
 				any_owned_planet = {
-					count_pops = {
+					count_owned_pop = {
 						limit = { has_job = mortal_initiate }
 						count >= 3
 					}
@@ -171,7 +171,7 @@ sacrifice_harmony = {
 			AND = {
 				years_passed > 20
 				any_owned_planet = {
-					count_pops = {
+					count_owned_pop = {
 						limit = { has_job = mortal_initiate }
 						count >= 3
 					}
@@ -209,7 +209,7 @@ sacrifice_bounty = {
         }
 		has_technology = tech_cultural_heritage
 		any_owned_planet = {
-			count_pops = {
+			count_owned_pop = {
             	limit = { has_job = mortal_initiate }
             	count >= 1
         	}
@@ -244,7 +244,7 @@ sacrifice_bounty = {
 			AND = {
 				years_passed > 12
 				any_owned_planet = {
-					count_pops = {
+					count_owned_pop = {
 						limit = { has_job = mortal_initiate }
 						count >= 3
 					}
@@ -260,7 +260,7 @@ sacrifice_bounty = {
 			AND = {
 				years_passed > 20
 				any_owned_planet = {
-					count_pops = {
+					count_owned_pop = {
 						limit = { has_job = mortal_initiate }
 						count >= 3
 					}

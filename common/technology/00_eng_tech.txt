@@ -1837,6 +1837,8 @@ tech_ship_armor_2 = {
 	prerequisites = { "tech_ship_armor_1" }
 	weight = @tier1weight2
 
+	gateway = infrastructure
+
 	weight_modifier = {
 		factor = 1.25
 		modifier = {
@@ -1869,6 +1871,8 @@ tech_ship_armor_3 = {
 	prerequisites = { "tech_ship_armor_2" }
 	weight = @tier2weight2
 
+	gateway = infrastructure
+
 	weight_modifier = {
 		factor = 1.25
 		modifier = {
@@ -1900,6 +1904,8 @@ tech_ship_armor_4 = {
 	ai_update_type = all
 	prerequisites = { "tech_ship_armor_3" }
 	weight = @tier3weight2
+
+	gateway = infrastructure
 
 	weight_modifier = {
 		factor = 1.25
@@ -2354,7 +2360,7 @@ tech_space_mining_3 = {
 	weight = @tier2weight1
 
 	modifier = {
-		station_gatherers_produces_mult = 0.10
+		station_gatherers_produces_mult = 0.15
 	}
 
 	weight_modifier = {
@@ -2387,7 +2393,7 @@ tech_space_mining_4 = {
 	weight = @tier2weight3
 
 	modifier = {
-		station_gatherers_produces_mult = 0.10
+		station_gatherers_produces_mult = 0.15
 	}
 
 	weight_modifier = {
@@ -2420,7 +2426,7 @@ tech_space_mining_5 = {
 	weight = @tier3weight1
 
 	modifier = {
-		station_gatherers_produces_mult = 0.10
+		station_gatherers_produces_mult = 0.30
 	}
 
 	weight_modifier = {
@@ -2455,6 +2461,7 @@ tech_mining_1 = {
 
 	modifier = {
 		planet_miners_minerals_produces_mult = 0.20
+		starbase_constructions_minerals_produces_mult = 0.20
 	}
 
 	weight_modifier = {
@@ -2489,6 +2496,7 @@ tech_mining_2 = {
 
 	modifier = {
 		planet_miners_minerals_produces_mult = 0.20
+		starbase_constructions_minerals_produces_mult = 0.20
 	}
 
 	weight_modifier = {
@@ -2523,6 +2531,7 @@ tech_mining_3 = {
 
 	modifier = {
 		planet_miners_minerals_produces_mult = 0.20
+		starbase_constructions_minerals_produces_mult = 0.20
 	}
 
 	weight_modifier = {

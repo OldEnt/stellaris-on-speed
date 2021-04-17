@@ -294,7 +294,8 @@ bio_trophy = {
 	}
 
 	resettlement_cost = {
-		energy = 50
+		energy = 100
+		influence = 10
 	}
 
 	pop_modifier = {
@@ -1173,6 +1174,8 @@ precursor = {
 		# crisis purge
 		modifier = {
 			factor = 0.01
+			exists = planet
+			exists = planet.controller
 			planet.controller = {
 				OR = {
 					is_country_type = swarm

@@ -20,7 +20,7 @@ guardian_scavenger_bot = {
 		needs_colony = no
 	}
 	modules = {
-		exclusive_diplomacy_module = {} # Nothing is allowed, but we need this for relationships.
+		exclusive_diplomacy_module = { contact_rule = on_action_only } # Nothing is allowed, but we need this for relationships.
 		basic_technology_module = {}
 		standard_event_module = {} # For bouncing events
 	}
@@ -43,7 +43,7 @@ guardian_elderly_tiyanki = {
 		needs_colony = no
 	}
 	modules = {
-		exclusive_diplomacy_module = {} # Nothing is allowed, but we need this for relationships.
+		exclusive_diplomacy_module = { contact_rule = on_action_only } # Nothing is allowed, but we need this for relationships.
 		basic_technology_module = {}
 		standard_event_module = {} # For bouncing events
 	}
@@ -64,7 +64,7 @@ ldragon_country = {
 		needs_colony = no
 	}
 	modules = {
-		exclusive_diplomacy_module = {} # Nothing is allowed, but we need this for relationships.
+		exclusive_diplomacy_module = { contact_rule = on_action_only } # Nothing is allowed, but we need this for relationships.
 		basic_technology_module = {}
 	}
 }
@@ -85,7 +85,7 @@ guardian_hatchling = {
 		needs_colony = no
 	}
 	modules = {
-		exclusive_diplomacy_module = {} # Nothing is allowed, but we need this for relationships.
+		exclusive_diplomacy_module = { contact_rule = on_action_only } # Nothing is allowed, but we need this for relationships.
 		basic_technology_module = {}
 		standard_event_module = {} # For bouncing events
 	}
@@ -145,7 +145,11 @@ prikki = {
 				max = 1
 			}
 			
-			
+			juggernaut = {
+				min = 1
+				max = 1
+			}
+
 			colossus = {
 				min = 1
 				max = 1
@@ -388,7 +392,7 @@ prikki = {
 		standard_event_module = {}
 		standard_economy_module = {}
 		standard_leader_module = {}
-		standard_diplomacy_module = {}
+		standard_diplomacy_module = { contact_rule = does_first_contact_sites }
 		standard_technology_module = {}
 		standard_pop_factions_module = {}
 		standard_expansion_module = {}

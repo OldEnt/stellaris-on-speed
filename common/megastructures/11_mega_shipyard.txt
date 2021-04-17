@@ -254,6 +254,21 @@ mega_shipyard_3 = {
 	}
 }
 
+# Permanently Ruined mega shipyard
+mega_shipyard_permanently_ruined = {
+	entity = "mega_shipyard_01_destroyed_entity"
+	construction_entity = "mega_shipyard_01_destroyed_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -27 y = -27 }
+	upgrade_from = {
+	}
+
+	potential = {
+		always = no
+	}
+}
+
 # Ruined mega shipyard
 mega_shipyard_ruined = {
 	entity = "mega_shipyard_01_destroyed_entity"

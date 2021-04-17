@@ -1,7 +1,9 @@
 @cooldown = 720
 
 succession_type_rotation = {
-	potential = { always = yes }
+	potential = {
+		NOT = { has_federation_flag = special_federation }
+	}
 	allow = { 
 		custom_tooltip = {
 			NOT = {
@@ -134,7 +136,10 @@ succession_type_rotation = {
 }
 
 succession_type_challenge = {
-	potential = { host_has_dlc = Federations }
+	potential = { 
+		host_has_dlc = Federations
+		NOT = { has_federation_flag = special_federation }
+	}
 	allow = { 
 		custom_tooltip = {
 			NOT = {
@@ -253,7 +258,10 @@ succession_type_challenge = {
 }
 
 succession_type_random = {
-	potential = { host_has_dlc = Federations }
+	potential = { 
+		host_has_dlc = Federations
+		NOT = { has_federation_flag = special_federation }
+	}
 	allow = { 
 		custom_tooltip = {
 			NOT = {
@@ -345,7 +353,10 @@ succession_type_random = {
 }
 
 succession_type_strongest = {
-	potential = { NOT = { has_federation_type = hegemony_federation } }
+	potential = { 
+		NOT = { has_federation_type = hegemony_federation }
+		NOT = { has_federation_flag = special_federation }
+	}
 	allow = { 
 		custom_tooltip = {
 			NOT = {
@@ -426,7 +437,10 @@ succession_type_strongest = {
 }
 
 succession_type_strongest_hegemony = {
-	potential = { has_federation_type = hegemony_federation }
+	potential = { 
+		has_federation_type = hegemony_federation
+		NOT = { has_federation_flag = special_federation }
+	}
 	allow = { 
 		custom_tooltip = {
 			NOT = {

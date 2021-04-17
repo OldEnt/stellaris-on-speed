@@ -32,36 +32,51 @@ shipyard = {
 	ai_weight = {
 		weight = 20
 		modifier = {
-			factor = 3
-			OR = {
-				AND = {
-					has_starbase_module = shipyard
-					count_starbase_modules = {
-						count < 3
-						type = shipyard
-					}
-				}
-				owner = {
+			factor = 100
+			owner = {
+				OR = {
 					count_owned_starbase = {
-						count >= 10
-					}
-					count_owned_starbase = {
-						count < 2
+						count = 0
 						limit = { has_starbase_module = shipyard }
+					}
+					AND = {
+						num_starbases >= 4
+						count_owned_starbase = {
+							count < 2
+							limit = { has_starbase_module = shipyard }
+						}
+					}
+					AND = {
+						num_starbases >= 9
+						count_owned_starbase = {
+							count < 3
+							limit = { has_starbase_module = shipyard }
+						}
+					}
+					AND = {
+						num_starbases >= 15
+						count_owned_starbase = {
+							count < 4
+							limit = { has_starbase_module = shipyard }
+						}
 					}
 				}
 			}
 		}
-		
-		# We want to build shipyard if no shipyards present
 		modifier = {
-			factor = 1000
-			owner = {
-				NOT = { 
-					any_owned_starbase = { 
-						has_starbase_module = shipyard 
-					}
-				}	
+			factor = 3
+			has_starbase_module = shipyard
+			count_starbase_modules = {
+				count < 2
+				type = shipyard
+			}
+		}
+		modifier = {
+			factor = 3
+			has_starbase_module = shipyard
+			count_starbase_modules = {
+				count < 4
+				type = shipyard
 			}
 		}
 	}
@@ -107,6 +122,7 @@ anchorage = {
 
 gun_battery = {
 	section = "BATTERY_STARBASE_SECTION"
+	icon = GFX_spaceport_modules
 	construction_days = 36
 
 	resources = {
@@ -186,8 +202,8 @@ missile_battery = {
 hangar_bay = {
 	icon = "GFX_starbase_hangar_bay"
 	section = "HANGAR_STARBASE_SECTION"
-	construction_days = 36	
-	
+	construction_days = 36
+
 	potential = {
 		exists = owner
 		owner = { has_technology = tech_strike_craft_1 }

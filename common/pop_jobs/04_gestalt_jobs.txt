@@ -11,6 +11,7 @@ spawning_drone = {
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
 	possible = {
@@ -19,7 +20,7 @@ spawning_drone = {
 
 	planet_modifier = {
 		planet_amenities_no_happiness_add = 5
-		pop_growth_speed = 0.25
+		planet_pop_assembly_organic_add = 2
 	}
 	triggered_planet_modifier = {
 		potential = {
@@ -94,6 +95,7 @@ replicator = {
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
 	possible = {
@@ -137,6 +139,7 @@ coordinator = {
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
 	possible = {
@@ -146,7 +149,7 @@ coordinator = {
 	resources = {
 		category = planet_bureaucrats
 		upkeep = {
-			energy = 20
+			energy = 30
 		}
 	}
 
@@ -226,6 +229,7 @@ evaluator = {
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
 	possible = {
@@ -271,6 +275,7 @@ synapse_drone = {
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
 	possible = {
@@ -360,6 +365,7 @@ brain_drone = {
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
 	possible = {
@@ -445,6 +451,7 @@ calculator = {
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
 	possible = {
@@ -526,6 +533,7 @@ artisan_drone = {
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
 	possible = {
@@ -535,10 +543,10 @@ artisan_drone = {
 	resources = {
 		category = planet_artisans
 		produces = {
-			consumer_goods = 40
+			consumer_goods = 50
 		}
 		upkeep = {
-			minerals = 40
+			minerals = 50
 		}
 		upkeep = {
 			trigger = {
@@ -581,6 +589,7 @@ fabricator = {
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
 	possible = {
@@ -636,6 +645,7 @@ alloy_drone = {
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
 	possible = {
@@ -684,6 +694,7 @@ chemist_drone = {
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
 	possible = {
@@ -730,6 +741,7 @@ translucer_drone = {
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
 	possible = {
@@ -776,6 +788,7 @@ gas_refiner_drone = {
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
 	possible = {
@@ -822,6 +835,7 @@ patrol_drone = {
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
 	possible = {
@@ -900,6 +914,7 @@ crystal_mining_drone = {
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
 	possible = {
@@ -946,6 +961,7 @@ mote_harvesting_drone = {
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
 	possible = {
@@ -992,6 +1008,7 @@ gas_extraction_drone = {
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
 	possible = {
@@ -1038,6 +1055,7 @@ mining_drone = {
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
 	possible = {
@@ -1107,6 +1125,7 @@ agri_drone = {
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
 	possible = {
@@ -1204,6 +1223,7 @@ technician_drone = {
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
 	possible = {
@@ -1213,7 +1233,7 @@ technician_drone = {
 	resources = {
 		category = planet_technician
 		produces = {
-			energy = 20
+			energy = 30
 		}
 		produces = {
 			trigger = {
@@ -1282,6 +1302,7 @@ maintenance_drone = {
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
 	resources = {
@@ -1328,7 +1349,7 @@ maintenance_drone = {
 	}
 
 	weight = {
-		weight = 1
+		weight = @clerk_job_weight
 		modifier = {
 			factor = 2
 			OR = {
@@ -1369,6 +1390,12 @@ maintenance_drone = {
 			}
 		}
 		modifier = {
+			factor = 2
+			planet = {
+				free_amenities <= -1
+			}
+		}
+		modifier = {
 			factor = 1.5
 			planet = {
 				free_amenities <= -5
@@ -1377,7 +1404,7 @@ maintenance_drone = {
 		modifier = {
 			factor = 1.5
 			planet = {
-				free_amenities <= -15
+				free_amenities <= -10
 			}
 		}
 		modifier = {
@@ -1431,6 +1458,7 @@ warrior_drone = {
 		is_enslaved = no
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
 	possible = {
@@ -1478,7 +1506,7 @@ warrior_drone = {
 		}
 		modifier = {
 			factor = 0
-			planet = { count_pops = { limit = { } count < 12 } }
+			planet = { count_owned_pop = { limit = { } count < 12 } }
 			owner = { is_ai = yes }
 		}
 		modifier = {
@@ -1503,6 +1531,7 @@ bluelotus_drone = {
 		has_owner = yes
 		is_being_purged = no
 		is_being_assimilated = no
+		is_sapient = yes
 	}
 
 	possible = {
