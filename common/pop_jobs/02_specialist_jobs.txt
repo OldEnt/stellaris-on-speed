@@ -1650,7 +1650,8 @@ healthcare = {
 	planet_modifier = {
 		planet_amenities_add = 5
 		pop_growth_speed = 0.05
-		pop_environment_tolerance = 0.01
+		planet_pop_assembly_organic_mult = 0.05
+		pop_environment_tolerance = 0.025
 	}
 
 	resources = {
@@ -2029,6 +2030,18 @@ bluelotus_technician = {
 		produces = {
 			alloys = 20
 		}
+		produces = {
+			trigger = {
+				planet = { has_active_building = building_foundry_2 }
+			}
+			alloys = 1
+		}
+		produces = {
+			trigger = {
+				planet = { has_active_building = building_foundry_3 }
+			}
+			alloys = 10
+		}
 
 		upkeep = {
 			trigger = {
@@ -2307,8 +2320,32 @@ foundry = {
 		produces = {
 			alloys = 15
 		}
+		produces = {
+			trigger = {
+				planet = { has_active_building = building_foundry_2 }
+			}
+			alloys = 5
+		}
+		produces = {
+			trigger = {
+				planet = { has_active_building = building_foundry_3 }
+			}
+			alloys = 10
+		}
 		upkeep = {
 			minerals = 30
+		}
+		upkeep = {
+			trigger = {
+				planet = { has_active_building = building_foundry_2 }
+			}
+			minerals = 10
+		}
+		upkeep = {
+			trigger = {
+				planet = { has_active_building = building_foundry_3 }
+			}
+			minerals = 20
 		}
 	}
 
@@ -2368,8 +2405,32 @@ artisan = {
 		produces = {
 			consumer_goods = 30
 		}
+		produces = {
+			trigger = {
+				planet = { has_active_building = building_factory_2 }
+			}
+			consumer_goods = 5
+		}
+		produces = {
+			trigger = {
+				planet = { has_active_building = building_factory_3 }
+			}
+			consumer_goods = 20
+		}
 		upkeep = {
 			minerals = 30
+		}
+		upkeep = {
+			trigger = {
+				planet = { has_active_building = building_factory_2 }
+			}
+			minerals = 5
+		}
+		upkeep = {
+			trigger = {
+				planet = { has_active_building = building_factory_3 }
+			}
+			minerals = 10
 		}
 		upkeep = {
 			trigger = {
@@ -2404,6 +2465,24 @@ artisan = {
 		modifier = {
 			factor = 1.5
 			has_trait = trait_void_dweller_1
+		}
+		modifier = {
+			factor = 1.2
+
+			OR = {
+				is_unemployed = yes
+				has_job = "artisan"
+			}
+			exists = planet
+			planet = {
+				has_available_jobs = "artisan"
+			}
+			owner = {
+				has_monthly_income = {
+					resource = consumer_goods
+					value < 25
+				}
+			}
 		}
 	}
 }

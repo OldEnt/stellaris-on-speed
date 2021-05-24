@@ -25,6 +25,7 @@
 
 @corvette_upkeep_energy = 1.5
 @corvette_upkeep_alloys = 0.5
+@corvette_upkeep_minerals = 1.0
 
 ##################
 # DESTROYER
@@ -39,6 +40,7 @@
 
 @destroyer_upkeep_energy = 3.0
 @destroyer_upkeep_alloys = 1.0
+@destroyer_upkeep_minerals = 2.0
 
 ##################
 # CRUISER
@@ -53,6 +55,7 @@
 
 @cruiser_upkeep_energy = 6.0
 @cruiser_upkeep_alloys = 2.0
+@cruiser_upkeep_minerals = 4.0
 
 ##################
 # BATTLESHIP

@@ -6,24 +6,24 @@ early_default_plan = {
 	type = early
 
 	income = {
-		energy = 250
-		minerals = 1000
-		alloys = 500
+		energy = 500
+		minerals = 375
+		alloys = 200
 		unity = 250
 
-		physics_research = 1000
-		society_research = 1000
-		engineering_research = 1000
+		physics_research = 0
+		society_research = 0
+		engineering_research = 0
 
-		exotic_gases = 5
-		volatile_motes = 5
-		rare_crystals = 5
+		exotic_gases = 10
+		volatile_motes = 10
+		rare_crystals = 10
 	}
 
 	focus = {
-		energy = 50
-		minerals = 150
-		alloys = 250
+		energy = 500
+		minerals = 250
+		alloys = 0
 	}
 
 	subplan = {
@@ -33,12 +33,12 @@ early_default_plan = {
 		}
 
 		income = {
-			food = 250
-			consumer_goods = 250
+			food = 25
+			consumer_goods = 100
 		}
 
 		focus = {
-			food = 50
+			food = 25
 			consumer_goods = 100
 		}
 	}
@@ -50,11 +50,11 @@ early_default_plan = {
 		}
 
 		income = {
-			consumer_goods = 250
+			consumer_goods = 100
 		}
 
 		focus = {
-			consumer_goods = 100
+			consumer_goods = 50
 		}
 	}
 
@@ -66,7 +66,7 @@ early_default_plan = {
 		}
 
 		income = {
-			food = 250 
+			food = 50
 		}
 
 		focus = {
@@ -74,8 +74,8 @@ early_default_plan = {
 		}
 	}
 
-	pops = 500
-	empire_size = 1.25
+	pops = 50
+	empire_size = 1.1 #admin cap is fine with being 10% over limit
 
 	ai_weight = {
 		weight = 1
@@ -89,13 +89,13 @@ middle_default_plan = {
 
 	income = {
 		energy = 500
-		minerals = 2500 
-		alloys = 1500
-		unity = 500
+		minerals = 375
+		alloys = 200
+		unity = 250
 
-		physics_research = 2500
-		society_research = 2500
-		engineering_research = 2500
+		physics_research = 250
+		society_research = 250
+		engineering_research = 250
 
 		exotic_gases = 10
 		volatile_motes = 10
@@ -103,9 +103,9 @@ middle_default_plan = {
 	}
 
 	focus = {
-		energy = 150
+		energy = 500
 		minerals = 250
-		alloys = 500
+		alloys = 0
 	}
 
 	subplan = {
@@ -115,13 +115,13 @@ middle_default_plan = {
 		}
 
 		income = {
-			food = 500
-			consumer_goods = 250
+			food = 25
+			consumer_goods = 100
 		}
 
 		focus = {
-			food = 150
-			consumer_goods = 100
+			food = 25
+			consumer_goods = 50
 		}
 	}
 
@@ -132,11 +132,11 @@ middle_default_plan = {
 		}
 
 		income = {
-			consumer_goods = 250
+			consumer_goods = 100
 		}
 
 		focus = {
-			consumer_goods = 100
+			consumer_goods = 50
 		}
 	}
 
@@ -148,16 +148,16 @@ middle_default_plan = {
 		}
 
 		income = {
-			food = 500
+			food = 50
 		}
 
 		focus = {
-			food = 150
+			food = 50
 		}
 	}
 
-	pops = 1000
-	empire_size = 1
+	pops = 200
+	empire_size = 1.1 #admin cap is fine with being 10% over limit
 
 	ai_weight = {
 		weight = 1
@@ -171,23 +171,23 @@ end_default_plan = {
 
 	income = {
 		energy = 500
-		minerals = 2500
-		alloys = 2500
-		unity = 1500
+		minerals = 375
+		alloys = 200
+		unity = 250
 
-		physics_research = 7500
-		society_research = 7500
-		engineering_research = 7500
+		physics_research = 250
+		society_research = 250
+		engineering_research = 250
 
-		exotic_gases = 15
-		volatile_motes = 15
-		rare_crystals = 15
+		exotic_gases = 20
+		volatile_motes = 20
+		rare_crystals = 20
 	}
 
 	focus = {
-		energy = 250
-		minerals = 500
-		alloys = 1000
+		energy = 500
+		minerals = 250
+		alloys = 0
 	}
 
 	subplan = {
@@ -197,13 +197,13 @@ end_default_plan = {
 		}
 
 		income = {
-			food = 500
-			consumer_goods = 250
+			food = 25
+			consumer_goods = 100
 		}
 
 		focus = {
-			food = 250
-			consumer_goods = 100
+			food = 25
+			consumer_goods = 50
 		}
 	}
 
@@ -214,11 +214,11 @@ end_default_plan = {
 		}
 
 		income = {
-			consumer_goods = 250
+			consumer_goods = 100
 		}
 
 		focus = {
-			consumer_goods = 100
+			consumer_goods = 50
 		}
 	}
 
@@ -230,16 +230,16 @@ end_default_plan = {
 		}
 
 		income = {
-			food = 500
+			food = 50
 		}
 
 		focus = {
-			food = 250
+			food = 50
 		}
 	}
 
-	pops = 1500
-	empire_size = 1
+	pops = 500
+	empire_size = 1.1 #admin cap is fine with being 10% over limit
 
 	ai_weight = {
 		weight = 1
@@ -254,26 +254,26 @@ ultimate_default_plan = {
 
 	income = {
 		energy = 500
-		minerals = 2500
-		alloys = 2500
-		unity = 1500
+		minerals = 375
+		alloys = 200
+		unity = 250
 
-		physics_research = 30000
-		society_research = 30000
-		engineering_research = 30000
+		physics_research = 250
+		society_research = 250
+		engineering_research = 250
 
-		exotic_gases = 15
-		volatile_motes = 15
-		rare_crystals = 15
-		sr_living_metal = 15
-		sr_zro = 15
-		sr_dark_matter = 15
+		exotic_gases = 20
+		volatile_motes = 20
+		rare_crystals = 20
+		sr_living_metal = 20
+		sr_zro = 20
+		sr_dark_matter = 20
 	}
 
 	focus = {
-		energy = 250
-		minerals = 500
-		alloys = 1000
+		energy = 500
+		minerals = 250
+		alloys = 0
 	}
 
 	subplan = {
@@ -283,13 +283,13 @@ ultimate_default_plan = {
 		}
 
 		income = {
-			food = 1000
-			consumer_goods = 1000
+			food = 25
+			consumer_goods = 100
 		}
 
 		focus = {
-			food = 250
-			consumer_goods = 250
+			food = 25
+			consumer_goods = 50
 		}
 	}
 
@@ -300,11 +300,11 @@ ultimate_default_plan = {
 		}
 
 		income = {
-			consumer_goods = 1000
+			consumer_goods = 100
 		}
 
 		focus = {
-			consumer_goods = 250
+			consumer_goods = 50
 		}
 	}
 
@@ -316,16 +316,16 @@ ultimate_default_plan = {
 		}
 
 		income = {
-			food  = 1000
+			food  = 50
 		}
 
 		focus = {
-			food = 250
+			food = 50
 		}
 	}
 
-	pops = 10000
-	empire_size = 1.5
+	pops = 1000
+	empire_size = 1.1 #admin cap is fine with being 10% over limit
 
 	ai_weight = {
 		weight = 0.5

@@ -30,7 +30,7 @@ decision_transplant_tree = {
 	}
 
 	ai_weight = {
-		weight = 1
+		weight = 10
 	}
 }
 

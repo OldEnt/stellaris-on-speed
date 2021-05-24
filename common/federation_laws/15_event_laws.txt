@@ -1,0 +1,239 @@
+@cooldown = 720
+
+succession_type_none = {
+	potential = { 
+		has_federation_type = imperial_loyalists_federation
+	}
+	allow = { 
+	}
+	on_enact = {
+		if = {
+			limit = { has_federation_flag = enable_federation_cooldowns }
+			add_modifier = {
+				modifier = federation_law_category_succession_type_cooldown
+				days = @cooldown
+			}
+		}
+		set_federation_law = succession_power_diplomatic_weight
+	}
+
+	ai_weight = {
+		base = 0
+	}
+}
+
+succession_term_perpetual = {
+	potential = { 
+		has_federation_type = imperial_loyalists_federation
+	}
+	allow = {
+	}
+	on_enact = {
+		set_federation_succession_term = years_40 # Should be perpetual
+		if = {
+			limit = { has_federation_flag = enable_federation_cooldowns }
+			add_modifier = {
+				modifier = federation_law_category_succession_term_cooldown
+				days = @cooldown
+			}
+		}
+	}
+
+	ai_weight = {
+		base = 0
+	}
+}
+
+treaties_separate_no_imperial_loyalists = {
+	potential = { 
+		has_federation_type = imperial_loyalists_federation
+	}
+	allow = {
+		custom_tooltip = {
+			NOT = {
+				AND = {
+					NOT = { has_federation_law = treaties_separate_no }
+					has_modifier = federation_law_category_separate_treaties_cooldown
+					has_any_federation_law_in_category = law_category_separate_treaties
+				}
+			}
+		}
+	}
+	on_enact = {
+		if = {
+			limit = { has_federation_flag = enable_federation_cooldowns }
+			add_modifier = {
+				modifier = federation_law_category_separate_treaties_cooldown
+				days = @cooldown
+			}
+		}
+		add_cohesion = -5
+		every_member = {
+			country_event = { id = action.215 } # Clear treaties with non-Federation members
+		}
+	}
+	
+	ai_weight = {
+		base = 0
+	}
+}
+
+centralization_imperial_loyalists = {
+	unlocks_centralization = 5
+	potential = { 
+		has_federation_type = imperial_loyalists_federation
+	}
+	allow = {
+	}
+	on_enact = {
+		if = {
+			limit = {
+				has_federation_flag = enable_federation_cooldowns
+			}
+			add_modifier = {
+				modifier = federation_law_category_centralization_cooldown
+				days = @cooldown
+			}
+		}
+	}
+	ai_weight = {
+		base = 0
+	}
+}
+
+kick_members_president_vote_imperial_loyalists = {
+	potential = { 
+		has_federation_type = imperial_loyalists_federation
+	}
+	allow = {
+	}
+	on_enact = {
+		set_diplomacy_action_setting = {
+			action = action_kick_from_federation
+			settings = {
+				vote_type = leader
+			}
+		}
+		if = {
+			limit = { has_federation_flag = enable_federation_cooldowns }
+			add_modifier = {
+				modifier = federation_law_category_kick_members_vote_cooldown
+				days = @cooldown
+			}
+		}
+		add_cohesion = -5
+	}
+
+	ai_weight = {
+		base = 0
+	}
+}
+
+declare_war_president_vote_imperial_loyalists = {
+	potential = { 
+		has_federation_type = imperial_loyalists_federation
+	}
+	allow = {
+	}
+	on_enact = {
+		set_diplomacy_action_setting = {
+			action = action_declare_war
+			settings = {
+				vote_type = leader
+			}
+		}
+		set_diplomacy_action_setting = {
+			action = action_offer_peace
+			settings = {
+				vote_type = leader
+			}
+		}
+		if = {
+			limit = { has_federation_flag = enable_federation_cooldowns }
+			add_modifier = {
+				modifier = federation_law_category_war_declaration_vote_cooldown
+				days = @cooldown
+			}
+		}
+		add_cohesion = -5
+	}
+
+	ai_weight = {
+		base = 0
+	}
+}
+
+invite_members_president_vote_imperial_loyalists = {
+	potential = { 
+		has_federation_type = imperial_loyalists_federation
+	}
+	allow = {
+	}
+	on_enact = {
+		set_diplomacy_action_setting = {
+			action = action_invite_to_federation
+			settings = {
+				vote_type = leader
+			}
+		}
+		if = {
+			limit = { has_federation_flag = enable_federation_cooldowns }
+			add_modifier = {
+				modifier = federation_law_category_invite_members_vote_cooldown
+				days = @cooldown
+			}
+		}
+	}
+
+	ai_weight = {
+		base = 0
+	}
+}
+
+allow_subjects_to_join_yes_imperial_loyalists = {
+	potential = { 
+		has_federation_type = imperial_loyalists_federation
+	}
+	allow = {
+	}
+	on_enact = {
+		set_allow_subjects_to_join = yes
+		if = {
+			limit = { has_federation_flag = enable_federation_cooldowns }
+			add_modifier = {
+				modifier = federation_law_category_allow_subjects_to_join_cooldown
+				days = @cooldown
+			}
+		}
+		random_member = {
+			country_event = { id = action.212 } # Let all subjects join
+		}
+	}
+	
+	ai_weight = {
+		base = 0
+	}
+}
+
+vote_weight_diplomatic_imperial_loyalists = {
+	potential = { 
+		has_federation_type = imperial_loyalists_federation
+	}
+	allow = {
+	}
+	on_enact = {
+		set_equal_voting_power = no
+		if = {
+			limit = { has_federation_flag = enable_federation_cooldowns }
+			add_modifier = {
+				modifier = federation_law_category_voting_weight_cooldown
+				days = @cooldown
+			}
+		}
+		add_cohesion = -5
+	}
+	
+	ai_weight = {
+		base = 0
+	}
+}

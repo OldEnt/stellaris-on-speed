@@ -97,7 +97,7 @@ district_arcology_housing = {
 			}
 		}
 		modifier = {
-			job_clerk_add = 6
+			job_clerk_add = 3
 		}
 	}
 
@@ -107,7 +107,7 @@ district_arcology_housing = {
 			owner = { has_non_swapped_tradition = tr_prosperity_interstellar_franchising }
 		}
 		modifier = {
-			job_clerk_add = 6
+			job_clerk_add = 3
 		}
 	}
 
@@ -228,73 +228,6 @@ district_arcology_arms_industry = {
 		text = job_fabricator_effect_desc
 	}
 
-	# Extra jobs from foundry buildings
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_regular_empire = yes }
-			has_active_building = building_foundry_2
-		}
-		modifier = {
-			job_foundry_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_regular_empire = yes }
-			has_active_building = building_foundry_3
-		}
-		modifier = {
-			job_foundry_add = 2
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-			has_active_building = building_foundry_2
-		}
-		modifier = {
-			job_fabricator_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-			has_active_building = building_foundry_3
-		}
-		modifier = {
-			job_fabricator_add = 2
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_hive_empire = yes }
-			has_active_building = building_foundry_2
-		}
-		modifier = {
-			job_alloy_drone_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_hive_empire = yes }
-			has_active_building = building_foundry_3
-		}
-		modifier = {
-			job_alloy_drone_add = 2
-		}
-	}
-
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -388,51 +321,6 @@ district_arcology_civilian_industry = {
 		}
 		modifier = {
 			job_artisan_add = 6
-		}
-	}
-
-	# Extra jobs from factory buildings
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_regular_empire = yes }
-			has_active_building = building_factory_2
-		}
-		modifier = {
-			job_artisan_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_regular_empire = yes }
-			has_active_building = building_factory_3
-		}
-		modifier = {
-			job_artisan_add = 2
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-			has_active_building = building_factory_2
-		}
-		modifier = {
-			job_artisan_drone_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-			has_active_building = building_factory_3
-		}
-		modifier = {
-			job_artisan_drone_add = 2
 		}
 	}
 

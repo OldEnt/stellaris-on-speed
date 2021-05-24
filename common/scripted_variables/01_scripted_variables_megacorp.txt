@@ -3,14 +3,17 @@
 # They can be overridden in each normal script file.
 
 @fleet1dealdecay = 720
+@fleet2dealdecay = 720
+@fleet3dealdecay = 720
 
-@special_job_weight = 0.01 # Intentionally very low weight	
+@special_job_weight = 0.01 # Intentionally very low weight
 
 @ruler_job_weight = 1000
 @colonist_job_weight = 200
 @soldier_job_weight = 100
 @specialist_job_weight = 10
 @criminal_job_weight = 5
+@worker_prio_job_weight = 1.25 # Bit higher than other worker jobs
 @worker_job_weight = 1
 @clerk_job_weight = 0.8 # Bit lower than other worker jobs
 

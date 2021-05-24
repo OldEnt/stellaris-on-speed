@@ -109,7 +109,15 @@ nebula_refinery = {
 		}
 
 		produces = {
-			minerals = 30
+			minerals = 50
+		}
+
+		produces = {
+			trigger = {
+				exists = owner
+				owner = { has_technology = tech_mine_exotic_gases }
+			}
+			exotic_gases = 1
 		}
 
 		upkeep = {
@@ -349,7 +357,7 @@ fleet_academy = {
 			factor = 0
 			count_starbase_modules = {
 				type = shipyard
-				count < 3
+				count < 2
 			}
 		}
 	}
@@ -434,7 +442,16 @@ titan_yards = {
 			factor = 0
 			count_starbase_modules = {
 				type = shipyard
-				count < 3
+				count < 2
+			}
+		}
+		modifier = {
+			factor = 0
+			owner = {
+				any_owned_starbase = {
+					NOT = { is_same_value = root }
+					has_starbase_building = titan_yards
+				}
 			}
 		}
 	}
@@ -469,7 +486,7 @@ colossus_yards = {
 		}
 
 		upkeep = {
-			energy = 100
+			energy = 20
 		}
 	}
 
@@ -485,7 +502,16 @@ colossus_yards = {
 			factor = 0
 			count_starbase_modules = {
 				type = shipyard
-				count < 3
+				count < 2
+			}
+		}
+		modifier = {
+			factor = 0
+			owner = {
+				any_owned_starbase = {
+					NOT = { is_same_value = root }
+					has_starbase_building = colossus_yards
+				}
 			}
 		}
 	}
@@ -518,7 +544,7 @@ black_hole_observatory = {
 		}
 
 		produces = {
-			physics_research = 50
+			physics_research = 75
 		}
 		produces = {
 			trigger = {
@@ -533,7 +559,14 @@ black_hole_observatory = {
 					is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
 				}
 			}
-			physics_research = 50
+			physics_research = 75
+		}
+		produces = {
+			trigger = {
+				exists = owner
+				owner = { has_technology = tech_mine_dark_matter }
+			}
+			sr_dark_matter = 1
 		}
 
 		upkeep = {
@@ -936,8 +969,8 @@ warp_fluctuator = {
 	
 	potential = {
 		exists = owner
-		owner = { 
-			has_technology = tech_hyper_drive_2 
+		owner = {
+			has_technology = tech_hyper_drive_2
 			is_gestalt = no
 		}
 	}
@@ -964,12 +997,73 @@ warp_fluctuator = {
 		starbase_trade_collection_range_add = 1
 	}
 
-	show_in_tech = "tech_hyper_drive_2"
+	show_in_tech = "tech_interstellar_economics"
 
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = no
 	ai_weight = {
 		weight = 10
+	}
+}
+
+transit_hub = {
+	icon = "GFX_spaceport_module_pioneering_terminal"
+	construction_days = 36
+
+	potential = {
+		exists = owner
+		owner = {
+			has_technology = tech_hyper_drive_2
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_starport"
+			has_starbase_size >= starbase_starport
+		}
+		custom_tooltip = {
+			fail_text = "requires_colonized_planet"
+			solar_system = {
+				any_system_planet = {
+					is_owned_by = from
+				}
+			}
+		}
+	}
+
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 100
+		}
+
+		upkeep = {
+			energy = 15
+		}
+	}
+
+	system_modifier = {
+		planet_resettlement_unemployed_mult = 1.00
+	}
+
+	show_in_tech = "tech_hyper_drive_2"
+
+	ai_build_at_chokepoint = yes
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 100
+		modifier = {
+			factor = 0
+			NOT = {
+				solar_system = {
+					any_system_planet = {
+						exists = owner
+						owner = { is_country_type = default }
+					}
+				}
+			}
+		}
 	}
 }
 

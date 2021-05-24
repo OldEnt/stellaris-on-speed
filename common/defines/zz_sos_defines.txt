@@ -80,6 +80,8 @@ NGameplay = {
 	SUBJECT_INTEGRATION_COST_PER_POP 		= 0.2 # Integration cost per pop
 	SUBJECT_INTEGRATION_COST_PER_PLANET		= 2 # Integration cost per planet
 	
+	INTEL_YEARLY_DECREASE				= 5.0		# Amount of Intel lost every year to reach the target Intel
+	INTEL_YEARLY_INCREASE				= 60.0		# Amount of Intel gained every year to reach the target Intel
 }
 
 NEconomy = {

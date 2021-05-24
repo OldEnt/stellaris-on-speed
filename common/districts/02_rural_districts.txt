@@ -74,17 +74,6 @@ district_generator = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = yes }
-			has_active_building = building_energy_nexus
-		}
-		modifier = {
-			job_technician_drone_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = {
 				is_gestalt = no
 				is_fallen_empire_spiritualist = no
@@ -98,35 +87,10 @@ district_generator = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_active_building = building_energy_nexus
-		}
-		modifier = {
-			job_technician_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = {
 			job_fe_acolyte_generator_add = 2
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_fallen_empire_spiritualist = yes }
-			has_active_building = building_energy_nexus
-		}
-		modifier = {
-			job_fe_acolyte_generator_add = 1
 		}
 	}
 
@@ -239,17 +203,6 @@ district_mining = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = yes }
-			has_active_building = building_mineral_purification_hub
-		}
-		modifier = {
-			job_mining_drone_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = {
 				is_gestalt = no
 				is_fallen_empire_spiritualist = no
@@ -263,35 +216,10 @@ district_mining = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_active_building = building_mineral_purification_hub
-		}
-		modifier = {
-			job_miner_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = {
 			job_fe_acolyte_mine_add = 2
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_fallen_empire_spiritualist = yes }
-			has_active_building = building_mineral_purification_hub
-		}
-		modifier = {
-			job_fe_acolyte_mine_add = 1
 		}
 	}
 
@@ -419,17 +347,6 @@ district_farming = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = yes }
-			has_active_building = building_food_processing_center
-		}
-		modifier = {
-			job_agri_drone_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = {
 				is_gestalt = no
 				is_fallen_empire_spiritualist = no
@@ -443,35 +360,10 @@ district_farming = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_active_building = building_food_processing_center
-		}
-		modifier = {
-			job_farmer_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = {
 			job_fe_acolyte_farm_add = 2
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_fallen_empire_spiritualist = yes }
-			has_active_building = building_food_processing_center
-		}
-		modifier = {
-			job_fe_acolyte_farm_add = 1
 		}
 	}
 
@@ -590,17 +482,6 @@ district_generator_uncapped = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = yes }
-			has_active_building = building_energy_nexus
-		}
-		modifier = {
-			job_technician_drone_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = {
 				is_gestalt = no
 				is_fallen_empire_spiritualist = no
@@ -614,35 +495,10 @@ district_generator_uncapped = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_active_building = building_energy_nexus
-		}
-		modifier = {
-			job_technician_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = {
 			job_fe_acolyte_generator_add = 2
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_fallen_empire_spiritualist = yes }
-			has_active_building = building_energy_nexus
-		}
-		modifier = {
-			job_fe_acolyte_generator_add = 1
 		}
 	}
 
@@ -757,17 +613,6 @@ district_mining_uncapped = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = yes }
-			has_active_building = building_mineral_purification_hub
-		}
-		modifier = {
-			job_mining_drone_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = {
 				is_gestalt = no
 				is_fallen_empire_spiritualist = no
@@ -781,35 +626,10 @@ district_mining_uncapped = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = {
-				is_gestalt = no
-				is_fallen_empire_spiritualist = no
-			}
-			has_active_building = building_mineral_purification_hub
-		}
-		modifier = {
-			job_miner_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		modifier = {
 			job_fe_acolyte_mine_add = 2
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_fallen_empire_spiritualist = yes }
-			has_active_building = building_mineral_purification_hub
-		}
-		modifier = {
-			job_fe_acolyte_mine_add = 1
 		}
 	}
 

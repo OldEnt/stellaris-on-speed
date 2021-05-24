@@ -382,7 +382,7 @@ building_corporate_embassy = {
 	}
 
 	country_modifier = {
-		diplo_weight_economy_mult = 0.1
+		diplo_weight_economy_mult = 0.05
 	}
 
 	planet_modifier = {

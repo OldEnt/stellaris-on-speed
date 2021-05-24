@@ -545,8 +545,33 @@ artisan_drone = {
 		produces = {
 			consumer_goods = 50
 		}
+		produces = {
+			trigger = {
+				planet = { has_active_building = building_factory_2 }
+			}
+			consumer_goods = 5
+		}
+		produces = {
+			trigger = {
+				planet = { has_active_building = building_factory_3 }
+			}
+			consumer_goods = 10
+		}
+
 		upkeep = {
 			minerals = 50
+		}
+		upkeep = {
+			trigger = {
+				planet = { has_active_building = building_factory_2 }
+			}
+			minerals = 10
+		}
+		upkeep = {
+			trigger = {
+				planet = { has_active_building = building_factory_3 }
+			}
+			minerals = 20
 		}
 		upkeep = {
 			trigger = {
@@ -601,8 +626,32 @@ fabricator = {
 		produces = {
 			alloys = 20
 		}
+		produces = {
+			trigger = {
+				planet = { has_active_building = building_foundry_2 }
+			}
+			alloys = 5
+		}
+		produces = {
+			trigger = {
+				planet = { has_active_building = building_foundry_3 }
+			}
+			alloys = 10
+		}
 		upkeep = {
 			minerals = 40
+		}
+		upkeep = {
+			trigger = {
+				planet = { has_active_building = building_foundry_2 }
+			}
+			minerals = 10
+		}
+		upkeep = {
+			trigger = {
+				planet = { has_active_building = building_foundry_3 }
+			}
+			minerals = 20
 		}
 		upkeep = {
 			trigger = {
@@ -657,8 +706,33 @@ alloy_drone = {
 		produces = {
 			alloys = 15
 		}
+		produces = {
+			trigger = {
+				planet = { has_active_building = building_foundry_2 }
+			}
+			alloys = 5
+		}
+		produces = {
+			trigger = {
+				planet = { has_active_building = building_foundry_3 }
+			}
+			alloys = 10
+		}
+
 		upkeep = {
 			minerals = 30
+		}
+		upkeep = {
+			trigger = {
+				planet = { has_active_building = building_foundry_2 }
+			}
+			minerals = 10
+		}
+		upkeep = {
+			trigger = {
+				planet = { has_active_building = building_foundry_3 }
+			}
+			minerals = 20
 		}
 		upkeep = {
 			trigger = {
@@ -1067,6 +1141,18 @@ mining_drone = {
 		produces = {
 			minerals = 20
 		}
+		produces = {
+			trigger = {
+				planet = { has_active_building = building_mineral_purification_plant }
+			}
+			minerals = 5
+		}
+		produces = {
+			trigger = {
+				planet = { has_active_building = building_mineral_purification_hub }
+			}
+			minerals = 10
+		}
 		upkeep = {
 			trigger = {
 				exists = owner
@@ -1145,6 +1231,18 @@ agri_drone = {
 				}
 			}
 			food = -5
+		}
+		produces = {
+			trigger = {
+				planet = { has_active_building = building_food_processing_facility }
+			}
+			food = 5
+		}
+		produces = {
+			trigger = {
+				planet = { has_active_building = building_food_processing_center }
+			}
+			food = 10
 		}
 		upkeep = {
 			trigger = {
@@ -1241,6 +1339,18 @@ technician_drone = {
 				owner = {
 					is_robot_empire = yes
 				}
+			}
+			energy = 10
+		}
+		produces = {
+			trigger = {
+				planet = { has_active_building = building_energy_grid }
+			}
+			energy = 5
+		}
+		produces = {
+			trigger = {
+				planet = { has_active_building = building_energy_nexus }
 			}
 			energy = 10
 		}
@@ -1542,6 +1652,18 @@ bluelotus_drone = {
 		category = planet_metallurgists
 		produces = {
 			alloys = 20
+		}
+		produces = {
+			trigger = {
+				planet = { has_active_building = building_foundry_2 }
+			}
+			alloys = 5
+		}
+		produces = {
+			trigger = {
+				planet = { has_active_building = building_foundry_3 }
+			}
+			alloys = 10
 		}
 
 		upkeep = {
