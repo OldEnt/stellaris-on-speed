@@ -37,6 +37,8 @@ NGameplay = {
 		1152	#9 levels below anomaly
 	}
 
+	ESPIONAGE_OPERATION_BASE_ROLL_FREQUENCY = 6.0 # Roll frequency in days
+
 	LEADER_EXPERIENCE_REQUIREMENT_BASE_VALUE					= 25.0 # Base value when calculating required experience for next skill level
 
 	MID_GAME_START_DEFAULT = 20
