@@ -155,7 +155,7 @@ progressive = {
 			owner = {
 				NOR = {
 					any_owned_pop = {
-						has_migration_control = yes
+						has_migration_control = { value = yes }
 						is_sapient = yes
 						is_enslaved = no
 						is_being_purged = no

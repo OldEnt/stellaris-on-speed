@@ -6,8 +6,8 @@
 # blocker = <key/any/none> - default any
 # station = station class in orbit to gather
 
-@rw_maintenance = 5
-@rw_maintenance_sr = 2
+@rw_maintenance = 25
+@rw_maintenance_sr = 10
 
 ############################
 #   Federations Deposits   #
