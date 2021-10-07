@@ -42,7 +42,7 @@ hydroponics_bay = {
 		}
 
 		produces = {
-			food = 15
+			food = 50
 		}
 
 		upkeep = {
@@ -204,7 +204,13 @@ offworld_trading_company = {
 			fail_text = "requires_starport"
 			has_starbase_size >= starbase_starport
 		}
-		has_starbase_module = trading_hub
+		OR = {
+			has_starbase_module = trading_hub
+			starbase_buildable_is_in_queue_before = {
+				first = trading_hub
+				second = offworld_trading_company
+			}
+		}
 	}
 
 	resources = {
@@ -373,7 +379,13 @@ naval_logistics_office = {
 	}
 
 	possible = {
-		has_starbase_module = anchorage
+		OR = {
+			has_starbase_module = anchorage
+			starbase_buildable_is_in_queue_before = {
+				first = anchorage
+				second = naval_logistics_office
+			}
+		}
 	}
 
 	resources = {
@@ -418,7 +430,13 @@ titan_yards = {
 			fail_text = "requires_citadel"
 			has_starbase_size >= starbase_citadel
 		}
-		has_starbase_module = shipyard
+		OR = {
+			has_starbase_module = shipyard
+			starbase_buildable_is_in_queue_before = {
+				first = shipyard
+				second = titan_yards
+			}
+		}
 	}
 
 	resources = {
@@ -466,7 +484,8 @@ colossus_yards = {
 		owner = {
 			OR = {
 				has_technology = tech_colossus
-				has_technology = tech_juggernaut		
+				has_technology = tech_juggernaut
+				has_technology = tech_btc_1 # star-eater
 			}
 		}
 	}
@@ -476,7 +495,13 @@ colossus_yards = {
 			fail_text = "requires_citadel"
 			has_starbase_size >= starbase_citadel
 		}
-		has_starbase_module = shipyard
+		OR = {
+			has_starbase_module = shipyard
+			starbase_buildable_is_in_queue_before = {
+				first = shipyard
+				second = colossus_yards
+			}
+		}
 	}
 
 	resources = {
@@ -610,6 +635,10 @@ target_uplink_computer = {
 	}
 
 	station_modifier = {
+		ship_weapon_range_mult = 0.50
+	}
+
+	defense_platform_modifier = {
 		ship_weapon_range_mult = 0.50
 	}
 

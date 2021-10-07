@@ -34,7 +34,7 @@ invite_members_unanimous_vote = {
 
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
@@ -83,7 +83,7 @@ invite_members_president_vote = {
 
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
@@ -141,7 +141,7 @@ invite_members_president_vote_hegemony = {
 
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
@@ -163,7 +163,7 @@ invite_members_president_vote_hegemony = {
 }
 
 invite_members_majority_vote = {
-	potential = { 
+	potential = {
 		host_has_dlc = Federations
 		NOT = { has_federation_type = imperial_loyalists_federation }
 	}
@@ -200,7 +200,7 @@ invite_members_majority_vote = {
 
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive

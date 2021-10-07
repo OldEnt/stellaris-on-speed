@@ -279,7 +279,7 @@ diplomatic_grants = {
 	}
 
 	potential = {
-		has_non_swapped_tradition = tr_diplomacy_adopt
+		has_tradition = tr_diplomacy_adopt
 		has_comms_with_alien_empire = yes
 	}
 
@@ -308,9 +308,12 @@ enhanced_surveillance = {
 	}
 
 	potential = {
-		has_tradition = tr_domination_judgment_corps
-		has_comms_with_alien_empire = yes
+		has_active_tradition = tr_domination_judgment_corps
 		is_gestalt = no
+	}
+
+	allow = {
+		has_comms_with_alien_empire = yes
 	}
 
 	ai_weight = {
@@ -603,7 +606,7 @@ extended_shifts = {
 	}
 
 	potential = {
-		has_non_swapped_tradition = tr_domination_workplace_motivators
+		has_active_tradition = tr_domination_workplace_motivators
 	}
 
 	ai_weight = {
@@ -686,7 +689,7 @@ industrial_maintenance = {
 
 	potential = {
 		is_machine_empire = yes
-		has_swapped_tradition = tr_synchronicity_finish
+		has_tradition = tr_synchronicity_finish
 	}
 
 	ai_weight = {
@@ -722,7 +725,7 @@ drone_overdrive = {
 
 	potential = {
 		is_gestalt = yes
-		has_swapped_tradition = tr_domination_drone_network
+		has_active_tradition = tr_domination_drone_network
 	}
 
 	ai_weight = {
@@ -761,8 +764,7 @@ capacity_subsidies = {
 
 	modifier = {
 		planet_technician_produces_mult = 0.50
-		custom_tooltip = edict_capacity_subsidies_tooltip
-		show_only_custom_tooltip = no
+		planet_technician_energy_upkeep_add = 0.5
 	}
 
 	prerequisites = {
@@ -802,8 +804,8 @@ mining_subsidies = {
 
 	modifier = {
 		planet_miners_produces_mult = 0.50 # Note: Also affects organic special resource miners!
-		custom_tooltip = edict_mining_subsidies_tooltip
-		show_only_custom_tooltip = no
+		planet_miners_energy_upkeep_add = 0.5
+		planet_sr_miners_energy_upkeep_add = 0.5 #Note: _add modifiers don't apply to children, but _mult ones do, so this is necessary here
 	}
 
 	prerequisites = {
@@ -844,8 +846,7 @@ farming_subsidies = {
 
 	modifier = {
 		planet_farmers_produces_mult = 0.50
-		custom_tooltip = edict_farming_subsidies_tooltip
-		show_only_custom_tooltip = no
+		planet_farmers_energy_upkeep_add = 0.5
 	}
 
 	prerequisites = {
@@ -886,8 +887,7 @@ industrial_subsidies = {
 
 	modifier = {
 		planet_artisans_produces_mult = 0.10
-		custom_tooltip = edict_industrial_subsidies_tooltip
-		show_only_custom_tooltip = no
+		planet_artisans_energy_upkeep_add = 1
 	}
 
 	potential = {
@@ -936,8 +936,7 @@ forge_subsidies = {
 
 	modifier = {
 		planet_metallurgists_produces_mult = 0.10
-		custom_tooltip = edict_forge_subsidies_tooltip
-		show_only_custom_tooltip = no
+		planet_metallurgists_energy_upkeep_add = 1
 	}
 
 	prerequisites = {
@@ -972,8 +971,7 @@ research_subsidies = {
 
 	modifier = {
 		planet_researchers_produces_mult = 0.10
-		custom_tooltip = edict_research_subsidies_tooltip
-		show_only_custom_tooltip = no
+		planet_researchers_energy_upkeep_add = 1
 	}
 
 	potential = {

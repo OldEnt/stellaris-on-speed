@@ -7,7 +7,7 @@ succession_power_economy = {
 			has_federation_law = succession_type_strongest_hegemony
 		}
 	}
-	allow = { 
+	allow = {
 		custom_tooltip = {
 			NOT = {
 				AND = {
@@ -32,7 +32,7 @@ succession_power_economy = {
 
 	ai_weight = {
 		base = 26
-		
+
 		#Behaviour-specific
 		modifier = {
 			add = 25
@@ -80,7 +80,7 @@ succession_power_diplomatic_weight = {
 			has_federation_law = succession_type_strongest_hegemony
 		}
 	}
-	allow = { 
+	allow = {
 		custom_tooltip = {
 			NOT = {
 				AND = {
@@ -105,13 +105,13 @@ succession_power_diplomatic_weight = {
 
 	ai_weight = {
 		base = 26
-		
+
 		#Behaviour-specific
 		modifier = {
 			add = 25
-			federation = { 
+			federation = {
 				has_federation_type = trade_federation
-				NOT = { federation = { has_federation_law = succession_power_economy } }
+				NOT = { has_federation_law = succession_power_economy }
 			}
 		}
 		modifier = {
@@ -134,10 +134,10 @@ succession_power_diplomatic_weight = {
 		}
 		modifier = {
 			add = 50
-			federation = { 
+			federation = {
 				OR = {
 					has_federation_type = default_federation
-					has_federation_type = hegemony_federation				
+					has_federation_type = hegemony_federation
 				}
 			}
 		}
@@ -170,7 +170,7 @@ succession_power_tech = {
 		}
 		host_has_dlc = Federations
 	}
-	allow = { 
+	allow = {
 		custom_tooltip = {
 			NOT = {
 				AND = {
@@ -195,7 +195,7 @@ succession_power_tech = {
 
 	ai_weight = {
 		base = 26
-		
+
 		#Behaviour-specific
 		modifier = {
 			add = 25
@@ -248,7 +248,7 @@ succession_power_fleet = {
 		}
 		host_has_dlc = Federations
 	}
-	allow = { 
+	allow = {
 		custom_tooltip = {
 			NOT = {
 				AND = {
@@ -273,7 +273,7 @@ succession_power_fleet = {
 
 	ai_weight = {
 		base = 26
-		
+
 		#Behaviour-specific
 		modifier = {
 			add = 25

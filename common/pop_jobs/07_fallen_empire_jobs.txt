@@ -1,4 +1,4 @@
-###################
+##################
 # Primitive Jobs
 ###################
 
@@ -241,18 +241,6 @@ fe_acolyte_farm = {
 		produces = {
 			food = 40
 		}
-		produces = {
-			trigger = {
-				planet = { has_active_building = building_food_processing_facility }
-			}
-			food = 5
-		}
-		produces = {
-			trigger = {
-				planet = { has_active_building = building_food_processing_center }
-			}
-			food = 10
-		}
 	}
 
 	weight = {
@@ -293,18 +281,6 @@ fe_acolyte_mine = {
 		produces = {
 			minerals = 30
 		}
-		produces = {
-			trigger = {
-				planet = { has_active_building = building_mineral_purification_plant }
-			}
-			minerals = 5
-		}
-		produces = {
-			trigger = {
-				planet = { has_active_building = building_mineral_purification_hub }
-			}
-			minerals = 10
-		}
 	}
 
 	weight = {
@@ -344,18 +320,6 @@ fe_acolyte_generator = {
 		category = planet_technician
 		produces = {
 			energy = 30
-		}
-		produces = {
-			trigger = {
-				planet = { has_active_building = building_energy_grid }
-			}
-			energy = 5
-		}
-		produces = {
-			trigger = {
-				planet = { has_active_building = building_energy_nexus }
-			}
-			energy = 10
 		}
 	}
 

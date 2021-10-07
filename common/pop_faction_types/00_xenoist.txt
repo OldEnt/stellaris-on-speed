@@ -13,7 +13,7 @@ xenoist = {
 		category = pop_factions
 		produces = {
 			influence = 10
-		}		
+		}
 	}
 
 	is_potential = {
@@ -607,14 +607,14 @@ xenoist = {
 			}
 
 			effect = {
-				add_modifier = { modifier = embraced_faction days = 3600 }
+				add_modifier = { modifier = embraced_faction days = 720 }
 				parameter:empire = {
 					shift_ethic = ethic_xenophile
 					hidden_effect = {
-						add_modifier = { modifier = embraced_faction_timer days = 3600 }
+						add_modifier = { modifier = embraced_faction_timer days = 720 }
 						every_pop_faction = {
 							limit = { NOT = { is_same_value = root } }
-							add_modifier = { modifier = embraced_another_faction days = 3600 }
+							add_modifier = { modifier = embraced_another_faction days = 720 }
 						}
 					}
 				}

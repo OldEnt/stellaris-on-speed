@@ -15,23 +15,23 @@
 #########################
 
 d_exotic_gases_1 = {
-	station = shipclass_mining_station 
-	is_for_colonizeable = no
-	
-	resources = { 
+	station = shipclass_mining_station
+	is_for_colonizable = no
+
+	resources = {
 		category = orbital_mining_deposits
 		produces = {
 			exotic_gases = 5
 		}
 	}
-	
+
 	potential = {
 		OR = {
 			is_planet_class = pc_gas_giant
 			is_planet_class = pc_toxic
-		}	
+		}
 	}
-	
+
 	drop_weight = {
 		weight = 1.5
 		modifier = {
@@ -42,23 +42,23 @@ d_exotic_gases_1 = {
 }
 
 d_exotic_gases_2 = {
-	station = shipclass_mining_station 
-	is_for_colonizeable = no
-	
-	resources = { 
+	station = shipclass_mining_station
+	is_for_colonizable = no
+
+	resources = {
 		category = orbital_mining_deposits
 		produces = {
 			exotic_gases = 10
 		}
-	}	
-	
+	}
+
 	potential = {
 		OR = {
 			is_planet_class = pc_gas_giant
 			is_planet_class = pc_toxic
-		}	
+		}
 	}
-	
+
 	drop_weight = {
 		weight = 0.5
 		modifier = {
@@ -69,63 +69,63 @@ d_exotic_gases_2 = {
 }
 
 d_exotic_gases_3 = {
-	station = shipclass_mining_station 
-	is_for_colonizeable = no
-	
-	resources = { 
+	station = shipclass_mining_station
+	is_for_colonizable = no
+
+	resources = {
 		category = orbital_mining_deposits
 		produces = {
 			exotic_gases = 15
 		}
 	}
-	
+
 	drop_weight = {
 		weight = 0
 	}
 }
 
 d_exotic_gases_4 = {
-	station = shipclass_mining_station 
-	is_for_colonizeable = no
-	
-	resources = { 
+	station = shipclass_mining_station
+	is_for_colonizable = no
+
+	resources = {
 		category = orbital_mining_deposits
 		produces = {
 			exotic_gases = 20
 		}
 	}
-	
+
 	drop_weight = {
 		weight = 0
 	}
 }
 
 d_exotic_gases_5 = {
-	station = shipclass_mining_station 
-	is_for_colonizeable = no
-	
-	resources = { 
+	station = shipclass_mining_station
+	is_for_colonizable = no
+
+	resources = {
 		category = orbital_mining_deposits
 		produces = {
 			exotic_gases = 25
 		}
 	}
-	
+
 	drop_weight = {
 		weight = 0
 	}
 }
 
 d_rare_crystals_1 = {
-	resources = { 
+	resources = {
 		category = orbital_mining_deposits
 		produces = {
 			rare_crystals = 5
 		}
 	}
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	drop_weight = {
 		weight = 0
 		modifier = {
@@ -143,15 +143,15 @@ d_rare_crystals_1 = {
 }
 
 d_rare_crystals_2 = {
-	resources = { 
+	resources = {
 		category = orbital_mining_deposits
 		produces = {
 			rare_crystals = 10
 		}
 	}
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	drop_weight = {
 		weight = 0
 		modifier = {
@@ -169,45 +169,45 @@ d_rare_crystals_2 = {
 }
 
 d_rare_crystals_3 = {
-	resources = { 
+	resources = {
 		category = orbital_mining_deposits
 		produces = {
 			rare_crystals = 15
 		}
 	}
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	drop_weight = {
 		weight = 0
 	}
 }
 
 d_rare_crystals_4 = {
-	resources = { 
+	resources = {
 		category = orbital_mining_deposits
 		produces = {
 			rare_crystals = 20
 		}
 	}
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	drop_weight = {
 		weight = 0
 	}
 }
 
 d_rare_crystals_5 = {
-	resources = { 
+	resources = {
 		category = orbital_mining_deposits
 		produces = {
 			rare_crystals = 25
 		}
 	}
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	drop_weight = {
 		weight = 0
 	}
@@ -215,22 +215,22 @@ d_rare_crystals_5 = {
 
 d_volatile_motes_1 = {
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
-	resources = { 
+	is_for_colonizable = no
+
+	resources = {
 		category = orbital_mining_deposits
 		produces = {
 			volatile_motes = 5
 		}
 	}
-	
+
 	potential = {
-		OR = {			
+		OR = {
 			is_planet_class = pc_molten
 			is_planet_class = pc_asteroid
 		}
 	}
-	
+
 	drop_weight = {
 		weight = 1.5
 		modifier = {
@@ -242,22 +242,22 @@ d_volatile_motes_1 = {
 
 d_volatile_motes_2 = {
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
-	resources = { 
+	is_for_colonizable = no
+
+	resources = {
 		category = orbital_mining_deposits
 		produces = {
 			volatile_motes = 10
 		}
-	}	
-	
+	}
+
 	potential = {
-		OR = {			
+		OR = {
 			is_planet_class = pc_molten
 			is_planet_class = pc_asteroid
 		}
 	}
-	
+
 	drop_weight = {
 		weight = 0.5
 		modifier = {
@@ -269,49 +269,49 @@ d_volatile_motes_2 = {
 
 d_volatile_motes_3 = {
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
-	resources = { 
+	is_for_colonizable = no
+
+	resources = {
 		category = orbital_mining_deposits
 		produces = {
 			volatile_motes = 15
 		}
 	}
-	
+
 	drop_weight = {
-		weight = 0	
+		weight = 0
 	}
 }
 
 d_volatile_motes_4 = {
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
-	resources = { 
+	is_for_colonizable = no
+
+	resources = {
 		category = orbital_mining_deposits
 		produces = {
 			volatile_motes = 20
 		}
 	}
-	
+
 	drop_weight = {
-		weight = 0	
+		weight = 0
 	}
 }
 
 d_volatile_motes_5 = {
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
-	resources = { 
+	is_for_colonizable = no
+
+	resources = {
 		category = orbital_mining_deposits
 		produces = {
 			volatile_motes = 25
 		}
 	}
-	
+
 	drop_weight = {
-		weight = 0	
+		weight = 0
 	}
 }
 
@@ -321,115 +321,115 @@ d_volatile_motes_5 = {
 
 d_zro_deposit_1 = {
 	station = shipclass_mining_station
-	is_for_colonizeable = no
+	is_for_colonizable = no
 	icon = d_dust_desert
-	
-	resources = { 
+
+	resources = {
 		category = orbital_mining_deposits
 		produces = {
 			sr_zro = 5
 		}
 	}
-	
+
 	potential = {
 		is_planet_class = pc_toxic
 	}
-	
+
 	drop_weight = {
 		weight = 5
 		modifier = {
 			factor = 0.5
 			is_inside_nebula = no
-		}	
+		}
 	}
 }
 
 d_zro_deposit_2 = {
 	station = shipclass_mining_station
-	is_for_colonizeable = no
+	is_for_colonizable = no
 	icon = d_dust_desert
-	
-	resources = { 
+
+	resources = {
 		category = orbital_mining_deposits
 		produces = {
 			sr_zro = 10
 		}
 	}
-	
+
 	potential = {
 		is_planet_class = pc_toxic
 	}
-	
+
 	drop_weight = {
 		weight = 1
 		modifier = {
 			factor = 0.5
 			is_inside_nebula = no
-		}	
+		}
 	}
 }
 
 d_zro_deposit_3 = {
 	station = shipclass_mining_station
-	is_for_colonizeable = no
+	is_for_colonizable = no
 	icon = d_dust_desert
-	
-	resources = { 
+
+	resources = {
 		category = orbital_mining_deposits
 		produces = {
 			sr_zro = 15
 		}
 	}
-	
+
 	drop_weight = {
-		weight = 0	
+		weight = 0
 	}
 }
 
 d_zro_deposit_4 = {
 	station = shipclass_mining_station
-	is_for_colonizeable = no
+	is_for_colonizable = no
 	icon = d_dust_desert
-	
-	resources = { 
+
+	resources = {
 		category = orbital_mining_deposits
 		produces = {
 			sr_zro = 20
 		}
 	}
-	
+
 	drop_weight = {
-		weight = 0	
+		weight = 0
 	}
 }
 
 d_zro_deposit_5 = {
 	station = shipclass_mining_station
-	is_for_colonizeable = no
+	is_for_colonizable = no
 	icon = d_dust_desert
-	
-	resources = { 
+
+	resources = {
 		category = orbital_mining_deposits
 		produces = {
 			sr_zro = 25
 		}
 	}
-	
+
 	drop_weight = {
-		weight = 0	
+		weight = 0
 	}
 }
 
 d_dark_matter_deposit_1 = {
-	resources = { 
+	resources = {
 		category = orbital_mining_deposits
 		produces = {
 			sr_dark_matter = 5
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	drop_weight = {
 		weight = 0
 		modifier = {
@@ -439,20 +439,20 @@ d_dark_matter_deposit_1 = {
 		modifier = {
 			factor = 0.5
 			is_inside_nebula = no
-		}		
+		}
 	}
 }
 
 d_dark_matter_deposit_2 = {
-	resources = { 
+	resources = {
 		category = orbital_research_deposits
 		produces = {
 			sr_dark_matter = 10
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	drop_weight = {
 		weight = 0
 		modifier = {
@@ -463,32 +463,32 @@ d_dark_matter_deposit_2 = {
 }
 
 d_dark_matter_deposit_3 = {
-	resources = { 
+	resources = {
 		category = orbital_research_deposits
 		produces = {
 			sr_dark_matter = 15
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	drop_weight = {
-		weight = 0	
+		weight = 0
 	}
 }
 
 d_dark_matter_deposit_10 = {
-	resources = { 
+	resources = {
 		category = orbital_research_deposits
 		produces = {
 			sr_dark_matter = 50
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	drop_weight = {
-		weight = 0	
+		weight = 0
 	}
 }
 
@@ -500,8 +500,8 @@ d_living_metal_deposit = {
 		}
 	}
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	drop_weight = {
 		weight = 0
 	}

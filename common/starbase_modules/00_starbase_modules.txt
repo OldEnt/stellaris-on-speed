@@ -277,7 +277,7 @@ solar_panel_network = {
 		}
 
 		produces = {
-			energy = 15
+			energy = 30
 		}
 
 		produces = {
@@ -293,7 +293,7 @@ solar_panel_network = {
 					is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
 				}
 			}
-			energy = 15
+			energy = 30
 		}
 	}
 

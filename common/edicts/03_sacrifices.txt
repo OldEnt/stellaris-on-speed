@@ -12,7 +12,7 @@
 sacrifice_togetherness = {
 	length = @sacrificeDuration
 	icon = "GFX_edict_type_time"
-	
+
 	resources = {
 		category = edicts
 		cost = { influence = @Edict1Cost }
@@ -24,18 +24,21 @@ sacrifice_togetherness = {
 		country_unity_produces_mult = 0.10
 		pop_growth_speed = 0.05
 	}
-	
+
 	potential = {
-        OR = {
-		    has_valid_civic = civic_death_cult
-            has_valid_civic = civic_death_cult_corporate
-        }
+		OR = {
+			has_valid_civic = civic_death_cult
+			has_valid_civic = civic_death_cult_corporate
+		}
 		has_technology = tech_cultural_heritage
-		any_owned_planet = {
-			count_owned_pop = {
-            	limit = { has_job = mortal_initiate }
-            	count >= 1
-        	}
+		OR = {
+			has_edict = sacrifice_togetherness
+			any_owned_planet = {
+				count_owned_pop = {
+					limit = { has_job = mortal_initiate }
+					count >= 1
+				}
+			}
 		}
 	}
 
@@ -59,11 +62,11 @@ sacrifice_togetherness = {
 	effect = {
 		country_event = { id = necroids.200 days = 0 }
 	}
-	
+
 	ai_weight = {
 		weight = 0
-        modifier = {
-            weight = @EdictLowPrio
+		modifier = {
+			weight = @EdictLowPrio
 			AND = {
 				years_passed > 12
 				any_owned_planet = {
@@ -77,9 +80,9 @@ sacrifice_togetherness = {
 					value <= 300
 				}
 			}
-        }
-        modifier = {
-            weight = @EdictMedPrio
+		}
+		modifier = {
+			weight = @EdictMedPrio
 			AND = {
 				years_passed > 20
 				any_owned_planet = {
@@ -93,14 +96,14 @@ sacrifice_togetherness = {
 					value <= 400
 				}
 			}
-        }
+		}
 	}
 }
 
 sacrifice_harmony = {
 	length = @sacrificeDuration
 	icon = "GFX_edict_type_time"
-	
+
 	resources = {
 		category = edicts
 		cost = { influence = @Edict1Cost }
@@ -112,18 +115,21 @@ sacrifice_harmony = {
 		pop_happiness = 0.10
 		pop_growth_speed = 0.05
 	}
-	
+
 	potential = {
-        OR = {
-		    has_valid_civic = civic_death_cult
-            has_valid_civic = civic_death_cult_corporate
-        }
+		OR = {
+			has_valid_civic = civic_death_cult
+			has_valid_civic = civic_death_cult_corporate
+		}
 		has_technology = tech_cultural_heritage
-		any_owned_planet = {
-			count_owned_pop = {
-            	limit = { has_job = mortal_initiate }
-            	count >= 1
-        	}
+		OR = {
+			has_edict = sacrifice_harmony
+			any_owned_planet = {
+				count_owned_pop = {
+					limit = { has_job = mortal_initiate }
+					count >= 1
+				}
+			}
 		}
 	}
 
@@ -147,11 +153,11 @@ sacrifice_harmony = {
 	effect = {
 		country_event = { id = necroids.201 days = 0 }
 	}
-	
+
 	ai_weight = {
 		weight = 0
-        modifier = {
-            weight = @EdictLowPrio
+		modifier = {
+			weight = @EdictLowPrio
 			AND = {
 				years_passed > 12
 				any_owned_planet = {
@@ -165,9 +171,9 @@ sacrifice_harmony = {
 					value <= 300
 				}
 			}
-        }
-        modifier = {
-            weight = @EdictMedPrio
+		}
+		modifier = {
+			weight = @EdictMedPrio
 			AND = {
 				years_passed > 20
 				any_owned_planet = {
@@ -181,14 +187,14 @@ sacrifice_harmony = {
 					value <= 400
 				}
 			}
-        }
+		}
 	}
 }
 
 sacrifice_bounty = {
 	length = @sacrificeDuration
 	icon = "GFX_edict_type_time"
-	
+
 	resources = {
 		category = edicts
 		cost = { influence = @Edict2Cost }
@@ -201,18 +207,21 @@ sacrifice_bounty = {
 		country_energy_produces_mult = 0.05
 		pop_growth_speed = 0.05
 	}
-	
+
 	potential = {
-        OR = {
-		    has_valid_civic = civic_death_cult
-            has_valid_civic = civic_death_cult_corporate
-        }
+		OR = {
+			has_valid_civic = civic_death_cult
+			has_valid_civic = civic_death_cult_corporate
+		}
 		has_technology = tech_cultural_heritage
-		any_owned_planet = {
-			count_owned_pop = {
-            	limit = { has_job = mortal_initiate }
-            	count >= 1
-        	}
+		OR = {
+			has_edict = sacrifice_bounty
+			any_owned_planet = {
+				count_owned_pop = {
+					limit = { has_job = mortal_initiate }
+					count >= 1
+				}
+			}
 		}
 	}
 
@@ -236,11 +245,11 @@ sacrifice_bounty = {
 	effect = {
 		country_event = { id = necroids.202 days = 0 }
 	}
-	
+
 	ai_weight = {
 		weight = 0
-        modifier = {
-            weight = @EdictLowPrio
+		modifier = {
+			weight = @EdictLowPrio
 			AND = {
 				years_passed > 12
 				any_owned_planet = {
@@ -254,9 +263,9 @@ sacrifice_bounty = {
 					value <= 300
 				}
 			}
-        }
-        modifier = {
-            weight = @EdictMedPrio
+		}
+		modifier = {
+			weight = @EdictMedPrio
 			AND = {
 				years_passed > 20
 				any_owned_planet = {
@@ -270,6 +279,6 @@ sacrifice_bounty = {
 					value <= 400
 				}
 			}
-        }
+		}
 	}
 }

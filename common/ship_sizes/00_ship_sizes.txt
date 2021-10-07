@@ -646,7 +646,6 @@ science = {
 
 transport = {
 	max_speed = @speed_very_fast
-	acceleration = 0.3
 	rotation_speed = 0.2
 	acceleration = 0.6
 	max_hitpoints = @transport_hp

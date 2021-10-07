@@ -1,7 +1,7 @@
 @cooldown = 720
 
 treaties_separate_no = {
-	potential = { 
+	potential = {
 		host_has_dlc = Federations
 		NOT = { has_federation_flag = special_federation }
 	}
@@ -33,16 +33,16 @@ treaties_separate_no = {
 			country_event = { id = action.215 } # Clear treaties with non-Federation members
 		}
 	}
-	
+
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 26
 		}
-		
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_xenophobe
@@ -59,7 +59,7 @@ treaties_separate_no = {
 }
 
 treaties_separate_yes = {
-	potential = { 
+	potential = {
 		NOT = { has_federation_flag = special_federation }
 	}
 	allow = {
@@ -83,16 +83,16 @@ treaties_separate_yes = {
 		}
 		add_cohesion = -5
 	}
-	
+
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 51
 		}
-		
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_xenophile

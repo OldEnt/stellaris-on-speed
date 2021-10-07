@@ -19,7 +19,7 @@ strategic_coordination_center_0 = {
 	}
 
 	prerequisites = { "tech_strategic_coordination" }
-	
+
 	possible = {
 		exists = starbase
 		custom_tooltip = {
@@ -46,7 +46,7 @@ strategic_coordination_center_0 = {
 			from = { NOT = { has_country_flag = built_strategic_coordination_center_site } }
 		}
 	}
-	
+
 	placement_rules = {
 		planet_possible = {
 			custom_tooltip = {
@@ -55,7 +55,7 @@ strategic_coordination_center_0 = {
 					who = prev.from
 					status = yes
 				}
-				colonizeable_planet = no
+				colonizable_planet = no
 			}
 			custom_tooltip = {
 				fail_text = "requires_no_anomaly"
@@ -78,28 +78,28 @@ strategic_coordination_center_0 = {
 			}
 		}
 	}
-	
+
 	# root = system
-	# from = country	
+	# from = country
 	ai_weight = {
 		factor = 15
-		
+
 		modifier = {
 			factor = 0.1
 			starbase = { NOT = { has_starbase_size >= starbase_starfortress } }
-		}	
-		
+		}
+
 		modifier = {
 			factor = 0.1
 			any_neighbor_system = {
 				exists = owner
-				NOT = { 
-					owner = { is_same_value = from } 
+				NOT = {
+					owner = { is_same_value = from }
 				}
 			}
 		}
 	}
-	
+
 	on_build_start = {}
 	on_build_cancel = {}
 	on_build_complete = {
@@ -169,7 +169,7 @@ strategic_coordination_center_2 = {
 	}
 
 	prerequisites = { "tech_strategic_coordination" }
-	
+
 	country_modifier = {
 		country_naval_cap_add = 100
 		country_starbase_capacity_add = 4
@@ -205,7 +205,7 @@ strategic_coordination_center_3 = {
 	upgrade_from = {
 		strategic_coordination_center_2
 	}
-	
+
 	prerequisites = { "tech_strategic_coordination" }
 	show_prereqs = yes
 
@@ -218,9 +218,9 @@ strategic_coordination_center_3 = {
 
 	on_build_complete = {
 		set_star_flag = strategic_coordination_center_built
-		from = { 
+		from = {
 			set_country_flag = has_built_or_repaired_megastructure
-			country_event = { id = mega.9005 } 
+			country_event = { id = mega.9005 }
 		}
 	}
 }
@@ -232,7 +232,7 @@ strategic_coordination_center_permanently_ruined = {
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
 	entity_offset = { x = -27 y = -27 }
-	
+
 	potential = { always = no }
 }
 
@@ -243,7 +243,7 @@ strategic_coordination_center_ruined = {
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
 	entity_offset = { x = -27 y = -27 }
-	
+
 	potential = { always = no }
 }
 
@@ -265,7 +265,7 @@ strategic_coordination_center_restored = {
 			energy = 375
 		}
 	}
-	
+
 	upgrade_from = {
 		strategic_coordination_center_ruined
 	}
@@ -300,9 +300,9 @@ strategic_coordination_center_restored = {
 			}
 			destroy_ambient_object = this
 		}
-		from = { 
+		from = {
 			set_country_flag = has_built_or_repaired_megastructure
-			country_event = { id = mega.9111 } 
+			country_event = { id = mega.9111 }
 		}
 	}
 }

@@ -1,10 +1,10 @@
 @cooldown = 720
 
 succession_type_none = {
-	potential = { 
+	potential = {
 		has_federation_type = imperial_loyalists_federation
 	}
-	allow = { 
+	allow = {
 	}
 	on_enact = {
 		if = {
@@ -23,7 +23,7 @@ succession_type_none = {
 }
 
 succession_term_perpetual = {
-	potential = { 
+	potential = {
 		has_federation_type = imperial_loyalists_federation
 	}
 	allow = {
@@ -45,7 +45,7 @@ succession_term_perpetual = {
 }
 
 treaties_separate_no_imperial_loyalists = {
-	potential = { 
+	potential = {
 		has_federation_type = imperial_loyalists_federation
 	}
 	allow = {
@@ -72,7 +72,7 @@ treaties_separate_no_imperial_loyalists = {
 			country_event = { id = action.215 } # Clear treaties with non-Federation members
 		}
 	}
-	
+
 	ai_weight = {
 		base = 0
 	}
@@ -80,7 +80,7 @@ treaties_separate_no_imperial_loyalists = {
 
 centralization_imperial_loyalists = {
 	unlocks_centralization = 5
-	potential = { 
+	potential = {
 		has_federation_type = imperial_loyalists_federation
 	}
 	allow = {
@@ -102,7 +102,7 @@ centralization_imperial_loyalists = {
 }
 
 kick_members_president_vote_imperial_loyalists = {
-	potential = { 
+	potential = {
 		has_federation_type = imperial_loyalists_federation
 	}
 	allow = {
@@ -130,7 +130,7 @@ kick_members_president_vote_imperial_loyalists = {
 }
 
 declare_war_president_vote_imperial_loyalists = {
-	potential = { 
+	potential = {
 		has_federation_type = imperial_loyalists_federation
 	}
 	allow = {
@@ -164,7 +164,7 @@ declare_war_president_vote_imperial_loyalists = {
 }
 
 invite_members_president_vote_imperial_loyalists = {
-	potential = { 
+	potential = {
 		has_federation_type = imperial_loyalists_federation
 	}
 	allow = {
@@ -191,7 +191,7 @@ invite_members_president_vote_imperial_loyalists = {
 }
 
 allow_subjects_to_join_yes_imperial_loyalists = {
-	potential = { 
+	potential = {
 		has_federation_type = imperial_loyalists_federation
 	}
 	allow = {
@@ -209,14 +209,14 @@ allow_subjects_to_join_yes_imperial_loyalists = {
 			country_event = { id = action.212 } # Let all subjects join
 		}
 	}
-	
+
 	ai_weight = {
 		base = 0
 	}
 }
 
 vote_weight_diplomatic_imperial_loyalists = {
-	potential = { 
+	potential = {
 		has_federation_type = imperial_loyalists_federation
 	}
 	allow = {
@@ -232,7 +232,7 @@ vote_weight_diplomatic_imperial_loyalists = {
 		}
 		add_cohesion = -5
 	}
-	
+
 	ai_weight = {
 		base = 0
 	}

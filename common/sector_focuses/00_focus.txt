@@ -2,7 +2,7 @@
 # Basic is inherited by all. It has:
 #	- high base weights for vital things, like amenities, housing and countering crime
 #	- low base weights for other buildings, which the other plans will fall back on if they can't do what they are
-#	  meant to for whatever reason (also so it knows how to update buildings you plant there)
+#		meant to for whatever reason (also so it knows how to update buildings you plant there)
 # Other plans overwrite weights for their special field so that the sector will favour these
 # Whether the planet can get pops to work the jobs from the building, and whether the owner can afford the upkeep,
 # are now checked in code (this doesn't cover upkeep from jobs)
@@ -11,12 +11,12 @@
 
 # The code will pick a priority building first. If it doesn't find one, it'll try districts, then buildings, then upgrades.
 
-# Basic 
+# Basic
 basic = {
 	hidden = yes
 
 	clear_blockers = yes
-	
+
 	# Housing Districts
 
 	district = {
@@ -293,7 +293,7 @@ basic = {
 			}
 		}
 	}
-	
+
 	district = {
 		key = district_rw_generator
 		weight = {
@@ -628,7 +628,7 @@ basic = {
 			}
 		}
 	}
-	
+
 	# Science Districts
 
 	district = { #too good to not build
@@ -644,7 +644,7 @@ basic = {
 			}
 		}
 	}
-	
+
 	district = {
 		key = district_rw_science
 		weight = {
@@ -1666,7 +1666,7 @@ basic = {
 			}
 		}
 	}
-	
+
 	building = {
 		key = building_hall_judgment
 		weight = {
@@ -1737,7 +1737,7 @@ basic = {
 			}
 		}
 	}
-	
+
 	building = {
 		key = building_sentinel_posts
 		weight = {
@@ -2084,7 +2084,7 @@ basic = {
 
 
 	# Commerce Buildings
-	
+
 	# get lots of jobs to prevent high unemployment
 	building = {
 		key = building_commercial_zone
@@ -2134,7 +2134,7 @@ basic = {
 		key = building_foundry_1
 		weight = {
 			weight = 5
-			
+
 			modifier = {
 				factor = 2
 				owner = {
@@ -2487,7 +2487,7 @@ basic = {
 	}
 
 	# Housing Buildings
-	
+
 	building = {
 		key = building_slave_huts
 		weight = {
@@ -2508,7 +2508,7 @@ basic = {
 			}
 		}
 	}
-	
+
 	building = {
 		key = building_luxury_residence
 		weight = {
@@ -2529,7 +2529,7 @@ basic = {
 			}
 		}
 	}
-	
+
 	building = {
 		key = building_paradise_dome
 		weight = {
@@ -2561,7 +2561,7 @@ basic = {
 			}
 		}
 	}
-	
+
 	building = {
 		key = building_communal_housing_large
 		weight = {
@@ -2593,7 +2593,7 @@ basic = {
 			}
 		}
 	}
-	
+
 	building = {
 		key = building_drone_megastorage
 		weight = {
@@ -2604,7 +2604,7 @@ basic = {
 			}
 		}
 	}
-	
+
 	building = {
 		key = building_hive_warren
 		weight = {
@@ -2625,7 +2625,7 @@ basic = {
 			}
 		}
 	}
-	
+
 	building = {
 		key = building_expanded_warren
 		weight = {
@@ -2847,7 +2847,7 @@ basic = {
 			weight = 1
 		}
 	}
-	
+
 	building = {
 		key = building_organic_sanctuary
 		priority = yes
@@ -2864,7 +2864,7 @@ basic = {
 			}
 		}
 	}
-	
+
 	building = {
 		key = building_organic_paradise
 		weight = {
@@ -2880,7 +2880,7 @@ basic = {
 			}
 		}
 	}
-	
+
 	building = {
 		key = building_imperial_capital
 		priority = yes
@@ -3064,7 +3064,7 @@ production = {
 			}
 		}
 	}
-	
+
 	district = {
 		key = district_rw_generator
 		weight = {
@@ -3403,7 +3403,7 @@ production = {
 
 
 	#production buildings
-	
+
 	building = {
 		key = building_hydroponics_farm
 		weight = {
@@ -3985,7 +3985,7 @@ research = {
 	}
 
 	# research districts
-	
+
 	district = {
 		key = district_rw_science
 		weight = {

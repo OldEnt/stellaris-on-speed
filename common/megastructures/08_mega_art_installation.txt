@@ -46,7 +46,7 @@ mega_art_installation_0 = {
 			from = { NOT = { has_country_flag = built_mega_art_installation_site } }
 		}
 	}
-	
+
 	placement_rules = {
 		planet_possible = {
 			custom_tooltip = {
@@ -55,7 +55,7 @@ mega_art_installation_0 = {
 					who = prev.from
 					status = yes
 				}
-				colonizeable_planet = no
+				colonizable_planet = no
 			}
 			custom_tooltip = {
 				fail_text = "requires_no_anomaly"
@@ -78,28 +78,28 @@ mega_art_installation_0 = {
 			}
 		}
 	}
-	
+
 	# root = system
-	# from = country	
+	# from = country
 	ai_weight = {
 		factor = 15
-		
+
 		modifier = {
 			factor = 0.1
 			starbase = { NOT = { has_starbase_size >= starbase_starfortress } }
-		}	
-		
+		}
+
 		modifier = {
 			factor = 0.1
 			any_neighbor_system = {
 				exists = owner
-				NOT = { 
-					owner = { is_same_value = from } 
+				NOT = {
+					owner = { is_same_value = from }
 				}
 			}
 		}
 	}
-	
+
 	on_build_start = {}
 	on_build_cancel = {}
 	on_build_complete = {
@@ -120,7 +120,7 @@ mega_art_installation_1 = {
 		cost = {
 			alloys = 15000
 		}
-		
+
 		produces = {
 			unity = 500
 		}
@@ -158,7 +158,7 @@ mega_art_installation_2 = {
 		cost = {
 			alloys = 15000
 		}
-		
+
 		produces = {
 			unity = 1000
 		}
@@ -167,7 +167,7 @@ mega_art_installation_2 = {
 			energy = 100
 		}
 	}
-	
+
 	upgrade_from = {
 		mega_art_installation_1
 	}
@@ -196,7 +196,7 @@ mega_art_installation_3 = {
 		cost = {
 			alloys = 15000
 		}
-		
+
 		produces = {
 			unity = 1500
 		}
@@ -205,7 +205,7 @@ mega_art_installation_3 = {
 			energy = 150
 		}
 	}
-	
+
 	upgrade_from = {
 		mega_art_installation_2
 	}
@@ -221,7 +221,7 @@ mega_art_installation_3 = {
 		set_star_flag = mega_art_installation_built
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
-			country_event = { id = mega.9002 } 
+			country_event = { id = mega.9002 }
 		}
 	}
 }
@@ -238,7 +238,7 @@ mega_art_installation_4 = {
 		cost = {
 			minor_artifacts = 100
 		}
-		
+
 		produces = {
 			unity = 2000
 		}
@@ -247,14 +247,14 @@ mega_art_installation_4 = {
 			energy = 150
 		}
 	}
-	
+
 	upgrade_from = {
 			mega_art_installation_3
 	}
 
 	prerequisites = { "tech_mega_art" }
 	show_prereqs = no
-	
+
 	possible = {
 		from = { has_ancrel = yes }
 	}
@@ -267,7 +267,7 @@ mega_art_installation_4 = {
 		set_star_flag = mega_art_installation_built
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
-			country_event = { id = ancrel.10030 } 
+			country_event = { id = ancrel.10030 }
 		}
 	}
 }
@@ -311,7 +311,7 @@ mega_art_installation_restored = {
 		cost = {
 			alloys = 15000
 		}
-		
+
 		produces = {
 			unity = 1500
 		}
@@ -320,7 +320,7 @@ mega_art_installation_restored = {
 			energy = 150
 		}
 	}
-	
+
 	upgrade_from = {
 		mega_art_installation_ruined
 	}
@@ -346,9 +346,9 @@ mega_art_installation_restored = {
 			}
 			destroy_ambient_object = this
 		}
-		from = { 
+		from = {
 			set_country_flag = has_built_or_repaired_megastructure
-			country_event = { id = mega.9121 } 
+			country_event = { id = mega.9121 }
 		}
 	}
 
@@ -375,7 +375,7 @@ mega_art_installation_restored_2 = {
 		cost = {
 			minor_artifacts = 100
 		}
-		
+
 		produces = {
 			unity = 2000
 		}
@@ -384,7 +384,7 @@ mega_art_installation_restored_2 = {
 			energy = 150
 		}
 	}
-	
+
 	upgrade_from = {
 		mega_art_installation_restored
 	}
@@ -404,7 +404,7 @@ mega_art_installation_restored_2 = {
 		set_star_flag = mega_art_installation_built
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
-			country_event = { id = ancrel.10030 } 
+			country_event = { id = ancrel.10030 }
 		}
 	}
 }

@@ -26,22 +26,22 @@ vote_weight_equal = {
 		}
 		add_cohesion = -5
 	}
-	
+
 	ai_weight = {
-		base = 0	
-		
+		base = 0
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 51
-		}	
+		}
 	}
 }
 
 vote_weight_diplomatic = {
 	potential = {
 		NOT = { has_federation_type = imperial_loyalists_federation }
-		host_has_dlc = Federations 
+		host_has_dlc = Federations
 	}
 	allow = {
 		custom_tooltip = {
@@ -68,10 +68,10 @@ vote_weight_diplomatic = {
 		}
 		add_cohesion = -5
 	}
-	
+
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive

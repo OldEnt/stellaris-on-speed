@@ -46,7 +46,7 @@ dyson_sphere_0 = {
 			NOT = {
 				any_system_planet = {
 					AND = {
-						colonizeable_planet = yes
+						colonizable_planet = yes
 					}
 				}
 			}

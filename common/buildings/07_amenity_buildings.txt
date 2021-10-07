@@ -55,7 +55,7 @@ building_luxury_residence = {
 		potential = {
 			exists = owner
 			owner = {
-				has_non_swapped_tradition = tr_domination_imperious_architecture
+				has_active_tradition = tr_domination_imperious_architecture
 			}
 		}
 		modifier = {
@@ -128,7 +128,7 @@ building_paradise_dome = {
 		potential = {
 			exists = owner
 			owner = {
-				has_non_swapped_tradition = tr_domination_imperious_architecture
+				has_active_tradition = tr_domination_imperious_architecture
 			}
 		}
 		modifier = {
@@ -221,7 +221,7 @@ building_communal_housing = {
 		potential = {
 			exists = owner
 			owner = {
-				has_non_swapped_tradition = tr_domination_imperious_architecture
+				has_active_tradition = tr_domination_imperious_architecture
 			}
 		}
 		modifier = {
@@ -299,7 +299,7 @@ building_communal_housing_large = {
 		potential = {
 			exists = owner
 			owner = {
-				has_non_swapped_tradition = tr_domination_imperious_architecture
+				has_active_tradition = tr_domination_imperious_architecture
 			}
 		}
 		modifier = {
@@ -417,7 +417,7 @@ building_drone_megastorage = {
 		potential = {
 			exists = owner
 			owner = {
-				has_non_swapped_tradition = tr_domination_imperious_architecture
+				has_active_tradition = tr_domination_imperious_architecture
 			}
 		}
 		modifier = {
@@ -545,7 +545,7 @@ building_expanded_warren = {
 		potential = {
 			exists = owner
 			owner = {
-				has_non_swapped_tradition = tr_domination_imperious_architecture
+				has_active_tradition = tr_domination_imperious_architecture
 			}
 		}
 		modifier = {
@@ -946,7 +946,31 @@ building_spawning_pool = {
 	}
 
 	triggered_desc = {
+		trigger = {
+			NAND = {
+				exists = owner
+				owner = { has_origin = origin_necrophage }
+				exists = growing_species
+				growing_species = {
+					NOT = { has_trait = trait_hive_mind }
+				}
+			}
+		}
 		text = job_spawning_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { has_origin = origin_necrophage }
+			exists = growing_species
+			growing_species = {
+				NOT = { has_trait = trait_hive_mind }
+			}
+		}
+		text = job_spawning_drone_necrophage_effect_desc
+	}
+	triggered_desc = {
+		text = spawning_pool_tooltip
 	}
 }
 

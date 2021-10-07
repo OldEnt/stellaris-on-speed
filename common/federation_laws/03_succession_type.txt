@@ -4,7 +4,7 @@ succession_type_rotation = {
 	potential = {
 		NOT = { has_federation_flag = special_federation }
 	}
-	allow = { 
+	allow = {
 		custom_tooltip = {
 			NOT = {
 				AND = {
@@ -49,21 +49,21 @@ succession_type_rotation = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 26
-		}	
-		
+		}
+
 		#Attempt to change to rotating when there is bad cohesion
 		modifier = {
 			desc = federation_acceptance_rotating
 			add = 25
-			federation = {			
+			federation = {
 				federation_cohesion < 0
 				has_federation_law = succession_type_strongest
 			}
@@ -71,7 +71,7 @@ succession_type_rotation = {
 		modifier = {
 			desc = federation_acceptance_rotating
 			add = 25
-			federation = {			
+			federation = {
 				federation_cohesion < -25
 				has_federation_law = succession_type_strongest
 			}
@@ -79,7 +79,7 @@ succession_type_rotation = {
 		modifier = {
 			desc = federation_acceptance_rotating
 			add = 25
-			federation = {			
+			federation = {
 				federation_cohesion < -50
 				has_federation_law = succession_type_strongest
 			}
@@ -87,12 +87,12 @@ succession_type_rotation = {
 		modifier = {
 			desc = federation_acceptance_rotating
 			add = 25
-			federation = {			
+			federation = {
 				federation_cohesion < -75
 				has_federation_law = succession_type_strongest
 			}
 		}
-		
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_strong_president
@@ -136,11 +136,11 @@ succession_type_rotation = {
 }
 
 succession_type_challenge = {
-	potential = { 
+	potential = {
 		host_has_dlc = Federations
 		NOT = { has_federation_flag = special_federation }
 	}
-	allow = { 
+	allow = {
 		custom_tooltip = {
 			NOT = {
 				AND = {
@@ -192,16 +192,16 @@ succession_type_challenge = {
 			set_federation_law = challenge_type_arena_combat
 		}
 	}
-	
+
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 1
 		}
-		
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_president
@@ -258,11 +258,11 @@ succession_type_challenge = {
 }
 
 succession_type_random = {
-	potential = { 
+	potential = {
 		host_has_dlc = Federations
 		NOT = { has_federation_flag = special_federation }
 	}
-	allow = { 
+	allow = {
 		custom_tooltip = {
 			NOT = {
 				AND = {
@@ -307,16 +307,16 @@ succession_type_random = {
 		}
 		add_cohesion = -5
 	}
-	
+
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 26
 		}
-		
+
 		#Opens up a bit more when cohesion is low, but not high enough that AI will suggest it
 		modifier = {
 			desc = federation_acceptance_poor_cohesion
@@ -342,7 +342,7 @@ succession_type_random = {
 			is_federation_leader = no
 			federation = { federation_cohesion < -75 }
 		}
-		
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_president
@@ -353,11 +353,11 @@ succession_type_random = {
 }
 
 succession_type_strongest = {
-	potential = { 
+	potential = {
 		NOT = { has_federation_type = hegemony_federation }
 		NOT = { has_federation_flag = special_federation }
 	}
-	allow = { 
+	allow = {
 		custom_tooltip = {
 			NOT = {
 				AND = {
@@ -409,12 +409,12 @@ succession_type_strongest = {
 
 	ai_weight = {
 		base = 0
-		
+
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 1
 		}
-		
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_subject
@@ -437,11 +437,11 @@ succession_type_strongest = {
 }
 
 succession_type_strongest_hegemony = {
-	potential = { 
+	potential = {
 		has_federation_type = hegemony_federation
 		NOT = { has_federation_flag = special_federation }
 	}
-	allow = { 
+	allow = {
 		custom_tooltip = {
 			NOT = {
 				AND = {
@@ -474,12 +474,12 @@ succession_type_strongest_hegemony = {
 
 	ai_weight = {
 		base = 0
-		
+
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 1
 		}
-		
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_subject

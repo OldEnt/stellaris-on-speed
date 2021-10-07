@@ -2,332 +2,115 @@
 
 # Early ---------------------------------------
 
-early_default_plan = {
-	type = early
-
+basic_economy_plan = {
 	income = {
-		energy = 500
-		minerals = 375
-		alloys = 200
-		unity = 250
+		energy = 2000
+		minerals = 3000
 
-		physics_research = 0
-		society_research = 0
-		engineering_research = 0
-
-		exotic_gases = 10
-		volatile_motes = 10
-		rare_crystals = 10
 	}
 
 	focus = {
-		energy = 500
-		minerals = 250
-		alloys = 0
+		energy = 50
+		minerals = 500
 	}
 
 	subplan = {
 		potential = {
 			country_uses_consumer_goods = yes
+			has_monthly_income = { resource = minerals value > 150 }
+		}
+
+		income = {
+			consumer_goods = 150
+		}
+
+	}
+
+	subplan = {
+		potential = {
 			country_uses_food = yes
 		}
 
 		income = {
-			food = 25
-			consumer_goods = 100
+			food = 200
 		}
 
 		focus = {
-			food = 25
-			consumer_goods = 100
+			food = 150
 		}
 	}
 
 	subplan = {
 		potential = {
-			country_uses_consumer_goods = yes
-			country_uses_food = no
+			is_catalytic_empire = no
+			has_monthly_income = { resource = minerals value > 150 }
 		}
 
 		income = {
-			consumer_goods = 100
+			alloys = 30
 		}
 
-		focus = {
-			consumer_goods = 50
-		}
 	}
 
-	# increased food goals for hiveminds
+	subplan = {
+		potential = {
+			is_catalytic_empire = yes
+			has_monthly_income = { resource = food value > 150 }
+		}
+
+		income = {
+			alloys = 150
+		}
+
+	}
+
 	subplan = {
 		potential = {
 			country_uses_consumer_goods = no
-			country_uses_food = yes
+			has_monthly_income = { resource = energy value > 300 }			
+			has_monthly_income = { resource = minerals value > 100 }
 		}
 
 		income = {
-			food = 50
+			physics_research = 2500
+			society_research = 2500
+			engineering_research = 2500
+			unity = 350
+			alloys = 1500
+			exotic_gases = 20
+			volatile_motes = 20
+			rare_crystals = 20
 		}
-
-		focus = {
-			food = 50
-		}
+		pops = 9000
 	}
 
-	pops = 50
+
+	subplan = {
+		potential = {
+			country_uses_consumer_goods = yes
+			has_monthly_income = { resource = energy value > 300 }
+			has_monthly_income = { resource = minerals value > 300 }
+			has_monthly_income = { resource = consumer_goods value > 150 }
+		}
+		
+		income = {
+			physics_research = 2500
+			society_research = 2500
+			engineering_research = 2500
+			unity = 350
+			alloys = 1500
+			exotic_gases = 20
+			volatile_motes = 20
+			rare_crystals = 20
+		}		
+		pops = 9000
+	}
+
+
 	empire_size = 1.1 #admin cap is fine with being 10% over limit
 
 	ai_weight = {
 		weight = 1
 	}
-}
 
-# Middle ----------------------------------------
-
-middle_default_plan = {
-	type = middle
-
-	income = {
-		energy = 500
-		minerals = 375
-		alloys = 200
-		unity = 250
-
-		physics_research = 250
-		society_research = 250
-		engineering_research = 250
-
-		exotic_gases = 10
-		volatile_motes = 10
-		rare_crystals = 10
-	}
-
-	focus = {
-		energy = 500
-		minerals = 250
-		alloys = 0
-	}
-
-	subplan = {
-		potential = {
-			country_uses_consumer_goods = yes
-			country_uses_food = yes
-		}
-
-		income = {
-			food = 25
-			consumer_goods = 100
-		}
-
-		focus = {
-			food = 25
-			consumer_goods = 50
-		}
-	}
-
-	subplan = {
-		potential = {
-			country_uses_consumer_goods = yes
-			country_uses_food = no
-		}
-
-		income = {
-			consumer_goods = 100
-		}
-
-		focus = {
-			consumer_goods = 50
-		}
-	}
-
-	# increased food goals for hiveminds
-	subplan = {
-		potential = {
-			country_uses_consumer_goods = no
-			country_uses_food = yes
-		}
-
-		income = {
-			food = 50
-		}
-
-		focus = {
-			food = 50
-		}
-	}
-
-	pops = 200
-	empire_size = 1.1 #admin cap is fine with being 10% over limit
-
-	ai_weight = {
-		weight = 1
-	}
-}
-
-# End ---------------------------------------
-
-end_default_plan = {
-	type = end
-
-	income = {
-		energy = 500
-		minerals = 375
-		alloys = 200
-		unity = 250
-
-		physics_research = 250
-		society_research = 250
-		engineering_research = 250
-
-		exotic_gases = 20
-		volatile_motes = 20
-		rare_crystals = 20
-	}
-
-	focus = {
-		energy = 500
-		minerals = 250
-		alloys = 0
-	}
-
-	subplan = {
-		potential = {
-			country_uses_consumer_goods = yes
-			country_uses_food = yes
-		}
-
-		income = {
-			food = 25
-			consumer_goods = 100
-		}
-
-		focus = {
-			food = 25
-			consumer_goods = 50
-		}
-	}
-
-	subplan = {
-		potential = {
-			country_uses_consumer_goods = yes
-			country_uses_food = no
-		}
-
-		income = {
-			consumer_goods = 100
-		}
-
-		focus = {
-			consumer_goods = 50
-		}
-	}
-
-	# increased food goals for hiveminds
-	subplan = {
-		potential = {
-			country_uses_consumer_goods = no
-			country_uses_food = yes
-		}
-
-		income = {
-			food = 50
-		}
-
-		focus = {
-			food = 50
-		}
-	}
-
-	pops = 500
-	empire_size = 1.1 #admin cap is fine with being 10% over limit
-
-	ai_weight = {
-		weight = 1
-	}
-}
-
-# Ultimate ---------------------------------------
-# End game plan is fulfilled, let's invest what we can in pop growth and science
-
-ultimate_default_plan = {
-	type = ultimate
-
-	income = {
-		energy = 500
-		minerals = 375
-		alloys = 200
-		unity = 250
-
-		physics_research = 250
-		society_research = 250
-		engineering_research = 250
-
-		exotic_gases = 20
-		volatile_motes = 20
-		rare_crystals = 20
-		sr_living_metal = 20
-		sr_zro = 20
-		sr_dark_matter = 20
-	}
-
-	focus = {
-		energy = 500
-		minerals = 250
-		alloys = 0
-	}
-
-	subplan = {
-		potential = {
-			country_uses_consumer_goods = yes
-			country_uses_food = yes
-		}
-
-		income = {
-			food = 25
-			consumer_goods = 100
-		}
-
-		focus = {
-			food = 25
-			consumer_goods = 50
-		}
-	}
-
-	subplan = {
-		potential = {
-			country_uses_consumer_goods = yes
-			country_uses_food = no
-		}
-
-		income = {
-			consumer_goods = 100
-		}
-
-		focus = {
-			consumer_goods = 50
-		}
-	}
-
-	# increased food goals for hiveminds
-	subplan = {
-		potential = {
-			country_uses_consumer_goods = no
-			country_uses_food = yes
-		}
-
-		income = {
-			food  = 50
-		}
-
-		focus = {
-			food = 50
-		}
-	}
-
-	pops = 1000
-	empire_size = 1.1 #admin cap is fine with being 10% over limit
-
-	ai_weight = {
-		weight = 0.5
-	}
 }

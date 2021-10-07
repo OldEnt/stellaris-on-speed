@@ -31,9 +31,9 @@ district_generator = {
 		}
 		upkeep = {
 			energy = 5
-		}		
-	}	
-	
+		}
+	}
+
 	planet_modifier = {
 		planet_housing_add = 2
 	}
@@ -291,9 +291,9 @@ district_farming = {
 		}
 		upkeep = {
 			energy = 5
-		}		
-	}	
-	
+		}
+	}
+
 	planet_modifier = {
 		planet_housing_add = 2
 	}
@@ -413,6 +413,16 @@ district_generator_uncapped = {
 		OR = {
 			uses_district_set = hive_world
 			uses_district_set = machine_world
+			AND = {
+				exists = from
+				from = {
+					OR = {
+						is_gestalt = yes
+						is_fallen_empire = yes
+					}
+				}
+				uses_district_set = shattered_ring_world
+			}
 		}
 	}
 
@@ -420,6 +430,16 @@ district_generator_uncapped = {
 		OR = {
 			uses_district_set = hive_world
 			uses_district_set = machine_world
+			AND = {
+				exists = owner
+				owner = {
+					OR = {
+						is_gestalt = yes
+						is_fallen_empire = yes
+					}
+				}
+				uses_district_set = shattered_ring_world
+			}
 		}
 	}
 
@@ -430,6 +450,8 @@ district_generator_uncapped = {
 	conversion_ratio = 1
 	convert_to = {
 		district_generator
+		district_rw_generator
+		district_srw_commercial
 	}
 
 	resources = {
@@ -439,9 +461,9 @@ district_generator_uncapped = {
 		}
 		upkeep = {
 			energy = 5
-		}		
-	}	
-	
+		}
+	}
+
 	planet_modifier = {
 		planet_housing_add = 2
 	}
@@ -540,10 +562,23 @@ district_mining_uncapped = {
 	icon = district_mining
 	is_capped_by_modifier = no
 
+	desc = {
+		trigger = {
+			NOT = { uses_district_set = shattered_ring_world  }
+		}
+		text = district_mining_uncapped_desc
+	}
+
+	desc = {
+		trigger = { uses_district_set = shattered_ring_world }
+		text = district_srw_mining_desc
+	}
+
 	show_on_uncolonized = {
 		OR = {
 			uses_district_set = hive_world
 			uses_district_set = machine_world
+			uses_district_set = shattered_ring_world
 		}
 	}
 
@@ -551,6 +586,7 @@ district_mining_uncapped = {
 		OR = {
 			uses_district_set = hive_world
 			uses_district_set = machine_world
+			uses_district_set = shattered_ring_world
 		}
 	}
 
@@ -591,6 +627,7 @@ district_mining_uncapped = {
 
 	triggered_planet_modifier = {
 		potential = {
+			NOT = { uses_district_set = shattered_ring_world }
 			exists = owner
 			owner = { is_hive_empire = yes }
 		}
@@ -601,6 +638,7 @@ district_mining_uncapped = {
 
 	triggered_planet_modifier = {
 		potential = {
+			NOT = { uses_district_set = shattered_ring_world }
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
@@ -612,6 +650,7 @@ district_mining_uncapped = {
 
 	triggered_planet_modifier = {
 		potential = {
+			NOT = { uses_district_set = shattered_ring_world }
 			exists = owner
 			owner = {
 				is_gestalt = no
@@ -625,6 +664,7 @@ district_mining_uncapped = {
 
 	triggered_planet_modifier = {
 		potential = {
+			NOT = { uses_district_set = shattered_ring_world }
 			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
@@ -633,8 +673,45 @@ district_mining_uncapped = {
 		}
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			uses_district_set = shattered_ring_world
+			exists = owner
+			owner = { is_hive_empire = yes }
+		}
+		modifier = {
+			job_scrap_miner_drone_add = 3
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			uses_district_set = shattered_ring_world
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		modifier = {
+			job_scrap_miner_drone_add = 2
+			planet_housing_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			uses_district_set = shattered_ring_world
+			exists = owner
+			owner = {
+				is_gestalt = no
+			}
+		}
+		modifier = {
+			job_scrap_miner_add = 2
+		}
+	}
+
 	triggered_desc = {
 		trigger = {
+			NOT = { uses_district_set = shattered_ring_world }
 			exists = owner
 			owner = { is_gestalt = yes }
 		}
@@ -643,6 +720,7 @@ district_mining_uncapped = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
+			NOT = { uses_district_set = shattered_ring_world }
 			owner = {
 				is_gestalt = no
 				is_fallen_empire_spiritualist = no
@@ -653,6 +731,22 @@ district_mining_uncapped = {
 
 	triggered_desc = {
 		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_scrap_miner_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = job_scrap_miner_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			NOT = { uses_district_set = shattered_ring_world }
 			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
@@ -675,9 +769,19 @@ district_farming_uncapped = {
 	icon = district_farming
 	is_capped_by_modifier = no
 
-	show_on_uncolonized = { uses_district_set = hive_world }
+	show_on_uncolonized = {
+		OR = {
+			uses_district_set = hive_world
+			uses_district_set = shattered_ring_world
+		}
+	}
 
-	potential = { uses_district_set = hive_world }
+	potential = {
+		OR = {
+			uses_district_set = hive_world
+			uses_district_set = shattered_ring_world
+		}
+	}
 
 	allow = {
 		NOT = { has_modifier = resort_colony }
@@ -686,6 +790,7 @@ district_farming_uncapped = {
 	conversion_ratio = 1
 	convert_to = {
 		district_farming
+		district_rw_farming
 	}
 
 	resources = {

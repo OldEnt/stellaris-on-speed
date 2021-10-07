@@ -16,14 +16,14 @@ d_minerals_1 = {
 		}
 	}
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	potential = {
 		can_have_mineral_deposits = yes
 	}
-	
+
 	drop_weight = {
-		weight = 0		
+		weight = 0
 	}
 }
 
@@ -35,12 +35,12 @@ d_minerals_2 = {
 		}
 	}
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	potential = {
-		can_have_mineral_deposits = yes	
+		can_have_mineral_deposits = yes
 	}
-	
+
 	drop_weight = {
 		weight = 5
 		modifier = {
@@ -54,7 +54,7 @@ d_minerals_2 = {
 		modifier = {
 			factor = 2.0
 			is_asteroid = yes
-		}		
+		}
 	}
 }
 
@@ -66,12 +66,12 @@ d_minerals_3 = {
 		}
 	}
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	potential = {
 		can_have_mineral_deposits = yes
 	}
-	
+
 	drop_weight = {
 		weight = 2.5
 		modifier = {
@@ -85,7 +85,7 @@ d_minerals_3 = {
 		modifier = {
 			factor = 2.0
 			is_asteroid = yes
-		}		
+		}
 	}
 }
 
@@ -97,12 +97,12 @@ d_minerals_4 = {
 		}
 	}
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	potential = {
 		can_have_mineral_deposits = yes
 	}
-	
+
 	drop_weight = {
 		weight = 1
 		modifier = {
@@ -116,7 +116,7 @@ d_minerals_4 = {
 		modifier = {
 			factor = 2.0
 			is_asteroid = yes
-		}		
+		}
 	}
 }
 
@@ -128,12 +128,12 @@ d_minerals_5 = {
 		}
 	}
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	potential = {
 		can_have_mineral_deposits = yes
 	}
-	
+
 	drop_weight = {
 		weight = 0.1
 		modifier = {
@@ -147,7 +147,7 @@ d_minerals_5 = {
 		modifier = {
 			factor = 2.0
 			is_asteroid = yes
-		}		
+		}
 	}
 }
 
@@ -159,8 +159,8 @@ d_minerals_6 = {
 		}
 	}
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
@@ -173,8 +173,8 @@ d_minerals_7 = {
 		}
 	}
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
@@ -187,8 +187,8 @@ d_minerals_8 = {
 		}
 	}
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
@@ -201,8 +201,8 @@ d_minerals_9 = {
 		}
 	}
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
@@ -215,8 +215,8 @@ d_minerals_10 = {
 		}
 	}
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
@@ -232,14 +232,14 @@ d_energy_1 = {
 		}
 	}
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	potential = {
 		can_have_energy_deposits = yes
 	}
-	
+
 	drop_weight = {
-		weight = 0			
+		weight = 0
 	}
 }
 
@@ -251,12 +251,12 @@ d_energy_2 = {
 		}
 	}
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	potential = {
 		can_have_energy_deposits = yes
 	}
-	
+
 	drop_weight = {
 		weight = 5
 		modifier = {
@@ -281,11 +281,11 @@ d_energy_2 = {
 				is_planet_class = pc_a_star
 				is_planet_class = pc_b_star
 			}
-		}			
+		}
 		modifier = {
 			factor = 2.0
 			is_planet_class = pc_gas_giant
-		}			
+		}
 	}
 }
 
@@ -297,12 +297,12 @@ d_energy_3 = {
 		}
 	}
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	potential = {
 		can_have_energy_deposits = yes
 	}
-	
+
 	drop_weight = {
 		weight = 2.5
 		modifier = {
@@ -327,11 +327,11 @@ d_energy_3 = {
 				is_planet_class = pc_a_star
 				is_planet_class = pc_b_star
 			}
-		}	
+		}
 		modifier = {
 			factor = 2.0
 			is_planet_class = pc_gas_giant
-		}			
+		}
 	}
 }
 
@@ -343,12 +343,12 @@ d_energy_4 = {
 		}
 	}
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	potential = {
 		can_have_energy_deposits = yes
 	}
-	
+
 	drop_weight = {
 		weight = 1
 		modifier = {
@@ -373,11 +373,11 @@ d_energy_4 = {
 				is_planet_class = pc_a_star
 				is_planet_class = pc_b_star
 			}
-		}	
+		}
 		modifier = {
 			factor = 2.0
 			is_planet_class = pc_gas_giant
-		}			
+		}
 	}
 }
 
@@ -389,12 +389,12 @@ d_energy_5 = {
 		}
 	}
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	potential = {
 		can_have_energy_deposits = yes
 	}
-	
+
 	drop_weight = {
 		weight = 0.1
 		modifier = {
@@ -419,11 +419,11 @@ d_energy_5 = {
 				is_planet_class = pc_a_star
 				is_planet_class = pc_b_star
 			}
-		}			
+		}
 		modifier = {
 			factor = 2.0
 			is_planet_class = pc_gas_giant
-		}			
+		}
 	}
 }
 
@@ -435,8 +435,8 @@ d_energy_6 = {
 		}
 	}
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
@@ -449,8 +449,8 @@ d_energy_7 = {
 		}
 	}
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
@@ -463,8 +463,8 @@ d_energy_8 = {
 		}
 	}
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
@@ -477,8 +477,8 @@ d_energy_9 = {
 		}
 	}
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
@@ -491,14 +491,14 @@ d_energy_10 = {
 		}
 	}
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
 
 ##################################
-######### 	SOCIETY 	 #########
+#########	SOCIETY	 #########
 ##################################
 d_society_1 = {
 	resources = {
@@ -507,15 +507,15 @@ d_society_1 = {
 			society_research = 5
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	potential = {
 		can_have_society_deposits = yes
 	}
-	
+
 	drop_weight = {
-		weight = 0	
+		weight = 0
 	}
 }
 
@@ -526,15 +526,15 @@ d_society_2 = {
 			society_research = 10
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	potential = {
 		can_have_society_deposits = yes
 	}
-	
+
 	drop_weight = {
-		weight = 5	
+		weight = 5
 	}
 }
 
@@ -545,13 +545,13 @@ d_society_3 = {
 			society_research = 15
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	potential = {
 		can_have_society_deposits = yes
 	}
-	
+
 	drop_weight = {
 		weight = 2.5
 	}
@@ -564,15 +564,15 @@ d_society_4 = {
 			society_research = 20
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	potential = {
 		can_have_society_deposits = yes
 	}
-	
+
 	drop_weight = {
-		weight = 0.5	
+		weight = 0.5
 	}
 }
 
@@ -583,15 +583,15 @@ d_society_5 = {
 			society_research = 25
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	potential = {
 		can_have_society_deposits = yes
 	}
-	
+
 	drop_weight = {
-		weight = 0.1	
+		weight = 0.1
 	}
 }
 
@@ -602,9 +602,9 @@ d_society_6 = {
 			society_research = 30
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	potential = { always = no }
 	drop_weight = { weight = 0	 }
 }
@@ -616,9 +616,9 @@ d_society_7 = {
 			society_research = 35
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	potential = { always = no }
 	drop_weight = { weight = 0	 }
 }
@@ -630,9 +630,9 @@ d_society_8 = {
 			society_research = 40
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	potential = { always = no }
 	drop_weight = { weight = 0	 }
 }
@@ -644,9 +644,9 @@ d_society_9 = {
 			society_research = 45
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	potential = { always = no }
 	drop_weight = { weight = 0	 }
 }
@@ -658,15 +658,15 @@ d_society_10 = {
 			society_research = 50
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
 
 ##################################
-######### 	 PHYSICS 	 #########
+#########	 PHYSICS	 #########
 ##################################
 d_physics_1 = {
 	resources = {
@@ -675,15 +675,15 @@ d_physics_1 = {
 			physics_research = 5
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	potential = {
 		can_have_minor_physics_deposits = yes
 	}
-	
+
 	drop_weight = {
-		weight = 0				
+		weight = 0
 	}
 }
 
@@ -694,13 +694,13 @@ d_physics_2 = {
 			physics_research = 10
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	potential = {
 		can_have_minor_physics_deposits = yes
 	}
-	
+
 	drop_weight = {
 		weight = 1
 		modifier = {
@@ -725,7 +725,7 @@ d_physics_2 = {
 				is_planet_class = pc_a_star
 				is_planet_class = pc_b_star
 			}
-		}				
+		}
 	}
 }
 
@@ -736,13 +736,13 @@ d_physics_3 = {
 			physics_research = 15
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	potential = {
 		can_have_physics_deposits = yes
 	}
-	
+
 	drop_weight = {
 		weight = 0.5
 		modifier = {
@@ -750,9 +750,9 @@ d_physics_3 = {
 			OR = {
 				is_planet_class = pc_neutron_star
 				is_planet_class = pc_pulsar
-				is_planet_class = pc_black_hole			
+				is_planet_class = pc_black_hole
 			}
-		}	
+		}
 		modifier = {
 			factor = 1.5
 			OR = {
@@ -775,7 +775,7 @@ d_physics_3 = {
 				is_planet_class = pc_a_star
 				is_planet_class = pc_b_star
 			}
-		}				
+		}
 	}
 }
 
@@ -786,13 +786,13 @@ d_physics_4 = {
 			physics_research = 20
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	potential = {
 		can_have_physics_deposits = yes
 	}
-	
+
 	drop_weight = {
 		weight = 0.05
 		modifier = {
@@ -800,9 +800,9 @@ d_physics_4 = {
 			OR = {
 				is_planet_class = pc_neutron_star
 				is_planet_class = pc_pulsar
-				is_planet_class = pc_black_hole			
+				is_planet_class = pc_black_hole
 			}
-		}			
+		}
 		modifier = {
 			factor = 1.5
 			OR = {
@@ -825,7 +825,7 @@ d_physics_4 = {
 				is_planet_class = pc_a_star
 				is_planet_class = pc_b_star
 			}
-		}				
+		}
 	}
 }
 
@@ -836,13 +836,13 @@ d_physics_5 = {
 			physics_research = 25
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	potential = {
 		can_have_physics_deposits = yes
 	}
-	
+
 	drop_weight = {
 		weight = 0.01
 		modifier = {
@@ -850,9 +850,9 @@ d_physics_5 = {
 			OR = {
 				is_planet_class = pc_neutron_star
 				is_planet_class = pc_pulsar
-				is_planet_class = pc_black_hole			
+				is_planet_class = pc_black_hole
 			}
-		}			
+		}
 		modifier = {
 			factor = 1.5
 			OR = {
@@ -875,7 +875,7 @@ d_physics_5 = {
 				is_planet_class = pc_a_star
 				is_planet_class = pc_b_star
 			}
-		}				
+		}
 	}
 }
 
@@ -886,9 +886,9 @@ d_physics_6 = {
 			physics_research = 30
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
@@ -900,9 +900,9 @@ d_physics_7 = {
 			physics_research = 35
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
@@ -914,9 +914,9 @@ d_physics_8 = {
 			physics_research = 40
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
@@ -928,9 +928,9 @@ d_physics_9 = {
 			physics_research = 45
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
@@ -942,15 +942,15 @@ d_physics_10 = {
 			physics_research = 50
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
 
 ##################################
-#########  ENGINEERING   #########
+######### ENGINEERING	#########
 ##################################
 d_engineering_1 = {
 	resources = {
@@ -959,15 +959,15 @@ d_engineering_1 = {
 			engineering_research = 5
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	potential = {
 		can_have_minor_engineering_deposits = yes
 	}
-	
+
 	drop_weight = {
-		weight = 0	
+		weight = 0
 	}
 }
 
@@ -978,15 +978,15 @@ d_engineering_2 = {
 			engineering_research = 10
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	potential = {
 		can_have_minor_engineering_deposits = yes
 	}
-	
+
 	drop_weight = {
-		weight = 2	
+		weight = 2
 	}
 }
 
@@ -997,13 +997,13 @@ d_engineering_3 = {
 			engineering_research = 15
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	potential = {
 		can_have_engineering_deposits = yes
 	}
-	
+
 	drop_weight = {
 		weight = 1
 		modifier = {
@@ -1011,9 +1011,9 @@ d_engineering_3 = {
 			OR = {
 				is_planet_class = pc_neutron_star
 				is_planet_class = pc_pulsar
-				is_planet_class = pc_black_hole			
+				is_planet_class = pc_black_hole
 			}
-		}			
+		}
 	}
 }
 
@@ -1024,13 +1024,13 @@ d_engineering_4 = {
 			engineering_research = 20
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	potential = {
 		can_have_engineering_deposits = yes
 	}
-	
+
 	drop_weight = {
 		weight = 0.2
 		modifier = {
@@ -1038,9 +1038,9 @@ d_engineering_4 = {
 			OR = {
 				is_planet_class = pc_neutron_star
 				is_planet_class = pc_pulsar
-				is_planet_class = pc_black_hole			
+				is_planet_class = pc_black_hole
 			}
-		}			
+		}
 	}
 }
 
@@ -1051,13 +1051,13 @@ d_engineering_5 = {
 			engineering_research = 25
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
 	potential = {
 		can_have_engineering_deposits = yes
 	}
-	
+
 	drop_weight = {
 		weight = 0.05
 		modifier = {
@@ -1065,9 +1065,9 @@ d_engineering_5 = {
 			OR = {
 				is_planet_class = pc_neutron_star
 				is_planet_class = pc_pulsar
-				is_planet_class = pc_black_hole			
+				is_planet_class = pc_black_hole
 			}
-		}		
+		}
 	}
 }
 
@@ -1078,10 +1078,10 @@ d_engineering_6 = {
 			engineering_research = 30
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
-	potential = { always = no }	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
+	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
 
@@ -1092,10 +1092,10 @@ d_engineering_7 = {
 			engineering_research = 35
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
-	potential = { always = no }	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
+	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
 
@@ -1106,10 +1106,10 @@ d_engineering_8 = {
 			engineering_research = 40
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
-	potential = { always = no }	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
+	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
 
@@ -1120,10 +1120,10 @@ d_engineering_9 = {
 			engineering_research = 45
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
-	potential = { always = no }	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
+	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
 
@@ -1134,51 +1134,51 @@ d_engineering_10 = {
 			engineering_research = 50
 		}
 	}
-	station = shipclass_research_station 
-	is_for_colonizeable = no
-	
-	potential = { always = no }	
+	station = shipclass_research_station
+	is_for_colonizable = no
+
+	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
 
 ##################################
-#########  TRADE VALUE   #########
+######### TRADE VALUE	#########
 ##################################
 d_trade_value_1 = {
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-		
-	planet_modifier = { 
+	is_for_colonizable = no
+
+	planet_modifier = {
 		trade_value_add = 5
 	}
-	
+
 	potential = {
 		can_have_trade_deposits = yes
 	}
-	
+
 	drop_weight = {
-		weight = 0			
+		weight = 0
 	}
 }
 
 d_trade_value_2 = {
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-		
+	is_for_colonizable = no
+
 	planet_modifier = {
 		trade_value_add = 10
 	}
-	
+
 	potential = {
 		can_have_trade_deposits = yes
 	}
-	
+
 	drop_weight = {
 		weight = 5
 		modifier = {
 			factor = 0.5
 			is_planet_class = pc_molten
-		}			
+		}
 		modifier = {
 			factor = 2.0
 			is_asteroid = yes
@@ -1188,147 +1188,147 @@ d_trade_value_2 = {
 
 d_trade_value_3 = {
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-		
+	is_for_colonizable = no
+
 	planet_modifier = {
 		trade_value_add = 15
 	}
-	
+
 	potential = {
 		can_have_trade_deposits = yes
 	}
-	
+
 	drop_weight = {
 		weight = 2.5
 		modifier = {
 			factor = 0.5
 			is_planet_class = pc_molten
-		}			
+		}
 		modifier = {
 			factor = 2.0
 			is_asteroid = yes
-		}		
+		}
 	}
 }
 
 d_trade_value_4 = {
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-		
+	is_for_colonizable = no
+
 	planet_modifier = {
 		trade_value_add = 20
 	}
-	
+
 	potential = {
 		can_have_trade_deposits = yes
 	}
-	
+
 	drop_weight = {
 		weight = 1
 		modifier = {
 			factor = 0.5
 			is_planet_class = pc_molten
-		}			
+		}
 		modifier = {
 			factor = 2.0
 			is_asteroid = yes
-		}		
+		}
 	}
 }
 
 d_trade_value_5 = {
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-		
+	is_for_colonizable = no
+
 	planet_modifier = {
 		trade_value_add = 25
 	}
-	
+
 	potential = {
 		can_have_trade_deposits = yes
 	}
-	
+
 	drop_weight = {
 		weight = 0.1
 		modifier = {
 			factor = 0.5
 			is_planet_class = pc_molten
-		}			
+		}
 		modifier = {
 			factor = 2.0
 			is_asteroid = yes
-		}		
+		}
 	}
 }
 
 d_trade_value_6 = {
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-		
+	is_for_colonizable = no
+
 	planet_modifier = {
 		trade_value_add = 30
 	}
-	
+
 	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
 
 d_trade_value_7 = {
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-		
+	is_for_colonizable = no
+
 	planet_modifier = {
 		trade_value_add = 35
 	}
-	
+
 	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
 
 d_trade_value_8 = {
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-		
+	is_for_colonizable = no
+
 	planet_modifier = {
 		trade_value_add = 40
 	}
-	
+
 	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
 
 d_trade_value_9 = {
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-		
+	is_for_colonizable = no
+
 	planet_modifier = {
 		trade_value_add = 45
 	}
-	
+
 	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
 
 d_trade_value_10 = {
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-		
+	is_for_colonizable = no
+
 	planet_modifier = {
 		trade_value_add = 50
 	}
-	
+
 	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
 
 ##################################
-#########     ALLOYS     #########
+#########	 ALLOYS	 #########
 ##################################
 
 d_alloys_1 = {
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	resources = {
 		category = orbital_mining_deposits
 		produces = {
@@ -1338,10 +1338,10 @@ d_alloys_1 = {
 	potential = {
 		OR = {
 			is_planet_class = pc_asteroid
-			is_planet_class = pc_molten		
-		}	
+			is_planet_class = pc_molten
+		}
 	}
-	
+
 	drop_weight = {
 		weight = 2
 		modifier = {
@@ -1353,19 +1353,19 @@ d_alloys_1 = {
 
 d_alloys_2 = {
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	resources = {
 		category = orbital_mining_deposits
 		produces = {
 			alloys = 10
 		}
 	}
-	
+
 	potential = {
 		is_planet_class = pc_asteroid
 	}
-	
+
 	drop_weight = {
 		weight = 0.50
 		modifier = {
@@ -1377,45 +1377,45 @@ d_alloys_2 = {
 
 d_alloys_3 = {
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	resources = {
 		category = orbital_mining_deposits
 		produces = {
 			alloys = 15
 		}
 	}
-	
+
 	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
 
 d_alloys_4 = {
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	resources = {
 		category = orbital_mining_deposits
 		produces = {
 			alloys = 20
 		}
 	}
-	
+
 	potential = { always = no }
 	drop_weight = { weight = 0 }
 }
 
 d_alloys_5 = {
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	resources = {
 		category = orbital_mining_deposits
 		produces = {
 			alloys = 25
 		}
 	}
-	
+
 	potential = { always = no }
 	drop_weight = { weight = 0 }
 }

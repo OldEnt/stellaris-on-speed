@@ -24,9 +24,9 @@ think_tank_0 = {
 			energy = 25
 		}
 	}
-	
+
 	prerequisites = { "tech_science_nexus" }
-	
+
 	possible = {
 		exists = starbase
 		custom_tooltip = {
@@ -53,7 +53,7 @@ think_tank_0 = {
 			from = { NOT = { has_country_flag = built_think_tank } }
 		}
 	}
-	
+
 	placement_rules = {
 		planet_possible = {
 			custom_tooltip = {
@@ -62,7 +62,7 @@ think_tank_0 = {
 					who = prev.from
 					status = yes
 				}
-				colonizeable_planet = no
+				colonizable_planet = no
 			}
 			custom_tooltip = {
 				fail_text = "requires_no_anomaly"
@@ -85,37 +85,37 @@ think_tank_0 = {
 			}
 		} # use these for all non-star megastructures
 	}
-	
+
 	# root = system
-	# from = country	
+	# from = country
 	ai_weight = {
 		factor = 10
 		modifier = {
 			factor = 0.1
 			starbase = { NOT = { has_starbase_size >= starbase_starfortress } }
-		}	
+		}
 
 		modifier = {
 			factor = 0.1
 			any_neighbor_system = {
 				exists = owner
-				NOT = { 
-					owner = { is_same_value = from } 
+				NOT = {
+					owner = { is_same_value = from }
 				}
 			}
-		}		
-		
+		}
+
 		modifier = {
 			factor = 2.0
 			from = {
 				OR = {
 					has_ethic = ethic_materialist
 					has_ethic = ethic_fanatic_materialist
-				}			
+				}
 			}
 		}
 	}
-	
+
 	on_build_start = {}
 	on_build_cancel = {}
 	on_build_complete = {
@@ -130,7 +130,7 @@ think_tank_0 = {
 think_tank_1 = {
 	entity = "thinktank_phase_01_entity"
 	construction_entity = "thinktank_phase_01_entity"
-	portrait = "GFX_megastructure_construction_background"	
+	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
 	entity_offset = { x = @entity_x y = @entity_y }
 	build_time = 720
@@ -150,13 +150,13 @@ think_tank_1 = {
 			physics_research = @stage_1_research_bonus
 		}
 	}
-	
+
 	upgrade_from = {
 		think_tank_0
 	}
-	
+
 	prerequisites = { "tech_science_nexus" }
-	
+
 	country_modifier = {
 		all_technology_research_speed = 0.05
 	}
@@ -189,9 +189,9 @@ think_tank_2 = {
 	upgrade_from = {
 		think_tank_1
 	}
-	
+
 	prerequisites = { "tech_science_nexus" }
-	
+
 	country_modifier = {
 		all_technology_research_speed = 0.10
 	}
@@ -224,7 +224,7 @@ think_tank_3 = {
 	upgrade_from = {
 		think_tank_2
 	}
-	
+
 	on_build_complete = {
 		from = {
 			set_country_flag = has_built_or_repaired_megastructure
@@ -233,7 +233,7 @@ think_tank_3 = {
 
 	prerequisites = { "tech_science_nexus" }
 	show_prereqs = yes
-	
+
 	country_modifier = {
 		all_technology_research_speed = 0.15
 	}
@@ -268,7 +268,7 @@ think_tank_4 = {
 			set_country_flag = has_built_or_repaired_megastructure
 		}
 	}
-	
+
 	prerequisites = { "tech_science_nexus" }
 
 	# used from script only
@@ -333,12 +333,12 @@ think_tank_restored = {
 
 	upgrade_from = {
 		think_tank_ruined
-	}	
+	}
 
 	possible = {
-		from = { has_technology = tech_mega_engineering }	
+		from = { has_technology = tech_mega_engineering }
 	}
-	
+
 	country_modifier = {
 		all_technology_research_speed = 0.15
 	}

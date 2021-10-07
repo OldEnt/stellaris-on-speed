@@ -509,6 +509,8 @@ building_sacrificial_temple_1 = {
 	base_buildtime = @b1_time
 	position_priority = 100
 
+	base_cap_amount = 5
+
 	category = unity
 
 	potential = {
@@ -633,7 +635,7 @@ building_sacrificial_temple_2 = {
 
 	planet_modifier = {
 		job_death_priest_add = 3
-		job_mortal_initiate_add = 3
+		job_mortal_initiate_add = 2
 		pop_ethic_spiritualist_attraction_mult = 0.1
 	}
 
@@ -717,7 +719,7 @@ building_sacrificial_temple_3 = {
 
 	planet_modifier = {
 		job_death_priest_add = 5
-		job_mortal_initiate_add = 5
+		job_mortal_initiate_add = 3
 		pop_ethic_spiritualist_attraction_mult = 0.15
 	}
 
@@ -813,10 +815,6 @@ building_galactic_memorial_1 = {
 		upkeep = {
 			minerals = @b1_upkeep
 		}
-	}
-
-	planet_modifier = {
-		planet_stability_add = 5
 	}
 
 	#Jobs
@@ -965,10 +963,6 @@ building_galactic_memorial_2 = {
 		}
 	}
 
-	planet_modifier = {
-		planet_stability_add = 10
-	}
-
 	#Jobs
 	triggered_planet_modifier = {
 		potential = {
@@ -1106,10 +1100,6 @@ building_galactic_memorial_3 = {
 		}
 	}
 
-	planet_modifier = {
-		planet_stability_add = 15
-	}
-
 	#Jobs
 	triggered_planet_modifier = {
 		potential = {
@@ -1223,7 +1213,7 @@ building_hive_node = {
 		potential = {
 			exists = owner
 			owner = {
-				has_swapped_tradition = tr_domination_synaptic_extensions
+				has_active_tradition = tr_domination_synaptic_extensions
 			}
 		}
 		modifier = {
@@ -1261,12 +1251,6 @@ building_hive_node = {
 			}
 		}
 		text = job_maintenance_drone_effect_desc
-	}
-
-	on_queued = {
-		planet = {
-			set_timed_planet_flag = { flag = recent_admin_building_built days = 144 }
-		}
 	}
 }
 
@@ -1329,7 +1313,7 @@ building_hive_cluster = {
 		potential = {
 			exists = owner
 			owner = {
-				has_swapped_tradition = tr_domination_synaptic_extensions
+				has_active_tradition = tr_domination_synaptic_extensions
 			}
 		}
 		modifier = {
@@ -1367,12 +1351,6 @@ building_hive_cluster = {
 			}
 		}
 		text = job_maintenance_drone_effect_desc
-	}
-
-	on_queued = {
-		planet = {
-			set_timed_planet_flag = { flag = recent_admin_building_built days = 144 }
-		}
 	}
 }
 
@@ -1436,7 +1414,7 @@ building_hive_confluence = {
 		potential = {
 			exists = owner
 			owner = {
-				has_swapped_tradition = tr_domination_synaptic_extensions
+				has_active_tradition = tr_domination_synaptic_extensions
 			}
 		}
 		modifier = {
@@ -1471,12 +1449,6 @@ building_hive_confluence = {
 		}
 		text = job_maintenance_drone_effect_desc
 	}
-
-	on_queued = {
-		planet = {
-			set_timed_planet_flag = { flag = recent_admin_building_built days = 144 }
-		}
-	}
 }
 
 ##################
@@ -1490,7 +1462,7 @@ building_simulation_1 = {
 
 	potential = {
 		exists = owner
-		building_basic_income_check  = yes
+		building_basic_income_check = yes
 		owner = {
 			is_machine_empire = yes
 			NOT = { has_valid_civic = civic_machine_servitor }
@@ -1930,7 +1902,7 @@ building_autocurating_vault = {
 		OR = {
 			has_modifier = slave_colony
 			buildings_no_crystals = yes
-	 		owner = {
+			owner = {
 				OR = {
 					is_machine_empire = yes
 					is_spiritualist = yes
@@ -2215,7 +2187,6 @@ building_organic_sanctuary = {
 	planet_modifier = {
 		job_bio_trophy_add = 10
 		job_artisan_drone_add = 1
-		planet_carry_cap_add = 10
 	}
 
 	resources = {
@@ -2226,6 +2197,14 @@ building_organic_sanctuary = {
 		upkeep = {
 			energy = @b1_upkeep
 		}
+	}
+
+	triggered_desc = {
+		text = job_bio_trophy_effect_desc
+	}
+
+	triggered_desc = {
+		text = job_artisan_drone_effect_desc
 	}
 
 	upgrades = {
@@ -2257,7 +2236,6 @@ building_organic_paradise = {
 		job_bio_trophy_add = 20
 		job_artisan_drone_add = 2
 		job_maintenance_drone_add = 1
-		planet_carry_cap_add = 20
 	}
 
 	resources = {
@@ -2270,6 +2248,18 @@ building_organic_paradise = {
 			energy = @b2_upkeep
 			exotic_gases = @b2_rare_upkeep
 		}
+	}
+
+	triggered_desc = {
+		text = job_bio_trophy_effect_desc
+	}
+
+	triggered_desc = {
+		text = job_artisan_drone_effect_desc
+	}
+
+	triggered_desc = {
+		text = job_maintenance_drone_effect_desc
 	}
 
 	prerequisites = { "tech_paradise_dome" }

@@ -11,7 +11,7 @@
 d_mountain_range = {
 	time = 54
 
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	resources = {
@@ -58,7 +58,7 @@ d_mountain_range = {
 d_active_volcano = {
 	time = 54
 
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	resources = {
@@ -101,7 +101,7 @@ d_active_volcano = {
 d_dangerous_wildlife_blocker = {
 	time = 54
 
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	resources = {
@@ -154,7 +154,7 @@ d_dangerous_wildlife_blocker = {
 d_dense_jungle = {
 	time = 36
 
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	resources = {
@@ -198,7 +198,7 @@ d_dense_jungle = {
 d_toxic_kelp = {
 	time = 36
 
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	resources = {
@@ -239,7 +239,7 @@ d_toxic_kelp = {
 d_deep_sinkhole = {
 	time = 36
 
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	resources = {
@@ -284,7 +284,7 @@ d_deep_sinkhole = {
 d_quicksand_basin = {
 	time = 36
 
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	resources = {
@@ -325,7 +325,7 @@ d_quicksand_basin = {
 d_noxious_swamp = {
 	time = 36
 
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	resources = {
@@ -366,7 +366,7 @@ d_noxious_swamp = {
 d_massive_glacier = {
 	time = 36
 
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	resources = {
@@ -412,7 +412,7 @@ d_massive_glacier = {
 d_radioactive_wasteland = {
 	time = 54
 
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	all_blocker_swap_types = yes
@@ -446,8 +446,8 @@ d_radioactive_wasteland = {
 
 d_city_ruins = {
 	time = 72
-	
-	is_for_colonizeable = yes
+
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	potential = {
@@ -482,7 +482,7 @@ d_bomb_crater = {
 	icon = d_crater
 	time = 54
 
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	all_blocker_swap_types = yes
@@ -516,8 +516,8 @@ d_bomb_crater = {
 
 d_infestation = {
 	time = 20
-	
-	is_for_colonizeable = yes
+
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	potential = {
@@ -538,8 +538,8 @@ d_infestation = {
 
 d_quarantine_zone = {
 	time = 20
-	
-	is_for_colonizeable = yes
+
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	potential = {
@@ -560,8 +560,8 @@ d_quarantine_zone = {
 
 d_slums = {
 	time = 20
-	
-	is_for_colonizeable = yes
+
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	potential = {
@@ -582,8 +582,8 @@ d_slums = {
 
 d_crater = {
 	time = 20
-	
-	is_for_colonizeable = yes
+
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	potential = {
@@ -605,7 +605,7 @@ d_crater = {
 d_wandering_forests = {
 	icon = d_dense_jungle
 
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	potential = {
@@ -620,8 +620,8 @@ d_wandering_forests = {
 d_sinkhole_subterraneans = {
 	icon = d_deep_sinkhole
 	time = 20
-	
-	is_for_colonizeable = yes
+
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	potential = {
@@ -642,7 +642,7 @@ d_sinkhole_subterraneans = {
 
 d_titanic_life_blocker = {	#Added via event
 
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 
 	potential = { always = no }
@@ -662,8 +662,8 @@ d_titanic_life_blocker = {	#Added via event
 d_failing_infrastructure = {
 	icon = d_metal_boneyard
 	time = 24
-	
-	is_for_colonizeable = yes
+
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	potential = { always = no }
@@ -697,8 +697,8 @@ d_failing_infrastructure = {
 d_decrepit_dwellings = {
 	icon = d_slums
 	time = 24
-	
-	is_for_colonizeable = yes
+
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	potential = { always = no }
@@ -708,34 +708,37 @@ d_decrepit_dwellings = {
 	}
 
 	on_cleared = {
-		if = {
-			limit = {
-				any_owned_pop = {
-					is_gestalt = no
-					is_robot_pop = no
-				}
-			}
-			random_owned_pop = {
+		hidden_effect = {
+			if = {
 				limit = {
-					is_gestalt = no
-					is_robot_pop = no
+					any_owned_pop = {
+						NOT = { has_trait = trait_hive_mind }
+						is_robot_pop = no
+					}
 				}
-				root = {
-					create_pop = {
-						species = prev
+				random_owned_pop = {
+					limit = {
+						NOT = { has_trait = trait_hive_mind }
+						is_robot_pop = no
+					}
+					root = {
+						create_pop = {
+							species = prev
+						}
+					}
+				}
+			}
+			else = {
+				random_owned_pop = {
+					root = {
+						create_pop = {
+							species = prev
+						}
 					}
 				}
 			}
 		}
-		else = {
-			random_owned_pop = {
-				root = {
-					create_pop = {
-						species = prev
-					}
-				}
-			}
-		}
+		custom_tooltip = d_decrepit_dwellings_custom_tooltip	
 	}
 
 	resources = {
@@ -744,6 +747,7 @@ d_decrepit_dwellings = {
 			energy = 300
 		}
 	}
+
 }
 
 # Starting Blockers on Machine Empire worlds
@@ -751,8 +755,8 @@ d_decrepit_dwellings = {
 d_tomb_world_ruins = {
 	icon = d_city_ruins
 	time = 24
-	
-	is_for_colonizeable = yes
+
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	potential = { always = no }
@@ -778,8 +782,8 @@ d_tomb_world_ruins = {
 d_tomb_world_wasteland = {
 	icon = d_radioactive_wasteland
 	time = 24
-	
-	is_for_colonizeable = yes
+
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	potential = { always = no }
@@ -805,8 +809,8 @@ d_tomb_world_wasteland = {
 d_machine_empire_ruins = {
 	icon = d_city_ruins
 	time = 24
-	
-	is_for_colonizeable = yes
+
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	potential = { always = no }
@@ -833,8 +837,8 @@ d_machine_empire_ruins = {
 d_exterminators_ruins = {
 	icon = d_city_ruins
 	time = 24
-	
-	is_for_colonizeable = yes
+
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	potential = { always = no }
@@ -859,8 +863,8 @@ d_exterminators_ruins = {
 d_former_battlefield = {
 	icon = d_radioactive_wasteland
 	time = 24
-	
-	is_for_colonizeable = yes
+
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	potential = { always = no }
@@ -885,8 +889,8 @@ d_former_battlefield = {
 d_strip_mine = {
 	icon = d_crater
 	time = 24
-	
-	is_for_colonizeable = yes
+
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	potential = { always = no }
@@ -915,8 +919,8 @@ d_strip_mine = {
 d_unsupervised_settlement = {
 	icon = d_slums
 	time = 24
-	
-	is_for_colonizeable = yes
+
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	potential = { always = no }
@@ -965,8 +969,8 @@ d_unsupervised_settlement = {
 d_collapsed_burrows = {
 	icon = d_deep_sinkhole
 	time = 24
-	
-	is_for_colonizeable = yes
+
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	potential = { always = no }
@@ -992,8 +996,8 @@ d_collapsed_burrows = {
 d_assimilators_ruins = {
 	icon = d_city_ruins
 	time = 24
-	
-	is_for_colonizeable = yes
+
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	potential = { always = no }
@@ -1019,8 +1023,8 @@ d_assimilators_ruins = {
 d_fungoid_extermination = {
 	icon = d_infestation
 	time = 24
-	
-	is_for_colonizeable = yes
+
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	potential = { always = no }
@@ -1040,8 +1044,8 @@ d_fungoid_extermination = {
 d_exofungus_blocker = {
 	icon = d_infestation
 	time = 24
-	
-	is_for_colonizeable = yes
+
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	potential = { always = no }
@@ -1061,8 +1065,8 @@ d_exofungus_blocker = {
 d_egg_cracking = {
 	icon = d_deep_sinkhole
 	time = 24
-	
-	is_for_colonizeable = yes
+
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	potential = { always = no }
@@ -1085,14 +1089,14 @@ d_ruined_building_blocker = {	#Added via event
 	potential = { always = no }
 	can_be_cleared = { always = no }
 
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 }
 
 d_living_subterraneans = {
 	icon = d_slums
 
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	potential = { always = no }
@@ -1103,7 +1107,7 @@ d_dead_subterraneans = {
 	time = 20
 	icon = d_deep_sinkhole
 
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	potential = { always = no }
@@ -1120,7 +1124,7 @@ d_ruined_arcology = {
 	time = 72
 	icon = d_city_ruins
 
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	potential = { always = no }
@@ -1199,7 +1203,7 @@ d_archaeological_site = {	#Added via event
 		planet_max_districts_add = -1
 	}
 
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare_blocker
 }
 
@@ -1208,7 +1212,7 @@ d_hibernating_lithoids = {
 	icon = d_buried_lithoids
 	time = 72
 
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	potential = { always = no }
@@ -1268,7 +1272,7 @@ d_lithoid_devastation = {
 
 	time = 72
 
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_blockers
 
 	potential = { always = no }

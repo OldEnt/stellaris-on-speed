@@ -30,22 +30,25 @@
 @subsidies_mid = 7.5
 @subsidies_low = 5
 
-@living_standard_food_high = 10.0
-@living_standard_food_normal = 5.0
+@living_standard_food_high = 10
+@living_standard_food_normal = 5
 
-@living_standard_luxuries_shared_burden = 2.0
-@living_standard_luxuries_very_high = 5.0
+@living_standard_phototrophic_high = 5
+@living_standard_phototrophic_normal = 2.5
+
+@living_standard_luxuries_shared_burden = 2
+@living_standard_luxuries_very_high = 5
 @living_standard_luxuries_high = 2.5
-@living_standard_luxuries_normal = 1.25
+@living_standard_luxuries_normal = 2.25
 @living_standard_luxuries_low = 0.5
 @living_standard_luxuries_very_low = 0.25
 
-@trade_value_prosperity_gospel = 1.25
-@trade_value_shared_burden = 1.00
-@trade_value_very_high = 2.00
-@trade_value_high = 1.25
-@trade_value_normal = 0.75
-@trade_value_low = 0.50
+@trade_value_prosperity_gospel = 1.65
+@trade_value_shared_burden = 1.25
+@trade_value_very_high = 2.50
+@trade_value_high = 1.65
+@trade_value_normal = 1
+@trade_value_low = 0.5
 @trade_value_very_low = 0.25
 
 @unemployment_subsidies = 5

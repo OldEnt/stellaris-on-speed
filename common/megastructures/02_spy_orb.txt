@@ -58,7 +58,7 @@ spy_orb_0 = {
 					who = prev.from
 					status = yes
 				}
-				colonizeable_planet = no
+				colonizable_planet = no
 			}
 			custom_tooltip = {
 				fail_text = "requires_no_anomaly"

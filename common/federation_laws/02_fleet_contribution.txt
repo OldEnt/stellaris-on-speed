@@ -8,7 +8,7 @@
 @cooldown = 720
 
 fleet_contribution_none = {
-	allow = { 
+	allow = {
 		custom_tooltip = {
 			NOT = {
 				AND = {
@@ -19,7 +19,7 @@ fleet_contribution_none = {
 			}
 		}
 	}
-	modifier = 	{
+	modifier =	{
 		federation_fleet_contribution_factor = 0
 	}
 	on_enact = {
@@ -37,19 +37,19 @@ fleet_contribution_none = {
 
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 1
 		}
-		
+
 		#Attempt to lower contribution by a step when there is bad cohesion
 		modifier = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < 0
 				has_federation_law = fleet_contribution_low
 			}
@@ -58,7 +58,7 @@ fleet_contribution_none = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -25
 				has_federation_law = fleet_contribution_low
 			}
@@ -67,7 +67,7 @@ fleet_contribution_none = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -50
 				has_federation_law = fleet_contribution_low
 			}
@@ -76,12 +76,12 @@ fleet_contribution_none = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -75
 				has_federation_law = fleet_contribution_low
 			}
 		}
-		
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_peaceful_traders
@@ -104,7 +104,7 @@ fleet_contribution_none = {
 # Fleet Contribution - Galactic Union
 
 fleet_contribution_low = {
-	allow = { 
+	allow = {
 		custom_tooltip = {
 			NOT = {
 				AND = {
@@ -121,7 +121,7 @@ fleet_contribution_low = {
 	required_centralization = {
 		base = 2
 	}
-	modifier = 	{
+	modifier =	{
 		description = "fleet_contribution_low_effect"
 		federation_fleet_contribution_factor = @contribution_low
 		federation_fleet_cap_add = @fleet_cap_low
@@ -149,20 +149,20 @@ fleet_contribution_low = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 11
 		}
-		
+
 		modifier = {
 			add = 30
 			desc = federation_acceptance_high_cohesion
-			federation = {			
+			federation = {
 				federation_cohesion >= 99
 				has_federation_law = fleet_contribution_none
 			}
@@ -172,27 +172,27 @@ fleet_contribution_low = {
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 15
-			federation = { has_federation_law = fleet_contribution_none }			
+			federation = { has_federation_law = fleet_contribution_none }
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 25
-			federation = { has_federation_law = fleet_contribution_none }			
+			federation = { has_federation_law = fleet_contribution_none }
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 100
-			federation = { has_federation_law = fleet_contribution_none }			
+			federation = { has_federation_law = fleet_contribution_none }
 			has_crisis_stage_4 = yes
 		}
-		
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_president
 			add = 100
-			federation = { has_federation_law = fleet_contribution_none }			
+			federation = { has_federation_law = fleet_contribution_none }
 			is_federation_leader = yes
 		}
 		modifier = {
@@ -210,13 +210,13 @@ fleet_contribution_low = {
 			add = 5
 			is_militarist = yes
 		}
-		
+
 		#Attempt to lower contribution by a step when there is bad cohesion
 		modifier = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < 0
 				has_federation_law = fleet_contribution_medium
 			}
@@ -225,7 +225,7 @@ fleet_contribution_low = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -25
 				has_federation_law = fleet_contribution_medium
 			}
@@ -234,7 +234,7 @@ fleet_contribution_low = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -50
 				has_federation_law = fleet_contribution_medium
 			}
@@ -243,7 +243,7 @@ fleet_contribution_low = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -75
 				has_federation_law = fleet_contribution_medium
 			}
@@ -252,7 +252,7 @@ fleet_contribution_low = {
 }
 
 fleet_contribution_medium = {
-	allow = { 
+	allow = {
 		custom_tooltip = {
 			NOT = {
 				AND = {
@@ -269,7 +269,7 @@ fleet_contribution_medium = {
 	required_centralization = {
 		base = 3
 	}
-	modifier = 	{
+	modifier =	{
 		description = "fleet_contribution_medium_effect"
 		federation_fleet_contribution_factor = @contribution_medium
 		federation_fleet_cap_add = @fleet_cap_medium
@@ -297,41 +297,41 @@ fleet_contribution_medium = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 26
 		}
-		
+
 		#Attempt to raise contribution by a step in crisis
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 15
-			federation = { has_federation_law = fleet_contribution_low }			
+			federation = { has_federation_law = fleet_contribution_low }
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 25
-			federation = { has_federation_law = fleet_contribution_low }			
+			federation = { has_federation_law = fleet_contribution_low }
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 100
-			federation = { has_federation_law = fleet_contribution_low }			
+			federation = { has_federation_law = fleet_contribution_low }
 			has_crisis_stage_4 = yes
 		}
-		
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_president
 			add = 100
-			federation = { has_federation_law = fleet_contribution_low }			
+			federation = { has_federation_law = fleet_contribution_low }
 			is_federation_leader = yes
 		}
 		modifier = {
@@ -354,13 +354,13 @@ fleet_contribution_medium = {
 			add = 5
 			is_militarist = yes
 		}
-		
+
 		#Attempt to lower contribution by a step when there is bad cohesion
 		modifier = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < 0
 				has_federation_law = fleet_contribution_high
 			}
@@ -369,7 +369,7 @@ fleet_contribution_medium = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -25
 				has_federation_law = fleet_contribution_high
 			}
@@ -378,7 +378,7 @@ fleet_contribution_medium = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -50
 				has_federation_law = fleet_contribution_high
 			}
@@ -387,7 +387,7 @@ fleet_contribution_medium = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -75
 				has_federation_law = fleet_contribution_high
 			}
@@ -396,7 +396,7 @@ fleet_contribution_medium = {
 }
 
 fleet_contribution_high = {
-	allow = { 
+	allow = {
 		custom_tooltip = {
 			NOT = {
 				AND = {
@@ -413,7 +413,7 @@ fleet_contribution_high = {
 	required_centralization = {
 		base = 4
 	}
-	modifier = 	{
+	modifier =	{
 		description = "fleet_contribution_high_effect"
 		federation_fleet_contribution_factor = @contribution_high
 		federation_fleet_cap_add = @fleet_cap_high
@@ -441,41 +441,41 @@ fleet_contribution_high = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 41
 		}
-		
+
 		#Attempt to raise contribution by a step in crisis
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 15
-			federation = { has_federation_law = fleet_contribution_medium }			
+			federation = { has_federation_law = fleet_contribution_medium }
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 25
-			federation = { has_federation_law = fleet_contribution_medium }			
+			federation = { has_federation_law = fleet_contribution_medium }
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 100
-			federation = { has_federation_law = fleet_contribution_medium }			
+			federation = { has_federation_law = fleet_contribution_medium }
 			has_crisis_stage_4 = yes
 		}
-		
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_president
 			add = 100
-			federation = { has_federation_law = fleet_contribution_medium }			
+			federation = { has_federation_law = fleet_contribution_medium }
 			is_federation_leader = yes
 		}
 		modifier = {
@@ -504,7 +504,7 @@ fleet_contribution_high = {
 # Fleet Contribution - Trade League
 
 fleet_contribution_low_trade = {
-	allow = { 
+	allow = {
 		custom_tooltip = {
 			NOT = {
 				AND = {
@@ -521,7 +521,7 @@ fleet_contribution_low_trade = {
 	required_centralization = {
 		base = 2
 	}
-	modifier = 	{
+	modifier =	{
 		description = "fleet_contribution_low_effect"
 		federation_fleet_contribution_factor = @contribution_low
 		federation_fleet_cap_add = @fleet_cap_low
@@ -549,20 +549,20 @@ fleet_contribution_low_trade = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 11
 		}
-		
+
 		modifier = {
 			add = 30
 			desc = federation_acceptance_high_cohesion
-			federation = {			
+			federation = {
 				federation_cohesion >= 99
 				has_federation_law = fleet_contribution_none
 			}
@@ -572,27 +572,27 @@ fleet_contribution_low_trade = {
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 15
-			federation = { has_federation_law = fleet_contribution_none }			
+			federation = { has_federation_law = fleet_contribution_none }
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 25
-			federation = { has_federation_law = fleet_contribution_none }			
+			federation = { has_federation_law = fleet_contribution_none }
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 100
-			federation = { has_federation_law = fleet_contribution_none }			
+			federation = { has_federation_law = fleet_contribution_none }
 			has_crisis_stage_4 = yes
 		}
-		
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_president
 			add = 100
-			federation = { has_federation_law = fleet_contribution_none }			
+			federation = { has_federation_law = fleet_contribution_none }
 			is_federation_leader = yes
 		}
 		modifier = {
@@ -615,13 +615,13 @@ fleet_contribution_low_trade = {
 			add = -5
 			has_ai_personality = peaceful_traders
 		}
-		
+
 		#Attempt to lower contribution by a step when there is bad cohesion
 		modifier = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < 0
 				has_federation_law = fleet_contribution_medium_trade
 			}
@@ -630,7 +630,7 @@ fleet_contribution_low_trade = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -25
 				has_federation_law = fleet_contribution_medium_trade
 			}
@@ -639,7 +639,7 @@ fleet_contribution_low_trade = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -50
 				has_federation_law = fleet_contribution_medium_trade
 			}
@@ -648,7 +648,7 @@ fleet_contribution_low_trade = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -75
 				has_federation_law = fleet_contribution_medium_trade
 			}
@@ -657,7 +657,7 @@ fleet_contribution_low_trade = {
 }
 
 fleet_contribution_medium_trade = {
-	allow = { 
+	allow = {
 		custom_tooltip = {
 			NOT = {
 				AND = {
@@ -674,7 +674,7 @@ fleet_contribution_medium_trade = {
 	required_centralization = {
 		base = 3
 	}
-	modifier = 	{
+	modifier =	{
 		description = "fleet_contribution_medium_effect"
 		federation_fleet_contribution_factor = @contribution_medium
 		federation_fleet_cap_add = @fleet_cap_medium
@@ -702,41 +702,41 @@ fleet_contribution_medium_trade = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 26
 		}
-		
+
 		#Attempt to raise contribution by a step in crisis
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 15
-			federation = { has_federation_law = fleet_contribution_low_trade }			
+			federation = { has_federation_law = fleet_contribution_low_trade }
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 25
-			federation = { has_federation_law = fleet_contribution_low_trade }			
+			federation = { has_federation_law = fleet_contribution_low_trade }
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 100
-			federation = { has_federation_law = fleet_contribution_low_trade }			
+			federation = { has_federation_law = fleet_contribution_low_trade }
 			has_crisis_stage_4 = yes
 		}
-		
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_president
 			add = 100
-			federation = { has_federation_law = fleet_contribution_low_trade }			
+			federation = { has_federation_law = fleet_contribution_low_trade }
 			is_federation_leader = yes
 		}
 		modifier = {
@@ -764,13 +764,13 @@ fleet_contribution_medium_trade = {
 			add = -5
 			has_ai_personality = xenophobic_isolationists
 		}
-		
+
 		#Attempt to lower contribution by a step when there is bad cohesion
 		modifier = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < 0
 				has_federation_law = fleet_contribution_high_trade
 			}
@@ -779,7 +779,7 @@ fleet_contribution_medium_trade = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -25
 				has_federation_law = fleet_contribution_high_trade
 			}
@@ -788,7 +788,7 @@ fleet_contribution_medium_trade = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -50
 				has_federation_law = fleet_contribution_high_trade
 			}
@@ -797,7 +797,7 @@ fleet_contribution_medium_trade = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -75
 				has_federation_law = fleet_contribution_high_trade
 			}
@@ -806,7 +806,7 @@ fleet_contribution_medium_trade = {
 }
 
 fleet_contribution_high_trade = {
-	allow = { 
+	allow = {
 		custom_tooltip = {
 			NOT = {
 				AND = {
@@ -823,7 +823,7 @@ fleet_contribution_high_trade = {
 	required_centralization = {
 		base = 5
 	}
-	modifier = 	{
+	modifier =	{
 		description = "fleet_contribution_high_effect"
 		federation_fleet_contribution_factor = @contribution_high
 		federation_fleet_cap_add = @fleet_cap_high
@@ -851,41 +851,41 @@ fleet_contribution_high_trade = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 41
 		}
-		
+
 		#Attempt to raise contribution by a step in crisis
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 15
-			federation = { has_federation_law = fleet_contribution_medium_trade }			
+			federation = { has_federation_law = fleet_contribution_medium_trade }
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 25
-			federation = { has_federation_law = fleet_contribution_medium_trade }			
+			federation = { has_federation_law = fleet_contribution_medium_trade }
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 100
-			federation = { has_federation_law = fleet_contribution_medium_trade }			
+			federation = { has_federation_law = fleet_contribution_medium_trade }
 			has_crisis_stage_4 = yes
 		}
-		
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_president
 			add = 100
-			federation = { has_federation_law = fleet_contribution_medium_trade }			
+			federation = { has_federation_law = fleet_contribution_medium_trade }
 			is_federation_leader = yes
 		}
 		modifier = {
@@ -919,7 +919,7 @@ fleet_contribution_high_trade = {
 # Fleet Contribution - Research Cooperative
 
 fleet_contribution_low_research = {
-	allow = { 
+	allow = {
 		custom_tooltip = {
 			NOT = {
 				AND = {
@@ -936,7 +936,7 @@ fleet_contribution_low_research = {
 	required_centralization = {
 		base = 3
 	}
-	modifier = 	{
+	modifier =	{
 		description = "fleet_contribution_low_effect"
 		federation_fleet_contribution_factor = @contribution_low
 		federation_fleet_cap_add = @fleet_cap_low
@@ -964,20 +964,20 @@ fleet_contribution_low_research = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 6
 		}
-		
+
 		modifier = {
 			add = 30
 			desc = federation_acceptance_high_cohesion
-			federation = {			
+			federation = {
 				federation_cohesion >= 99
 				has_federation_law = fleet_contribution_none
 			}
@@ -987,27 +987,27 @@ fleet_contribution_low_research = {
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 15
-			federation = { has_federation_law = fleet_contribution_none }			
+			federation = { has_federation_law = fleet_contribution_none }
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 25
-			federation = { has_federation_law = fleet_contribution_none }			
+			federation = { has_federation_law = fleet_contribution_none }
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 100
-			federation = { has_federation_law = fleet_contribution_none }			
+			federation = { has_federation_law = fleet_contribution_none }
 			has_crisis_stage_4 = yes
 		}
-		
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_president
 			add = 100
-			federation = { has_federation_law = fleet_contribution_none }			
+			federation = { has_federation_law = fleet_contribution_none }
 			is_federation_leader = yes
 		}
 		modifier = {
@@ -1025,13 +1025,13 @@ fleet_contribution_low_research = {
 			add = -5
 			has_ai_personality = xenophobic_isolationists
 		}
-		
+
 		#Attempt to lower contribution by a step when there is bad cohesion
 		modifier = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < 0
 				has_federation_law = fleet_contribution_medium_research
 			}
@@ -1040,7 +1040,7 @@ fleet_contribution_low_research = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -25
 				has_federation_law = fleet_contribution_medium_research
 			}
@@ -1049,7 +1049,7 @@ fleet_contribution_low_research = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -50
 				has_federation_law = fleet_contribution_medium_research
 			}
@@ -1058,7 +1058,7 @@ fleet_contribution_low_research = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -75
 				has_federation_law = fleet_contribution_medium_research
 			}
@@ -1067,7 +1067,7 @@ fleet_contribution_low_research = {
 }
 
 fleet_contribution_medium_research = {
-	allow = { 
+	allow = {
 		custom_tooltip = {
 			NOT = {
 				AND = {
@@ -1084,7 +1084,7 @@ fleet_contribution_medium_research = {
 	required_centralization = {
 		base = 5
 	}
-	modifier = 	{
+	modifier =	{
 		description = "fleet_contribution_medium_effect"
 		federation_fleet_contribution_factor = @contribution_medium
 		federation_fleet_cap_add = @fleet_cap_medium
@@ -1112,41 +1112,41 @@ fleet_contribution_medium_research = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 21
 		}
-		
+
 		#Attempt to raise contribution by a step in crisis
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 15
-			federation = { has_federation_law = fleet_contribution_low_research }			
+			federation = { has_federation_law = fleet_contribution_low_research }
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 25
-			federation = { has_federation_law = fleet_contribution_low_research }			
+			federation = { has_federation_law = fleet_contribution_low_research }
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 100
-			federation = { has_federation_law = fleet_contribution_low_research }			
+			federation = { has_federation_law = fleet_contribution_low_research }
 			has_crisis_stage_4 = yes
 		}
-		
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_president
 			add = 100
-			federation = { has_federation_law = fleet_contribution_low_research }			
+			federation = { has_federation_law = fleet_contribution_low_research }
 			is_federation_leader = yes
 		}
 		modifier = {
@@ -1171,7 +1171,7 @@ fleet_contribution_medium_research = {
 # Fleet Contribution - Martial Alliance
 
 fleet_contribution_low_martial = {
-	allow = { 
+	allow = {
 		custom_tooltip = {
 			NOT = {
 				AND = {
@@ -1188,7 +1188,7 @@ fleet_contribution_low_martial = {
 	required_centralization = {
 		base = 1
 	}
-	modifier = 	{
+	modifier =	{
 		description = "fleet_contribution_low_effect"
 		federation_fleet_contribution_factor = @contribution_low
 		federation_fleet_cap_add = @fleet_cap_low
@@ -1216,20 +1216,20 @@ fleet_contribution_low_martial = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 11
 		}
-		
+
 		modifier = {
 			add = 30
 			desc = federation_acceptance_high_cohesion
-			federation = {			
+			federation = {
 				federation_cohesion >= 99
 				has_federation_law = fleet_contribution_none
 			}
@@ -1239,27 +1239,27 @@ fleet_contribution_low_martial = {
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 15
-			federation = { has_federation_law = fleet_contribution_none }			
+			federation = { has_federation_law = fleet_contribution_none }
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 25
-			federation = { has_federation_law = fleet_contribution_none }			
+			federation = { has_federation_law = fleet_contribution_none }
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 100
-			federation = { has_federation_law = fleet_contribution_none }			
+			federation = { has_federation_law = fleet_contribution_none }
 			has_crisis_stage_4 = yes
 		}
-		
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_president
 			add = 100
-			federation = { has_federation_law = fleet_contribution_none }			
+			federation = { has_federation_law = fleet_contribution_none }
 			is_federation_leader = yes
 		}
 		modifier = {
@@ -1277,13 +1277,13 @@ fleet_contribution_low_martial = {
 			add = 5
 			is_militarist = yes
 		}
-		
+
 		#Attempt to lower contribution by a step when there is bad cohesion
 		modifier = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < 0
 				has_federation_law = fleet_contribution_medium_martial
 			}
@@ -1292,7 +1292,7 @@ fleet_contribution_low_martial = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -25
 				has_federation_law = fleet_contribution_medium_martial
 			}
@@ -1301,7 +1301,7 @@ fleet_contribution_low_martial = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -50
 				has_federation_law = fleet_contribution_medium_martial
 			}
@@ -1310,7 +1310,7 @@ fleet_contribution_low_martial = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -75
 				has_federation_law = fleet_contribution_medium_martial
 			}
@@ -1319,7 +1319,7 @@ fleet_contribution_low_martial = {
 }
 
 fleet_contribution_medium_martial = {
-	allow = { 
+	allow = {
 		custom_tooltip = {
 			NOT = {
 				AND = {
@@ -1336,7 +1336,7 @@ fleet_contribution_medium_martial = {
 	required_centralization = {
 		base = 2
 	}
-	modifier = 	{
+	modifier =	{
 		description = "fleet_contribution_medium_effect"
 		federation_fleet_contribution_factor = @contribution_medium
 		federation_fleet_cap_add = @fleet_cap_medium
@@ -1364,20 +1364,20 @@ fleet_contribution_medium_martial = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 26
 		}
-		
+
 		modifier = {
 			add = 30
 			desc = federation_acceptance_high_cohesion
-			federation = {			
+			federation = {
 				federation_cohesion >= 99
 				has_federation_law = fleet_contribution_low_martial
 			}
@@ -1387,22 +1387,22 @@ fleet_contribution_medium_martial = {
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 15
-			federation = { has_federation_law = fleet_contribution_low_martial }			
+			federation = { has_federation_law = fleet_contribution_low_martial }
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 25
-			federation = { has_federation_law = fleet_contribution_low_martial }			
+			federation = { has_federation_law = fleet_contribution_low_martial }
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 100
-			federation = { has_federation_law = fleet_contribution_low_martial }			
+			federation = { has_federation_law = fleet_contribution_low_martial }
 			has_crisis_stage_4 = yes
 		}
-		
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_president
@@ -1430,13 +1430,13 @@ fleet_contribution_medium_martial = {
 			add = -5
 			has_ai_personality = xenophobic_isolationists
 		}
-		
+
 		#Attempt to lower contribution by a step when there is bad cohesion
 		modifier = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < 0
 				has_federation_law = fleet_contribution_high_martial
 			}
@@ -1445,7 +1445,7 @@ fleet_contribution_medium_martial = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -25
 				has_federation_law = fleet_contribution_high_martial
 			}
@@ -1454,7 +1454,7 @@ fleet_contribution_medium_martial = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -50
 				has_federation_law = fleet_contribution_high_martial
 			}
@@ -1463,7 +1463,7 @@ fleet_contribution_medium_martial = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -75
 				has_federation_law = fleet_contribution_high_martial
 			}
@@ -1472,7 +1472,7 @@ fleet_contribution_medium_martial = {
 }
 
 fleet_contribution_high_martial = {
-	allow = { 
+	allow = {
 		custom_tooltip = {
 			NOT = {
 				AND = {
@@ -1489,7 +1489,7 @@ fleet_contribution_high_martial = {
 	required_centralization = {
 		base = 3
 	}
-	modifier = 	{
+	modifier =	{
 		description = "fleet_contribution_high_effect"
 		federation_fleet_contribution_factor = @contribution_high
 		federation_fleet_cap_add = @fleet_cap_high
@@ -1517,20 +1517,20 @@ fleet_contribution_high_martial = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 41
 		}
-		
+
 		modifier = {
 			add = 30
 			desc = federation_acceptance_high_cohesion
-			federation = {			
+			federation = {
 				federation_cohesion >= 99
 				has_federation_law = fleet_contribution_medium_martial
 			}
@@ -1540,27 +1540,27 @@ fleet_contribution_high_martial = {
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 15
-			federation = { has_federation_law = fleet_contribution_medium_martial }			
+			federation = { has_federation_law = fleet_contribution_medium_martial }
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 25
-			federation = { has_federation_law = fleet_contribution_medium_martial }			
+			federation = { has_federation_law = fleet_contribution_medium_martial }
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 100
-			federation = { has_federation_law = fleet_contribution_medium_martial }			
+			federation = { has_federation_law = fleet_contribution_medium_martial }
 			has_crisis_stage_4 = yes
 		}
-		
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_president
 			add = 100
-			federation = { has_federation_law = fleet_contribution_medium_martial }			
+			federation = { has_federation_law = fleet_contribution_medium_martial }
 			is_federation_leader = yes
 		}
 		modifier = {
@@ -1589,7 +1589,7 @@ fleet_contribution_high_martial = {
 # Fleet Contribution - Hegemony
 
 fleet_contribution_low_hegemony = {
-	allow = { 
+	allow = {
 		custom_tooltip = {
 			NOT = {
 				AND = {
@@ -1606,7 +1606,7 @@ fleet_contribution_low_hegemony = {
 	allow = {
 		always = yes
 	}
-	modifier = 	{
+	modifier =	{
 		description = "fleet_contribution_low_effect"
 		federation_fleet_contribution_factor = @contribution_low
 		federation_fleet_cap_add = @fleet_cap_low
@@ -1634,20 +1634,20 @@ fleet_contribution_low_hegemony = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 11
 		}
-		
+
 		modifier = {
 			add = 30
 			desc = federation_acceptance_high_cohesion
-			federation = {			
+			federation = {
 				federation_cohesion >= 99
 				has_federation_law = fleet_contribution_none
 			}
@@ -1657,27 +1657,27 @@ fleet_contribution_low_hegemony = {
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 15
-			federation = { has_federation_law = fleet_contribution_none }			
+			federation = { has_federation_law = fleet_contribution_none }
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 25
-			federation = { has_federation_law = fleet_contribution_none }			
+			federation = { has_federation_law = fleet_contribution_none }
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 100
-			federation = { has_federation_law = fleet_contribution_none }			
+			federation = { has_federation_law = fleet_contribution_none }
 			has_crisis_stage_4 = yes
 		}
-		
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_president
 			add = 100
-			federation = { has_federation_law = fleet_contribution_none }			
+			federation = { has_federation_law = fleet_contribution_none }
 			is_federation_leader = yes
 		}
 		modifier = {
@@ -1695,13 +1695,13 @@ fleet_contribution_low_hegemony = {
 			add = 5
 			is_militarist = yes
 		}
-		
+
 		#Attempt to lower contribution by a step when there is bad cohesion
 		modifier = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < 0
 				has_federation_law = fleet_contribution_medium_hegemony
 			}
@@ -1710,7 +1710,7 @@ fleet_contribution_low_hegemony = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -25
 				has_federation_law = fleet_contribution_medium_hegemony
 			}
@@ -1719,7 +1719,7 @@ fleet_contribution_low_hegemony = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -50
 				has_federation_law = fleet_contribution_medium_hegemony
 			}
@@ -1728,7 +1728,7 @@ fleet_contribution_low_hegemony = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -75
 				has_federation_law = fleet_contribution_medium_hegemony
 			}
@@ -1737,7 +1737,7 @@ fleet_contribution_low_hegemony = {
 }
 
 fleet_contribution_medium_hegemony = {
-	allow = { 
+	allow = {
 		custom_tooltip = {
 			NOT = {
 				AND = {
@@ -1754,7 +1754,7 @@ fleet_contribution_medium_hegemony = {
 	required_centralization = {
 		base = 2
 	}
-	modifier = 	{
+	modifier =	{
 		description = "fleet_contribution_medium_effect"
 		federation_fleet_contribution_factor = @contribution_medium
 		federation_fleet_cap_add = @fleet_cap_medium
@@ -1782,41 +1782,41 @@ fleet_contribution_medium_hegemony = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 26
 		}
-		
+
 		#Attempt to raise contribution by a step in crisis
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 15
-			federation = { has_federation_law = fleet_contribution_low_hegemony }			
+			federation = { has_federation_law = fleet_contribution_low_hegemony }
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 25
-			federation = { has_federation_law = fleet_contribution_low_hegemony }			
+			federation = { has_federation_law = fleet_contribution_low_hegemony }
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 100
-			federation = { has_federation_law = fleet_contribution_low_hegemony }			
+			federation = { has_federation_law = fleet_contribution_low_hegemony }
 			has_crisis_stage_4 = yes
 		}
-		
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_president
 			add = 100
-			federation = { has_federation_law = fleet_contribution_low_hegemony }			
+			federation = { has_federation_law = fleet_contribution_low_hegemony }
 			is_federation_leader = yes
 		}
 		modifier = {
@@ -1834,13 +1834,13 @@ fleet_contribution_medium_hegemony = {
 			add = 5
 			is_militarist = yes
 		}
-		
+
 		#Attempt to lower contribution by a step when there is bad cohesion
 		modifier = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < 0
 				has_federation_law = fleet_contribution_high_hegemony
 			}
@@ -1849,7 +1849,7 @@ fleet_contribution_medium_hegemony = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -25
 				has_federation_law = fleet_contribution_high_hegemony
 			}
@@ -1858,7 +1858,7 @@ fleet_contribution_medium_hegemony = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -50
 				has_federation_law = fleet_contribution_high_hegemony
 			}
@@ -1867,7 +1867,7 @@ fleet_contribution_medium_hegemony = {
 			desc = federation_acceptance_reduce_fleet
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -75
 				has_federation_law = fleet_contribution_high_hegemony
 			}
@@ -1876,7 +1876,7 @@ fleet_contribution_medium_hegemony = {
 }
 
 fleet_contribution_high_hegemony = {
-	allow = { 
+	allow = {
 		custom_tooltip = {
 			NOT = {
 				AND = {
@@ -1893,7 +1893,7 @@ fleet_contribution_high_hegemony = {
 	required_centralization = {
 		base = 4
 	}
-	modifier = 	{
+	modifier =	{
 		description = "fleet_contribution_high_effect"
 		federation_fleet_contribution_factor = @contribution_high
 		federation_fleet_cap_add = @fleet_cap_high
@@ -1921,41 +1921,41 @@ fleet_contribution_high_hegemony = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 41
 		}
-		
+
 		#Attempt to raise contribution by a step in crisis
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 15
-			federation = { has_federation_law = fleet_contribution_medium_hegemony }			
+			federation = { has_federation_law = fleet_contribution_medium_hegemony }
 			has_crisis_stage_2 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 25
-			federation = { has_federation_law = fleet_contribution_medium_hegemony }			
+			federation = { has_federation_law = fleet_contribution_medium_hegemony }
 			has_crisis_stage_3 = yes
 		}
 		modifier = {
 			desc = federation_acceptance_crisis
 			add = 100
-			federation = { has_federation_law = fleet_contribution_medium_hegemony }			
+			federation = { has_federation_law = fleet_contribution_medium_hegemony }
 			has_crisis_stage_4 = yes
 		}
-		
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_president
 			add = 100
-			federation = { has_federation_law = fleet_contribution_medium_hegemony }			
+			federation = { has_federation_law = fleet_contribution_medium_hegemony }
 			is_federation_leader = yes
 		}
 		modifier = {

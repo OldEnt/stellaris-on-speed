@@ -141,16 +141,39 @@ building_artist_patron = {
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { NOT = { has_ethic = ethic_gestalt_consciousness } }
+			owner = { is_gestalt = no }
 		}
 		text = job_culture_worker_effect_desc
 	}
 	triggered_desc = {
 		trigger = {
 			exists = owner
-			owner = { has_ethic = ethic_gestalt_consciousness }
+			owner = { is_hive_empire = yes }
 		}
-		text = job_coordinator_effect_desc
+		text = job_synapse_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+		}
+		text = job_evaluator_effect_desc
+	}
+
+	desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = building_artist_patron_desc
+	}
+
+	desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = building_artist_patron_gestalt_desc
 	}
 
 	on_queued = {
@@ -326,7 +349,7 @@ building_crystal_plant_2 = {
 		}
 		text = job_translucer_drone_effect_desc
 	}
-	
+
 	ai_resource_production = {
 		rare_crystals = @b3_rare_upkeep
 		trigger = {

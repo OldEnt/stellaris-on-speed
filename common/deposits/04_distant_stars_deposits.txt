@@ -7,7 +7,7 @@
 # station = station class in orbit to gather
 
 ##############################
-#   Distant Stars Deposits   #
+#	Distant Stars Deposits	#
 ##############################
 
 d_vast_unity_deposit = {
@@ -17,7 +17,7 @@ d_vast_unity_deposit = {
 		}
 	}
 	station = shipclass_research_station
-	is_for_colonizeable = no
+	is_for_colonizable = no
 	drop_weight = { weight = 0 }
 }
 
@@ -29,8 +29,8 @@ d_nanites_deposit = {
 		}
 	}
 	station = shipclass_mining_station
-	is_for_colonizeable = no
-	
+	is_for_colonizable = no
+
 	drop_weight = {
 		weight = 0
 		modifier = {
@@ -42,6 +42,10 @@ d_nanites_deposit = {
 		modifier = {
 			factor = 5
 			is_planet_class = pc_gray_goo
+		}
+		modifier = {
+			factor = 0
+			has_modifier = terraforming_candidate
 		}
 	}
 }

@@ -523,15 +523,15 @@ supremacist = {
 			}
 
 			effect = {
-				add_modifier = { modifier = embraced_faction days = 3600 }
+				add_modifier = { modifier = embraced_faction days = 720 }
 				parameter:empire = {
 					shift_ethic = ethic_xenophobe
 					hidden_effect = {
 						every_pop_faction = { # embraces xenophobe ethos
 							limit = { is_pop_faction_type = isolationist }
-							add_modifier = { modifier = embraced_faction days = 3600 	}
+							add_modifier = { modifier = embraced_faction days = 720	}
 						}
-						add_modifier = { modifier = embraced_faction_timer days = 3600 }
+						add_modifier = { modifier = embraced_faction_timer days = 720 }
 						every_pop_faction = {
 							limit = {
 								NOR = {
@@ -539,7 +539,7 @@ supremacist = {
 									is_pop_faction_type = isolationist # same ethos
 								}
 							}
-							add_modifier = { modifier = embraced_another_faction days = 3600 }
+							add_modifier = { modifier = embraced_another_faction days = 720 }
 						}
 					}
 				}

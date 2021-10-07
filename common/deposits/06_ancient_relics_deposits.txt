@@ -7,7 +7,7 @@
 # station = station class in orbit to gather
 
 ###############################
-#   Ancient Relics Deposits   #
+#	Ancient Relics Deposits	#
 ###############################
 
 # Relic World Blockers
@@ -15,13 +15,13 @@
 d_collapsed_spire = {
 	time = 96
 	icon = d_broken_spire
-	
-	is_for_colonizeable = yes
+
+	is_for_colonizable = yes
 	category = deposit_cat_rare_blocker
-	
+
 	potential = { always = no }
-	
-	planet_modifier = { 
+
+	planet_modifier = {
 		planet_max_districts_add = -1
 	}
 
@@ -42,13 +42,13 @@ d_collapsed_spire = {
 d_massive_crevice = {
 	time = 54
 	icon = d_massive_crevice
-	
-	is_for_colonizeable = yes
-	category = deposit_cat_rare_blocker	
-	
+
+	is_for_colonizable = yes
+	category = deposit_cat_rare_blocker
+
 	potential = { always = no }
-	
-	planet_modifier = { 
+
+	planet_modifier = {
 		planet_max_districts_add = -1
 	}
 
@@ -69,13 +69,13 @@ d_massive_crevice = {
 d_shattered_solar_array = {
 	icon = d_solar_array
 	time = 54
-	
-	is_for_colonizeable = yes
-	category = deposit_cat_rare_blocker	
-	
+
+	is_for_colonizable = yes
+	category = deposit_cat_rare_blocker
+
 	potential = { always = no }
-	
-	planet_modifier = { 
+
+	planet_modifier = {
 		planet_max_districts_add = -1
 	}
 
@@ -96,13 +96,13 @@ d_shattered_solar_array = {
 d_flooded_reactor_pits = {
 	icon = d_reactor
 	time = 54
-	
-	is_for_colonizeable = yes
-	category = deposit_cat_rare_blocker	
-	
+
+	is_for_colonizable = yes
+	category = deposit_cat_rare_blocker
+
 	potential = { always = no }
-	
-	planet_modifier = { 
+
+	planet_modifier = {
 		planet_max_districts_add = -1
 	}
 
@@ -123,13 +123,13 @@ d_flooded_reactor_pits = {
 d_crumbling_mining_tunnels = {
 	icon = d_mining_tunnels
 	time = 54
-	
-	is_for_colonizeable = yes
-	category = deposit_cat_rare_blocker	
-	
+
+	is_for_colonizable = yes
+	category = deposit_cat_rare_blocker
+
 	potential = { always = no }
-	
-	planet_modifier = { 
+
+	planet_modifier = {
 		planet_max_districts_add = -1
 	}
 
@@ -150,57 +150,57 @@ d_crumbling_mining_tunnels = {
 # Relic World Deposits
 
 d_ancient_reactor_pits = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	icon = d_reactor
 
 	potential = { always = no }
-	
-	planet_modifier = { 
+
+	planet_modifier = {
 		district_generator_max = 6
 	}
 }
 
 d_immense_solar_array = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	icon = d_solar_array
 
 	potential = { always = no }
-	
-	planet_modifier = { 
+
+	planet_modifier = {
 		district_generator_max = 3
 	}
 }
 
 d_abandoned_mining_tunnels = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	icon = d_mining_tunnels
 
 	potential = { always = no }
-	
-	planet_modifier = { 
+
+	planet_modifier = {
 		district_mining_max = 6
 	}
 }
 
 d_relic_metal_boneyard = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	icon = d_metal_boneyard
-	
+
 	potential = { always = no }
 
-	planet_modifier = { 
+	planet_modifier = {
 		district_mining_max = 3
 	}
-} 
+}
 
 d_central_spire = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	icon = d_central_spire
 	category = deposit_cat_rare
 
 	potential = { always = no }
-	
-	planet_modifier = { 
+
+	planet_modifier = {
 		planet_jobs_society_research_produces_mult = 0.15
 		planet_jobs_engineering_research_produces_mult = 0.15
 		planet_jobs_physics_research_produces_mult = 0.15
@@ -215,7 +215,7 @@ d_central_spire = {
 			job_researcher_add = 8
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -225,26 +225,26 @@ d_central_spire = {
 			job_brain_drone_add = 8
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = { is_machine_empire = yes }
 		}
-		modifier = {	
+		modifier = {
 			job_calculator_add = 8
 		}
 	}
 }
 
 d_industrial_sector = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	icon = d_ruins_medium
 	category = deposit_cat_rare
 
 	potential = { always = no }
-	
-	planet_modifier = { 
+
+	planet_modifier = {
 		building_crystal_mines_max = 2
 		building_gas_extractors_max = 2
 		building_mote_harvesters_max = 2
@@ -252,12 +252,12 @@ d_industrial_sector = {
 }
 
 d_relic_dense_ruins = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	icon = d_ruins_large
 	category = deposit_cat_rare
 
 	potential = { always = no }
-	
+
 	planet_modifier = {
 		planet_max_districts_add = -6
 		planet_jobs_society_research_produces_mult = 0.15
@@ -267,12 +267,12 @@ d_relic_dense_ruins = {
 }
 
 d_former_relic_world = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	icon = d_central_spire
 	category = deposit_cat_rare
 
 	potential = { always = no }
-	
+
 	planet_modifier = {
 		planet_jobs_society_research_produces_mult = 0.1
 		planet_jobs_engineering_research_produces_mult = 0.1
@@ -283,12 +283,12 @@ d_former_relic_world = {
 # Archaeology Event Deposits
 
 d_mutation_vats = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	icon = d_metal_boneyard
 	category = deposit_cat_rare
 
 	potential = { always = no }
-	
+
 	resources = {
 		category = planet_deposits
 		produces = {

@@ -49,6 +49,16 @@ servant = {
 		}
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_pleasure_seeker = yes }
+		}
+		modifier = {
+			planet_amenities_add = 5
+		}
+	}
+
 	weight = {
 		weight = @special_job_weight
 	}
@@ -93,7 +103,7 @@ slave_overseer = {
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { has_non_swapped_tradition = tr_domination_judgment_corps }
+			owner = { has_active_tradition = tr_domination_judgment_corps }
 		}
 		modifier = {
 			planet_crime_add = -5
@@ -106,6 +116,16 @@ slave_overseer = {
 		}
 		modifier = {
 			planet_crime_add = -10
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_pleasure_seeker = yes }
+		}
+		modifier = {
+			planet_amenities_add = 5
 		}
 	}
 
@@ -152,6 +172,16 @@ slave_toiler = {
 		}
 		modifier = {
 			planet_amenities_add = -0.5
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_pleasure_seeker = yes }
+		}
+		modifier = {
+			planet_amenities_add = 5
 		}
 	}
 
@@ -623,10 +653,23 @@ assimilation = {
 		category = planet_jobs
 		upkeep = {
 			trigger = {
+				has_phototrophic_energy_upkeep = yes
+			}
+			energy = @living_standard_phototrophic_normal
+		}
+		upkeep = {
+			trigger = {
 				is_organic_species = yes
+				is_phototrophic = no
 				is_lithoid = no
 			}
 			food = @living_standard_food_normal
+		}
+		upkeep = {
+			trigger = {
+				is_phototrophic = yes
+			}
+			food = @living_standard_phototrophic_normal
 		}
 		upkeep = {
 			trigger = {
@@ -659,6 +702,7 @@ criminal = {
 	clothes_texture_index = 2
 	building_icon = building_residence
 	contributes_to_diplo_weight = no
+	ignores_favorite = yes #this means that if you favorite e.g. clerks, the +1000 bonus will not matter for jobs working as criminals
 
 	possible_pre_triggers = {
 		has_owner = yes
@@ -679,7 +723,7 @@ criminal = {
 	}
 
 	planet_modifier = {
-		trade_value_add = -50
+		trade_value_add = -25
 		branch_office_criminal_syndicate_value_add = 5
 	}
 
@@ -695,6 +739,7 @@ deviant_drone = {
 	clothes_texture_index = 2
 	icon = criminal
 	contributes_to_diplo_weight = no
+	ignores_favorite = yes
 
 	possible_pre_triggers = {
 		has_planet = yes
@@ -724,6 +769,7 @@ corrupt_drone = {
 	clothes_texture_index = 2
 	icon = criminal
 	contributes_to_diplo_weight = no
+	ignores_favorite = yes
 
 	possible_pre_triggers = {
 		has_planet = yes

@@ -104,12 +104,12 @@
 @s_t5_rare = 0.33
 @s_t6_rare = 0.43
 @s_t7_rare = 0.55
-      
+
 @m_t4_rare = 0.50
 @m_t5_rare = 0.65
 @m_t6_rare = 0.85
 @m_t7_rare = 1.10
-      
+
 @l_t4_rare = 1.0
 @l_t5_rare = 1.3
 @l_t6_rare = 1.69
@@ -238,23 +238,23 @@
 @power_S1 = -15
 @power_M1 = -30
 @power_L1 = -60
-             
+
 @power_S2 = -20
 @power_M2 = -40
 @power_L2 = -80
-             
+
 @power_S3 = -25
 @power_M3 = -50
 @power_L3 = -100
-             
+
 @power_S4 = -35
 @power_M4 = -70
 @power_L4 = -140
-             
+
 @power_S5 = -45
 @power_M5 = -90
 @power_L5 = -180
- 
+
 @power_S6 = -55
 @power_M6 = -110
 @power_L6 = -220

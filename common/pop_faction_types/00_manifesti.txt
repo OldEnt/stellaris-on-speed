@@ -23,19 +23,19 @@ manifesti = {
 		is_regular_empire = yes
 		has_encountered_other_species = yes
 		is_at_war = no
-        NOR = {
-            is_homicidal = yes
-            is_fanatic = yes
-            has_valid_civic = civic_warrior_culture
+		NOR = {
+			is_homicidal = yes
+			is_fanatic = yes
+			has_valid_civic = civic_warrior_culture
 			has_country_flag = manifesti_decline #Applied if/when the faction is suppressed
-        }
+		}
 		count_owned_pop = {
 			count >= 2
 			limit = {
-                OR = {
-				    has_ethic = ethic_egalitarian
-                    has_ethic = ethic_xenophile
-                }
+				OR = {
+					has_ethic = ethic_egalitarian
+					has_ethic = ethic_xenophile
+				}
 			}
 		}
 	}
@@ -63,10 +63,10 @@ manifesti = {
 		OR = {
 			has_ethic = ethic_egalitarian
 			has_ethic = ethic_fanatic_egalitarian
-            has_ethic = ethic_xenophile
-            has_ethic = ethic_fanatic_xenophile
-            has_ethic = ethic_pacifist
-            has_ethic = ethic_fanatic_pacifist
+			has_ethic = ethic_xenophile
+			has_ethic = ethic_fanatic_xenophile
+			has_ethic = ethic_pacifist
+			has_ethic = ethic_fanatic_pacifist
 		}
 	}
 
@@ -98,11 +98,11 @@ manifesti = {
 		}
 		modifier = { #Outcasts and radicals
 			factor = 1.5
-            OR = {
-			    NOT = { is_same_species = owner_species }
-                NOT = { has_citizenship_type = { type = citizenship_full } }
-                has_trait = trait_unruly
-            }
+			OR = {
+				NOT = { is_same_species = owner_species }
+				NOT = { has_citizenship_type = { type = citizenship_full } }
+				has_trait = trait_unruly
+			}
 		}
 	}
 
@@ -112,11 +112,11 @@ manifesti = {
 			factor = 0
 			leader_class = ruler
 			owner = {
-                OR = {
-                    has_authority = auth_imperial
-                    has_authority = auth_dictatorial
-                }
-            }
+				OR = {
+					has_authority = auth_imperial
+					has_authority = auth_dictatorial
+				}
+			}
 		}
 		modifier = {
 			factor = 0
@@ -135,28 +135,28 @@ manifesti = {
 
 		potential = {
 			exists = owner
-            owner = {
-                has_technology = tech_colonization_2
-                NOT = { has_origin = origin_void_dwellers }
-            }
+			owner = {
+				has_technology = tech_colonization_2
+				NOT = { has_origin = origin_void_dwellers }
+			}
 		}
 
 		trigger = {
 			owner = {
-                OR = {
-                    AND = {
-                        has_technology = tech_massive_glacier
-                        any_owned_planet = { has_deposit = d_massive_glacier }
-                    }
-                    AND = {
-                        has_technology = tech_noxious_swamp
-                        any_owned_planet = { has_deposit = d_noxious_swamp }
-                    }
-                    any_owned_planet = {
-                        has_planet_flag = planet_earth
-                        NOT = { has_deposit = d_great_pacific_garbage_patch }
-                    }
-                }
+				OR = {
+					AND = {
+						has_technology = tech_massive_glacier
+						any_owned_planet = { has_deposit = d_massive_glacier }
+					}
+					AND = {
+						has_technology = tech_noxious_swamp
+						any_owned_planet = { has_deposit = d_noxious_swamp }
+					}
+					any_owned_planet = {
+						has_planet_flag = planet_earth
+						NOT = { has_deposit = d_great_pacific_garbage_patch }
+					}
+				}
 			}
 		}
 	}
@@ -171,31 +171,31 @@ manifesti = {
 		potential = {
 			exists = owner
 			owner = {
-                has_technology = tech_combat_computers_2 #Prerequisite for Autonomous
-                NOT = { has_policy_flag = robots_outlawed }
-            }
+				has_technology = tech_combat_computers_2 #Prerequisite for Autonomous
+				NOT = { has_policy_flag = robots_outlawed }
+			}
 		}
 
 		trigger = {
 			owner = {
-                has_technology = tech_combat_computers_autonomous
-                any_owned_ship = {
-                    OR = {
-                        has_component = COMBAT_COMPUTER_SWARM_AUTONOMOUS
-                        has_component = COMBAT_COMPUTER_PICKET_AUTONOMOUS
-                        has_component = COMBAT_COMPUTER_LINE_AUTONOMOUS
-                        has_component = COMBAT_COMPUTER_ARTILLERY_AUTONOMOUS
-                        has_component = COMBAT_COMPUTER_CARRIER_AUTONOMOUS
-                    }
-                }
-                count_armies = {
-                    limit = { army_type = slave_army }
-                    count < 1
-                }
-                count_armies = {
-                    limit = { army_type = undead_army }
-                    count < 1
-                }
+				has_technology = tech_combat_computers_autonomous
+				any_owned_ship = {
+					OR = {
+						has_component = COMBAT_COMPUTER_SWARM_AUTONOMOUS
+						has_component = COMBAT_COMPUTER_PICKET_AUTONOMOUS
+						has_component = COMBAT_COMPUTER_LINE_AUTONOMOUS
+						has_component = COMBAT_COMPUTER_ARTILLERY_AUTONOMOUS
+						has_component = COMBAT_COMPUTER_CARRIER_AUTONOMOUS
+					}
+				}
+				count_owned_army = {
+					limit = { army_type = slave_army }
+					count < 1
+				}
+				count_owned_army = {
+					limit = { army_type = undead_army }
+					count < 1
+				}
 			}
 		}
 	}
@@ -213,27 +213,27 @@ manifesti = {
 
 		trigger = {
 			owner = {
-                any_owned_leader = {
+				any_owned_leader = {
 					is_researching_area = physics
 					OR = {
-                    	has_trait = leader_trait_roamer
+						has_trait = leader_trait_roamer
 						has_trait = leader_trait_carefree
 					}
-                }
-                any_owned_leader = {
+				}
+				any_owned_leader = {
 					is_researching_area = engineering
 					OR = {
-                    	has_trait = leader_trait_roamer
+						has_trait = leader_trait_roamer
 						has_trait = leader_trait_carefree
 					}
-                }
-                any_owned_leader = {
+				}
+				any_owned_leader = {
 					is_researching_area = society
 					OR = {
-                    	has_trait = leader_trait_roamer
+						has_trait = leader_trait_roamer
 						has_trait = leader_trait_carefree
 					}
-                }
+				}
 			}
 		}
 	}
@@ -251,7 +251,7 @@ manifesti = {
 
 		trigger = {
 			owner = {
-                has_monthly_income = {
+				has_monthly_income = {
 					resource = consumer_goods
 					value < 1
 				}
@@ -358,14 +358,14 @@ manifesti = {
 			}
 
 			effect = {
-				add_modifier = { modifier = embraced_faction days = 3600 }
+				add_modifier = { modifier = embraced_faction days = 720 }
 				parameter:empire = {
 					shift_ethic = ethic_egalitarian
 					hidden_effect = {
-						add_modifier = { modifier = embraced_faction_timer days = 3600 }
+						add_modifier = { modifier = embraced_faction_timer days = 720 }
 						every_pop_faction = {
 							limit = { NOT = { is_same_value = root } }
-							add_modifier = { modifier = embraced_another_faction days = 3600 }
+							add_modifier = { modifier = embraced_another_faction days = 720 }
 						}
 					}
 				}

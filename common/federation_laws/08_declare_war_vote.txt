@@ -1,7 +1,7 @@
 @cooldown = 720
 
 declare_war_unanimous_vote = {
-	potential = { 
+	potential = {
 		NOT = { has_federation_type = imperial_loyalists_federation }
 	}
 	allow = {
@@ -40,7 +40,7 @@ declare_war_unanimous_vote = {
 
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
@@ -94,7 +94,7 @@ declare_war_majority_vote = {
 
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
@@ -146,7 +146,7 @@ declare_war_majority_vote_hegemony = {
 
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
@@ -156,7 +156,7 @@ declare_war_majority_vote_hegemony = {
 }
 
 declare_war_president_vote = {
-	potential = { 
+	potential = {
 		host_has_dlc = Federations
 		NOT = { has_federation_type = imperial_loyalists_federation }
 	}
@@ -200,7 +200,7 @@ declare_war_president_vote = {
 
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
@@ -217,7 +217,7 @@ declare_war_president_vote = {
 			federation = {
 				has_federation_type = hegemony_federation
 			}
-		}		
+		}
 		modifier = {
 			desc = federation_acceptance_military_federation
 			add = 25

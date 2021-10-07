@@ -32,13 +32,13 @@ challenge_type_arena_combat = {
 
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 51
 		}
-				
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_ruler_cyborg
@@ -106,7 +106,7 @@ challenge_type_arena_combat = {
 # Psionic Battle Challenge Type
 challenge_type_psionic_battle = {
 	potential = { has_federation_law = succession_type_challenge }
-	allow = { 
+	allow = {
 		custom_tooltip = {
 			fail_text = "requires_psionic_pops"
 			any_member = {
@@ -140,13 +140,13 @@ challenge_type_psionic_battle = {
 
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 26
 		}
-		
+
 		# Psionic empires should like it
 		modifier = {
 			desc = federation_acceptance_no_psionic
@@ -157,7 +157,7 @@ challenge_type_psionic_battle = {
 						has_trait = trait_latent_psionic
 						has_trait = trait_psionic
 					}
-				}			
+				}
 			}
 		}
 		modifier = {
@@ -234,7 +234,7 @@ challenge_type_psionic_battle = {
 				has_trait = leader_trait_ruler_chosen
 			}
 		}
-				
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_gestalt
@@ -270,13 +270,13 @@ challenge_type_bidding_war = {
 
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 26
 		}
-				
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_trade_league
@@ -300,7 +300,7 @@ challenge_type_bidding_war = {
 			add = 25
 			OR = {
 				has_ai_personality = peaceful_traders
-				has_ai_personality = ruthless_capitalists			
+				has_ai_personality = ruthless_capitalists
 			}
 			is_federation_leader = yes
 		}
@@ -333,25 +333,25 @@ challenge_type_thesis = {
 
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 26
 		}
-		
+
 		modifier = {
 			desc = federation_acceptance_materialist
 			add = 5
 			is_materialist = yes
 		}
-		
+
 		modifier = {
 			desc = federation_acceptance_erudite_explorers
 			add = 26
 			has_ai_personality = erudite_explorers
 		}
-				
+
 		#Technocrats and materialists will relish it
 		modifier = {
 			desc = federation_acceptance_technocracy

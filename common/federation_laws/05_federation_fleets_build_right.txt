@@ -27,7 +27,7 @@ federation_build_fleets_everyone = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		base = 51
 	}
@@ -35,7 +35,7 @@ federation_build_fleets_everyone = {
 
 federation_build_fleets_only_leader = {
 	potential = {
-		host_has_dlc = Federations		
+		host_has_dlc = Federations
 		NOT = {
 			has_federation_law = fleet_contribution_none
 		}
@@ -68,10 +68,10 @@ federation_build_fleets_only_leader = {
 			}
 		}
 	}
-	
+
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive

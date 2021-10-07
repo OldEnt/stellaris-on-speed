@@ -11,19 +11,19 @@ decision_martial_law = {
 			influence = 50
 		}
 	}
-	
+
 	potential = {
 		owner = { is_regular_empire = yes }
 		NOT = { has_modifier = martial_law }
 	}
-	
+
 	effect = {
 		custom_tooltip = decision_martial_law_effects_custom
 		hidden_effect = {
 			add_modifier = { modifier = "martial_law" days = -1 }
 		}
 	}
-	
+
 	ai_weight = {
 		weight = 0
 	}
@@ -36,19 +36,19 @@ decision_end_martial_law = {
 	resources = {
 		category = decisions
 	}
-	
+
 	potential = {
 		#owner = { is_regular_empire = yes } #if you conquer the planet as a different type you need to be able to disable it
 		has_modifier = martial_law
 	}
-	
+
 	effect = {
 		custom_tooltip = decision_end_martial_law_effects_short
 		hidden_effect = {
 			remove_modifier = martial_law
 		}
 	}
-	
+
 	ai_weight = {
 		weight = 1
 	}
@@ -64,19 +64,19 @@ decision_martial_law_machine = {
 			influence = 50
 		}
 	}
-	
+
 	potential = {
 		owner = { is_machine_empire = yes }
 		NOT = { has_modifier = compliance_protocols }
 	}
-	
+
 	effect = {
 		custom_tooltip = decision_martial_law_machine_effects_custom
 		hidden_effect = {
 			add_modifier = { modifier = "compliance_protocols" days = -1 }
-		}	
+		}
 	}
-	
+
 	ai_weight = {
 		weight = 0
 	}
@@ -89,16 +89,16 @@ decision_end_martial_law_machine = {
 	resources = {
 		category = decisions
 	}
-	
+
 	potential = {
 		#owner = { is_machine_empire = yes }
 		has_modifier = compliance_protocols
 	}
-	
+
 	effect = {
 		remove_modifier = compliance_protocols
 	}
-	
+
 	ai_weight = {
 		weight = 1
 	}
@@ -114,19 +114,19 @@ decision_martial_law_hive = {
 			influence = 50
 		}
 	}
-	
+
 	potential = {
 		owner = { is_hive_empire = yes }
 		NOT = { has_modifier = hunter_killer_drones }
 	}
-	
+
 	effect = {
 		custom_tooltip = decision_martial_law_hive_effects_custom
 		hidden_effect = {
 			add_modifier = { modifier = "hunter_killer_drones" days = -1 }
 		}
 	}
-	
+
 	ai_weight = {
 		weight = 0
 	}
@@ -139,16 +139,16 @@ decision_end_martial_law_hive = {
 	resources = {
 		category = decisions
 	}
-	
+
 	potential = {
 		#owner = { is_hive_empire = yes }
 		has_modifier = hunter_killer_drones
 	}
-	
+
 	effect = {
 		remove_modifier = hunter_killer_drones
 	}
-	
+
 	ai_weight = {
 		weight = 1
 	}
@@ -174,7 +174,7 @@ decision_enact_population_control = {
 		}
 		NOT = { has_modifier = planet_population_control }
 	}
-	
+
 	effect = {
 		add_modifier = { modifier = "planet_population_control" days = -1 }
 		IF = {
@@ -247,7 +247,7 @@ decision_enact_population_control_gestalt = {
 		}
 		NOT = { has_modifier = planet_population_control_gestalt }
 	}
-	
+
 	effect = {
 		add_modifier = { modifier = "planet_population_control_gestalt" days = -1 } # if name changes, change in jobs too
 	}
@@ -323,7 +323,7 @@ decision_enact_robot_assembly_control = {
 		}
 		NOT = { has_modifier = planet_robot_assembly_control }
 	}
-	
+
 	effect = {
 		add_modifier = { modifier = "planet_robot_assembly_control" days = -1 }
 	}
@@ -363,7 +363,7 @@ decision_end_robot_assembly_control = {
 
 	ai_weight = {
 		weight = 20
-		
+
 		modifier = { # don't end if less than 1 housing
 			factor = 0
 			free_housing < 1
@@ -386,8 +386,8 @@ decision_expel_population = {
 	}
 
 	potential = {
-		owner = { 
-			is_regular_empire = yes 
+		owner = {
+			is_regular_empire = yes
 			NOT = { has_policy_flag = population_controls_not_allowed }
 		}
 	}
@@ -406,7 +406,7 @@ decision_expel_population = {
 				trigger = free_housing
 				-9 < { set_variable = { which = expel_pop_var value = 10 } } # 10
 				-8 < { set_variable = { which = expel_pop_var value = 9 } } # 9
-				-7 < { set_variable = { which = expel_pop_var value = 8 } } # 8 
+				-7 < { set_variable = { which = expel_pop_var value = 8 } } # 8
 				-6 < { set_variable = { which = expel_pop_var value = 7 } } # 7
 				-5 < { set_variable = { which = expel_pop_var value = 6 } } # 6
 				-4 < { set_variable = { which = expel_pop_var value = 5 } } # 5
@@ -416,19 +416,13 @@ decision_expel_population = {
 				0 < { set_variable = { which = expel_pop_var value = 1 } } # 1
 			}
 			while = {
-				count = 10
-				limit = {
-					check_variable = {
-						which = expel_pop_var
-						value > 0
-					}
-				}
-				
+				count = expel_pop_var
+
 				random_owned_pop = {
 					limit = {
 						is_robot_pop = no
 						NOR = {
-							has_trait = trait_hive_mind 
+							has_trait = trait_hive_mind
 							has_trait = trait_nerve_stapled
 							is_pop_category = ruler
 						}
@@ -441,35 +435,32 @@ decision_expel_population = {
 							is_pop_category = purge
 						}
 						modifier = {
-							mult = 5
+							factor = 5
 							is_unemployed = yes
 						}
 						modifier = {
-							mult = 10
+							factor = 10
 							has_citizenship_rights = no
-						}					
+						}
 						modifier = {
 							add = 10
 							OR = {
 								is_pop_category = worker
 								is_pop_category = slave
-							}					
-						}						
+							}
+						}
 					}
 					if = {
 						limit = { is_valid_refugee_pop = yes }
 						save_event_target_as = refugee_pop #Must be saved for refugee_pop_effect to work
-						refugee_pop_effect = yes					
+						refugee_pop_effect = yes
 					}
 					else = {
 						kill_pop = yes
 					}
 				}
-				change_variable = {
-					which = expel_pop_var
-					value = -1
-				}
-			}		
+			}
+			clear_variable = expel_pop_var
 		}
 	}
 
@@ -538,7 +529,7 @@ decision_end_discourage_growth = {
 
 	ai_weight = {
 		weight = 20
-		
+
 		modifier = { # don't end if less than 1 housing
 			factor = 0
 			free_housing < 1

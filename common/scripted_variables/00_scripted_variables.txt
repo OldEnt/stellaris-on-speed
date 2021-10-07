@@ -94,30 +94,30 @@
 @tier2influencecontactmaxxenophile = 150
 
 ### MANDATES
-@unityreward = 6
+@unityreward = 30
 @unitymin = 50
 @unitymax = 1000
 
 ### MARAUDERS
 @raidcooldown = 600
-@largemercallow = 9000
-@largemerccost = -9000
-@mediummercallow = 6500
-@mediummerccost = -6500
-@smallmercallow = 4000
-@smallmerccost = -4000
-@tributeallow = 500
-@tributecost = -500
-@tributefoodallow = 500
-@tributefoodcost = -500
-@tributeallowraided = 1000
-@tributecostraided = -1000
-@tributefoodallowraided = 1000
-@tributefoodcostraided = -1000
-@leaderallow = 2000
-@leadercost = -2000
-@raidallow = 3000
-@raidcost = -3000
+@largemercallow = 45000
+@largemerccost = -45000
+@mediummercallow = 32500
+@mediummerccost = -32500
+@smallmercallow = 20000
+@smallmerccost = -20000
+@tributeallow = 2500
+@tributecost = -2500
+@tributefoodallow = 2500
+@tributefoodcost = -2500
+@tributeallowraided = 5000
+@tributecostraided = -5000
+@tributefoodallowraided = 5000
+@tributefoodcostraided = -5000
+@leaderallow = 10000
+@leadercost = -10000
+@raidallow = 15000
+@raidcost = -15000
 
 ### UNREST EVENTS
 @stabilitylevel1 = 10

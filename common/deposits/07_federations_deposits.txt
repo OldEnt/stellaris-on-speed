@@ -10,13 +10,13 @@
 @rw_maintenance_sr = 10
 
 ############################
-#   Federations Deposits   #
+#	Federations Deposits	#
 ############################
 
 # Void Dweller Origin
 
 d_arcane_replicator = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	icon = "d_station_reactor"
 	category = deposit_cat_rare
 
@@ -34,7 +34,7 @@ d_arcane_replicator = {
 # Shattered Ring
 
 d_arcane_generator = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	icon = "d_station_reactor"
 	category = deposit_cat_rare
 
@@ -90,9 +90,8 @@ d_arcane_generator = {
 	}
 }
 
-# Used to balance Assimilators and Servitors, who get two Ringworld districts in the Shattered Ring origin
 d_segment_rubble_1 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	icon = "d_organic_landfill"
 	category = deposit_cat_blockers
 	time = 72
@@ -100,8 +99,27 @@ d_segment_rubble_1 = {
 	potential = { always = no }
 
 	planet_modifier = {
-		planet_housing_add = -5
-		job_agri_drone_add = -5
+		planet_max_districts_add = -1
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 250
+		}
+	}
+}
+
+d_segment_rubble_1_small = {
+	is_for_colonizable = yes
+	icon = "d_organic_landfill"
+	category = deposit_cat_blockers
+	time = 72
+
+	potential = { always = no }
+
+	planet_modifier = {
+		planet_max_districts_add = -1
 	}
 
 	resources = {
@@ -113,7 +131,7 @@ d_segment_rubble_1 = {
 }
 
 d_segment_rubble_2 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	icon = "d_metal_boneyard"
 	category = deposit_cat_blockers
 	time = 72
@@ -121,8 +139,7 @@ d_segment_rubble_2 = {
 	potential = { always = no }
 
 	planet_modifier = {
-		planet_housing_add = -5
-		job_technician_drone_add = -5
+		planet_max_districts_add = -1
 	}
 
 	resources = {
@@ -134,7 +151,7 @@ d_segment_rubble_2 = {
 }
 
 d_segment_rubble_3 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	icon = "d_ruins_medium"
 	category = deposit_cat_blockers
 	time = 72
@@ -142,29 +159,7 @@ d_segment_rubble_3 = {
 	potential = { always = no }
 
 	planet_modifier = {
-		planet_housing_add = -5
 		planet_max_districts_add = -1
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_hive_empire = yes }
-		}
-		modifier = {
-			job_maintenance_drone_add = -6
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		modifier = {
-			job_maintenance_drone_add = -5
-			job_technician_drone_add = -1
-		}
 	}
 
 	resources = {
@@ -176,7 +171,7 @@ d_segment_rubble_3 = {
 }
 
 d_segment_rubble_4 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	icon = "d_city_ruins"
 	category = deposit_cat_blockers
 	time = 72
@@ -184,39 +179,7 @@ d_segment_rubble_4 = {
 	potential = { always = no }
 
 	planet_modifier = {
-		planet_housing_add = -5
 		planet_max_districts_add = -1
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_regular_empire = yes }
-		}
-		modifier = {
-			job_artisan_add = -2
-			job_foundry_add = -3
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_hive_empire = yes }
-		}
-		modifier = {
-			job_alloy_drone_add = -5
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		modifier = {
-			job_fabricator_add = -5
-		}
 	}
 
 	resources = {
@@ -228,7 +191,7 @@ d_segment_rubble_4 = {
 }
 
 d_decrepit_tunnels_1 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	icon = "d_mining_tunnels"
 	category = deposit_cat_blockers
 	time = 72
@@ -236,28 +199,28 @@ d_decrepit_tunnels_1 = {
 	potential = { always = no }
 
 	planet_modifier = {
-		planet_max_districts_add = -1
+		planet_max_districts_add = -2
 	}
 
 	resources = {
 		category = deposit_blockers
 		cost = {
-			energy = 500
+			energy = 1000
 		}
 	}
 
 	on_cleared = {
 		owner = {
 			add_resource = {
-				minerals = 400
-				volatile_motes = 100
+				minerals = 200
+				alloys = 100
 			}
 		}
 	}
 }
 
 d_decrepit_tunnels_2 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	icon = "d_mining_tunnels"
 	category = deposit_cat_blockers
 	time = 72
@@ -265,28 +228,28 @@ d_decrepit_tunnels_2 = {
 	potential = { always = no }
 
 	planet_modifier = {
-		planet_max_districts_add = -1
+		planet_max_districts_add = -2
 	}
 
 	resources = {
 		category = deposit_blockers
 		cost = {
-			energy = 500
+			energy = 1000
 		}
 	}
 
 	on_cleared = {
 		owner = {
 			add_resource = {
-				minerals = 400
-				rare_crystals = 100
+				minerals = 200
+				alloys = 100
 			}
 		}
 	}
 }
 
 d_decrepit_tunnels_3 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	icon = "d_mining_tunnels"
 	category = deposit_cat_blockers
 	time = 72
@@ -294,21 +257,21 @@ d_decrepit_tunnels_3 = {
 	potential = { always = no }
 
 	planet_modifier = {
-		planet_max_districts_add = -1
+		planet_max_districts_add = -2
 	}
 
 	resources = {
 		category = deposit_blockers
 		cost = {
-			energy = 500
+			energy = 1000
 		}
 	}
 
 	on_cleared = {
 		owner = {
 			add_resource = {
-				minerals = 400
-				exotic_gases = 100
+				minerals = 200
+				alloys = 100
 			}
 		}
 	}
@@ -316,7 +279,7 @@ d_decrepit_tunnels_3 = {
 
 # Feral Overload - Utilize Option - Spore Vents
 d_spore_vents = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 
 	icon = d_gaseous_eruption
@@ -348,7 +311,7 @@ d_spore_vents = {
 
 # Feral Overload - Exterminate Option - Burned-Out Caves
 d_cave_shroom_veins = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 
 	icon = d_fungal_caves
@@ -382,7 +345,7 @@ d_cave_shroom_veins = {
 # home world
 
 d_tree_of_life_home = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 
 	icon = d_huge_tree
@@ -415,7 +378,7 @@ d_tree_of_life_home = {
 
 #colony
 d_tree_of_life_colony = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 
 	icon = d_huge_tree
@@ -454,7 +417,7 @@ d_buried_lithoids = {
 	icon = d_buried_lithoids
 	time = 72
 
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare_blocker
 
 	potential = { always = no }
@@ -504,7 +467,7 @@ d_buried_lithoids = {
 }
 
 d_lithoid_crater = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 
 	icon = d_crater
@@ -537,7 +500,7 @@ d_lithoid_crater = {
 
 ###machine origin
 d_machine_minerals = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	icon = "d_veiny_cliffs"
 	category = deposit_cat_rare
 
@@ -552,7 +515,7 @@ d_machine_minerals = {
 }
 
 d_organic_slurry = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	icon = "d_bubbling_swamp"
 	category = deposit_cat_rare
 
@@ -567,7 +530,7 @@ d_organic_slurry = {
 }
 
 d_project_cornucopia = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 
 	icon = d_mining_tunnels
@@ -586,7 +549,7 @@ d_project_cornucopia = {
 }
 
 d_disco_planet = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 
 	icon = d_tradestation_interior
@@ -606,7 +569,7 @@ d_disco_planet = {
 }
 
 d_disco_planet2 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	category = deposit_cat_rare
 
 	icon = d_tradestation_interior
@@ -627,8 +590,8 @@ d_disco_planet2 = {
 ### Impossible Corrie ###
 #Initial deposit
 d_impossiblecorrie = {
-    is_for_colonizeable = yes
-    category = deposit_cat_rare
+	is_for_colonizable = yes
+	category = deposit_cat_rare
 	icon = d_veiny_cliffs
 
 	triggered_planet_modifier = {
@@ -641,9 +604,9 @@ d_impossiblecorrie = {
 }
 #Initial lab
 d_bluelotus = {
-    is_for_colonizeable = yes
-    category = deposit_cat_rare
-    icon = d_bunker_door
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	icon = d_bunker_door
 
 	triggered_planet_modifier = {
 		potential = {
@@ -671,9 +634,9 @@ d_bluelotus = {
 }
 #Instituted after the science is supported, and the special project is enacted
 d_bluelotus2 = {
-    is_for_colonizeable = yes
-    category = deposit_cat_rare
-    icon = d_bunker_door
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	icon = d_bunker_door
 
 	triggered_planet_modifier = {
 		potential = {
@@ -701,11 +664,11 @@ d_bluelotus2 = {
 }
 #Failed special project
 d_ruin_bluelotus = {
-    is_for_colonizeable = yes
-    category = deposit_cat_rare
-    icon = d_ruins_medium
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	icon = d_ruins_medium
 
-    resources = {
+	resources = {
 		category = planet_deposits
 		produces = {
 			alloys = 5
@@ -718,15 +681,15 @@ d_ruin_bluelotus = {
 }
 #Left over only if the lab was supported in some way
 d_crater_bluelotus = {
-    is_for_colonizeable = yes
-    category = deposit_cat_rare
-    icon = d_crater
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	icon = d_crater
 
 	planet_modifier = {
 		district_mining_max = 1
 	}
 
-    resources = {
+	resources = {
 		category = planet_deposits
 		produces = {
 			alloys = 10
@@ -740,9 +703,9 @@ d_crater_bluelotus = {
 
 #2nd best reward for Hegemony Joint Operation
 d_federation_hegemony_monument_1 = {
-    is_for_colonizeable = yes
-    category = deposit_cat_rare
-    icon = d_monument_in_space
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	icon = d_monument_in_space
 
 	country_modifier = {
 		country_base_influence_produces_add = 0.25
@@ -755,9 +718,9 @@ d_federation_hegemony_monument_1 = {
 
 #Best reward for Hegemony Joint Operation
 d_federation_hegemony_monument_2 = {
-    is_for_colonizeable = yes
-    category = deposit_cat_rare
-    icon = d_monument_in_space
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	icon = d_monument_in_space
 
 	country_modifier = {
 		country_base_influence_produces_add = 0.5
@@ -769,7 +732,7 @@ d_federation_hegemony_monument_2 = {
 }
 
 d_resource_consolidation_1 = {
-	is_for_colonizeable = yes
+	is_for_colonizable = yes
 	icon = "d_station_junk"
 	category = deposit_cat_blockers
 	time = 72

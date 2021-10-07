@@ -126,25 +126,25 @@ prikki = {
 			foreign_minister_module
 			interior_minister_module
 		}
-		
+
 		ship_data = {
 			constructor = {
 				min = 2
 				max = 3
 				system_mult = 0.10
 			}
-			
+
 			science	= {
 				min = 2
 				max = 3
 				system_mult = 0.15
 			}
-			
+
 			colonizer = {
 				min = 1
 				max = 1
 			}
-			
+
 			juggernaut = {
 				min = 1
 				max = 1
@@ -153,22 +153,22 @@ prikki = {
 			colossus = {
 				min = 1
 				max = 1
-			}	
-			
+			}
+
 			titan = {
 				min = 1
 				max = 2
-			}			
-			
+			}
+
 			battleship = {
 				fraction = {
 					modifier = {
 						add = 25
 						has_technology = tech_battleships
-					}					
+					}
 				}
 			}
-			
+
 			cruiser = {
 				fraction = {
 					modifier = {
@@ -181,13 +181,13 @@ prikki = {
 					}
 				}
 			}
-			
+
 			destroyer = {
 				fraction = {
 					modifier = {
 						add = 50
 						has_technology = tech_destroyers
-					}	
+					}
 					modifier = {
 						add = -15
 						has_technology = tech_cruisers
@@ -198,14 +198,14 @@ prikki = {
 					}
 				}
 			}
-			
+
 			corvette = {
 				fraction = {
 					base = 100
 					modifier = {
 						add = -25
 						has_technology = tech_destroyers
-					}	
+					}
 					modifier = {
 						add = -45
 						has_technology = tech_cruisers
@@ -213,15 +213,15 @@ prikki = {
 					modifier = {
 						add = -5
 						has_technology = tech_battleships
-					}						
+					}
 				}
 			}
 		}
-		
+
 		army_data = {
 			assault_army = {
 				fraction = {
-					factor = 100					
+					factor = 100
 					modifier = {
 						factor = 0
 						OR = {
@@ -238,16 +238,16 @@ prikki = {
 							AND = {
 								has_ai_personality_behaviour = slaver
 								has_technology = tech_neural_implants
-							}		
+							}
 							AND = {
 								has_ai_personality_behaviour = robot_liberator
 								has_technology = tech_droid_workers
-							}							
+							}
 						}
 					}
 				}
 			}
-			
+
 			slave_army = {
 				fraction = {
 					factor = 100
@@ -267,16 +267,16 @@ prikki = {
 							NAND = {
 								has_ai_personality_behaviour = slaver
 								has_technology = tech_neural_implants
-							}		
+							}
 							AND = {
 								has_ai_personality_behaviour = robot_liberator
 								has_technology = tech_droid_workers
-							}							
+							}
 						}
 					}
 				}
 			}
-			
+
 			robotic_army = {
 				fraction = {
 					factor = 100
@@ -285,16 +285,16 @@ prikki = {
 						OR = {
 							has_authority = auth_machine_intelligence
 							has_technology = tech_telepathy
-							has_technology = tech_gene_seed_purification	
+							has_technology = tech_gene_seed_purification
 							NAND = {
 								has_ai_personality_behaviour = robot_liberator
 								has_technology = tech_droid_workers
-							}							
+							}
 						}
 					}
 				}
 			}
-			
+
 			clone_army = {
 				fraction = {
 					factor = 100
@@ -310,13 +310,13 @@ prikki = {
 									has_ethic = ethic_fanatic_militarist
 								}
 								has_technology = tech_gene_banks
-							}								
+							}
 						}
 					}
 				}
 			}
-			
-			psionic_army = {			
+
+			psionic_army = {
 				fraction = {
 					factor = 100
 					modifier = {
@@ -324,12 +324,12 @@ prikki = {
 						OR = {
 							has_authority = auth_machine_intelligence
 							NOT = { has_technology = tech_telepathy }
-							has_technology = tech_gene_seed_purification								
+							has_technology = tech_gene_seed_purification
 						}
 					}
 				}
 			}
-			
+
 			gene_warrior_army = {
 				fraction = {
 					factor = 100
@@ -337,7 +337,7 @@ prikki = {
 						factor = 0
 						OR = {
 							has_authority = auth_machine_intelligence
-							NOT = { has_technology = tech_gene_seed_purification }			
+							NOT = { has_technology = tech_gene_seed_purification }
 						}
 					}
 				}
@@ -355,7 +355,7 @@ prikki = {
 					}
 				}
 			}
-	
+
 			machine_assault_2 = {
 				fraction = {
 					factor = 100
@@ -372,7 +372,7 @@ prikki = {
 					}
 				}
 			}
-	
+
 			machine_assault_3 = {
 				fraction = {
 					factor = 25

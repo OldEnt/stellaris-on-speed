@@ -8,7 +8,7 @@ artifact_arcane_deciphering = {
 			minor_artifacts = 5
 		}
 	}
-	
+
 	ai_weight = {
 		weight = 100
 		modifier = {
@@ -20,7 +20,7 @@ artifact_arcane_deciphering = {
 	potential = {
 		has_technology = tech_arcane_deciphering
 	}
-	
+
 	allow = {
 		custom_tooltip = {
 			fail_text = "requires_arcane_deciphering_no_cooldown"
@@ -39,7 +39,7 @@ artifact_arcane_deciphering = {
 				set_country_flag = arcana_achievement
 			}
 			add_modifier = {
-				modifier = "arcane_deciphering_cooldown" 
+				modifier = "arcane_deciphering_cooldown"
 				days = 720
 			}
 			owner = {
@@ -56,7 +56,7 @@ artifact_lgate_clue = {
 			minor_artifacts = 50
 		}
 	}
-	
+
 	potential = {
 		has_country_flag = encountered_first_lgate
 		NOT = { has_country_flag = completed_lcluster_chain }
@@ -70,10 +70,10 @@ artifact_lgate_clue = {
 
 	effect = {
 		custom_tooltip = artifact_lgate_clue_effect
-		
+
 		hidden_effect = {
 			generate_lcluster_clue = yes
-	
+
 			add_modifier = {
 				modifier = "artifact_lgate_insight_cooldown"
 				days = 3600
@@ -89,7 +89,7 @@ artifact_proclaim_religious_finding = {
 			minor_artifacts = @minor_artifact_decision_cost
 		}
 	}
-	
+
 	ai_weight = {
 		weight = 100
 		modifier = {
@@ -105,7 +105,7 @@ artifact_proclaim_religious_finding = {
 	potential = {
 		is_spiritualist = yes
 	}
-	
+
 	effect = {
 		add_monthly_resource_mult = {
 			resource = unity
@@ -114,11 +114,11 @@ artifact_proclaim_religious_finding = {
 			max = @tier1unitymax
 		}
 		add_modifier = {
-			modifier = "proclaim_religious_finding" 
+			modifier = "proclaim_religious_finding"
 			days = @minor_artifact_decision_duration
 		}
 	}
-	
+
 	allow = {
 		NOT = { has_modifier = proclaim_religious_finding }
 	}
@@ -131,7 +131,7 @@ artifact_proclaim_superiority = {
 			minor_artifacts = @minor_artifact_decision_cost
 		}
 	}
-	
+
 	ai_weight = {
 		weight = 100
 		modifier = {
@@ -143,7 +143,7 @@ artifact_proclaim_superiority = {
 	potential = {
 		is_xenophobe = yes
 	}
-	
+
 	effect = {
 		add_monthly_resource_mult = {
 			resource = influence
@@ -152,11 +152,11 @@ artifact_proclaim_superiority = {
 			max = @tier1influencemax
 		}
 		add_modifier = {
-			modifier = "proclaim_superiority" 
-			days = @minor_artifact_decision_duration 
+			modifier = "proclaim_superiority"
+			days = @minor_artifact_decision_duration
 		}
 	}
-	
+
 	allow = {
 		NOT = { has_modifier = proclaim_superiority }
 	}
@@ -169,7 +169,7 @@ artifact_celebrate_diversity = {
 			minor_artifacts = @minor_artifact_decision_cost
 		}
 	}
-	
+
 	ai_weight = {
 		weight = 100
 		modifier = {
@@ -186,7 +186,7 @@ artifact_celebrate_diversity = {
 		is_gestalt = no
 		is_xenophobe = no
 	}
-	
+
 	effect = {
 		add_monthly_resource_mult = {
 			resource = unity
@@ -195,11 +195,11 @@ artifact_celebrate_diversity = {
 			max = @tier1unitymax
 		}
 		add_modifier = {
-			modifier = "celebrate_diversity" 
-			days = @minor_artifact_decision_duration 
+			modifier = "celebrate_diversity"
+			days = @minor_artifact_decision_duration
 		}
 	}
-	
+
 	allow = {
 		NOT = { has_modifier = celebrate_diversity }
 	}
@@ -212,17 +212,17 @@ artifact_cultural_study = {
 			minor_artifacts = @minor_artifact_decision_cost
 		}
 	}
-	
+
 	ai_weight = {
 		weight = 0
 	}
 
-	potential = 
+	potential =
 	{
-		is_gestalt = no 
+		is_gestalt = no
 		is_megacorp = no
 	}
-	
+
 	allow = {
 		custom_tooltip = {
 			fail_text = "artifact_cultural_study_effect"
@@ -238,13 +238,13 @@ artifact_manager_awards = {
 			minor_artifacts = @minor_artifact_decision_cost
 		}
 	}
-	
+
 	ai_weight = {
 		weight = 0
 	}
 
 	potential = { is_megacorp = yes }
-	
+
 	allow = {
 		custom_tooltip = {
 			fail_text = "artifact_manager_awards_effect"
@@ -260,13 +260,13 @@ artifact_artifact_relays_hivemind = {
 			minor_artifacts = @minor_artifact_decision_cost
 		}
 	}
-	
+
 	ai_weight = {
 		weight = 0
 	}
 
 	potential = { is_hive_empire = yes }
-	
+
 	allow = {
 		custom_tooltip = {
 			fail_text = "artifact_artifact_relays_hivemind_effect"
@@ -282,13 +282,13 @@ artifact_artifact_relays_machine = {
 			minor_artifacts = @minor_artifact_decision_cost
 		}
 	}
-	
+
 	ai_weight = {
 		weight = 0
 	}
 
 	potential = { is_machine_empire = yes }
-	
+
 	allow = {
 		custom_tooltip = {
 			fail_text = "artifact_artifact_relays_machine_effect"
@@ -304,13 +304,13 @@ artifact_sanctuary_exhibits = {
 			minor_artifacts = @minor_artifact_decision_cost
 		}
 	}
-	
+
 	ai_weight = {
 		weight = 0
 	}
 
 	potential = { has_civic = civic_machine_servitor }
-	
+
 	allow = {
 		custom_tooltip = {
 			fail_text = "artifact_sanctuary_exhibits_effect"
@@ -326,7 +326,7 @@ artifact_find_military_applications = {
 			minor_artifacts = 5
 		}
 	}
-	
+
 	ai_weight = {
 		weight = 10
 		modifier = {
@@ -383,7 +383,7 @@ artifact_find_peaceful_applications = {
 			minor_artifacts = 5
 		}
 	}
-	
+
 	ai_weight = {
 		weight = 10
 		modifier = {
@@ -438,7 +438,7 @@ artifact_sell_collector = {
 			minor_artifacts = 1
 		}
 	}
-	
+
 	ai_weight = {
 		weight = 100
 		modifier = {
@@ -467,7 +467,7 @@ artifact_arcane_deciphering_locked = {
 	potential = {
 		NOT = { has_technology = tech_arcane_deciphering }
 	}
-	
+
 	allow = {
 		custom_tooltip = {
 			fail_text = "artifact_action_locked_failtext"
@@ -480,7 +480,7 @@ artifact_find_military_applications_locked = {
 	potential = {
 		NOT = { has_technology = tech_arcane_deciphering }
 	}
-	
+
 	allow = {
 		custom_tooltip = {
 			fail_text = "artifact_action_locked_failtext"
@@ -494,7 +494,7 @@ artifact_find_peaceful_applications_locked = {
 		NOT = { has_technology = tech_arcane_deciphering }
 		is_homicidal = no
 	}
-	
+
 	allow = {
 		custom_tooltip = {
 			fail_text = "artifact_action_locked_failtext"
@@ -510,16 +510,16 @@ artifact_irassian_research = {
 			minor_artifacts = 50
 		}
 	}
-	
+
 	ai_weight = {
 		weight = 0
 	}
 
 	potential = {
 		 has_country_flag = irassian_world_found
-		 NOT = { has_country_flag = irassian_research_started } 
+		 NOT = { has_country_flag = irassian_research_started }
 	}
-	
+
 	effect = {
 		enable_special_project = {
 			name = "IRASSIAN_SECRETS"
@@ -542,23 +542,23 @@ artifact_yuht_research = {
 			minor_artifacts = 50
 		}
 	}
-	
+
 	ai_weight = {
 		weight = 0
 	}
 
 	potential = {
 		 has_country_flag = yuht_world_found
-		 NOT = { has_country_flag = yuht_research_started } 
+		 NOT = { has_country_flag = yuht_research_started }
 	}
-	
+
 	effect = {
 		enable_special_project = {
 			name = "YUHT_SECRETS"
 			location = capital_scope
 			owner = ROOT
 		}
-		
+
 		hidden_effect = {
 			set_country_flag = yuht_research_started
 			country_event = { id = ancrel.10040 }
@@ -573,23 +573,23 @@ artifact_vultaum_research = {
 			minor_artifacts = 50
 		}
 	}
-	
+
 	ai_weight = {
 		weight = 0
 	}
 
 	potential = {
 		 has_country_flag = vultaum_world_found
-		 NOT = { has_country_flag = vultaum_research_started } 
+		 NOT = { has_country_flag = vultaum_research_started }
 	}
-	
+
 	effect = {
 		enable_special_project = {
 			name = "VULTAUM_SECRETS"
 			location = capital_scope
 			owner = ROOT
 		}
-		
+
 		hidden_effect = {
 			set_country_flag = vultaum_research_started
 			country_event = { id = ancrel.10040 }
@@ -604,23 +604,23 @@ artifact_cybrex_research = {
 			minor_artifacts = 50
 		}
 	}
-	
+
 	ai_weight = {
 		weight = 0
 	}
 
 	potential = {
 		 has_country_flag = cybrex_world_found
-		 NOT = { has_country_flag = cybrex_research_started } 
+		 NOT = { has_country_flag = cybrex_research_started }
 	}
-	
+
 	effect = {
 		enable_special_project = {
 			name = "CYBREX_SECRETS"
 			location = capital_scope
 			owner = ROOT
 		}
-		
+
 		hidden_effect = {
 			set_country_flag = cybrex_research_started
 			country_event = { id = ancrel.10040 }
@@ -635,7 +635,7 @@ artifact_league_research = {
 			minor_artifacts = 50
 		}
 	}
-	
+
 	ai_weight = {
 		weight = 0
 	}
@@ -648,16 +648,16 @@ artifact_league_research = {
 			}
 		}
 
-		NOT = { has_country_flag = league_research_started } 
+		NOT = { has_country_flag = league_research_started }
 	}
-	
+
 	effect = {
 		enable_special_project = {
 			name = "LEAGUE_SECRETS"
 			location = capital_scope
 			owner = ROOT
 		}
-		
+
 		hidden_effect = {
 			set_country_flag = league_research_started
 			country_event = { id = ancrel.10040 }
@@ -672,23 +672,23 @@ artifact_baol_research = {
 			minor_artifacts = 50
 		}
 	}
-	
+
 	ai_weight = {
 		weight = 0
 	}
 
 	potential = {
 		 has_country_flag = last_baol_system
-		 NOT = { has_country_flag = baol_research_started } 
+		 NOT = { has_country_flag = baol_research_started }
 	}
-	
+
 	effect = {
 		enable_special_project = {
 			name = "BAOL_SECRETS"
 			location = capital_scope
 			owner = ROOT
 		}
-		
+
 		hidden_effect = {
 			set_country_flag = baol_research_started
 			country_event = { id = ancrel.10040 }
@@ -704,23 +704,23 @@ artifact_zroni_research = {
 			minor_artifacts = 50
 		}
 	}
-	
+
 	ai_weight = {
 		weight = 0
 	}
 
 	potential = {
 		 has_country_flag = last_zroni_system
-		 NOT = { has_country_flag = zroni_research_started } 
+		 NOT = { has_country_flag = zroni_research_started }
 	}
-	
+
 	effect = {
 		enable_special_project = {
 			name = "ZRONI_SECRETS"
 			location = capital_scope
 			owner = ROOT
 		}
-		
+
 		hidden_effect = {
 			set_country_flag = zroni_research_started
 			country_event = { id = ancrel.10040 }
@@ -735,14 +735,14 @@ artifact_precursor_clue = {
 			minor_artifacts = 25
 		}
 	}
-	
+
 	potential = {
 		is_ai = no
 
 		OR = {
 			AND = {
 				has_event_chain = "vultaum_chain"
-				any_system_within_border = { 
+				any_system_within_border = {
 					has_star_flag = precursor_1
 				}
 				NOT = {
@@ -754,7 +754,7 @@ artifact_precursor_clue = {
 			}
 			AND = {
 				has_event_chain = "yuht_chain"
-				any_system_within_border = { 
+				any_system_within_border = {
 					has_star_flag = precursor_2
 				}
 				NOT = {
@@ -764,9 +764,9 @@ artifact_precursor_clue = {
 					}
 				}
 			}
-			AND = { 
+			AND = {
 				has_event_chain = "first_league_chain"
-				any_system_within_border = { 
+				any_system_within_border = {
 					has_star_flag = precursor_3
 				}
 				NOT = {
@@ -778,7 +778,7 @@ artifact_precursor_clue = {
 			}
 			AND = {
 				has_event_chain = "irassian_chain"
-				any_system_within_border = { 
+				any_system_within_border = {
 					has_star_flag = precursor_4
 				}
 				NOT = {
@@ -790,7 +790,7 @@ artifact_precursor_clue = {
 			}
 			AND = {
 				has_event_chain = "cybrex_chain"
-				any_system_within_border = { 
+				any_system_within_border = {
 					has_star_flag = precursor_5
 				}
 				NOT = {

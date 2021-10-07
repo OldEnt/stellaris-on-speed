@@ -386,7 +386,7 @@ shield_gases = {
 	}
 }
 
-clearing_motes  = {
+clearing_motes = {
 	length = @EdictDuration
 	icon = "GFX_edict_type_time"
 	resources = {
@@ -499,7 +499,7 @@ motes_armor = {
 	}
 }
 
-crystalline_sensors  = {
+crystalline_sensors = {
 	length = @EdictDuration
 	icon = "GFX_edict_type_time"
 	resources = {
@@ -556,7 +556,7 @@ crystal_focus = {
 	}
 }
 
-living_metal_construction  = {
+living_metal_construction = {
 	length = @EdictDuration
 	icon = "GFX_edict_type_time"
 	resources = {
@@ -586,7 +586,7 @@ living_metal_construction  = {
 	}
 }
 
-nanite_actuators  = {
+nanite_actuators = {
 	length = @EdictDuration
 	icon = "GFX_edict_type_time"
 	resources = {
@@ -628,7 +628,7 @@ masters_writings_politics = {
 	potential = {
 		has_country_flag = edict_masters_writings_politics
 	}
-	
+
 	modifier = {
 		planet_buildings_cost_mult = -0.1
 		planet_districts_cost_mult = -0.1
@@ -656,7 +656,7 @@ masters_writings_diplomacy = {
 	potential = {
 		has_country_flag = edict_masters_writings_diplomacy
 	}
-	
+
 	modifier = {
 		country_trust_growth = 1
 	}
@@ -682,7 +682,7 @@ masters_writings_philosophy = {
 	potential = {
 		has_country_flag = edict_masters_writings_philosophy
 	}
-	
+
 	modifier = {
 		country_society_tech_research_speed = 0.1
 		country_leader_pool_size = 1
@@ -740,7 +740,7 @@ improved_work_environment = {
 	potential = {
 		has_country_flag = edict_improved_work_environment
 	}
-	
+
 	modifier = {
 		pop_happiness = 0.05
 		category_biology_research_speed_mult = 0.1
@@ -768,7 +768,7 @@ renewable_energy = {
 	potential = {
 		has_country_flag = edict_renewable_energy
 	}
-	
+
 	modifier = {
 		planet_pops_consumer_goods_upkeep_mult = -0.05
 		category_industry_research_speed_mult = 0.1
@@ -824,7 +824,7 @@ nuumismatic_visualization = {
 	potential = {
 		has_country_flag = nuumismatic_visualization
 	}
-	
+
 	modifier = {
 		planet_pops_consumer_goods_upkeep_mult = -0.05
 		category_statecraft_research_speed_mult = 0.1

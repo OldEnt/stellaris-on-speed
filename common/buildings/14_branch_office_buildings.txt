@@ -831,6 +831,36 @@ building_disinformation_center = {
 	}
 }
 
+building_subversive_shrine = {
+	base_buildtime = @b1_time
+	base_cap_amount = 1
+	branch_office_building = yes
+	potential = {
+		has_branch_office = yes
+		branch_office_owner = {
+			has_valid_civic = civic_gospel_of_the_masses
+			is_criminal_syndicate = yes
+		}
+	}
+	planet_modifier = {
+		job_preacher_add = 2
+		pop_ethic_spiritualist_attraction_mult = 0.25
+		planet_crime_add = 25
+	}
+	resources = {
+		category = planet_branch_office_buildings
+		cost = {
+			minerals = 500
+		}
+		upkeep = {
+			energy = 10
+		}
+	}
+	ai_weight = {
+		weight = 250
+	}
+}
+
 ## GOSPEL MEGACORP ##
 
 building_temple_of_prosperity = {
@@ -841,7 +871,10 @@ building_temple_of_prosperity = {
 
 	potential = {
 		has_branch_office = yes
-		branch_office_owner = { has_valid_civic = civic_gospel_of_the_masses }
+		branch_office_owner = {
+			has_valid_civic = civic_gospel_of_the_masses
+			is_criminal_syndicate = no
+		}
 	}
 
 	planet_modifier = {
@@ -882,7 +915,7 @@ building_executive_retreat = {
 	}
 
 	allow = {
-		num_pops >= 50
+		num_pops >= 25
 	}
 
 	country_modifier = {
@@ -926,7 +959,7 @@ building_xeno_tourism_agency = {
 	}
 
 	allow = {
-		num_pops >= 50
+		num_pops >= 25
 	}
 
 	country_modifier = {
@@ -962,7 +995,7 @@ building_imperial_concession_port = {
 
 	potential = {
 		has_branch_office = yes
-		branch_office_owner = { 
+		branch_office_owner = {
 			OR = {
 				has_modifier = imperial_charter
 				has_civic = civic_galactic_sovereign_megacorp

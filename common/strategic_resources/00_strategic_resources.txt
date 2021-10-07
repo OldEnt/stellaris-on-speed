@@ -45,7 +45,7 @@ food = {
 	max = 75000 
 	
 	deficit_modifier = food_deficit #found in static modifiers
-	
+
 	ai_weight = {
 		weight = 1
 	}
@@ -77,9 +77,9 @@ influence = {
 	max = 5000
 	tooltip_decimals = 1
 	fixed_max_amount = yes
-	
+
 	deficit_modifier = influence_deficit #found in static modifiers
-	
+
 	ai_weight = {
 		weight = 1
 	}
@@ -92,34 +92,34 @@ unity = {
 }
 
 ###########################
-### Manufactured Resources  ###
+### Manufactured Resources ###
 ###########################
-
-alloys = {
-	tradable = yes
-	market_amount = 25
-	market_price = 100
-	max = 75000
-	
-	deficit_modifier = alloys_deficit
-	
-	ai_weight = {
-		weight = 5
-	}
-
-	ai_wants = {
-		base = 500
-	}
-}
 
 consumer_goods = {
 	tradable = yes
 	market_amount = 50
 	market_price = 100
 	max = 75000
-	
+
 	deficit_modifier = consumer_goods_deficit #found in static modifiers
-	
+
+	ai_weight = {
+		weight = 5
+	}
+
+	ai_wants = {
+		base = 500
+	}
+}
+
+alloys = {
+	tradable = yes
+	market_amount = 25
+	market_price = 100
+	max = 75000
+
+	deficit_modifier = alloys_deficit
+
 	ai_weight = {
 		weight = 5
 	}
@@ -130,7 +130,7 @@ consumer_goods = {
 }
 
 ###########################
-### Advanced Resources  ###
+### Advanced Resources ###
 ###########################
 
 volatile_motes = {
@@ -140,9 +140,9 @@ volatile_motes = {
 	max = 75000
 	
 	prerequisites = { "tech_mine_volatile_motes" }
-	
+
 	deficit_modifier = volatile_motes_deficit #found in static modifiers
-	
+
 	ai_weight = {
 		weight = 10
 	}
@@ -159,9 +159,9 @@ exotic_gases = {
 	max = 75000
 	
 	prerequisites = { "tech_mine_exotic_gases" }
-	
+
 	deficit_modifier = exotic_gases_deficit #found in static modifiers
-	
+
 	ai_weight = {
 		weight = 10
 	}
@@ -178,9 +178,9 @@ rare_crystals = {
 	max = 75000
 	
 	prerequisites = { "tech_mine_rare_crystals" }
-	
+
 	deficit_modifier = rare_crystals_deficit #found in static modifiers
-	
+
 	ai_weight = {
 		weight = 10
 	}
@@ -192,7 +192,7 @@ rare_crystals = {
 
 
 ###########################
-###    Rare Resources   ###
+###	Rare Resources	###
 ###########################
 
 # Living Metal
@@ -204,7 +204,7 @@ sr_living_metal = {
 	
 	prerequisites = { "tech_mine_living_metal" }
 	visibility_prerequisite = { always = yes }
-	
+
 	ai_weight = {
 		weight = 100
 	}
@@ -242,7 +242,7 @@ sr_dark_matter = {
 
 	prerequisites = { "tech_mine_dark_matter" }
 	visibility_prerequisite = { always = yes }
-	
+
 	ai_weight = {
 		weight = 100
 	}
@@ -253,13 +253,13 @@ sr_dark_matter = {
 }
 
 # Nanites
-nanites  = {
+nanites = {
 	tradable = no
 	max = 75000
 
 	visibility_prerequisite = { always = yes }
 	deficit_modifier = nanites_deficit #found in static modifiers
-	
+
 	ai_weight = {
 		weight = 100
 	}
@@ -268,19 +268,19 @@ nanites  = {
 # Minor Artifacts
 minor_artifacts = {
 	tradable = no
-	
+
 	ai_weight = {
 		weight = 1
 	}
 }
 
 #####################
-###    Nemesis    ###
+###	Nemesis	###
 #####################
 
 menace = {
 	tradable = no
-	
+
 	ai_weight = {
 		weight = 1
 	}

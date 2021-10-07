@@ -24,17 +24,17 @@ free_migration_no = {
 		}
 		add_cohesion = -5
 	}
-	
+
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 51
 		}
-		
-		#Behaviour-specific	
+
+		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_xenophobe
 			add = 50
@@ -44,7 +44,7 @@ free_migration_no = {
 }
 
 free_migration_yes = {
-	potential = { 
+	potential = {
 		host_has_dlc = Federations
 		NOT = { has_federation_flag = special_federation }
 	}
@@ -73,23 +73,23 @@ free_migration_yes = {
 		}
 		add_cohesion = -5
 	}
-	
+
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 51
 		}
-				
+
 		modifier = {
 			desc = federation_acceptance_weaker
 			add = 25
 			relative_power = { who = from value >= superior }
 		}
-		
-		#Behaviour-specific	
+
+		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_xenophile
 			add = 50

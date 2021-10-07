@@ -94,7 +94,9 @@ planet_event = {
 			}
 			root.owner = {
 				if = {
-					limit = { has_ascension_perk = ap_become_the_crisis }
+					limit = {
+						has_ascension_perk = ap_become_the_crisis
+					}
 					complete_crisis_objective = crisobj_purge_pops
 				}
 			}
@@ -193,7 +195,7 @@ planet_event = {
 					has_intel_level = {
 						who = FROM
 						category = economy
-						level >= 1 #lower because you'd hear from a friend of a friend
+						level >= 1						#lower because you'd hear from a friend of a friend
 					}
 				}
 				add_opinion_modifier = {
@@ -464,6 +466,60 @@ country_event = {
 				}
 			}
 			add_district = district_city
+		}
+	}
+}
+
+country_event = {
+	id = necroids.1
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_system = {
+			limit = {
+				NOT = {
+					is_surveyed = {
+						who = root
+						status = yes
+					}
+				}
+				any_fleet_in_system = {
+					NOT = {
+						is_owned_by = root
+					}
+				}
+			}
+			random_fleet_in_system = {
+				limit = {
+					is_owned_by = root
+				}
+			}
+			every_system = {
+				limit = {
+					distance = {
+						source = prev
+						min_distance >= 0
+						max_distance <= 500
+						type = euclidean
+						same_solar_system = no
+					}
+					any_fleet_in_system = {
+						NOT = {
+							is_owned_by = root
+						}
+					}
+				}
+				every_system_planet = {
+					set_surveyed = {
+						surveyed = yes
+						surveyor = ROOT
+					}
+				}
+				set_surveyed = {
+					surveyed = yes
+					surveyor = ROOT
+				}
+			}
 		}
 	}
 }

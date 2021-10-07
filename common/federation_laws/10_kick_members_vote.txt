@@ -1,7 +1,7 @@
 @cooldown = 720
 
 kick_members_majority_vote = {
-	potential = { 
+	potential = {
 		NOT = { has_federation_type = imperial_loyalists_federation }
 	}
 	allow = {
@@ -34,7 +34,7 @@ kick_members_majority_vote = {
 
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
@@ -83,7 +83,7 @@ kick_members_president_vote = {
 
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive

@@ -24,10 +24,6 @@ building_commercial_zone = {
 		}
 	}
 
-	planet_modifier = {
-		job_clerk_add = 3
-	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -38,16 +34,42 @@ building_commercial_zone = {
 		}
 	}
 
+	planet_modifier = {
+		job_clerk_add = 3
+	}
+
+	triggered_desc = {
+		text = job_clerk_effect_desc
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_active_tradition = tr_mercantile_commercial_enterprise
+			}
+		}
+		modifier = {
+			job_merchant_add = 1
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_active_tradition = tr_mercantile_commercial_enterprise
+			}
+		}
+		text = job_merchant_effect_desc
+	}
+
 	prerequisites = {
 		"tech_interplanetary_commerce"
 	}
 
 	show_tech_unlock_if = {
 		is_regular_empire = yes
-	}
-
-	triggered_desc = {
-		text = job_clerk_effect_desc
 	}
 
 	upgrades = {
@@ -100,11 +122,6 @@ building_commercial_megaplex = {
 		}
 	}
 
-	planet_modifier = {
-		job_merchant_add = 1
-		job_clerk_add = 6
-	}
-
 	resources = {
 		category = planet_buildings
 		cost = {
@@ -117,6 +134,31 @@ building_commercial_megaplex = {
 		}
 	}
 
+	planet_modifier = {
+		job_clerk_add = 6
+		job_merchant_add = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_active_tradition = tr_mercantile_commercial_enterprise
+			}
+		}
+		modifier = {
+			job_merchant_add = 1
+		}
+	}
+
+	triggered_desc = {
+		text = job_clerk_effect_desc
+	}
+
+	triggered_desc = {
+		text = job_merchant_effect_desc
+	}
+
 	prerequisites = {
 		"tech_interstellar_economics"
 	}
@@ -125,19 +167,13 @@ building_commercial_megaplex = {
 		is_regular_empire = yes
 	}
 
-	triggered_desc = {
-		text = job_clerk_effect_desc
-	}
-	triggered_desc = {
-		text = job_merchant_effect_desc
-	}
-
 	ai_resource_production = {
 		energy = 20
 		trigger = {
 			always = yes
 		}
 	}
+	
 	ai_resource_production = {
 		energy = 30
 		trigger = {

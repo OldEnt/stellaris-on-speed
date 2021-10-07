@@ -26,9 +26,9 @@ general = {
 		}
 		upkeep = {
 			energy = 10
-		}		
+		}
 	}
-  
+
 	default_category = general
 }
 

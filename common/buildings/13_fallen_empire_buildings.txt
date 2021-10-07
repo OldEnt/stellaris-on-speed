@@ -320,7 +320,7 @@ building_dimensional_fabricator = {
 			sr_zro = 10
 			sr_dark_matter = 10
 			sr_living_metal = 10
-		} 	# Fixed Fallen Empire being unable to build new ships.
+		}	# Fixed Fallen Empire being unable to build new ships.
 		cost = {
 			minerals = @b3_minerals
 		}

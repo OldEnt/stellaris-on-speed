@@ -162,6 +162,10 @@ building_food_processing_facility = {
 		buildings_simple_allow = yes
 	}
 
+	planet_modifier = {
+		planet_farmers_food_produces_add = 1
+	}
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -203,10 +207,6 @@ building_food_processing_facility = {
 		upkeep = {
 			energy = 10
 		}
-	}
-
-	triggered_desc = {
-		text = building_food_processing_facility_effect_desc
 	}
 
 	triggered_desc = {
@@ -295,6 +295,10 @@ building_food_processing_center = {
 		}
 	}
 
+	planet_modifier = {
+		planet_farmers_food_produces_add = 2
+	}
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -338,10 +342,6 @@ building_food_processing_center = {
 			energy = 2
 			volatile_motes = @b2_rare_upkeep
 		}
-	}
-
-	triggered_desc = {
-		text = building_food_processing_center_effect_desc
 	}
 
 	triggered_desc = {
@@ -402,6 +402,17 @@ building_food_processing_center = {
 }
 
 building_mineral_purification_plant = {
+
+	desc = {
+		trigger = { NOT = { is_planet_class = pc_shattered_ring_habitable } }
+		text = building_mineral_purification_plant_desc
+	}
+
+	desc = {
+		trigger = { is_planet_class = pc_shattered_ring_habitable }
+		text = building_scrap_processing_plant_desc
+	}
+
 	base_buildtime = @b1_time
 	base_cap_amount = 1
 	category = resource
@@ -427,8 +438,13 @@ building_mineral_purification_plant = {
 		buildings_simple_allow = yes
 	}
 
+	planet_modifier = {
+		planet_miners_minerals_produces_add = 1
+	}
+
 	triggered_planet_modifier = {
 		potential = {
+			NOT = { is_planet_class = pc_shattered_ring_habitable }
 			exists = owner
 			owner = {
 				is_regular_empire = yes
@@ -442,6 +458,7 @@ building_mineral_purification_plant = {
 
 	triggered_planet_modifier = {
 		potential = {
+			NOT = { is_planet_class = pc_shattered_ring_habitable }
 			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
@@ -452,6 +469,7 @@ building_mineral_purification_plant = {
 
 	triggered_planet_modifier = {
 		potential = {
+			NOT = { is_planet_class = pc_shattered_ring_habitable }
 			exists = owner
 			owner = { is_gestalt = yes }
 		}
@@ -462,15 +480,38 @@ building_mineral_purification_plant = {
 
 	triggered_planet_modifier = {
 		potential = {
+			is_planet_class = pc_shattered_ring_habitable
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_scrap_miner_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_shattered_ring_habitable
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_scrap_miner_drone_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
 			exists = owner
 			owner = {
 				is_robot_empire = yes
 			}
-			NOR  = {
+			NOR = {
 				is_planet_class = pc_habitat
 				is_planet_class = pc_machine
 				is_planet_class = pc_hive
 				is_planet_class = pc_city
+				is_planet_class = pc_shattered_ring_habitable
 			}
 		}
 		modifier = {
@@ -506,11 +547,8 @@ building_mineral_purification_plant = {
 	}
 
 	triggered_desc = {
-		text = building_mineral_purification_plant_effect_desc
-	}
-
-	triggered_desc = {
 		trigger = {
+			NOT = { is_planet_class = pc_shattered_ring_habitable }
 			exists = owner
 			owner = { is_gestalt = yes }
 		}
@@ -518,6 +556,7 @@ building_mineral_purification_plant = {
 	}
 	triggered_desc = {
 		trigger = {
+			NOT = { is_planet_class = pc_shattered_ring_habitable }
 			exists = owner
 			owner = {
 				is_gestalt = no
@@ -528,10 +567,28 @@ building_mineral_purification_plant = {
 	}
 	triggered_desc = {
 		trigger = {
+			NOT = { is_planet_class = pc_shattered_ring_habitable }
 			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		text = job_fe_acolyte_mine_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			is_planet_class = pc_shattered_ring_habitable
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_scrap_miner_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			is_planet_class = pc_shattered_ring_habitable
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = job_scrap_miner_effect_desc
 	}
 
 	ai_resource_production = {
@@ -563,6 +620,17 @@ building_mineral_purification_plant = {
 }
 
 building_mineral_purification_hub = {
+
+	desc = {
+		trigger = { NOT = { is_planet_class = pc_shattered_ring_habitable } }
+		text = building_mineral_purification_hub_desc
+	}
+
+	desc = {
+		trigger = { is_planet_class = pc_shattered_ring_habitable }
+		text = building_scrap_processing_hub_desc
+	}
+
 	base_buildtime = @b2_time
 	can_build = no
 	category = resource
@@ -579,8 +647,29 @@ building_mineral_purification_hub = {
 		}
 	}
 
+
 	triggered_planet_modifier = {
 		potential = {
+			NOT = { is_planet_class = pc_shattered_ring_habitable }
+		}
+		modifier = {
+			planet_miners_minerals_produces_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_shattered_ring_habitable
+		}
+		modifier = {
+			planet_miners_minerals_produces_add = 1
+			planet_miners_alloys_produces_add = 0.5
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			NOT = { is_planet_class = pc_shattered_ring_habitable }
 			exists = owner
 			owner = {
 				is_regular_empire = yes
@@ -594,6 +683,7 @@ building_mineral_purification_hub = {
 
 	triggered_planet_modifier = {
 		potential = {
+			NOT = { is_planet_class = pc_shattered_ring_habitable }
 			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
@@ -603,6 +693,7 @@ building_mineral_purification_hub = {
 	}
 	triggered_planet_modifier = {
 		potential = {
+			NOT = { is_planet_class = pc_shattered_ring_habitable }
 			exists = owner
 			owner = { is_gestalt = yes }
 		}
@@ -613,15 +704,38 @@ building_mineral_purification_hub = {
 
 	triggered_planet_modifier = {
 		potential = {
+			is_planet_class = pc_shattered_ring_habitable
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		modifier = {
+			job_scrap_miner_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			is_planet_class = pc_shattered_ring_habitable
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_scrap_miner_drone_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
 			exists = owner
 			owner = {
 				is_robot_empire = yes
 			}
-			NOR  = {
+			NOR = {
 				is_planet_class = pc_habitat
 				is_planet_class = pc_machine
 				is_planet_class = pc_hive
 				is_planet_class = pc_city
+				is_planet_class = pc_shattered_ring_habitable
 			}
 		}
 		modifier = {
@@ -655,11 +769,8 @@ building_mineral_purification_hub = {
 	}
 
 	triggered_desc = {
-		text = building_mineral_purification_hub_effect_desc
-	}
-
-	triggered_desc = {
 		trigger = {
+			NOT = { is_planet_class = pc_shattered_ring_habitable }
 			exists = owner
 			owner = { is_gestalt = yes }
 		}
@@ -667,6 +778,7 @@ building_mineral_purification_hub = {
 	}
 	triggered_desc = {
 		trigger = {
+			NOT = { is_planet_class = pc_shattered_ring_habitable }
 			exists = owner
 			owner = {
 				is_gestalt = no
@@ -677,10 +789,28 @@ building_mineral_purification_hub = {
 	}
 	triggered_desc = {
 		trigger = {
+			NOT = { is_planet_class = pc_shattered_ring_habitable }
 			exists = owner
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		text = job_fe_acolyte_mine_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			is_planet_class = pc_shattered_ring_habitable
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_scrap_miner_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			is_planet_class = pc_shattered_ring_habitable
+			exists = owner
+			owner = { is_regular_empire = yes }
+		}
+		text = job_scrap_miner_effect_desc
 	}
 
 	ai_resource_production = {
@@ -736,8 +866,8 @@ building_energy_grid = {
 		buildings_simple_allow = yes
 	}
 
-	triggered_desc = {
-		text = building_energy_grid_effect_desc
+	planet_modifier = {
+		planet_technician_energy_produces_add = 1
 	}
 
 	triggered_planet_modifier = {
@@ -779,7 +909,7 @@ building_energy_grid = {
 			owner = {
 				is_robot_empire = yes
 			}
-			NOR  = {
+			NOR = {
 				is_planet_class = pc_habitat
 				is_planet_class = pc_machine
 				is_planet_class = pc_hive
@@ -887,6 +1017,11 @@ building_energy_nexus = {
 		}
 	}
 
+
+	planet_modifier = {
+		planet_technician_energy_produces_add = 2
+	}
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -926,7 +1061,7 @@ building_energy_nexus = {
 			owner = {
 				is_robot_empire = yes
 			}
-			NOR  = {
+			NOR = {
 				is_planet_class = pc_habitat
 				is_planet_class = pc_machine
 				is_planet_class = pc_hive
@@ -961,10 +1096,6 @@ building_energy_nexus = {
 
 	prerequisites = {
 		tech_power_hub_2
-	}
-
-	triggered_desc = {
-		text = building_energy_nexus_effect_desc
 	}
 
 	triggered_desc = {
@@ -1042,7 +1173,7 @@ building_resource_silo = {
 					OR = {
 						owner = {
 							is_machine_empire = yes
-							has_swapped_tradition = tr_domination_modular_depot
+							has_active_tradition = tr_domination_modular_depot
 						}
 						is_active_resolution = "resolution_greatergood_balance_in_the_middle"
 						is_active_resolution = "resolution_greatergood_universal_prosperity_mandate"
@@ -1144,25 +1275,5 @@ building_bio_reactor = {
 
 	prerequisites = {
 		"tech_bio_reactor"
-	}
-
-	on_queued = {
-		IF = {
-			limit = {
-				owner = { has_technology = tech_construction_templates }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_reactor_building days = 54 } }
-		}
-		ELSE_IF = {
-			limit = {
-				owner = { has_technology = tech_assembly_pattern }
-			}
-			owner = { set_timed_country_flag = { flag = buildings_new_reactor_building days = 78 } }
-		}
-		ELSE = {
-			planet = {
-				owner = { set_timed_country_flag = { flag = buildings_new_reactor_building days = 102 } }
-			}
-		}
 	}
 }

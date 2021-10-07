@@ -1,7 +1,7 @@
 @cooldown = 720
 
 succession_term_years_10 = {
-	potential = { 
+	potential = {
 		always = yes
 		NOT = { has_federation_flag = special_federation }
 	}
@@ -37,13 +37,13 @@ succession_term_years_10 = {
 
 	ai_weight = {
 		base = 0
-		
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 41
 		}
-		
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_president
@@ -66,7 +66,7 @@ succession_term_years_10 = {
 }
 
 succession_term_years_20 = {
-	potential = { 
+	potential = {
 		always = yes
 		NOT = { has_federation_flag = special_federation }
 	}
@@ -102,13 +102,13 @@ succession_term_years_20 = {
 
 	ai_weight = {
 		base = 0
-				
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 41
 		}
-		
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_president
@@ -119,13 +119,13 @@ succession_term_years_20 = {
 				has_federation_law = succession_type_strongest
 			}
 		}
-		
+
 		#Attempt to change from status change when cohesion is low
 		modifier = {
 			desc = federation_acceptance_term_limit
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < 0
 				has_federation_law = succession_type_strongest
 				has_federation_law = succession_term_status_change
@@ -135,7 +135,7 @@ succession_term_years_20 = {
 			desc = federation_acceptance_term_limit
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -25
 				has_federation_law = succession_type_strongest
 				has_federation_law = succession_term_status_change
@@ -145,7 +145,7 @@ succession_term_years_20 = {
 			desc = federation_acceptance_term_limit
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -50
 				has_federation_law = succession_type_strongest
 				has_federation_law = succession_term_status_change
@@ -155,7 +155,7 @@ succession_term_years_20 = {
 			desc = federation_acceptance_term_limit
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -75
 				has_federation_law = succession_type_strongest
 				has_federation_law = succession_term_status_change
@@ -165,7 +165,7 @@ succession_term_years_20 = {
 }
 
 succession_term_years_30 = {
-	potential = { 
+	potential = {
 		always = yes
 		NOT = { has_federation_flag = special_federation }
 	}
@@ -201,13 +201,13 @@ succession_term_years_30 = {
 
 	ai_weight = {
 		base = 0
-				
+
 		#Default support
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 36
 		}
-				
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_president
@@ -230,7 +230,7 @@ succession_term_years_30 = {
 }
 
 succession_term_years_40 = {
-	potential = { 
+	potential = {
 		always = yes
 		NOT = { has_federation_flag = special_federation }
 	}
@@ -266,13 +266,13 @@ succession_term_years_40 = {
 
 	ai_weight = {
 		base = 0
-		
+
 		# AI will always accept, but not suggest
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 31
 		}
-		
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_president
@@ -291,13 +291,13 @@ succession_term_years_40 = {
 				has_federation_law = succession_term_status_change
 			}
 		}
-		
+
 		#Attempt to change from status change when cohesion is low
 		modifier = {
 			desc = federation_acceptance_term_limit
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < 0
 				has_federation_law = succession_type_strongest
 				has_federation_law = succession_term_status_change
@@ -307,7 +307,7 @@ succession_term_years_40 = {
 			desc = federation_acceptance_term_limit
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -25
 				has_federation_law = succession_type_strongest
 				has_federation_law = succession_term_status_change
@@ -317,7 +317,7 @@ succession_term_years_40 = {
 			desc = federation_acceptance_term_limit
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -50
 				has_federation_law = succession_type_strongest
 				has_federation_law = succession_term_status_change
@@ -327,7 +327,7 @@ succession_term_years_40 = {
 			desc = federation_acceptance_term_limit
 			add = 25
 			is_federation_leader = no
-			federation = {			
+			federation = {
 				federation_cohesion < -75
 				has_federation_law = succession_type_strongest
 				has_federation_law = succession_term_status_change
@@ -337,7 +337,7 @@ succession_term_years_40 = {
 }
 
 succession_term_status_change = {
-	potential = { 
+	potential = {
 		always = yes
 		NOT = { has_federation_flag = special_federation }
 	}
@@ -380,18 +380,18 @@ succession_term_status_change = {
 
 	ai_weight = {
 		base = 0
-		
+
 		modifier = {
 			desc = federation_acceptance_generally_positive
 			add = 26
 		}
-		
+
 		modifier = {
 			desc = federation_acceptance_weaker
 			add = 25
 			relative_power = { who = from value >= superior }
 		}
-		
+
 		#Behaviour-specific
 		modifier = {
 			desc = federation_acceptance_president

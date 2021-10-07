@@ -29,6 +29,7 @@ d_guardian_dragon_hoard = {
 d_dragon_monument = {
 	icon = d_monument
 	category = deposit_cat_rare
+	is_for_colonizable = yes
 	resources = {
 		category = planet_deposits
 		produces = {
@@ -46,6 +47,7 @@ d_dragon_monument = {
 d_stellarite_trophy = {
 	icon = d_monument
 	category = deposit_cat_rare
+	is_for_colonizable = yes
 	planet_modifier = {
 		pop_happiness = 0.05
 	}

@@ -6,13 +6,13 @@ building_military_academy = {
 	base_cap_amount = 1
 
 	category = army
-	
+
 	potential = {
 		buildings_simple_allow = yes
 		exists = owner
 		owner = { NOT = { has_valid_civic = civic_reanimated_armies } }
 	}
-	
+
 	destroy_trigger = {
 		exists = owner
 		owner = {
@@ -26,15 +26,15 @@ building_military_academy = {
 	convert_to = {
 		building_dread_encampment
 	}
-	
+
 	allow = {
 		has_upgraded_capital = yes
 	}
-	
+
 	army_modifier = {
 		army_starting_experience_add = 100
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -58,12 +58,12 @@ building_military_academy = {
 		category = planet_buildings
 		cost = {
 			minerals = @b1_minerals
-		}			
+		}
 		upkeep = {
 			energy = @b1_upkeep
 		}
 	}
-	
+
 	prerequisites = {
 		"tech_centralized_command"
 	}
@@ -71,7 +71,7 @@ building_military_academy = {
 	show_tech_unlock_if = {
 		NOT = { has_valid_civic = civic_reanimated_armies }
 	}
-	
+
 	triggered_desc = {
 		trigger = {
 			exists = owner
@@ -93,7 +93,7 @@ building_dread_encampment = {
 	base_cap_amount = 1
 
 	category = army
-	
+
 	potential = {
 		buildings_simple_allow = yes
 		exists = owner
@@ -103,37 +103,29 @@ building_dread_encampment = {
 	convert_to = {
 		building_military_academy
 	}
-	
+
 	allow = {
 		has_upgraded_capital = yes
 	}
-	
+
 	army_modifier = {
-		army_starting_experience_add = 110
+		army_starting_experience_add = 100
 	}
-	
+
 	planet_modifier = {
-		job_necromancer_add = 1
+		job_necromancer_add = 2
 	}
 
 	resources = {
 		category = planet_buildings
 		cost = {
 			minerals = @b2_minerals
-		}			
+		}
 		upkeep = {
 			energy = @b1_upkeep
 		}
 	}
-	
-	prerequisites = {
-		"tech_centralized_command"
-	}
 
-	show_tech_unlock_if = {
-		has_valid_civic = civic_reanimated_armies
-	}
-	
 	triggered_desc = {
 		trigger = {
 			always = yes
@@ -147,7 +139,7 @@ building_stronghold = {
 	position_priority = 100
 
 	category = army
-	
+
 	potential = {
 		buildings_simple_allow = yes
 	}
@@ -161,13 +153,13 @@ building_stronghold = {
 				has_building = building_fortress
 			}
 			free_building_slots = 0
-			owner = { 
+			owner = {
 				used_naval_capacity_percent < 0.6
 				is_at_war = no # don't destroy while at war
 			}
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -189,22 +181,31 @@ building_stronghold = {
 
 	resources = {
 		category = planet_buildings_strongholds
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_active_tradition = tr_unyielding_resistance_is_frugal
+				}
+			}
+			unity = 15
+		}
 		cost = {
 			minerals = @b1_minerals
-		}			
+		}
 		upkeep = {
 			energy = 5
 		}
 	}
-	
+
 	prerequisites = {
 		"tech_planetary_defenses"
 	}
-	
+
 	upgrades = {
 		"building_fortress"
 	}
-	
+
 	triggered_desc = {
 		trigger = {
 			exists = owner
@@ -228,11 +229,11 @@ building_fortress = {
 	position_priority = 100
 
 	category = army
-	
+
 	allow = {
 		has_upgraded_capital = yes
 	}
-	
+
 	destroy_trigger = {
 		exists = owner
 		owner = { is_ai = yes }
@@ -245,7 +246,7 @@ building_fortress = {
 			buildings_no_motes = yes
 		}
 	}
-	
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -267,20 +268,29 @@ building_fortress = {
 
 	resources = {
 		category = planet_buildings_strongholds
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					has_active_tradition = tr_unyielding_resistance_is_frugal
+				}
+			}
+			unity = 15
+		}
 		cost = {
 			minerals = @b2_minerals
 			volatile_motes = @b2_rare_cost
-		}			
+		}
 		upkeep = {
 			energy = 5
 			volatile_motes = @b2_rare_upkeep
 		}
 	}
-	
+
 	prerequisites = {
 		"tech_global_defense_grid"
 	}
-	
+
 	triggered_desc = {
 		trigger = {
 			exists = owner
@@ -298,22 +308,22 @@ building_fortress = {
 }
 
 building_planetary_shield_generator = {
-	base_buildtime = @b3_time	
+	base_buildtime = @b3_time
 	base_cap_amount = 1
 	position_priority = 100
 
 	category = army
-	
+
 	allow = {
 		has_upgraded_capital = yes
 		hidden_trigger = { owner = { is_ai = no } }
 	}
-	
+
 	destroy_trigger = {
 		exists = owner
 		owner = { is_ai = yes }
 	}
-	
+
 	planet_modifier = {
 		planet_orbital_bombardment_damage = -0.5
 	}
@@ -322,12 +332,12 @@ building_planetary_shield_generator = {
 		category = planet_buildings
 		cost = {
 			minerals = @b2_minerals
-		}			
+		}
 		upkeep = {
 			energy = @b2_upkeep
 		}
 	}
-	
+
 	prerequisites = {
 		"tech_planetary_shield_generator"
 	}
