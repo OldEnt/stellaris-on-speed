@@ -1,3 +1,5 @@
+@basicTypeCost = 2000
+
 #########
 ## Wet ##
 #########
@@ -6,15 +8,29 @@ terraform_link = {
 	from = "pc_continental"
 	to = "pc_tropical"
 
-	energy = 2000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @basicTypeCost
+		}
+	}
+
 	duration = 360
-	
+
 	condition = {
 		has_technology = "tech_terrestrial_sculpting"
 	}
 
 	ai_weight = {
 		weight = 0
+		modifier = {
+			weight = 1
+			should_terraform_trigger = {
+				CLASS_FROM = pc_continental
+				CLASS_TO = pc_tropical
+			}
+		}
 	}
 }
 
@@ -23,15 +39,33 @@ terraform_link = {
 	from = "pc_continental"
 	to = "pc_ocean"
 
-	energy = 2000
+	resources = {
+		category = terraforming_ocean
+
+		cost = {
+			energy = @basicTypeCost
+		}
+	}
+
 	duration = 360
-	
+
 	condition = {
 		has_technology = "tech_terrestrial_sculpting"
 	}
 
 	ai_weight = {
 		weight = 0
+		modifier = {
+			weight = 1
+			should_terraform_trigger = {
+				CLASS_FROM = pc_continental
+				CLASS_TO = pc_ocean
+			}
+		}
+		modifier = {
+			factor = 10
+			has_trait = trait_aquatic
+		}
 	}
 }
 
@@ -39,15 +73,29 @@ terraform_link = {
 	from = "pc_ocean"
 	to = "pc_continental"
 
-	energy = 2000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @basicTypeCost
+		}
+	}
+
 	duration = 360
-	
+
 	condition = {
 		has_technology = "tech_terrestrial_sculpting"
 	}
 
 	ai_weight = {
 		weight = 0
+		modifier = {
+			weight = 1
+			should_terraform_trigger = {
+				CLASS_FROM = pc_ocean
+				CLASS_TO = pc_continental
+			}
+		}
 	}
 }
 
@@ -55,15 +103,29 @@ terraform_link = {
 	from = "pc_ocean"
 	to = "pc_tropical"
 
-	energy = 2000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @basicTypeCost
+		}
+	}
+
 	duration = 360
-	
+
 	condition = {
 		has_technology = "tech_terrestrial_sculpting"
 	}
-	
+
 	ai_weight = {
 		weight = 0
+		modifier = {
+			weight = 1
+			should_terraform_trigger = {
+				CLASS_FROM = pc_ocean
+				CLASS_TO = pc_tropical
+			}
+		}
 	}
 }
 
@@ -71,15 +133,30 @@ terraform_link = {
 	from = "pc_tropical"
 	to = "pc_continental"
 
-	energy = 2000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @basicTypeCost
+		}
+	}
+
+
 	duration = 360
-	
+
 	condition = {
 		has_technology = "tech_terrestrial_sculpting"
 	}
 
 	ai_weight = {
 		weight = 0
+		modifier = {
+			weight = 1
+			should_terraform_trigger = {
+				CLASS_FROM = pc_tropical
+				CLASS_TO = pc_continental
+			}
+		}
 	}
 }
 
@@ -87,15 +164,33 @@ terraform_link = {
 	from = "pc_tropical"
 	to = "pc_ocean"
 
-	energy = 2000
+	resources = {
+		category = terraforming_ocean
+
+		cost = {
+			energy = @basicTypeCost
+		}
+	}
+
 	duration = 360
-	
+
 	condition = {
 		has_technology = "tech_terrestrial_sculpting"
 	}
 
 	ai_weight = {
 		weight = 0
+		modifier = {
+			weight = 1
+			should_terraform_trigger = {
+				CLASS_FROM = pc_tropical
+				CLASS_TO = pc_ocean
+			}
+		}
+		modifier = {
+			factor = 10
+			has_trait = trait_aquatic
+		}
 	}
 }
 
@@ -107,15 +202,29 @@ terraform_link = {
 	from = "pc_alpine"
 	to = "pc_arctic"
 
-	energy = 2000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @basicTypeCost
+		}
+	}
+
 	duration = 360
-	
+
 	condition = {
 		has_technology = "tech_terrestrial_sculpting"
 	}
 
 	ai_weight = {
 		weight = 0
+		modifier = {
+			weight = 1
+			should_terraform_trigger = {
+				CLASS_FROM = pc_alpine
+				CLASS_TO = pc_arctic
+			}
+		}
 	}
 }
 
@@ -124,15 +233,29 @@ terraform_link = {
 	from = "pc_alpine"
 	to = "pc_tundra"
 
-	energy = 2000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @basicTypeCost
+		}
+	}
+
 	duration = 360
-	
+
 	condition = {
 		has_technology = "tech_terrestrial_sculpting"
 	}
 
 	ai_weight = {
 		weight = 0
+		modifier = {
+			weight = 1
+			should_terraform_trigger = {
+				CLASS_FROM = pc_alpine
+				CLASS_TO = pc_tundra
+			}
+		}
 	}
 }
 
@@ -140,15 +263,29 @@ terraform_link = {
 	from = "pc_tundra"
 	to = "pc_alpine"
 
-	energy = 2000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @basicTypeCost
+		}
+	}
+
 	duration = 360
-	
+
 	condition = {
 		has_technology = "tech_terrestrial_sculpting"
 	}
 
 	ai_weight = {
 		weight = 0
+		modifier = {
+			weight = 1
+			should_terraform_trigger = {
+				CLASS_FROM = pc_tundra
+				CLASS_TO = pc_alpine
+			}
+		}
 	}
 }
 
@@ -156,15 +293,29 @@ terraform_link = {
 	from = "pc_tundra"
 	to = "pc_arctic"
 
-	energy = 2000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @basicTypeCost
+		}
+	}
+
 	duration = 360
-	
+
 	condition = {
 		has_technology = "tech_terrestrial_sculpting"
 	}
 
 	ai_weight = {
 		weight = 0
+		modifier = {
+			weight = 1
+			should_terraform_trigger = {
+				CLASS_FROM = pc_tundra
+				CLASS_TO = pc_arctic
+			}
+		}
 	}
 }
 
@@ -172,15 +323,29 @@ terraform_link = {
 	from = "pc_arctic"
 	to = "pc_alpine"
 
-	energy = 2000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @basicTypeCost
+		}
+	}
+
 	duration = 360
-	
+
 	condition = {
 		has_technology = "tech_terrestrial_sculpting"
 	}
 
 	ai_weight = {
 		weight = 0
+		modifier = {
+			weight = 1
+			should_terraform_trigger = {
+				CLASS_FROM = pc_arctic
+				CLASS_TO = pc_alpine
+			}
+		}
 	}
 }
 
@@ -188,15 +353,29 @@ terraform_link = {
 	from = "pc_arctic"
 	to = "pc_tundra"
 
-	energy = 2000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @basicTypeCost
+		}
+	}
+
 	duration = 360
-	
+
 	condition = {
 		has_technology = "tech_terrestrial_sculpting"
 	}
 
 	ai_weight = {
 		weight = 0
+		modifier = {
+			weight = 1
+			should_terraform_trigger = {
+				CLASS_FROM = pc_arctic
+				CLASS_TO = pc_tundra
+			}
+		}
 	}
 }
 
@@ -208,15 +387,29 @@ terraform_link = {
 	from = "pc_desert"
 	to = "pc_arid"
 
-	energy = 2000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @basicTypeCost
+		}
+	}
+
 	duration = 360
-	
+
 	condition = {
 		has_technology = "tech_terrestrial_sculpting"
 	}
 
 	ai_weight = {
 		weight = 0
+		modifier = {
+			weight = 1
+			should_terraform_trigger = {
+				CLASS_FROM = pc_desert
+				CLASS_TO = pc_arid
+			}
+		}
 	}
 }
 
@@ -225,15 +418,29 @@ terraform_link = {
 	from = "pc_desert"
 	to = "pc_savannah"
 
-	energy = 2000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @basicTypeCost
+		}
+	}
+
 	duration = 360
-	
+
 	condition = {
 		has_technology = "tech_terrestrial_sculpting"
 	}
 
 	ai_weight = {
 		weight = 0
+		modifier = {
+			weight = 1
+			should_terraform_trigger = {
+				CLASS_FROM = pc_desert
+				CLASS_TO = pc_savannah
+			}
+		}
 	}
 }
 
@@ -241,15 +448,29 @@ terraform_link = {
 	from = "pc_savannah"
 	to = "pc_desert"
 
-	energy = 2000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @basicTypeCost
+		}
+	}
+
 	duration = 360
-	
+
 	condition = {
 		has_technology = "tech_terrestrial_sculpting"
 	}
 
 	ai_weight = {
 		weight = 0
+		modifier = {
+			weight = 1
+			should_terraform_trigger = {
+				CLASS_FROM = pc_savannah
+				CLASS_TO = pc_desert
+			}
+		}
 	}
 }
 
@@ -257,15 +478,29 @@ terraform_link = {
 	from = "pc_savannah"
 	to = "pc_arid"
 
-	energy = 2000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @basicTypeCost
+		}
+	}
+
 	duration = 360
-	
+
 	condition = {
 		has_technology = "tech_terrestrial_sculpting"
 	}
 
 	ai_weight = {
 		weight = 0
+		modifier = {
+			weight = 1
+			should_terraform_trigger = {
+				CLASS_FROM = pc_savannah
+				CLASS_TO = pc_arid
+			}
+		}
 	}
 }
 
@@ -273,15 +508,29 @@ terraform_link = {
 	from = "pc_arid"
 	to = "pc_desert"
 
-	energy = 2000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @basicTypeCost
+		}
+	}
+
 	duration = 360
-	
+
 	condition = {
 		has_technology = "tech_terrestrial_sculpting"
 	}
 
 	ai_weight = {
 		weight = 0
+		modifier = {
+			weight = 1
+			should_terraform_trigger = {
+				CLASS_FROM = pc_arid
+				CLASS_TO = pc_desert
+			}
+		}
 	}
 }
 
@@ -289,14 +538,28 @@ terraform_link = {
 	from = "pc_arid"
 	to = "pc_savannah"
 
-	energy = 2000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @basicTypeCost
+		}
+	}
+
 	duration = 360
-	
+
 	condition = {
 		has_technology = "tech_terrestrial_sculpting"
 	}
 
 	ai_weight = {
 		weight = 0
+		modifier = {
+			weight = 1
+			should_terraform_trigger = {
+				CLASS_FROM = pc_arid
+				CLASS_TO = pc_savannah
+			}
+		}
 	}
 }

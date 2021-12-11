@@ -368,7 +368,7 @@ district_hab_industrial = {
 			exists = owner
 			owner = {
 				is_regular_empire = yes
-				is_crafter_empire = yes
+				is_crafter_empire = no
 				is_catalytic_empire = yes
 			}
 		}

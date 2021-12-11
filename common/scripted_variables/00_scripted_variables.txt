@@ -13,19 +13,19 @@
 
 @tier1materialreward = 30
 @tier1materialmin = 100
-@tier1materialmax = 500
+@tier1materialmax = 1000
 @tier2materialreward = 60
 @tier2materialmin = 150
-@tier2materialmax = 1000
+@tier2materialmax = 2000
 @tier3materialreward = 90
 @tier3materialmin = 250
-@tier3materialmax = 1500
+@tier3materialmax = 5000
 @tier4materialreward = 120
 @tier4materialmin = 350
-@tier4materialmax = 2000
+@tier4materialmax = 10000
 @tier5materialreward = 240
 @tier5materialmin = 700
-@tier5materialmax = 4000
+@tier5materialmax = 30000
 
 @tier1influencereward = 30
 @tier1influencemin = 40
@@ -48,19 +48,19 @@
 
 @tier1researchreward = 60
 @tier1researchmin = 250
-@tier1researchmax = 10000
+@tier1researchmax = 100000
 @tier2researchreward = 90
 @tier2researchmin = 350
-@tier2researchmax = 10000
+@tier2researchmax = 100000
 @tier3researchreward = 120
 @tier3researchmin = 500
-@tier3researchmax = 10000
+@tier3researchmax = 1000000
 @tier4researchreward = 240
 @tier4researchmin = 1000
-@tier4researchmax = 10000
+@tier4researchmax = 1000000
 @tier5researchreward = 480
 @tier5researchmin = 2000
-@tier5researchmax = 10000
+@tier5researchmax = 2000000
 
 @tier1unityreward = 30
 @tier1unitymin = 100
@@ -218,7 +218,6 @@
 @guardiantechtier = 5
 
 # BUILDINGS
-
 @b1_time = 72
 @b1_minerals = 400
 @b1_upkeep = 10
@@ -255,5 +254,7 @@
 @federation_perk_factor = 2
 
 @lithoid_trait_resource_production = 0.05
+
+@plantoid_budding_rate = 0.02
 
 @armies_for_declaring_war = 6

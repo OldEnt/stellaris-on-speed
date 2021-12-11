@@ -50,9 +50,8 @@ massive_ship_fallen_empire = {
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon_frame = 7
-	text_icon = military_size_32
-	
+	icon = ship_size_military_32
+
 	combat_disengage_chance = 0.5
 
 	resources = {
@@ -88,9 +87,8 @@ large_ship_fallen_empire = {
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	is_space_station = no
-	icon_frame = 5
-	text_icon = military_size_8
-	
+	icon = ship_size_military_8
+
 	combat_disengage_chance = 1.0
 
 	resources = {
@@ -110,7 +108,7 @@ large_ship_fallen_empire = {
 # Fallen Empire Small Ship
 small_ship_fallen_empire = {
 	formation_priority = @destroyer_formation_priority
-	graphical_culture = { "fallen_empire_01" "fallen_empire_02" "fallen_empire_03" "fallen_empire_04"  "fallen_machine_empire_01" }
+	graphical_culture = { "fallen_empire_01" "fallen_empire_02" "fallen_empire_03" "fallen_empire_04" "fallen_machine_empire_01" }
 	max_speed = @speed_fast
 	acceleration = 0.3
 	rotation_speed = 0.2
@@ -125,10 +123,9 @@ small_ship_fallen_empire = {
 	fleet_slot_size = 2
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
-	icon_frame = 3
-	text_icon = military_size_2
+	icon = ship_size_military_2
 	is_space_station = no
-	
+
 	combat_disengage_chance = 1.5
 
 	resources = {
@@ -165,13 +162,13 @@ military_station_small_fallen_empire = {
 	combat_size_multiplier = 4
 	size_multiplier = 2
 	fleet_slot_size = 2
-	section_slots = { 
+	section_slots = {
 		"mid" = { locator = "part1" }
 	}
 	num_target_locators = 0
 	is_space_station = yes
 	build_block_radius = @build_block_radius_military
-	
+
 	uses_name_prefix = no
 	takes_name_from_ship_design = yes
 
@@ -187,12 +184,13 @@ military_station_small_fallen_empire = {
 	class = shipclass_military_station
 	construction_type = starbase_defenses
 	is_designable = no
+	icon = ship_size_military_station
 }
 
 
 # Fallen Empire Large Station
 military_station_large_fallen_empire = {
-	graphical_culture = { "fallen_empire_01" "fallen_empire_02" "fallen_empire_03" "fallen_empire_04"  "fallen_machine_empire_01" }
+	graphical_culture = { "fallen_empire_01" "fallen_empire_02" "fallen_empire_03" "fallen_empire_04" "fallen_machine_empire_01" }
 	max_speed = 6
 	rotation_speed = 10
 	acceleration = 10
@@ -207,13 +205,13 @@ military_station_large_fallen_empire = {
 	combat_size_multiplier = 20
 	size_multiplier = 8
 	fleet_slot_size = 4
-	section_slots = { 
+	section_slots = {
 		"mid" = { locator = "part1" }
 	}
 	num_target_locators = 0
 	is_space_station = yes
 	build_block_radius = @build_block_radius_military
-	
+
 	uses_name_prefix = no
 	takes_name_from_ship_design = yes
 
@@ -226,9 +224,10 @@ military_station_large_fallen_empire = {
 
 	base_buildtime = 146
 	is_listed = no
-	
+
 	class = shipclass_military_station
 	construction_type = starbase_defenses
 	is_designable = no
+	icon = ship_size_military_station
 }
 

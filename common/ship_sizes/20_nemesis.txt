@@ -1,4 +1,4 @@
-###  Nemesis  ###
+### Nemesis ###
 
 crisis_corvette = {
 	graphical_culture = yes
@@ -68,7 +68,7 @@ crisis_destroyer = {
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	icon_frame = 3
-	text_icon = military_size_2
+	icon = ship_size_military_2
 	base_buildtime = 12
 	is_space_station = no
 	can_have_federation_design = no
@@ -83,7 +83,7 @@ crisis_destroyer = {
 	construction_type = starbase_shipyard
 	enable_default_design = yes
 	use_shipnames_from = destroyer
-	
+
 	required_component_set = "power_core"
 	required_component_set = "ftl_components"
 	required_component_set = "thruster_components"
@@ -119,7 +119,7 @@ crisis_cruiser = {
 	section_slots = { "mid" = { locator = "part1" } }
 	num_target_locators = 0
 	icon_frame = 4
-	text_icon = military_size_4
+	icon = ship_size_military_4
 	base_buildtime = 24
 	is_space_station = no
 	can_have_federation_design = no
@@ -129,12 +129,12 @@ crisis_cruiser = {
 	potential_country = {
 		has_crisis_level = crisis_level_4
 	}
-	
+
 	class = shipclass_military
 	construction_type = starbase_shipyard
 	enable_default_design = yes
 	use_shipnames_from = cruiser
-	
+
 	required_component_set = "power_core"
 	required_component_set = "ftl_components"
 	required_component_set = "thruster_components"
@@ -171,12 +171,12 @@ star_eater = {
 	num_target_locators = 0
 	is_space_station = no
 	icon_frame = 7
-	text_icon = military_size_32
+	icon = ship_size_military_32
 	construction_type = starbase_shipyard
 	base_buildtime = 1200
 	can_have_federation_design = no
 	components_add_to_cost = no
-	
+
 	class = shipclass_military_special
 	enable_default_design = yes
 	use_shipnames_from = colossus

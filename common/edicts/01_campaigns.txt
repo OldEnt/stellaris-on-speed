@@ -405,7 +405,7 @@ clearing_motes = {
 
 	modifier = {
 		deposit_blockers_cost_mult = -0.25
-		planet_clear_blocker_time_mult = -0.25
+		planet_clear_blocker_speed_mult = 0.25
 	}
 
 	ai_weight = {

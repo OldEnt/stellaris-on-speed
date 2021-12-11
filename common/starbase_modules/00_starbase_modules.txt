@@ -30,7 +30,7 @@ shipyard = {
 	ai_build_at_chokepoint = no
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 20
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 		modifier = {
 			factor = 100
 			owner = {
@@ -109,7 +109,7 @@ anchorage = {
 	ai_build_at_chokepoint = no
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 20
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 		modifier = {
 			factor = 2
 			count_starbase_modules = {
@@ -146,7 +146,7 @@ gun_battery = {
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = no
 	ai_weight = {
-		weight = 10
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 		modifier = {
 			factor = 2
 			exists = owner
@@ -188,7 +188,7 @@ missile_battery = {
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = no
 	ai_weight = {
-		weight = 10
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 		modifier = {
 			factor = 2
 			exists = owner
@@ -229,7 +229,7 @@ hangar_bay = {
 
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 10
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 		modifier = {
 			factor = 2
 			exists = owner
@@ -242,7 +242,7 @@ hangar_bay = {
 
 solar_panel_network = {
 	icon = "GFX_solar_panel_network"
-	section = "REFINERY_STARBASE_SECTION"
+	section = "SCIENCE_STARBASE_SECTION"
 	construction_days = 36
 	initial = yes
 
@@ -299,7 +299,7 @@ solar_panel_network = {
 
 	ai_build_at_chokepoint = no
 	ai_weight = {
-		weight = 15
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
@@ -333,7 +333,7 @@ trading_hub = {
 
 	ai_build_at_chokepoint = no
 	ai_weight = {
-		weight = 15
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 		modifier = {
 			factor = 5
 			NOT = { has_starbase_module = trading_hub }

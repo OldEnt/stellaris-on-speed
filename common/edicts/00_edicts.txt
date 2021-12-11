@@ -575,6 +575,7 @@ thought_enforcement = {
 			is_egalitarian = yes
 		}
 	}
+	modifier = { custom_tooltip = edict_thought_enforcement_effect }
 }
 
 extended_shifts = {

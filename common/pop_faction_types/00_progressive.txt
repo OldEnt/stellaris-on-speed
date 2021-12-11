@@ -21,12 +21,6 @@ progressive = {
 		has_encountered_other_species = yes
 		NOT = { has_authority = auth_hive_mind }
 		NOT = { has_country_flag = suppress_vanilla_factions }
-		count_owned_pop = {
-			count >= 5
-			limit = {
-				has_ethic = ethic_egalitarian
-			}
-		}
 	}
 
 	parameters = {
@@ -46,10 +40,6 @@ progressive = {
 	can_join_faction = {
 		is_shackled_robot = no
 		NOT = { has_trait = trait_nerve_stapled }
-		OR = {
-			has_ethic = ethic_egalitarian
-			has_ethic = ethic_fanatic_egalitarian
-		}
 	}
 
 	attraction = {
@@ -154,6 +144,7 @@ progressive = {
 		trigger = {
 			owner = {
 				NOR = {
+					has_policy_flag = resettlement_allowed
 					any_owned_pop = {
 						has_migration_control = { value = yes }
 						is_sapient = yes
@@ -162,7 +153,6 @@ progressive = {
 						is_shackled_robot = no
 						is_robot_pop = no
 					}
-					has_policy_flag = resettlement_allowed
 				}
 			}
 		}
@@ -202,8 +192,8 @@ progressive = {
 		trigger = {
 			owner = {
 				NOT = {
-					any_owned_pop = {
-						has_living_standard = { type = living_standard_stratified }
+					any_owned_species = {
+						has_living_standard = { type = living_standard_stratified country = prev }
 					}
 				}
 			}

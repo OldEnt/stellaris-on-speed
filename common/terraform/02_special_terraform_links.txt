@@ -1,11 +1,16 @@
 @gaiaCost = 7500
 @gaiaTime = 720
 
+@highestCost = 12500
+@highestTime = 1800
+
 @machineCost = 10000
-@machineTime = 1440
+@machineTime = 7200
 
 @hiveCost = 10000
 @hiveTime = 1440
+
+@lClusterCost = 1000
 
 ################
 ## Tomb World ##
@@ -15,21 +20,27 @@ terraform_link = {
 	from = "pc_nuked"
 	to = "pc_desert"
 
-	energy = 10000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 10000
+		}
+	}
+
 	duration = 1440
-	
+
 	condition = {
 		has_technology = "tech_climate_restoration"
 	}
 
 	ai_weight = {
-		weight = 2
+		weight = 0
 		modifier = {
-			factor = 0
-			OR = {
-				is_mechanical_empire = yes
-				is_cyborg_empire = yes
-				has_authority = auth_machine_intelligence
+			weight = 5
+			should_terraform_trigger = {
+				CLASS_FROM = pc_nuked
+				CLASS_TO = pc_desert
 			}
 		}
 	}
@@ -39,21 +50,27 @@ terraform_link = {
 	from = "pc_nuked"
 	to = "pc_arid"
 
-	energy = 10000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 10000
+		}
+	}
+
 	duration = 1440
-	
+
 	condition = {
 		has_technology = "tech_climate_restoration"
 	}
 
 	ai_weight = {
-		weight = 2
+		weight = 0
 		modifier = {
-			factor = 0
-			OR = {
-				is_mechanical_empire = yes
-				is_cyborg_empire = yes
-				has_authority = auth_machine_intelligence
+			weight = 5
+			should_terraform_trigger = {
+				CLASS_FROM = pc_nuked
+				CLASS_TO = pc_arid
 			}
 		}
 	}
@@ -63,21 +80,27 @@ terraform_link = {
 	from = "pc_nuked"
 	to = "pc_savannah"
 
-	energy = 10000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 10000
+		}
+	}
+
 	duration = 1440
-	
+
 	condition = {
 		has_technology = "tech_climate_restoration"
 	}
 
 	ai_weight = {
-		weight = 2
+		weight = 0
 		modifier = {
-			factor = 0
-			OR = {
-				is_mechanical_empire = yes
-				is_cyborg_empire = yes
-				has_authority = auth_machine_intelligence
+			weight = 5
+			should_terraform_trigger = {
+				CLASS_FROM = pc_nuked
+				CLASS_TO = pc_savannah
 			}
 		}
 	}
@@ -87,21 +110,27 @@ terraform_link = {
 	from = "pc_nuked"
 	to = "pc_arctic"
 
-	energy = 10000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 10000
+		}
+	}
+
 	duration = 1440
-	
+
 	condition = {
 		has_technology = "tech_climate_restoration"
 	}
 
 	ai_weight = {
-		weight = 2
+		weight = 0
 		modifier = {
-			factor = 0
-			OR = {
-				is_mechanical_empire = yes
-				is_cyborg_empire = yes
-				has_authority = auth_machine_intelligence
+			weight = 5
+			should_terraform_trigger = {
+				CLASS_FROM = pc_nuked
+				CLASS_TO = pc_arctic
 			}
 		}
 	}
@@ -111,21 +140,27 @@ terraform_link = {
 	from = "pc_nuked"
 	to = "pc_tundra"
 
-	energy = 10000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 10000
+		}
+	}
+
 	duration = 1440
-	
+
 	condition = {
 		has_technology = "tech_climate_restoration"
 	}
 
 	ai_weight = {
-		weight = 2
+		weight = 0
 		modifier = {
-			factor = 0
-			OR = {
-				is_mechanical_empire = yes
-				is_cyborg_empire = yes
-				has_authority = auth_machine_intelligence
+			weight = 5
+			should_terraform_trigger = {
+				CLASS_FROM = pc_nuked
+				CLASS_TO = pc_tundra
 			}
 		}
 	}
@@ -135,21 +170,27 @@ terraform_link = {
 	from = "pc_nuked"
 	to = "pc_alpine"
 
-	energy = 10000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 10000
+		}
+	}
+
 	duration = 1440
-	
+
 	condition = {
 		has_technology = "tech_climate_restoration"
 	}
 
 	ai_weight = {
-		weight = 2
+		weight = 0
 		modifier = {
-			factor = 0
-			OR = {
-				is_mechanical_empire = yes
-				is_cyborg_empire = yes
-				has_authority = auth_machine_intelligence
+			weight = 5
+			should_terraform_trigger = {
+				CLASS_FROM = pc_nuked
+				CLASS_TO = pc_alpine
 			}
 		}
 	}
@@ -159,21 +200,27 @@ terraform_link = {
 	from = "pc_nuked"
 	to = "pc_continental"
 
-	energy = 10000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 10000
+		}
+	}
+
 	duration = 1440
-	
+
 	condition = {
 		has_technology = "tech_climate_restoration"
 	}
 
 	ai_weight = {
-		weight = 2
+		weight = 0
 		modifier = {
-			factor = 0
-			OR = {
-				is_mechanical_empire = yes
-				is_cyborg_empire = yes
-				has_authority = auth_machine_intelligence
+			weight = 5
+			should_terraform_trigger = {
+				CLASS_FROM = pc_nuked
+				CLASS_TO = pc_continental
 			}
 		}
 	}
@@ -183,21 +230,27 @@ terraform_link = {
 	from = "pc_nuked"
 	to = "pc_tropical"
 
-	energy = 10000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 10000
+		}
+	}
+
 	duration = 1440
-	
+
 	condition = {
 		has_technology = "tech_climate_restoration"
 	}
 
 	ai_weight = {
-		weight = 2
+		weight = 0
 		modifier = {
-			factor = 0
-			OR = {
-				is_mechanical_empire = yes
-				is_cyborg_empire = yes
-				has_authority = auth_machine_intelligence
+			weight = 5
+			should_terraform_trigger = {
+				CLASS_FROM = pc_nuked
+				CLASS_TO = pc_tropical
 			}
 		}
 	}
@@ -207,22 +260,32 @@ terraform_link = {
 	from = "pc_nuked"
 	to = "pc_ocean"
 
-	energy = 10000
+	resources = {
+		category = terraforming_ocean
+
+		cost = {
+			energy = 10000
+		}
+	}
+
 	duration = 1440
-	
+
 	condition = {
 		has_technology = "tech_climate_restoration"
 	}
 
 	ai_weight = {
-		weight = 2
+		weight = 0
 		modifier = {
-			factor = 0
-			OR = {
-				is_mechanical_empire = yes
-				is_cyborg_empire = yes
-				has_authority = auth_machine_intelligence
+			weight = 5
+			should_terraform_trigger = {
+				CLASS_FROM = pc_nuked
+				CLASS_TO = pc_ocean
 			}
+		}
+		modifier = {
+			factor = 4
+			has_trait = trait_aquatic
 		}
 	}
 }
@@ -231,11 +294,20 @@ terraform_link = {
 ## Gaia World ##
 ################
 
+#These are always a good idea if the AI has taken the perk. So the AI will always want it, to a degree.
+
 terraform_link = {
 	to = "pc_gaia"
 	from = "pc_desert"
 
-	energy = @gaiaCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @gaiaCost
+		}
+	}
+
 	duration = @gaiaTime
 
 	potential = {
@@ -244,18 +316,6 @@ terraform_link = {
 
 	ai_weight = {
 		weight = 1
-		modifier = {
-			factor = 0
-			resource_stockpile_compare = { resource = energy value < 40000 }
-		}
-		modifier = {
-			factor = 0
-			OR = {
-				is_mechanical_empire = yes
-				is_cyborg_empire = yes
-				has_authority = auth_machine_intelligence
-			}
-		}
 	}
 }
 
@@ -263,7 +323,14 @@ terraform_link = {
 	from = "pc_arid"
 	to = "pc_gaia"
 
-	energy = @gaiaCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @gaiaCost
+		}
+	}
+
 	duration = @gaiaTime
 
 	potential = {
@@ -272,18 +339,6 @@ terraform_link = {
 
 	ai_weight = {
 		weight = 1
-		modifier = {
-			factor = 0
-			resource_stockpile_compare = { resource = energy value < 40000 }
-		}
-		modifier = {
-			factor = 0
-			OR = {
-				is_mechanical_empire = yes
-				is_cyborg_empire = yes
-				has_authority = auth_machine_intelligence
-			}
-		}
 	}
 }
 
@@ -291,7 +346,14 @@ terraform_link = {
 	to = "pc_gaia"
 	from = "pc_savannah"
 
-	energy = @gaiaCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @gaiaCost
+		}
+	}
+
 	duration = @gaiaTime
 
 	potential = {
@@ -300,18 +362,6 @@ terraform_link = {
 
 	ai_weight = {
 		weight = 1
-		modifier = {
-			factor = 0
-			resource_stockpile_compare = { resource = energy value < 40000 }
-		}
-		modifier = {
-			factor = 0
-			OR = {
-				is_mechanical_empire = yes
-				is_cyborg_empire = yes
-				has_authority = auth_machine_intelligence
-			}
-		}
 	}
 }
 
@@ -319,7 +369,14 @@ terraform_link = {
 	to = "pc_gaia"
 	from = "pc_arctic"
 
-	energy = @gaiaCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @gaiaCost
+		}
+	}
+
 	duration = @gaiaTime
 
 	potential = {
@@ -328,18 +385,6 @@ terraform_link = {
 
 	ai_weight = {
 		weight = 1
-		modifier = {
-			factor = 0
-			resource_stockpile_compare = { resource = energy value < 40000 }
-		}
-		modifier = {
-			factor = 0
-			OR = {
-				is_mechanical_empire = yes
-				is_cyborg_empire = yes
-				has_authority = auth_machine_intelligence
-			}
-		}
 	}
 }
 
@@ -347,7 +392,14 @@ terraform_link = {
 	to = "pc_gaia"
 	from = "pc_tundra"
 
-	energy = @gaiaCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @gaiaCost
+		}
+	}
+
 	duration = @gaiaTime
 
 	potential = {
@@ -356,18 +408,6 @@ terraform_link = {
 
 	ai_weight = {
 		weight = 1
-		modifier = {
-			factor = 0
-			resource_stockpile_compare = { resource = energy value < 40000 }
-		}
-		modifier = {
-			factor = 0
-			OR = {
-				is_mechanical_empire = yes
-				is_cyborg_empire = yes
-				has_authority = auth_machine_intelligence
-			}
-		}
 	}
 }
 
@@ -375,7 +415,14 @@ terraform_link = {
 	to = "pc_gaia"
 	from = "pc_alpine"
 
-	energy = @gaiaCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @gaiaCost
+		}
+	}
+
 	duration = @gaiaTime
 
 	potential = {
@@ -384,18 +431,6 @@ terraform_link = {
 
 	ai_weight = {
 		weight = 1
-		modifier = {
-			factor = 0
-			resource_stockpile_compare = { resource = energy value < 40000 }
-		}
-		modifier = {
-			factor = 0
-			OR = {
-				is_mechanical_empire = yes
-				is_cyborg_empire = yes
-				has_authority = auth_machine_intelligence
-			}
-		}
 	}
 }
 
@@ -403,7 +438,14 @@ terraform_link = {
 	to = "pc_gaia"
 	from = "pc_continental"
 
-	energy = @gaiaCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @gaiaCost
+		}
+	}
+
 	duration = @gaiaTime
 
 	potential = {
@@ -412,18 +454,6 @@ terraform_link = {
 
 	ai_weight = {
 		weight = 1
-		modifier = {
-			factor = 0
-			resource_stockpile_compare = { resource = energy value < 40000 }
-		}
-		modifier = {
-			factor = 0
-			OR = {
-				is_mechanical_empire = yes
-				is_cyborg_empire = yes
-				has_authority = auth_machine_intelligence
-			}
-		}
 	}
 }
 
@@ -431,7 +461,14 @@ terraform_link = {
 	to = "pc_gaia"
 	from = "pc_tropical"
 
-	energy = @gaiaCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @gaiaCost
+		}
+	}
+
 	duration = @gaiaTime
 
 	potential = {
@@ -440,18 +477,6 @@ terraform_link = {
 
 	ai_weight = {
 		weight = 1
-		modifier = {
-			factor = 0
-			resource_stockpile_compare = { resource = energy value < 40000 }
-		}
-		modifier = {
-			factor = 0
-			OR = {
-				is_mechanical_empire = yes
-				is_cyborg_empire = yes
-				has_authority = auth_machine_intelligence
-			}
-		}
 	}
 }
 
@@ -459,7 +484,14 @@ terraform_link = {
 	to = "pc_gaia"
 	from = "pc_ocean"
 
-	energy = @gaiaCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @gaiaCost
+		}
+	}
+
 	duration = @gaiaTime
 
 	potential = {
@@ -468,16 +500,14 @@ terraform_link = {
 
 	ai_weight = {
 		weight = 1
-		modifier = {
+		modifier = { #Ocean Worlds are Aquatic species' paradises
 			factor = 0
-			resource_stockpile_compare = { resource = energy value < 40000 }
-		}
-		modifier = {
-			factor = 0
-			OR = {
-				is_mechanical_empire = yes
-				is_cyborg_empire = yes
-				has_authority = auth_machine_intelligence
+			from = {
+				is_colony = yes
+				pop_percentage = {
+					percentage >= 0.5
+					limit = { has_trait = trait_aquatic }
+				}
 			}
 		}
 	}
@@ -487,8 +517,15 @@ terraform_link = {
 	from = "pc_barren"
 	to = "pc_gaia"
 
-	energy = @gaiaCost
-	duration = @gaiaTime
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @highestCost
+		}
+	}
+
+	duration = @highestTime
 
 	potential = {
 		has_ascension_perk = "ap_world_shaper"
@@ -504,19 +541,7 @@ terraform_link = {
 	}
 
 	ai_weight = {
-		weight = 1
-		modifier = {
-			factor = 0
-			resource_stockpile_compare = { resource = energy value < 40000 }
-		}
-		modifier = {
-			factor = 0
-			OR = {
-				is_mechanical_empire = yes
-				is_cyborg_empire = yes
-				has_authority = auth_machine_intelligence
-			}
-		}
+		weight = 10
 	}
 }
 
@@ -524,8 +549,15 @@ terraform_link = {
 	from = "pc_barren_cold"
 	to = "pc_gaia"
 
-	energy = @gaiaCost
-	duration = @gaiaTime
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @highestCost
+		}
+	}
+
+	duration = @highestTime
 
 	potential = {
 		has_ascension_perk = "ap_world_shaper"
@@ -541,19 +573,7 @@ terraform_link = {
 	}
 
 	ai_weight = {
-		weight = 1
-		modifier = {
-			factor = 0
-			resource_stockpile_compare = { resource = energy value < 40000 }
-		}
-		modifier = {
-			factor = 0
-			OR = {
-				is_mechanical_empire = yes
-				is_cyborg_empire = yes
-				has_authority = auth_machine_intelligence
-			}
-		}
+		weight = 10
 	}
 }
 
@@ -561,8 +581,15 @@ terraform_link = {
 	from = "pc_nuked"
 	to = "pc_gaia"
 
-	energy = 12500
-	duration = 1800
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @highestCost
+		}
+	}
+
+	duration = @highestTime
 
 	potential = {
 		has_ascension_perk = "ap_world_shaper"
@@ -577,19 +604,7 @@ terraform_link = {
 	}
 
 	ai_weight = {
-		weight = 1
-		modifier = {
-			factor = 0
-			resource_stockpile_compare = { resource = energy value < 40000 }
-		}
-		modifier = {
-			factor = 0
-			OR = {
-				is_mechanical_empire = yes
-				is_cyborg_empire = yes
-				has_authority = auth_machine_intelligence
-			}
-		}
+		weight = 10
 	}
 }
 
@@ -597,13 +612,22 @@ terraform_link = {
 ## Barren World ##
 ##################
 
+# The AI is rigged to always pick the one with the highest habitability. So nothing complicated needed for weights here either
+
 terraform_link = {
 	from = "pc_barren"
 	to = "pc_desert"
 
-	energy = 5000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+
 	duration = 720
-	
+
 	potential = {
 		from = { has_modifier = terraforming_candidate }
 	}
@@ -624,9 +648,16 @@ terraform_link = {
 	from = "pc_barren"
 	to = "pc_arid"
 
-	energy = 5000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+
 	duration = 720
-	
+
 	potential = {
 		from = { has_modifier = terraforming_candidate }
 	}
@@ -647,9 +678,16 @@ terraform_link = {
 	from = "pc_barren"
 	to = "pc_savannah"
 
-	energy = 5000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+
 	duration = 720
-	
+
 	potential = {
 		from = { has_modifier = terraforming_candidate }
 	}
@@ -670,9 +708,16 @@ terraform_link = {
 	from = "pc_barren"
 	to = "pc_continental"
 
-	energy = 10000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 10000
+		}
+	}
+
 	duration = 1080
-	
+
 	potential = {
 		from = { has_modifier = terraforming_candidate }
 	}
@@ -693,9 +738,16 @@ terraform_link = {
 	from = "pc_barren"
 	to = "pc_tropical"
 
-	energy = 10000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 10000
+		}
+	}
+
 	duration = 1080
-	
+
 	potential = {
 		from = { has_modifier = terraforming_candidate }
 	}
@@ -716,9 +768,16 @@ terraform_link = {
 	from = "pc_barren"
 	to = "pc_ocean"
 
-	energy = 10000
+	resources = {
+		category = terraforming_ocean
+
+		cost = {
+			energy = 10000
+		}
+	}
+
 	duration = 1080
-	
+
 	potential = {
 		from = { has_modifier = terraforming_candidate }
 	}
@@ -732,6 +791,10 @@ terraform_link = {
 
 	ai_weight = {
 		weight = 5
+		modifier = {
+			factor = 4
+			has_trait = trait_aquatic
+		}
 	}
 }
 
@@ -740,9 +803,16 @@ terraform_link = {
 	from = "pc_barren"
 	to = "pc_arctic"
 
-	energy = 15000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 15000
+		}
+	}
+
 	duration = 1440
-	
+
 	potential = {
 		from = { has_modifier = terraforming_candidate }
 	}
@@ -763,9 +833,16 @@ terraform_link = {
 	from = "pc_barren"
 	to = "pc_tundra"
 
-	energy = 15000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 15000
+		}
+	}
+
 	duration = 1440
-	
+
 	potential = {
 		from = { has_modifier = terraforming_candidate }
 	}
@@ -786,9 +863,16 @@ terraform_link = {
 	from = "pc_barren"
 	to = "pc_alpine"
 
-	energy = 15000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 15000
+		}
+	}
+
 	duration = 1440
-	
+
 	potential = {
 		from = { has_modifier = terraforming_candidate }
 	}
@@ -809,9 +893,16 @@ terraform_link = {
 	from = "pc_barren_cold"
 	to = "pc_arctic"
 
-	energy = 5000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+
 	duration = 720
-	
+
 	potential = {
 		from = { has_modifier = terraforming_candidate }
 	}
@@ -832,9 +923,16 @@ terraform_link = {
 	from = "pc_barren_cold"
 	to = "pc_tundra"
 
-	energy = 5000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+
 	duration = 720
-	
+
 	potential = {
 		from = { has_modifier = terraforming_candidate }
 	}
@@ -855,9 +953,16 @@ terraform_link = {
 	from = "pc_barren_cold"
 	to = "pc_alpine"
 
-	energy = 5000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 5000
+		}
+	}
+
 	duration = 720
-	
+
 	potential = {
 		from = { has_modifier = terraforming_candidate }
 	}
@@ -878,9 +983,16 @@ terraform_link = {
 	from = "pc_barren_cold"
 	to = "pc_continental"
 
-	energy = 10000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 10000
+		}
+	}
+
 	duration = 1080
-	
+
 	potential = {
 		from = { has_modifier = terraforming_candidate }
 	}
@@ -901,9 +1013,16 @@ terraform_link = {
 	from = "pc_barren_cold"
 	to = "pc_tropical"
 
-	energy = 10000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 10000
+		}
+	}
+
 	duration = 1080
-	
+
 	potential = {
 		from = { has_modifier = terraforming_candidate }
 	}
@@ -924,7 +1043,14 @@ terraform_link = {
 	from = "pc_barren_cold"
 	to = "pc_ocean"
 
-	energy = 10000
+	resources = {
+		category = terraforming_ocean
+
+		cost = {
+			energy = 10000
+		}
+	}
+
 	duration = 1080
 
 	potential = {
@@ -940,15 +1066,26 @@ terraform_link = {
 
 	ai_weight = {
 		weight = 5
+		modifier = {
+			factor = 4
+			has_trait = trait_aquatic
+		}
 	}
 }
 
-terraform_link = { #only available in certain circumstances
+terraform_link = { #only countries with Hydrocentric can find this. Probably no reasonable way of making only them able to terraform it, though
 	from = "pc_frozen"
 	to = "pc_ocean"
 
-	energy = 15000
-	duration = 1440
+	resources = {
+		category = terraforming_ocean
+
+		cost = {
+			energy = @highestCost
+		}
+	}
+
+	duration = @highestTime
 
 	potential = {
 		from = { has_modifier = terraforming_candidate }
@@ -963,6 +1100,10 @@ terraform_link = { #only available in certain circumstances
 
 	ai_weight = {
 		weight = 5
+		modifier = {
+			factor = 4
+			has_trait = trait_aquatic
+		}
 	}
 }
 
@@ -970,9 +1111,16 @@ terraform_link = {
 	from = "pc_barren_cold"
 	to = "pc_desert"
 
-	energy = 15000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 15000
+		}
+	}
+
 	duration = 1440
-	
+
 	potential = {
 		from = { has_modifier = terraforming_candidate }
 	}
@@ -993,9 +1141,16 @@ terraform_link = {
 	from = "pc_barren_cold"
 	to = "pc_arid"
 
-	energy = 15000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 15000
+		}
+	}
+
 	duration = 1440
-	
+
 	potential = {
 		from = { has_modifier = terraforming_candidate }
 	}
@@ -1016,9 +1171,16 @@ terraform_link = {
 	from = "pc_barren_cold"
 	to = "pc_savannah"
 
-	energy = 15000
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = 15000
+		}
+	}
+
 	duration = 1440
-	
+
 	potential = {
 		from = { has_modifier = terraforming_candidate }
 	}
@@ -1043,7 +1205,14 @@ terraform_link = {
 	to = "pc_machine"
 	from = "pc_barren"
 
-	energy = @machineCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @machineCost
+		}
+	}
+
 	duration = @machineTime
 
 	potential = {
@@ -1053,23 +1222,7 @@ terraform_link = {
 
 	ai_weight = {
 		weight = 20
-		modifier = {
-			factor = 0
-			from = {
-				any_owned_pop = {
-					NOR = {
-						has_trait = trait_machine_unit
-						has_trait = trait_mechanical
-					}
-				}
-			}
-		}
-		modifier = {
-			factor = 0
-			from = {
-				is_colony = no
-			}
-		}
+		#It's a barren world!
 	}
 }
 
@@ -1077,7 +1230,14 @@ terraform_link = {
 	to = "pc_machine"
 	from = "pc_barren_cold"
 
-	energy = @machineCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @machineCost
+		}
+	}
+
 	duration = @machineTime
 
 	potential = {
@@ -1087,23 +1247,7 @@ terraform_link = {
 
 	ai_weight = {
 		weight = 20
-		modifier = {
-			factor = 0
-			from = {
-				any_owned_pop = {
-					NOR = {
-						has_trait = trait_machine_unit
-						has_trait = trait_mechanical
-					}
-				}
-			}
-		}
-		modifier = {
-			factor = 0
-			from = {
-				is_colony = no
-			}
-		}
+		#It's a barren world!
 	}
 }
 
@@ -1111,7 +1255,14 @@ terraform_link = {
 	to = "pc_machine"
 	from = "pc_nuked"
 
-	energy = @machineCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @machineCost
+		}
+	}
+
 	duration = @machineTime
 
 	potential = {
@@ -1123,18 +1274,13 @@ terraform_link = {
 		modifier = {
 			factor = 0
 			from = {
-				any_owned_pop = {
+				any_owned_species = {
 					NOR = {
 						has_trait = trait_machine_unit
 						has_trait = trait_mechanical
 					}
+					is_sapient = yes
 				}
-			}
-		}
-		modifier = {
-			factor = 0
-			from = {
-				is_colony = no
 			}
 		}
 	}
@@ -1144,7 +1290,14 @@ terraform_link = {
 	to = "pc_machine"
 	from = "pc_gaia"
 
-	energy = @machineCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @machineCost
+		}
+	}
+
 	duration = @machineTime
 
 	potential = {
@@ -1165,18 +1318,13 @@ terraform_link = {
 		modifier = {
 			factor = 0
 			from = {
-				any_owned_pop = {
+				any_owned_species = {
 					NOR = {
 						has_trait = trait_machine_unit
 						has_trait = trait_mechanical
 					}
+					is_sapient = yes
 				}
-			}
-		}
-		modifier = {
-			factor = 0
-			from = {
-				is_colony = no
 			}
 		}
 	}
@@ -1186,7 +1334,14 @@ terraform_link = {
 	to = "pc_machine"
 	from = "pc_hive"
 
-	energy = @machineCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @machineCost
+		}
+	}
+
 	duration = @machineTime
 
 	potential = {
@@ -1198,11 +1353,12 @@ terraform_link = {
 		modifier = {
 			factor = 0
 			from = {
-				any_owned_pop = {
+				any_owned_species = {
 					NOR = {
 						has_trait = trait_machine_unit
 						has_trait = trait_mechanical
 					}
+					is_sapient = yes
 				}
 			}
 		}
@@ -1213,7 +1369,14 @@ terraform_link = {
 	to = "pc_machine"
 	from = "pc_desert"
 
-	energy = @machineCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @machineCost
+		}
+	}
+
 	duration = @machineTime
 
 	potential = {
@@ -1225,18 +1388,13 @@ terraform_link = {
 		modifier = {
 			factor = 0
 			from = {
-				any_owned_pop = {
+				any_owned_species = {
 					NOR = {
 						has_trait = trait_machine_unit
 						has_trait = trait_mechanical
 					}
+					is_sapient = yes
 				}
-			}
-		}
-		modifier = {
-			factor = 0
-			from = {
-				is_colony = no
 			}
 		}
 	}
@@ -1246,7 +1404,14 @@ terraform_link = {
 	from = "pc_arid"
 	to = "pc_machine"
 
-	energy = @machineCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @machineCost
+		}
+	}
+
 	duration = @machineTime
 
 	potential = {
@@ -1258,18 +1423,13 @@ terraform_link = {
 		modifier = {
 			factor = 0
 			from = {
-				any_owned_pop = {
+				any_owned_species = {
 					NOR = {
 						has_trait = trait_machine_unit
 						has_trait = trait_mechanical
 					}
+					is_sapient = yes
 				}
-			}
-		}
-		modifier = {
-			factor = 0
-			from = {
-				is_colony = no
 			}
 		}
 	}
@@ -1279,7 +1439,14 @@ terraform_link = {
 	to = "pc_machine"
 	from = "pc_savannah"
 
-	energy = @machineCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @machineCost
+		}
+	}
+
 	duration = @machineTime
 
 	potential = {
@@ -1291,18 +1458,13 @@ terraform_link = {
 		modifier = {
 			factor = 0
 			from = {
-				any_owned_pop = {
+				any_owned_species = {
 					NOR = {
 						has_trait = trait_machine_unit
 						has_trait = trait_mechanical
 					}
+					is_sapient = yes
 				}
-			}
-		}
-		modifier = {
-			factor = 0
-			from = {
-				is_colony = no
 			}
 		}
 	}
@@ -1312,7 +1474,14 @@ terraform_link = {
 	to = "pc_machine"
 	from = "pc_arctic"
 
-	energy = @machineCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @machineCost
+		}
+	}
+
 	duration = @machineTime
 
 	potential = {
@@ -1324,18 +1493,13 @@ terraform_link = {
 		modifier = {
 			factor = 0
 			from = {
-				any_owned_pop = {
+				any_owned_species = {
 					NOR = {
 						has_trait = trait_machine_unit
 						has_trait = trait_mechanical
 					}
+					is_sapient = yes
 				}
-			}
-		}
-		modifier = {
-			factor = 0
-			from = {
-				is_colony = no
 			}
 		}
 	}
@@ -1345,7 +1509,14 @@ terraform_link = {
 	to = "pc_machine"
 	from = "pc_tundra"
 
-	energy = @machineCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @machineCost
+		}
+	}
+
 	duration = @machineTime
 
 	potential = {
@@ -1357,18 +1528,13 @@ terraform_link = {
 		modifier = {
 			factor = 0
 			from = {
-				any_owned_pop = {
+				any_owned_species = {
 					NOR = {
 						has_trait = trait_machine_unit
 						has_trait = trait_mechanical
 					}
+					is_sapient = yes
 				}
-			}
-		}
-		modifier = {
-			factor = 0
-			from = {
-				is_colony = no
 			}
 		}
 	}
@@ -1378,7 +1544,14 @@ terraform_link = {
 	to = "pc_machine"
 	from = "pc_alpine"
 
-	energy = @machineCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @machineCost
+		}
+	}
+
 	duration = @machineTime
 
 	potential = {
@@ -1390,18 +1563,13 @@ terraform_link = {
 		modifier = {
 			factor = 0
 			from = {
-				any_owned_pop = {
+				any_owned_species = {
 					NOR = {
 						has_trait = trait_machine_unit
 						has_trait = trait_mechanical
 					}
+					is_sapient = yes
 				}
-			}
-		}
-		modifier = {
-			factor = 0
-			from = {
-				is_colony = no
 			}
 		}
 	}
@@ -1411,7 +1579,14 @@ terraform_link = {
 	to = "pc_machine"
 	from = "pc_continental"
 
-	energy = @machineCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @machineCost
+		}
+	}
+
 	duration = @machineTime
 
 	potential = {
@@ -1423,18 +1598,13 @@ terraform_link = {
 		modifier = {
 			factor = 0
 			from = {
-				any_owned_pop = {
+				any_owned_species = {
 					NOR = {
 						has_trait = trait_machine_unit
 						has_trait = trait_mechanical
 					}
+					is_sapient = yes
 				}
-			}
-		}
-		modifier = {
-			factor = 0
-			from = {
-				is_colony = no
 			}
 		}
 	}
@@ -1444,7 +1614,14 @@ terraform_link = {
 	to = "pc_machine"
 	from = "pc_tropical"
 
-	energy = @machineCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @machineCost
+		}
+	}
+
 	duration = @machineTime
 
 	potential = {
@@ -1456,18 +1633,13 @@ terraform_link = {
 		modifier = {
 			factor = 0
 			from = {
-				any_owned_pop = {
+				any_owned_species = {
 					NOR = {
 						has_trait = trait_machine_unit
 						has_trait = trait_mechanical
 					}
+					is_sapient = yes
 				}
-			}
-		}
-		modifier = {
-			factor = 0
-			from = {
-				is_colony = no
 			}
 		}
 	}
@@ -1477,7 +1649,14 @@ terraform_link = {
 	to = "pc_machine"
 	from = "pc_ocean"
 
-	energy = @machineCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @machineCost
+		}
+	}
+
 	duration = @machineTime
 
 	potential = {
@@ -1489,18 +1668,13 @@ terraform_link = {
 		modifier = {
 			factor = 0
 			from = {
-				any_owned_pop = {
+				any_owned_species = {
 					NOR = {
 						has_trait = trait_machine_unit
 						has_trait = trait_mechanical
 					}
+					is_sapient = yes
 				}
-			}
-		}
-		modifier = {
-			factor = 0
-			from = {
-				is_colony = no
 			}
 		}
 	}
@@ -1510,7 +1684,14 @@ terraform_link = {
 	from = "pc_machine"
 	to = "pc_desert"
 
-	energy = @machineCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @machineCost
+		}
+	}
+
 	duration = @machineTime
 
 	potential = {
@@ -1537,7 +1718,14 @@ terraform_link = {
 	to = "pc_arid"
 	from = "pc_machine"
 
-	energy = @machineCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @machineCost
+		}
+	}
+
 	duration = @machineTime
 
 	potential = {
@@ -1564,7 +1752,14 @@ terraform_link = {
 	from = "pc_machine"
 	to = "pc_savannah"
 
-	energy = @machineCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @machineCost
+		}
+	}
+
 	duration = @machineTime
 
 	potential = {
@@ -1591,7 +1786,14 @@ terraform_link = {
 	from = "pc_machine"
 	to = "pc_arctic"
 
-	energy = @machineCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @machineCost
+		}
+	}
+
 	duration = @machineTime
 
 	potential = {
@@ -1618,7 +1820,14 @@ terraform_link = {
 	from = "pc_machine"
 	to = "pc_tundra"
 
-	energy = @machineCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @machineCost
+		}
+	}
+
 	duration = @machineTime
 
 	potential = {
@@ -1645,7 +1854,14 @@ terraform_link = {
 	from = "pc_machine"
 	to = "pc_alpine"
 
-	energy = @machineCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @machineCost
+		}
+	}
+
 	duration = @machineTime
 
 	potential = {
@@ -1672,7 +1888,14 @@ terraform_link = {
 	from = "pc_machine"
 	to = "pc_continental"
 
-	energy = @machineCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @machineCost
+		}
+	}
+
 	duration = @machineTime
 
 	potential = {
@@ -1699,7 +1922,14 @@ terraform_link = {
 	from = "pc_machine"
 	to = "pc_tropical"
 
-	energy = @machineCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @machineCost
+		}
+	}
+
 	duration = @machineTime
 
 	potential = {
@@ -1726,7 +1956,14 @@ terraform_link = {
 	from = "pc_machine"
 	to = "pc_ocean"
 
-	energy = @machineCost
+	resources = {
+		category = terraforming_ocean
+
+		cost = {
+			energy = @machineCost
+		}
+	}
+
 	duration = @machineTime
 
 	potential = {
@@ -1745,6 +1982,10 @@ terraform_link = {
 		modifier = {
 			factor = 0
 			has_authority = auth_machine_intelligence
+		}
+		modifier = {
+			factor = 4
+			has_trait = trait_aquatic
 		}
 	}
 }
@@ -1757,7 +1998,14 @@ terraform_link = {
 	to = "pc_hive"
 	from = "pc_barren"
 
-	energy = @hiveCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @hiveCost
+		}
+	}
+
 	duration = @hiveTime
 
 	potential = {
@@ -1767,20 +2015,6 @@ terraform_link = {
 
 	ai_weight = {
 		weight = 20
-		modifier = {
-			factor = 0
-			from = {
-				any_owned_pop = {
-					NOT = { has_trait = trait_hive_mind }
-				}
-			}
-		}
-		modifier = {
-			factor = 0
-			from = {
-				is_colony = no
-			}
-		}
 	}
 }
 
@@ -1788,7 +2022,14 @@ terraform_link = {
 	to = "pc_hive"
 	from = "pc_barren_cold"
 
-	energy = @hiveCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @hiveCost
+		}
+	}
+
 	duration = @hiveTime
 
 	potential = {
@@ -1798,20 +2039,6 @@ terraform_link = {
 
 	ai_weight = {
 		weight = 20
-		modifier = {
-			factor = 0
-			from = {
-				any_owned_pop = {
-					NOT = { has_trait = trait_hive_mind }
-				}
-			}
-		}
-		modifier = {
-			factor = 0
-			from = {
-				is_colony = no
-			}
-		}
 	}
 }
 
@@ -1819,7 +2046,14 @@ terraform_link = {
 	to = "pc_hive"
 	from = "pc_nuked"
 
-	energy = @hiveCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @hiveCost
+		}
+	}
+
 	duration = @hiveTime
 
 	potential = {
@@ -1830,16 +2064,12 @@ terraform_link = {
 		weight = 10
 		modifier = {
 			factor = 0
+			NOT = { has_origin = origin_necrophage }
 			from = {
-				any_owned_pop = {
+				any_owned_species = {
 					NOT = { has_trait = trait_hive_mind }
+					is_sapient = yes
 				}
-			}
-		}
-		modifier = {
-			factor = 0
-			from = {
-				is_colony = no
 			}
 		}
 	}
@@ -1849,7 +2079,14 @@ terraform_link = {
 	to = "pc_hive"
 	from = "pc_gaia"
 
-	energy = @hiveCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @hiveCost
+		}
+	}
+
 	duration = @hiveTime
 
 	potential = {
@@ -1869,16 +2106,12 @@ terraform_link = {
 		weight = 10
 		modifier = {
 			factor = 0
+			NOT = { has_origin = origin_necrophage }
 			from = {
-				any_owned_pop = {
+				any_owned_species = {
 					NOT = { has_trait = trait_hive_mind }
+					is_sapient = yes
 				}
-			}
-		}
-		modifier = {
-			factor = 0
-			from = {
-				is_colony = no
 			}
 		}
 	}
@@ -1888,7 +2121,14 @@ terraform_link = {
 	to = "pc_hive"
 	from = "pc_machine"
 
-	energy = @hiveCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @hiveCost
+		}
+	}
+
 	duration = @hiveTime
 
 	potential = {
@@ -1899,9 +2139,11 @@ terraform_link = {
 		weight = 10
 		modifier = {
 			factor = 0
+			NOT = { has_origin = origin_necrophage }
 			from = {
-				any_owned_pop = {
+				any_owned_species = {
 					NOT = { has_trait = trait_hive_mind }
+					is_sapient = yes
 				}
 			}
 		}
@@ -1912,7 +2154,14 @@ terraform_link = {
 	to = "pc_hive"
 	from = "pc_desert"
 
-	energy = @hiveCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @hiveCost
+		}
+	}
+
 	duration = @hiveTime
 
 	potential = {
@@ -1942,7 +2191,14 @@ terraform_link = {
 	from = "pc_arid"
 	to = "pc_hive"
 
-	energy = @hiveCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @hiveCost
+		}
+	}
+
 	duration = @hiveTime
 
 	potential = {
@@ -1953,16 +2209,12 @@ terraform_link = {
 		weight = 10
 		modifier = {
 			factor = 0
+			NOT = { has_origin = origin_necrophage }
 			from = {
-				any_owned_pop = {
+				any_owned_species = {
 					NOT = { has_trait = trait_hive_mind }
+					is_sapient = yes
 				}
-			}
-		}
-		modifier = {
-			factor = 0
-			from = {
-				is_colony = no
 			}
 		}
 	}
@@ -1972,7 +2224,14 @@ terraform_link = {
 	to = "pc_hive"
 	from = "pc_savannah"
 
-	energy = @hiveCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @hiveCost
+		}
+	}
+
 	duration = @hiveTime
 
 	potential = {
@@ -1983,16 +2242,12 @@ terraform_link = {
 		weight = 10
 		modifier = {
 			factor = 0
+			NOT = { has_origin = origin_necrophage }
 			from = {
-				any_owned_pop = {
+				any_owned_species = {
 					NOT = { has_trait = trait_hive_mind }
+					is_sapient = yes
 				}
-			}
-		}
-		modifier = {
-			factor = 0
-			from = {
-				is_colony = no
 			}
 		}
 	}
@@ -2002,7 +2257,14 @@ terraform_link = {
 	to = "pc_hive"
 	from = "pc_arctic"
 
-	energy = @hiveCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @hiveCost
+		}
+	}
+
 	duration = @hiveTime
 
 	potential = {
@@ -2013,16 +2275,12 @@ terraform_link = {
 		weight = 10
 		modifier = {
 			factor = 0
+			NOT = { has_origin = origin_necrophage }
 			from = {
-				any_owned_pop = {
+				any_owned_species = {
 					NOT = { has_trait = trait_hive_mind }
+					is_sapient = yes
 				}
-			}
-		}
-		modifier = {
-			factor = 0
-			from = {
-				is_colony = no
 			}
 		}
 	}
@@ -2032,7 +2290,14 @@ terraform_link = {
 	to = "pc_hive"
 	from = "pc_tundra"
 
-	energy = @hiveCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @hiveCost
+		}
+	}
+
 	duration = @hiveTime
 
 	potential = {
@@ -2043,16 +2308,12 @@ terraform_link = {
 		weight = 10
 		modifier = {
 			factor = 0
+			NOT = { has_origin = origin_necrophage }
 			from = {
-				any_owned_pop = {
+				any_owned_species = {
 					NOT = { has_trait = trait_hive_mind }
+					is_sapient = yes
 				}
-			}
-		}
-		modifier = {
-			factor = 0
-			from = {
-				is_colony = no
 			}
 		}
 	}
@@ -2062,7 +2323,14 @@ terraform_link = {
 	to = "pc_hive"
 	from = "pc_alpine"
 
-	energy = @hiveCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @hiveCost
+		}
+	}
+
 	duration = @hiveTime
 
 	potential = {
@@ -2073,16 +2341,12 @@ terraform_link = {
 		weight = 10
 		modifier = {
 			factor = 0
+			NOT = { has_origin = origin_necrophage }
 			from = {
-				any_owned_pop = {
+				any_owned_species = {
 					NOT = { has_trait = trait_hive_mind }
+					is_sapient = yes
 				}
-			}
-		}
-		modifier = {
-			factor = 0
-			from = {
-				is_colony = no
 			}
 		}
 	}
@@ -2092,7 +2356,14 @@ terraform_link = {
 	to = "pc_hive"
 	from = "pc_continental"
 
-	energy = @hiveCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @hiveCost
+		}
+	}
+
 	duration = @hiveTime
 
 	potential = {
@@ -2103,16 +2374,12 @@ terraform_link = {
 		weight = 10
 		modifier = {
 			factor = 0
+			NOT = { has_origin = origin_necrophage }
 			from = {
-				any_owned_pop = {
+				any_owned_species = {
 					NOT = { has_trait = trait_hive_mind }
+					is_sapient = yes
 				}
-			}
-		}
-		modifier = {
-			factor = 0
-			from = {
-				is_colony = no
 			}
 		}
 	}
@@ -2122,7 +2389,14 @@ terraform_link = {
 	to = "pc_hive"
 	from = "pc_tropical"
 
-	energy = @hiveCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @hiveCost
+		}
+	}
+
 	duration = @hiveTime
 
 	potential = {
@@ -2133,16 +2407,12 @@ terraform_link = {
 		weight = 10
 		modifier = {
 			factor = 0
+			NOT = { has_origin = origin_necrophage }
 			from = {
-				any_owned_pop = {
+				any_owned_species = {
 					NOT = { has_trait = trait_hive_mind }
+					is_sapient = yes
 				}
-			}
-		}
-		modifier = {
-			factor = 0
-			from = {
-				is_colony = no
 			}
 		}
 	}
@@ -2152,7 +2422,14 @@ terraform_link = {
 	to = "pc_hive"
 	from = "pc_ocean"
 
-	energy = @hiveCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @hiveCost
+		}
+	}
+
 	duration = @hiveTime
 
 	potential = {
@@ -2163,16 +2440,12 @@ terraform_link = {
 		weight = 10
 		modifier = {
 			factor = 0
+			NOT = { has_origin = origin_necrophage }
 			from = {
-				any_owned_pop = {
+				any_owned_species = {
 					NOT = { has_trait = trait_hive_mind }
+					is_sapient = yes
 				}
-			}
-		}
-		modifier = {
-			factor = 0
-			from = {
-				is_colony = no
 			}
 		}
 	}
@@ -2182,7 +2455,14 @@ terraform_link = {
 	from = "pc_hive"
 	to = "pc_desert"
 
-	energy = @hiveCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @hiveCost
+		}
+	}
+
 	duration = @hiveTime
 
 	potential = {
@@ -2209,7 +2489,14 @@ terraform_link = {
 	to = "pc_arid"
 	from = "pc_hive"
 
-	energy = @hiveCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @hiveCost
+		}
+	}
+
 	duration = @hiveTime
 
 	potential = {
@@ -2236,7 +2523,14 @@ terraform_link = {
 	from = "pc_hive"
 	to = "pc_savannah"
 
-	energy = @hiveCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @hiveCost
+		}
+	}
+
 	duration = @hiveTime
 
 	potential = {
@@ -2263,7 +2557,14 @@ terraform_link = {
 	from = "pc_hive"
 	to = "pc_arctic"
 
-	energy = @hiveCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @hiveCost
+		}
+	}
+
 	duration = @hiveTime
 
 	potential = {
@@ -2290,7 +2591,14 @@ terraform_link = {
 	from = "pc_hive"
 	to = "pc_tundra"
 
-	energy = @hiveCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @hiveCost
+		}
+	}
+
 	duration = @hiveTime
 
 	potential = {
@@ -2317,7 +2625,14 @@ terraform_link = {
 	from = "pc_hive"
 	to = "pc_alpine"
 
-	energy = @hiveCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @hiveCost
+		}
+	}
+
 	duration = @hiveTime
 
 	potential = {
@@ -2344,7 +2659,14 @@ terraform_link = {
 	from = "pc_hive"
 	to = "pc_continental"
 
-	energy = @hiveCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @hiveCost
+		}
+	}
+
 	duration = @hiveTime
 
 	potential = {
@@ -2371,7 +2693,14 @@ terraform_link = {
 	from = "pc_hive"
 	to = "pc_tropical"
 
-	energy = @hiveCost
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @hiveCost
+		}
+	}
+
 	duration = @hiveTime
 
 	potential = {
@@ -2398,7 +2727,14 @@ terraform_link = {
 	from = "pc_hive"
 	to = "pc_ocean"
 
-	energy = @hiveCost
+	resources = {
+		category = terraforming_ocean
+
+		cost = {
+			energy = @hiveCost
+		}
+	}
+
 	duration = @hiveTime
 
 	potential = {
@@ -2427,90 +2763,210 @@ terraform_link = {
 
 terraform_link = {
 	from = pc_gray_goo
-																to = pc_desert
+	to = pc_desert
+
 	condition = { has_technology = "tech_climate_restoration" }
-	energy = 1000
+
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @lClusterCost
+		}
+	}
 	duration = 72
 	potential = { from = { has_modifier = terraforming_candidate } }
 	effect = { from = { remove_modifier = terraforming_candidate } }
+
+	ai_weight = {
+		weight = 10
+	}
 }
 
 terraform_link = {
 	from = pc_gray_goo
-																to = pc_arid
+	to = pc_arid
+
 	condition = { has_technology = "tech_climate_restoration" }
-	energy = 1000
+
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @lClusterCost
+		}
+	}
+
 	duration = 72
 	potential = { from = { has_modifier = terraforming_candidate } }
 	effect = { from = { remove_modifier = terraforming_candidate } }
+
+	ai_weight = {
+		weight = 10
+	}
 }
 
 terraform_link = {
 	from = pc_gray_goo
-																to = pc_savannah
+	to = pc_savannah
+
 	condition = { has_technology = "tech_climate_restoration" }
-	energy = 1000
+
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @lClusterCost
+		}
+	}
+
 	duration = 72
 	potential = { from = { has_modifier = terraforming_candidate } }
 	effect = { from = { remove_modifier = terraforming_candidate } }
+
+	ai_weight = {
+		weight = 10
+	}
 }
 
 terraform_link = {
 	from = pc_gray_goo
-																to = pc_ocean
+	to = pc_ocean
+
 	condition = { has_technology = "tech_climate_restoration" }
-	energy = 1000
+
+	resources = {
+		category = terraforming_ocean
+
+		cost = {
+			energy = @lClusterCost
+		}
+	}
+
 	duration = 72
 	potential = { from = { has_modifier = terraforming_candidate } }
 	effect = { from = { remove_modifier = terraforming_candidate } }
+
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 2
+			has_trait = trait_aquatic
+		}
+	}
 }
 
 terraform_link = {
 	from = pc_gray_goo
-																to = pc_continental
+	to = pc_continental
+
 	condition = { has_technology = "tech_climate_restoration" }
-	energy = 1000
+
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @lClusterCost
+		}
+	}
+
 	duration = 72
 	potential = { from = { has_modifier = terraforming_candidate } }
 	effect = { from = { remove_modifier = terraforming_candidate } }
+
+	ai_weight = {
+		weight = 10
+	}
 }
 
 terraform_link = {
 	from = pc_gray_goo
-																to = pc_tropical
+	to = pc_tropical
+
 	condition = { has_technology = "tech_climate_restoration" }
-	energy = 1000
+
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @lClusterCost
+		}
+	}
+
 	duration = 72
 	potential = { from = { has_modifier = terraforming_candidate } }
 	effect = { from = { remove_modifier = terraforming_candidate } }
+
+	ai_weight = {
+		weight = 10
+	}
 }
 
 terraform_link = {
 	from = pc_gray_goo
-																to = pc_arctic
+	to = pc_arctic
+
 	condition = { has_technology = "tech_climate_restoration" }
-	energy = 1000
+
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @lClusterCost
+		}
+	}
+
 	duration = 72
 	potential = { from = { has_modifier = terraforming_candidate } }
 	effect = { from = { remove_modifier = terraforming_candidate } }
+
+	ai_weight = {
+		weight = 10
+	}
 }
 
 terraform_link = {
 	from = pc_gray_goo
-																to = pc_alpine
+	to = pc_alpine
+
 	condition = { has_technology = "tech_climate_restoration" }
-	energy = 1000
+
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @lClusterCost
+		}
+	}
+
 	duration = 72
 	potential = { from = { has_modifier = terraforming_candidate } }
 	effect = { from = { remove_modifier = terraforming_candidate } }
+
+	ai_weight = {
+		weight = 10
+	}
 }
 
 terraform_link = {
 	from = pc_gray_goo
-																to = pc_tundra
+	to = pc_tundra
+
 	condition = { has_technology = "tech_climate_restoration" }
-	energy = 1000
+
+	resources = {
+		category = terraforming
+
+		cost = {
+			energy = @lClusterCost
+		}
+	}
+
 	duration = 72
 	potential = { from = { has_modifier = terraforming_candidate } }
 	effect = { from = { remove_modifier = terraforming_candidate } }
+
+	ai_weight = {
+		weight = 10
+	}
 }

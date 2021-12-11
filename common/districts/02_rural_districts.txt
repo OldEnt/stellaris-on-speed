@@ -273,6 +273,14 @@ district_farming = {
 
 	potential = {
 		uses_district_set = standard
+		OR = {
+			NOT = { exists = owner }
+			NOT = { owner = { is_anglers_empire = yes } }
+			AND = {
+				owner = { is_anglers_empire = yes }
+				NOT = { is_planet_class = pc_ocean }
+			}
+		}
 	}
 
 	allow = {
@@ -288,6 +296,17 @@ district_farming = {
 		category = planet_districts
 		cost = {
 			minerals = @base_cost
+		}
+		# Anglers Civic cost effect
+		cost = {
+			trigger = {
+				AND = {
+					exists = owner
+					owner = { is_anglers_empire = yes }
+					planet = { has_climate = wet }
+				}
+			}
+			minerals = -50
 		}
 		upkeep = {
 			energy = 5
@@ -307,6 +326,7 @@ district_farming = {
 		}
 		modifier = {
 			planet_housing_add = 1
+			planet_max_buildings_add = 0.25
 		}
 	}
 
@@ -350,6 +370,10 @@ district_farming = {
 			owner = {
 				is_gestalt = no
 				is_fallen_empire_spiritualist = no
+				NAND = {
+					is_anglers_empire = yes
+					PREV = { planet = { is_wet = yes } }
+				}
 			}
 		}
 		modifier = {
@@ -367,6 +391,18 @@ district_farming = {
 		}
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_anglers_empire = yes }
+			planet = { is_wet = yes }
+		}
+		modifier = {
+			job_angler_add = 1
+			job_pearl_diver_add = 1
+		}
+	}
+
 	triggered_desc = {
 		trigger = {
 			exists = owner
@@ -380,6 +416,10 @@ district_farming = {
 			owner = {
 				is_gestalt = no
 				is_fallen_empire_spiritualist = no
+				NAND = {
+					is_anglers_empire = yes
+					PREV = { planet = { is_wet = yes } }
+				}
 			}
 		}
 		text = job_farmer_effect_desc
@@ -390,6 +430,22 @@ district_farming = {
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		text = job_fe_acolyte_farm_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_anglers_empire = yes }
+			planet = { is_wet = yes }
+		}
+		text = job_aqu_angler_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_anglers_empire = yes }
+			planet = { is_wet = yes }
+		}
+		text = job_pearl_diver_effect_desc
 	}
 
 	prerequisites = {
@@ -780,6 +836,11 @@ district_farming_uncapped = {
 		OR = {
 			uses_district_set = hive_world
 			uses_district_set = shattered_ring_world
+			AND = {
+				exists = owner
+				owner = { is_anglers_empire = yes }
+				planet = { is_planet_class = pc_ocean }
+			}
 		}
 	}
 
@@ -797,6 +858,17 @@ district_farming_uncapped = {
 		category = planet_districts
 		cost = {
 			minerals = @base_cost
+		}
+		# Anglers Civic cost effect
+		cost = {
+			trigger = {
+				AND = {
+					exists = owner
+					owner = { is_anglers_empire = yes }
+					planet = { is_planet_class = pc_ocean }
+				}
+			}
+			minerals = -50
 		}
 		upkeep = {
 			energy = 5
@@ -816,6 +888,7 @@ district_farming_uncapped = {
 		}
 		modifier = {
 			planet_housing_add = 1
+			planet_max_buildings_add = 0.25
 		}
 	}
 
@@ -859,6 +932,10 @@ district_farming_uncapped = {
 			owner = {
 				is_gestalt = no
 				is_fallen_empire_spiritualist = no
+				NAND = {
+					is_anglers_empire = yes
+					PREV = { planet = { is_wet = yes } }
+				}
 			}
 		}
 		modifier = {
@@ -876,6 +953,18 @@ district_farming_uncapped = {
 		}
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_anglers_empire = yes }
+			planet = { is_wet = yes }
+		}
+		modifier = {
+			job_angler_add = 1
+			job_pearl_diver_add = 1
+		}
+	}
+
 	triggered_desc = {
 		trigger = {
 			exists = owner
@@ -889,6 +978,10 @@ district_farming_uncapped = {
 			owner = {
 				is_gestalt = no
 				is_fallen_empire_spiritualist = no
+				NAND = {
+					is_anglers_empire = yes
+					PREV = { planet = { is_wet = yes } }
+				}
 			}
 		}
 		text = job_farmer_effect_desc
@@ -899,6 +992,22 @@ district_farming_uncapped = {
 			owner = { is_fallen_empire_spiritualist = yes }
 		}
 		text = job_fe_acolyte_farm_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_anglers_empire = yes  }
+			planet = { is_wet = yes }
+		}
+		text = job_aqu_angler_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_anglers_empire = yes  }
+			planet = { is_wet = yes }
+		}
+		text = job_pearl_diver_effect_desc
 	}
 
 	ai_resource_production = {

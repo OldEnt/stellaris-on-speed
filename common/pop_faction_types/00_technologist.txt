@@ -5,6 +5,7 @@
 technologist = {
 	election_header = "GFX_faction_header_yellow"
 	guiding_ethic = ethic_materialist
+	use_guiding_ethic_as_pop_filter = no
 
 	unique = yes
 	support_multiplier = 1
@@ -21,12 +22,6 @@ technologist = {
 		has_encountered_other_species = yes
 		NOT = { has_ethic = ethic_gestalt_consciousness }
 		NOT = { has_country_flag = suppress_vanilla_factions }
-		count_owned_pop = {
-			count >= 5
-			limit = {
-				has_ethic = ethic_materialist
-			}
-		}
 	}
 
 	parameters = {
@@ -43,16 +38,14 @@ technologist = {
 	}
 
 	can_join_faction = {
-		is_shackled_robot = no
-		NOT = { has_trait = trait_nerve_stapled }
-		NOR = {
-			has_ethic = ethic_spiritualist
-			has_ethic = ethic_fanatic_spiritualist
-		}
 		OR = {
 			has_ethic = ethic_materialist
-			has_ethic = ethic_fanatic_materialist
 			is_robot_pop = yes
+		}
+		is_shackled_robot = no
+		NOR = {
+			has_trait = trait_nerve_stapled
+			has_ethic = ethic_spiritualist
 		}
 	}
 

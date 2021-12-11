@@ -160,37 +160,17 @@ building_foundry_1 = {
 	}
 
 	ai_resource_production = {
-		alloys = 20 # This is an important building for future upgrades
+		alloys = 5
 		trigger = {
 			always = yes
 		}
 	}
-	ai_resource_production = { # Overvalue this building if this planet is a major source of alloys.
-		alloys = 20
-		trigger = {
-			planet_resource_compare = {
-				resource = alloys
-				value >= 40
-				type = produces
-			}
-		}
-	}
 	ai_resource_production = {
-		alloys = 20
+		alloys = 40
 		trigger = {
 			planet_resource_compare = {
 				resource = alloys
-				value >= 80
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		alloys = 20
-		trigger = {
-			planet_resource_compare = {
-				resource = alloys
-				value >= 120
+				value >= 100
 				type = produces
 			}
 		}
@@ -382,31 +362,11 @@ building_foundry_2 = {
 		}
 	}
 	ai_resource_production = {
-		alloys = 40
+		alloys = 80
 		trigger = {
 			planet_resource_compare = {
 				resource = alloys
-				value >= 40
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		alloys = 40
-		trigger = {
-			planet_resource_compare = {
-				resource = alloys
-				value >= 80
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		alloys = 8
-		trigger = {
-			planet_resource_compare = {
-				resource = alloys
-				value >= 24
+				value >= 100
 				type = produces
 			}
 		}
@@ -594,31 +554,11 @@ building_foundry_3 = {
 		}
 	}
 	ai_resource_production = {
-		alloys = 80
-		trigger = {
-			planet_resource_compare = {
-				resource = alloys
-				value >= 80
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		alloys = 80
+		alloys = 160
 		trigger = {
 			planet_resource_compare = {
 				resource = alloys
 				value >= 160
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		alloys = 80
-		trigger = {
-			planet_resource_compare = {
-				resource = alloys
-				value >= 240
 				type = produces
 			}
 		}
@@ -740,37 +680,17 @@ building_factory_1 = {
 	}
 
 	ai_resource_production = {
-		consumer_goods = 40  # This is an important building for future upgrades
+		consumer_goods = 5
 		trigger = {
 			always = yes
 		}
 	}
-	ai_resource_production = { # Overvalue this building if this planet is a major source of consumer goods
-		consumer_goods = 40
-		trigger = {
-			planet_resource_compare = {
-				resource = consumer_goods
-				value >= 80
-				type = produces
-			}
-		}
-	}
 	ai_resource_production = {
 		consumer_goods = 40
 		trigger = {
 			planet_resource_compare = {
 				resource = consumer_goods
-				value >= 160
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		consumer_goods = 40
-		trigger = {
-			planet_resource_compare = {
-				resource = consumer_goods
-				value >= 240
+				value >= 100
 				type = produces
 			}
 		}
@@ -903,37 +823,17 @@ building_factory_2 = {
 	}
 
 	ai_resource_production = {
-		consumer_goods = 80
+		consumer_goods = 60
 		trigger = {
 			always = yes
 		}
 	}
 	ai_resource_production = {
-		consumer_goods = 80
+		consumer_goods = 100
 		trigger = {
 			planet_resource_compare = {
 				resource = consumer_goods
-				value >= 80
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		consumer_goods = 80
-		trigger = {
-			planet_resource_compare = {
-				resource = consumer_goods
-				value >= 160
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		consumer_goods = 80
-		trigger = {
-			planet_resource_compare = {
-				resource = consumer_goods
-				value >= 240
+				value >= 100
 				type = produces
 			}
 		}
@@ -1065,37 +965,17 @@ building_factory_3 = {
 	}
 
 	ai_resource_production = {
-		consumer_goods = 120
+		consumer_goods = 100
 		trigger = {
 			always = yes
 		}
 	}
 	ai_resource_production = {
-		consumer_goods = 120
+		consumer_goods = 200
 		trigger = {
 			planet_resource_compare = {
 				resource = consumer_goods
-				value >= 120
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		consumer_goods = 100
-		trigger = {
-			planet_resource_compare = {
-				resource = consumer_goods
-				value >= 220
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		consumer_goods = 100
-		trigger = {
-			planet_resource_compare = {
-				resource = consumer_goods
-				value >= 320
+				value >= 200
 				type = produces
 			}
 		}
@@ -1492,45 +1372,25 @@ building_ministry_production = {
 
 	ai_resource_production = {
 		trigger = { always = yes }
-		alloys = 15
-		consumer_goods = 30
+		alloys = 5
+		consumer_goods = 15
 	}
 	ai_resource_production = {
-		alloys = 15
+		alloys = 30
 		trigger = {
 			planet_resource_compare = {
 				resource = alloys
-				value >= 100
+				value >= 200
 				type = produces
 			}
 		}
 	}
 	ai_resource_production = {
-		alloys = 3
-		trigger = {
-			planet_resource_compare = {
-				resource = alloys
-				value >= 40
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		consumer_goods = 25
+		consumer_goods = 40
 		trigger = {
 			planet_resource_compare = {
 				resource = consumer_goods
-				value >= 180
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		consumer_goods = 25
-		trigger = {
-			planet_resource_compare = {
-				resource = consumer_goods
-				value >= 330
+				value >= 200
 				type = produces
 			}
 		}
@@ -1664,7 +1524,7 @@ building_production_center = {
 
 	ai_resource_production = {
 		trigger = { always = yes }
-		alloys = 15
+		alloys = 5
 	}
 	ai_resource_production = {
 		trigger = {
@@ -1672,20 +1532,10 @@ building_production_center = {
 				country_uses_consumer_goods = yes
 			}
 		}
-		consumer_goods = 30
+		consumer_goods = 15
 	}
 	ai_resource_production = {
-		alloys = 15
-		trigger = {
-			planet_resource_compare = {
-				resource = alloys
-				value >= 100
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		alloys = 15
+		alloys = 30
 		trigger = {
 			planet_resource_compare = {
 				resource = alloys
@@ -1695,21 +1545,12 @@ building_production_center = {
 		}
 	}
 	ai_resource_production = {
-		consumer_goods = 15
+		consumer_goods = 40
 		trigger = {
+			owner = { country_uses_consumer_goods = yes }
 			planet_resource_compare = {
 				resource = consumer_goods
-				value >= 180
-				type = produces
-			}
-		}
-	}
-	ai_resource_production = {
-		consumer_goods = 25
-		trigger = {
-			planet_resource_compare = {
-				resource = consumer_goods
-				value >= 330
+				value >= 250
 				type = produces
 			}
 		}

@@ -390,23 +390,12 @@ building_institute = {
 		trigger = {
 			planet_resource_compare = {
 				resource = physics_research
-				value >= 100
+				value >= 150
 			}
 		}
-		physics_research = 15
-		society_research = 15
-		engineering_research = 15
-	}
-	ai_resource_production = {
-		trigger = {
-			planet_resource_compare = {
-				resource = physics_research
-				value >= 200
-			}
-		}
-		physics_research = 15
-		society_research = 15
-		engineering_research = 15
+		physics_research = 25
+		society_research = 25
+		engineering_research = 25
 	}
 }
 

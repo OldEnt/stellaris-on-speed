@@ -373,7 +373,7 @@ tech_space_science_3 = {
 	weight = @tier2weight1
 
 	modifier = {
-		station_researchers_produces_mult = 0.15
+		station_researchers_produces_mult = 0.10
 	}
 
 	weight_modifier = {
@@ -406,7 +406,7 @@ tech_space_science_4 = {
 	weight = @tier2weight3
 
 	modifier = {
-		station_researchers_produces_mult = 0.15
+		station_researchers_produces_mult = 0.10
 	}
 
 	weight_modifier = {
@@ -439,7 +439,7 @@ tech_space_science_5 = {
 	weight = @tier3weight1
 
 	modifier = {
-		station_researchers_produces_mult = 0.30
+		station_researchers_produces_mult = 0.10
 	}
 
 	weight_modifier = {
@@ -800,13 +800,13 @@ tech_automated_exploration = {
 			is_ai = no
 			years_passed > 2
 		}
-		
+
 		modifier = {
 			factor = 2.0
 			is_ai = no
 			years_passed > 3
 		}
-		
+
 		modifier = {
 			factor = 2.0
 			is_ai = no
@@ -2282,7 +2282,7 @@ tech_power_plant_2 = {
 
 	modifier = {
 		planet_technician_energy_produces_mult = 0.2
-		starbase_constructions_energy_produces_mult = 0.20
+		starbase_constructions_energy_produces_mult = 0.10
 	}
 
 	weight_modifier = {
@@ -2322,7 +2322,7 @@ tech_power_plant_3 = {
 
 	modifier = {
 		planet_technician_energy_produces_mult = 0.2
-		starbase_constructions_energy_produces_mult = 0.20
+		starbase_constructions_energy_produces_mult = 0.10
 	}
 
 	weight_modifier = {
@@ -2362,7 +2362,7 @@ tech_power_plant_4 = {
 
 	modifier = {
 		planet_technician_energy_produces_mult = 0.2
-		starbase_constructions_energy_produces_mult = 0.20
+		starbase_constructions_energy_produces_mult = 0.10
 	}
 
 	weight_modifier = {
@@ -2753,7 +2753,7 @@ tech_ftl_inhibitor = {
 		factor = 4 #FTL inhibitor is very important
 		modifier = {
 			factor = 1.25
-			has_tradition = tr_supremacy_adopt
+			has_tradition = tr_unyielding_adopt
 		}
 		modifier = {
 			factor = 1.25

@@ -1412,7 +1412,41 @@ d_alloys_5 = {
 	resources = {
 		category = orbital_mining_deposits
 		produces = {
-			alloys = 25
+			alloys = 5
+		}
+	}
+
+	potential = { always = no }
+	drop_weight = { weight = 0 }
+}
+
+##################################
+#########	 FOOD	  ############
+##################################
+
+d_food_3 = {
+	station = shipclass_mining_station
+	is_for_colonizable = no
+
+	resources = {
+		category = orbital_mining_deposits
+		produces = {
+			food = 15
+		}
+	}
+
+	potential = { always = no }
+	drop_weight = { weight = 0 }
+}
+
+d_food_10 = {
+	station = shipclass_mining_station
+	is_for_colonizable = no
+
+	resources = {
+		category = orbital_mining_deposits
+		produces = {
+			food = 50
 		}
 	}
 

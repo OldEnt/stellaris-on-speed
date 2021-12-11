@@ -408,6 +408,7 @@ undead_army = {
 	time = 12
 	icon = GFX_army_type_undead
 	pop_limited = no
+	disband_if_species_lacks_rights = no #i.e. if you resurrect your enemies, you get to keep these armies, even if you are a purifier
 	prerequisites = { "tech_assault_armies" }
 
 	resources = {

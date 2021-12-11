@@ -1271,7 +1271,7 @@ d_ancient_one = {
 			society_research = 4
 		}
 	}
-	
+
 	drop_weight = {
 		weight = 0
 	}
@@ -1287,7 +1287,7 @@ d_numas_breath = {
 		district_generator_max = 3
 		planet_max_districts_add = 2
 	}
-	
+
 	drop_weight = {
 		weight = 0
 		#Bought from Caravaneer Fleet 2
@@ -1527,6 +1527,85 @@ d_fungal_study_zone = {
 
 	planet_modifier = {
 		planet_jobs_society_research_produces_mult = 0.15
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_landed_dragon = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+
+	resources = {
+		category = planet_deposits
+		produces = {
+			unity = 25
+		}
+		upkeep = {
+			food = 75
+		}
+	}
+	planet_modifier = {
+		planet_stability_add = 10
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_dayside_farm = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+
+	icon = d_solar_array
+
+	planet_modifier = {
+		district_generator_max = 6
+		planet_jobs_energy_produces_mult = 0.30
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}
+
+d_radiotrophic_preserve = {
+	is_for_colonizable = yes
+	category = deposit_cat_rare
+	icon = d_bunker_door
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		job_entertainer_add = 3
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = yes
+				has_civic = civic_machine_servitor
+			}
+		}
+		job_bio_trophy_add = 3
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { 
+				is_gestalt = yes
+				NOT = { has_civic = civic_machine_servitor }
+			}
+		}
+		planet_jobs_unity_produces_mult = 0.05
+	}
+
+	planet_modifier = {
+		planet_jobs_society_research_produces_mult = 0.05
 	}
 
 	drop_weight = {

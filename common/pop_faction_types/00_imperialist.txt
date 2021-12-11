@@ -4,7 +4,7 @@
 
 imperialist = {
 	election_header = "GFX_faction_header_yellow"
-	guiding_ethic = ethic_militarist
+	guiding_ethic = ethic_militarist #only pops of this ethic can join the faction
 
 	unique = yes
 	support_multiplier = 1
@@ -21,12 +21,23 @@ imperialist = {
 		has_encountered_other_species = yes
 		NOT = { has_ethic = ethic_gestalt_consciousness }
 		NOT = { has_country_flag = suppress_vanilla_factions }
-		count_owned_pop = {
-			count >= 5
-			limit = {
-				has_ethic = ethic_militarist
-			}
-		}
+		# if = { Note: define POP_FACTION_MIN_POTENTIAL_MEMBERS does this now!
+		# 	limit = {
+		# 		has_faction = imperialist
+		# 	}
+		# 	any_pop_faction = {
+		# 		is_pop_faction_type = imperialist
+		# 		num_pops >= 5
+		# 	}
+		# }
+		# else = {
+		# 	count_owned_pop = {
+		# 		count >= 5
+		# 		limit = {
+		# 			has_ethic = ethic_militarist
+		# 		}
+		# 	}
+		# }
 	}
 
 	parameters = {
@@ -46,10 +57,6 @@ imperialist = {
 	can_join_faction = {
 		is_shackled_robot = no
 		NOT = { has_trait = trait_nerve_stapled }
-		OR = {
-			has_ethic = ethic_militarist
-			has_ethic = ethic_fanatic_militarist
-		}
 	}
 
 	attraction = {

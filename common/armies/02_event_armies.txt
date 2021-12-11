@@ -562,3 +562,28 @@ imperial_legion = {
 		}
 	}
 }
+
+giant_undead_army = {
+	damage = 3.00
+	health = 7.00
+	has_morale = no
+	collateral_damage = 3.5
+	morale_damage = 3
+	war_exhaustion = 0.50
+	icon = GFX_army_type_undead
+	pop_limited = no
+	prerequisites = { "tech_assault_armies" }
+
+	resources = {
+		category = armies
+
+		upkeep = {
+			energy = 7.5
+		}
+	}
+
+
+	potential = {
+		always = no
+	}
+}

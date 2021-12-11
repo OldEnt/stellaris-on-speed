@@ -304,6 +304,7 @@ ruler = {
 					has_high_living_standard_type = yes
 					has_normal_living_standard_type = yes
 					has_stratified_living_standard_type = yes
+					has_decadent_living_standard_type = yes
 				}
 			}
 			energy = @living_standard_energy_normal
@@ -696,7 +697,10 @@ specialist = {
 		upkeep = {
 			trigger = {
 				is_robotic_species = yes
-				has_high_living_standard_type = yes
+				OR = {
+					has_high_living_standard_type = yes
+					has_decadent_living_standard_type = yes
+				}
 			}
 			energy = @living_standard_energy_normal
 			consumer_goods = @living_standard_luxuries_high
@@ -1176,6 +1180,7 @@ worker = {
 				OR = {
 					has_normal_living_standard_type = yes
 					has_academic_living_standard_type = yes
+					has_decadent_living_standard_type = yes
 				}
 			}
 			energy = @living_standard_energy_normal

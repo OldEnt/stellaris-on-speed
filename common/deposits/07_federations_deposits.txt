@@ -708,7 +708,7 @@ d_federation_hegemony_monument_1 = {
 	icon = d_monument_in_space
 
 	country_modifier = {
-		country_base_influence_produces_add = 0.25
+		country_monuments_influence_produces_add = 0.25
 	}
 
 	drop_weight = {
@@ -723,7 +723,7 @@ d_federation_hegemony_monument_2 = {
 	icon = d_monument_in_space
 
 	country_modifier = {
-		country_base_influence_produces_add = 0.5
+		country_monuments_influence_produces_add = 0.5
 	}
 
 	drop_weight = {

@@ -29,6 +29,10 @@ decision_launch_anticrime_campaign = {
 
 	ai_weight = {
 		weight = 0
+		modifier = {
+			weight = 2
+			planet_crime > 50
+		}
 	}
 }
 
@@ -51,6 +55,10 @@ decision_end_anticrime_campaign = {
 
 	ai_weight = {
 		weight = 0
+		modifier = {
+			weight = 1000 #no cost to end it, so may as well do so quickly
+			planet_crime <= 0
+		}
 	}
 }
 
@@ -82,6 +90,14 @@ decision_negotiate_with_crime_lords = {
 
 	ai_weight = {
 		weight = 0
+		modifier = {
+			weight = 2
+			planet_crime > 50
+			has_branch_office = yes
+			branch_office_owner = {
+				is_criminal_syndicate = yes
+			}
+		}
 	}
 }
 
@@ -105,5 +121,9 @@ decision_end_crime_lord_deal = {
 
 	ai_weight = {
 		weight = 0
+		modifier = {
+			weight = 5
+			planet_crime <= 0
+		}
 	}
 }

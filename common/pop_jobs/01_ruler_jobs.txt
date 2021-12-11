@@ -16,9 +16,7 @@ head_researcher = {
 		is_sapient = yes
 	}
 
-	possible = {
-		ruler_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_ruler_job
 
 	resources = {
 		category = planet_researchers
@@ -177,8 +175,8 @@ high_priest = {
 		is_sapient = yes
 	}
 
+	possible_precalc = can_fill_ruler_job
 	possible = {
-		ruler_job_check_trigger = yes
 		NOT = { has_ethic = ethic_materialist }
 	}
 
@@ -320,9 +318,7 @@ administrator = {
 		is_sapient = yes
 	}
 
-	possible = {
-		ruler_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_ruler_job
 
 	resources = {
 		category = planet_administrators
@@ -445,9 +441,7 @@ noble = {
 		is_sapient = yes
 	}
 
-	possible = {
-		ruler_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_ruler_job
 
 	resources = {
 		category = planet_nobles
@@ -539,9 +533,7 @@ merchant = {
 		is_sapient = yes
 	}
 
-	possible = {
-		ruler_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_ruler_job
 
 	planet_modifier = {
 		planet_amenities_add = 5
@@ -685,9 +677,7 @@ executive = {
 		is_sapient = yes
 	}
 
-	possible = {
-		ruler_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_ruler_job
 
 	resources = {
 		category = planet_executives

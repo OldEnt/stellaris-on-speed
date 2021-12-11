@@ -111,7 +111,7 @@ succession_power_diplomatic_weight = {
 			add = 25
 			federation = {
 				has_federation_type = trade_federation
-				NOT = { has_federation_law = succession_power_economy }
+				NOT = { federation = { has_federation_law = succession_power_economy } }
 			}
 		}
 		modifier = {

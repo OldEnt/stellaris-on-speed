@@ -76,24 +76,24 @@ building_commercial_zone = {
 		"building_commercial_megaplex"
 	}
 
-	ai_resource_production = {
-		energy = 10
-		trigger = {
-			always = yes
-		}
-	}
-	ai_resource_production = {
-		energy = 15
-		trigger = {
-			OR = {
-				num_unemployed >= 10
-				num_assigned_jobs = {
-					job = servant
-					value >= 10
-				}
-			}
-		}
-	}
+	#ai_resource_production = {
+	#	energy = 2
+	#	trigger = {
+	#		always = yes
+	#	}
+	#}
+	#ai_resource_production = {
+	#	energy = 3
+	#	trigger = {
+	#		OR = {
+	#			num_unemployed >= 10
+	#			num_assigned_jobs = {
+	#				job = servant
+	#				value >= 10
+	#			}
+	#		}
+	#	}
+	#}
 }
 
 building_commercial_megaplex = {
@@ -180,9 +180,9 @@ building_commercial_megaplex = {
 			OR = {
 				num_unemployed >= 10
 				num_assigned_jobs = {
-					job = servant
+				job = servant
 					value >= 10
-				}
+			}
 			}
 		}
 	}
@@ -240,12 +240,12 @@ building_galactic_stock_exchange = {
 		text = job_merchant_effect_desc
 	}
 
-	ai_resource_production = {
-		energy = 15
-		trigger = {
-			always = yes
-		}
-	}
+	#ai_resource_production = {
+	#	energy = 3
+	#	trigger = {
+	#		always = yes
+	#	}
+	#}
 	ai_resource_production = {
 		energy = 5
 		trigger = {

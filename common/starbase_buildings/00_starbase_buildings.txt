@@ -22,7 +22,7 @@ crew_quarters = {
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 50
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
@@ -52,10 +52,10 @@ hydroponics_bay = {
 
 	show_in_tech = "tech_hydroponics"
 
-	ai_build_at_chokepoint = no
+	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 50
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
@@ -78,7 +78,7 @@ resource_silo = {
 	ai_build_at_chokepoint = no
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 50
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
@@ -130,7 +130,7 @@ nebula_refinery = {
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 150
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
@@ -181,7 +181,7 @@ listening_post = {
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = no
 	ai_weight = {
-		weight = 50
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 	}
 
 	show_in_tech = "tech_sensors_2"
@@ -314,7 +314,7 @@ offworld_trading_company = {
 	ai_build_at_chokepoint = no
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 200
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 		modifier = {
 			factor = 0
 			count_starbase_modules = {
@@ -358,7 +358,7 @@ fleet_academy = {
 	ai_build_at_chokepoint = no
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 200
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 		modifier = {
 			factor = 0
 			count_starbase_modules = {
@@ -405,12 +405,12 @@ naval_logistics_office = {
 	ai_build_at_chokepoint = no
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 200
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 		modifier = {
 			factor = 0
 			count_starbase_modules = {
 				type = anchorage
-				count < 3
+				count < 1
 			}
 		}
 	}
@@ -455,7 +455,7 @@ titan_yards = {
 	ai_build_at_chokepoint = no
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 200
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 		modifier = {
 			factor = 0
 			count_starbase_modules = {
@@ -522,7 +522,7 @@ colossus_yards = {
 	ai_build_at_chokepoint = no
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 200
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 		modifier = {
 			factor = 0
 			count_starbase_modules = {
@@ -645,7 +645,7 @@ target_uplink_computer = {
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = no
 	ai_weight = {
-		weight = 10
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
@@ -685,7 +685,7 @@ defense_grid = {
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = no
 	ai_weight = {
-		weight = 10
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
@@ -741,7 +741,7 @@ deep_space_black_site = {
 	ai_build_at_chokepoint = no
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 150
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
@@ -833,7 +833,7 @@ curator_think_tank = {
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 150
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
@@ -957,7 +957,7 @@ communications_jammer = {
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = no
 	ai_weight = {
-		weight = 10
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
@@ -988,7 +988,7 @@ disruption_field = {
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = no
 	ai_weight = {
-		weight = 10
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
@@ -999,7 +999,7 @@ warp_fluctuator = {
 	potential = {
 		exists = owner
 		owner = {
-			has_technology = tech_hyper_drive_2
+			has_technology = tech_interstellar_economics
 			is_gestalt = no
 		}
 	}
@@ -1031,7 +1031,7 @@ warp_fluctuator = {
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = no
 	ai_weight = {
-		weight = 10
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
@@ -1075,6 +1075,8 @@ transit_hub = {
 	system_modifier = {
 		planet_resettlement_unemployed_mult = 1.00
 	}
+
+	custom_tooltip = sm_transit_hub_desc_modifier
 
 	show_in_tech = "tech_hyper_drive_2"
 
@@ -1129,7 +1131,7 @@ command_center = {
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = no
 	ai_weight = {
-		weight = 10
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 	}
 }
 
@@ -1254,7 +1256,7 @@ trader_proxy_office = {
 	ai_build_at_chokepoint = no
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 200
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
 		modifier = {
 			factor = 0
 			OR = {
@@ -1263,6 +1265,113 @@ trader_proxy_office = {
 				solar_system = {
 					any_fleet_in_system = {
 						has_fleet_flag = trader_enclave_station
+					}
+				}
+			}
+		}
+	}
+}
+
+dragon_hatchery = {
+	icon = "GFX_starbase_dragon_hatchery"
+	construction_days = 144
+
+	potential = {
+		exists = owner
+		owner = {
+			is_dragon_breeder_country = yes
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_citadel"
+			has_starbase_size >= starbase_citadel
+		}
+	}
+
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 750
+		}
+		upkeep = {
+			energy = 50
+		}
+	}
+
+	custom_tooltip = dragon_hatchery_tooltip
+
+	ai_build_at_chokepoint = yes
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		modifier = {
+			factor = 0
+			owner = {
+				count_owned_starbase = {
+					count >= 1
+					limit = {
+						has_starbase_building = dragon_hatchery
+					}
+				}
+			}
+		}
+	}
+}
+
+ice_mining_station = {
+	icon = "GFX_starbase_ice_mining_station"
+	construction_days = 72
+
+	potential = {
+		exists = owner
+		owner = {
+			has_ascension_perk = ap_hydrocentric
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_starport"
+			has_starbase_size >= starbase_starport
+		}
+
+		custom_tooltip = {
+			fail_text = requires_ice_source
+			solar_system = {
+				OR = {
+					has_planet_class = pc_ice_asteroid
+					has_planet_class = pc_frozen
+				}
+			}
+		}
+	}
+
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 100
+		}
+	}
+
+	custom_tooltip = ice_mining_station_tooltip
+
+	system_modifier = {
+		station_gatherers_produces_mult = 0.15
+	}
+
+	ai_build_at_chokepoint = yes
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+		modifier = {
+			factor = 0
+			owner = {
+				count_owned_starbase = {
+					count >= 2
+					limit = {
+						has_starbase_building = ice_mining_station
 					}
 				}
 			}

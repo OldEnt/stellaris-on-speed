@@ -305,6 +305,7 @@ trade_federation = {
 			OR = {
 				is_megacorp = yes
 				has_valid_civic = civic_merchant_guilds
+				has_valid_civic = civic_corporate_dominion
 			}
 		}
 		custom_tooltip = {
